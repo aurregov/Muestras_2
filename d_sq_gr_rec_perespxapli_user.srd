@@ -1,0 +1,42 @@
+HA$PBExportHeader$d_sq_gr_rec_perespxapli_user.srd
+$PBExportComments$/***********************************************************~r~nSA53453 - Ceiba/jjmonsal - 29-05-2016~r~nComentario: RESTRICCION DE USUARIOS PARA FICHAS DE MATERIA PRIMA~r~n***********************************************************/
+release 9;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=92 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_aplicacion dbname="m_param_perespxapli.co_aplicacion" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_programa dbname="m_param_perespxapli.co_programa" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="m_param_perespxapli.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_linea dbname="m_param_perespxapli.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_opcion dbname="m_param_perespxapli.co_opcion" )
+ column=(type=char(8) update=yes updatewhereclause=yes key=yes name=usuario dbname="m_param_perespxapli.usuario" )
+ retrieve="  SELECT m_param_perespxapli.co_aplicacion,   
+         m_param_perespxapli.co_programa,   
+         m_param_perespxapli.co_fabrica,   
+			m_param_perespxapli.co_linea, 
+         m_param_perespxapli.co_opcion, 
+			m_param_perespxapli.usuario
+    FROM m_param_perespxapli   
+WHERE( m_param_perespxapli.co_aplicacion = :an_aplica OR :an_aplica = 0 )	AND
+	  ( m_param_perespxapli.usuario IN (:as_user) )
+
+" update="m_param_perespxapli" updatewhere=1 updatekeyinplace=yes arguments=(("an_aplica", number),("as_user", string))  sort="usuario A co_programa A co_fabrica A co_linea A " )
+text(band=header alignment="2" text="Aplicacion" border="6" color="33554432" x="9" y="8" height="80" width="242" html.valueishtml="0"  name=co_aplicacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Programa" border="6" color="33554432" x="261" y="8" height="80" width="1033" html.valueishtml="0"  name=co_programa_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Fabrica" border="6" color="33554432" x="1303" y="8" height="80" width="201" html.valueishtml="0"  name=co_fabrica_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Linea" border="6" color="33554432" x="1513" y="8" height="80" width="183" html.valueishtml="0"  name=co_linea_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Opcion" border="6" color="33554432" x="1705" y="8" height="80" width="713" html.valueishtml="0"  name=co_opcion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Usuario" border="6" color="33554432" x="2427" y="8" height="80" width="242" html.valueishtml="0"  name=usuario_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="1" tabsequence=40 border="5" color="33554432" x="1705" y="4" height="68" width="713" format="[general]" html.valueishtml="0"  name=co_opcion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="0" tabsequence=50 border="5" color="33554432" x="2427" y="4" height="68" width="242" format="[general]" html.valueishtml="0"  name=usuario visible="1" edit.limit=8 edit.case=lower edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="1" tabsequence=30 border="5" color="33554432" x="1513" y="4" height="68" width="183" format="[general]" html.valueishtml="0"  name=co_linea visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="5" color="33554432" x="9" y="4" height="68" width="242" format="[general]" html.valueishtml="0"  name=co_aplicacion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="1" tabsequence=20 border="5" color="33554432" x="1303" y="4" height="68" width="201" format="[general]" html.valueishtml="0"  name=co_fabrica visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="1" tabsequence=10 border="5" color="33554432" x="261" y="4" height="68" width="1033" format="[general]" html.valueishtml="0"  name=co_programa visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
