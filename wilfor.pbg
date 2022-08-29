@@ -1,0 +1,36 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "wilfor.pbl" "";
+@end;
+@begin Objects
+ "d_ext_datos_orden.srd" "wilfor.pbl";
+ "d_cod_descrip_maquina.srd" "wilfor.pbl";
+ "d_ext_cambio_prioridad.srd" "wilfor.pbl";
+ "d_tareas_grupo_x_hora.srd" "wilfor.pbl";
+ "d_consulta_orden.srd" "wilfor.pbl";
+ "w_cambio_prioridad.srw" "wilfor.pbl";
+ "d_cant_colas_x_maquina.srd" "wilfor.pbl";
+ "d_tareas_maq_tin_lista.srd" "wilfor.pbl";
+ "d_corregir_r_fmp_dif_a_dt_fmp_osw.srd" "wilfor.pbl";
+ "d_tareas_grupo_lista.srd" "wilfor.pbl";
+ "d_cod_descrip_grupo.srd" "wilfor.pbl";
+ "w_cambio_maq_tin.srw" "wilfor.pbl";
+ "d_detalle_turno.srd" "wilfor.pbl";
+ "n_cst_c_actualizarmp_en_ficha.sru" "wilfor.pbl";
+ "w_actualizar_mat_prima_en_ficha.srw" "wilfor.pbl";
+ "w_opc_cam_prior.srw" "wilfor.pbl";
+ "d_tareas_maquina_x_hora.srd" "wilfor.pbl";
+ "d_actualizar_maquina_individual.srd" "wilfor.pbl";
+ "d_lista_orden_prioridad.srd" "wilfor.pbl";
+ "d_verificar_peso_tarea_maquina.srd" "wilfor.pbl";
+ "d_sq_gr_validarfmp_pdto_color_existe.srd" "wilfor.pbl";
+ "d_actualizar_grupo_individual.srd" "wilfor.pbl";
+ "w_cambio_grupos.srw" "wilfor.pbl";
+ "d_sq_gr_cambio_pdto_color_mp_dt.srd" "wilfor.pbl";
+ "d_gr_muestra_ref_x_producto_color.srd" "wilfor.pbl";
+ "d_actualizar_maquina_x_estado.srd" "wilfor.pbl";
+ "d_sq_gr_generarlogfmpact.srd" "wilfor.pbl";
+ "d_ext_datos_orden_muestra.srd" "wilfor.pbl";
+ "d_actualizar_grupo_x_estado.srd" "wilfor.pbl";
+ "d_gr_cambio_producto_color_mp.srd" "wilfor.pbl";
+@end;
