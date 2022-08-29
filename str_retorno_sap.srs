@@ -1,0 +1,18 @@
+HA$PBExportHeader$str_retorno_sap.srs
+global type str_retorno_sap from structure
+	string		typesap[]
+	string		idsap[]
+	string		numbersap[]
+	string		messagesap[]
+	string		log_nosap[]
+	string		log_msg_nosap[]
+	string		message_v1sap[]
+	string		message_v2sap[]
+	string		message_v3sap[]
+	string		message_v4sap[]
+	string		parametersap[]
+	string		rowsap[]
+	string		fieldsap[]
+	string		systemsap[]
+end type
+
