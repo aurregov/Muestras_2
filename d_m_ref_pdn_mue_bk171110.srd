@@ -1,0 +1,66 @@
+HA$PBExportHeader$d_m_ref_pdn_mue_bk171110.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=77442227 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=4 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=788 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica_ref dbname="dt_muestras_ref.co_fabrica_ref" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_linea_ref dbname="dt_muestras_ref.co_linea_ref" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_referencia_ref dbname="dt_muestras_ref.co_referencia_ref" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_talla_ref dbname="dt_muestras_ref.co_talla_ref" )
+ column=(type=long updatewhereclause=yes name=cs_talla dbname="cs_talla" )
+ column=(type=long update=yes updatewhereclause=yes name=co_composicion dbname="dt_muestras_ref.co_composicion" )
+ column=(type=char(2) updatewhereclause=yes name=de_talla dbname="dt_muestras_ref.de_talla" )
+ column=(type=char(2) updatewhereclause=yes name=de_composicion dbname="dt_muestras_ref.de_composicion" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="dt_muestras_ref.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_linea dbname="dt_muestras_ref.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_muestra dbname="dt_muestras_ref.co_muestra" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_talla dbname="dt_muestras_ref.co_talla" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="dt_muestras_ref.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="dt_muestras_ref.usuario" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="dt_muestras_ref.instancia" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_creacion dbname="dt_muestras_ref.fe_creacion" )
+ retrieve="  SELECT dt_muestras_ref.co_fabrica_ref,   
+         dt_muestras_ref.co_linea_ref,   
+         dt_muestras_ref.co_referencia_ref, 
+         dt_muestras_ref.co_talla_ref, 
+         0 cs_talla,   
+         dt_muestras_ref.co_composicion,
+         ~"  ~" de_talla,
+         ~"  ~" de_composicion , 
+         dt_muestras_ref.co_fabrica, 
+         dt_muestras_ref.co_linea, 
+         dt_muestras_ref.co_muestra, 
+         dt_muestras_ref.co_talla,  
+         dt_muestras_ref.fe_actualizacion,   
+         dt_muestras_ref.usuario,   
+         dt_muestras_ref.instancia,
+         dt_muestras_ref.fe_creacion  
+    FROM dt_muestras_ref   
+   WHERE ( dt_muestras_ref.co_fabrica = :a_fabrica ) AND  
+         ( dt_muestras_ref.co_linea = :a_linea ) AND  
+         ( dt_muestras_ref.co_muestra = :a_referencia ) AND  
+         ( dt_muestras_ref.co_talla = :a_talla ) 
+ 
+" update="dt_muestras_ref" updatewhere=0 updatekeyinplace=yes arguments=(("a_fabrica", number),("a_linea", number),("a_referencia", number),("a_talla", number)) )
+column(band=detail id=1 alignment="0" tabsequence=10 border="5" color="0" x="9" y="80" height="68" width="224" format="[general]" html.valueishtml="0"  name=co_fabrica_ref visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=2 alignment="0" tabsequence=20 border="5" color="0" x="261" y="80" height="68" width="169" format="[general]" html.valueishtml="0"  name=co_linea_ref visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=3 alignment="0" tabsequence=30 border="5" color="0" x="453" y="80" height="68" width="247" format="[general]" html.valueishtml="0"  name=co_referencia_ref visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=4 alignment="0" tabsequence=40 border="5" color="0" x="713" y="80" height="68" width="178" format="[general]" html.valueishtml="0"  name=co_talla_ref visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=5 alignment="0" tabsequence=50 border="5" color="0" x="919" y="80" height="68" width="119" format="[general]" html.valueishtml="0"  name=cs_talla visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=detail alignment="0" text="Referencia" border="0" color="0" x="457" y="8" height="56" width="261" html.valueishtml="0"  name=co_referencia_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Fab" border="0" color="0" x="14" y="8" height="56" width="206" html.valueishtml="0"  name=co_fabrica_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="L$$HEX1$$ed00$$ENDHEX$$nea" border="0" color="0" x="261" y="8" height="56" width="155" html.valueishtml="0"  name=co_linea_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Talla" border="0" color="0" x="736" y="8" height="56" width="169" html.valueishtml="0"  name=co_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Descrip.Talla" border="0" color="0" x="1115" y="12" height="56" width="283" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Composicion " border="0" color="0" x="1504" y="8" height="56" width="293" html.valueishtml="0"  name=cs_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="CsTalla" border="0" color="0" x="882" y="8" height="56" width="160" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="5" color="0" x="1083" y="80" height="68" width="352" format="[general]" html.valueishtml="0"  name=de_talla visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=6 alignment="0" tabsequence=60 border="5" color="0" x="1449" y="80" height="68" width="165" format="[general]" html.valueishtml="0"  name=co_composicion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="5" color="0" x="1641" y="80" height="68" width="1019" format="[general]" html.valueishtml="0"  name=de_composicion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
