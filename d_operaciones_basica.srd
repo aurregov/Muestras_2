@@ -1,0 +1,48 @@
+HA$PBExportHeader$d_operaciones_basica.srd
+$PBExportComments$Para el ingreso de las operaciones basicas
+release 9;
+datawindow(units=0 timer_interval=0 color=79017397 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=64 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_linea dbname="co_linea" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_muestra dbname="co_muestra" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_talla dbname="co_talla" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_tipoprod dbname="co_tipoprod" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_operacion dbname="co_operacion" validation="Integer(Gettext())>0" validationmsg="'C$$HEX1$$f300$$ENDHEX$$digo de la operaci$$HEX1$$f300$$ENDHEX$$n no v$$HEX1$$e100$$ENDHEX$$lido'" )
+ column=(type=char(30) updatewhereclause=yes name=de_operacion dbname="de_operacion" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="fe_actualizacion" validation="Integer(Gettext())>0" validationmsg="'N$$HEX1$$fa00$$ENDHEX$$mero del orden no v$$HEX1$$e100$$ENDHEX$$lido'" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="usuario" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="instancia" )
+ column=(type=long update=yes updatewhereclause=yes name=orden_operacion dbname="orden_operacion" )
+ retrieve="SELECT  m_proref_muestras.co_fabrica ,
+        m_proref_muestras.co_linea ,
+        m_proref_muestras.co_muestra ,
+        m_proref_muestras.co_talla ,
+        m_proref_muestras.co_tipoprod ,
+        m_proref_muestras.co_operacion ,
+        Trim(m_operacio_ct.de_operacion) AS de_operacion,
+        m_proref_muestras.fe_actualizacion ,
+        m_proref_muestras.usuario ,
+        m_proref_muestras.instancia ,
+        m_proref_muestras.orden_operacion     
+   FROM m_proref_muestras ,
+        m_operacio_ct     
+  WHERE ( m_proref_muestras.co_tipoprod = m_operacio_ct.co_tipoprod ) and
+        ( m_proref_muestras.co_operacion = m_operacio_ct.co_operacion ) and
+        ( ( m_proref_muestras.co_fabrica = :a_fabrica ) And
+        ( m_proref_muestras.co_linea = :a_linea ) And 
+        ( m_proref_muestras.co_muestra = :a_muestra ) )  " update="m_proref_muestras" updatewhere=0 updatekeyinplace=yes arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number))  sort="orden_operacion A " )
+text(band=header alignment="2" text="Orden" border="0" color="0" x="9" y="4" height="56" width="293" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Operaci$$HEX1$$f300$$ENDHEX$$n" border="0" color="0" x="311" y="4" height="56" width="411" html.valueishtml="0"  name=co_operacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Operaci$$HEX1$$f300$$ENDHEX$$n" border="0" color="0" x="731" y="4" height="56" width="960" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=7 alignment="0" tabsequence=30 border="5" color="0" x="731" y="4" height="60" width="960" format="[general]" html.valueishtml="0"  name=de_operacion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=11 alignment="1" tabsequence=10 border="5" color="0" x="9" y="4" height="60" width="293" format="[general]" html.valueishtml="0"  name=orden_operacion visible="1" edit.name="#####" editmask.mask="#####" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1089992695" )
+column(band=detail id=6 alignment="1" tabsequence=20 border="5" color="0" x="311" y="4" height="60" width="411" format="[general]" html.valueishtml="0"  name=co_operacion  tag="&NN=C$$HEX1$$f300$$ENDHEX$$d. operaci$$HEX1$$f300$$ENDHEX$$n" visible="1" editmask.mask="#####" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1089992695" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
