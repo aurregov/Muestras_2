@@ -1,0 +1,150 @@
+HA$PBExportHeader$d_gantt_ingreso.srd
+$PBExportComments$DWO para el detalle de los datos Gantt en el registro de ordenes
+release 9;
+datawindow(units=3 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 635 print.margin.right = 635 print.margin.top = 635 print.margin.bottom = 635 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=476 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=476 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=nu_orden dbname="mu_gantt.nu_orden" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=consec dbname="mu_gantt.consec" )
+ column=(type=long update=yes updatewhereclause=yes name=nu_sol_serv dbname="mu_gantt.nu_sol_serv" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=cons_color dbname="mu_gantt.cons_color" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=id_actividad dbname="mu_gantt.id_actividad" )
+ column=(type=long update=yes updatewhereclause=yes name=co_operacion dbname="mu_gantt.co_operacion" )
+ column=(type=long update=yes updatewhereclause=yes name=co_estado dbname="mu_gantt.co_estado" )
+ column=(type=long update=yes updatewhereclause=yes name=minutos dbname="mu_gantt.minutos" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=ca_kilos dbname="mu_gantt.ca_kilos" initial="0" )
+ column=(type=datetime update=yes updatewhereclause=yes name=f_prog_ini dbname="mu_gantt.f_prog_ini" )
+ column=(type=datetime update=yes updatewhereclause=yes name=f_prog_fin dbname="mu_gantt.f_prog_fin" )
+ column=(type=datetime update=yes updatewhereclause=yes name=f_mov_ini dbname="mu_gantt.f_mov_ini" )
+ column=(type=datetime update=yes updatewhereclause=yes name=f_mov_fin dbname="mu_gantt.f_mov_fin" )
+ column=(type=long update=yes updatewhereclause=yes name=co_grupo dbname="mu_gantt.co_grupo" )
+ column=(type=long update=yes updatewhereclause=yes name=co_fabrica dbname="mu_gantt.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes name=cs_maquina dbname="mu_gantt.cs_maquina" )
+ column=(type=long update=yes updatewhereclause=yes name=cola_grupo dbname="mu_gantt.cola_grupo" )
+ column=(type=long update=yes updatewhereclause=yes name=cola_tin dbname="mu_gantt.cola_tin" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_ini dbname="mu_gantt.fe_ini" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_fin dbname="mu_gantt.fe_fin" )
+ column=(type=long update=yes updatewhereclause=yes name=min_espera dbname="mu_gantt.min_espera" )
+ column=(type=long update=yes updatewhereclause=yes name=min_paro dbname="mu_gantt.min_paro" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="mu_gantt.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="mu_gantt.usuario" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="mu_gantt.instancia" )
+ column=(type=long update=yes updatewhereclause=yes name=condicion dbname="mu_gantt.condicion" initial="1" )
+ column=(type=long update=yes updatewhereclause=yes name=posicion dbname="mu_gantt.posicion" validation="Integer(Gettext())>0" validationmsg="'N$$HEX1$$fa00$$ENDHEX$$mero de posici$$HEX1$$f300$$ENDHEX$$n de la tarea no v$$HEX1$$e100$$ENDHEX$$lido'" )
+ column=(type=char(50) updatewhereclause=yes name=de_grupo dbname="de_grupo" )
+ column=(type=char(50) updatewhereclause=yes name=de_maq_tin dbname="de_maq_tin" )
+ column=(type=char(20) updatewhereclause=yes name=de_estado dbname="de_estado" )
+ column=(type=char(50) updatewhereclause=yes name=descripcion dbname="descripcion" )
+ column=(type=long updatewhereclause=yes name=co_color dbname="co_color" )
+ column=(type=char(8) updatewhereclause=yes name=co_ctecnicoi dbname="mu_gantt.co_ctecnicoi" )
+ column=(type=char(8) updatewhereclause=yes name=co_ctecnicof dbname="mu_gantt.co_ctecnicof" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=tarea_adicional dbname="mu_gantt.tarea_adicional" )
+ column=(type=char(68) updatewhereclause=yes name=color_hilaza dbname="color_hilaza" )
+ column=(type=char(1) updatewhereclause=yes name=de_color dbname="mu_gantt.de_color" )
+ column=(type=long updatewhereclause=yes name=sw_color_hil dbname="sw_color_hil" )
+ retrieve="  SELECT mu_gantt.nu_orden,   
+         mu_gantt.consec,   
+         mu_gantt.nu_sol_serv,   
+         mu_gantt.cons_color,   
+         mu_gantt.id_actividad,   
+         mu_gantt.co_operacion,   
+         mu_gantt.co_estado,   
+         mu_gantt.minutos,   
+         mu_gantt.ca_kilos,   
+         mu_gantt.f_prog_ini,   
+         mu_gantt.f_prog_fin,   
+         mu_gantt.f_mov_ini,   
+         mu_gantt.f_mov_fin,   
+         mu_gantt.co_grupo,   
+         mu_gantt.co_fabrica,   
+         mu_gantt.cs_maquina,   
+         mu_gantt.cola_grupo,   
+         mu_gantt.cola_tin,   
+         mu_gantt.fe_ini,   
+         mu_gantt.fe_fin,   
+         mu_gantt.min_espera,   
+         mu_gantt.min_paro,   
+         mu_gantt.fe_actualizacion,   
+         mu_gantt.usuario,   
+         mu_gantt.instancia,   
+         mu_gantt.condicion,   
+         mu_gantt.posicion,   
+         trim(sp_desc_m_mu_grupo(mu_gantt.co_grupo)) AS de_grupo,   
+         trim(sp_nom_m_maquina(mu_gantt.co_fabrica,mu_gantt.cs_maquina)) AS de_maq_tin,   
+         trim(sp_nom_m_est_mue(mu_gantt.co_estado)) AS de_estado,   
+         trim(sp_nom_ao_tarea(mu_gantt.co_operacion,mu_gantt.id_actividad, m_muestras.co_tipoprod)) AS descripcion,   
+         0 co_color,
+         mu_gantt.co_ctecnicoi,   
+         mu_gantt.co_ctecnicof,   
+         mu_gantt.tarea_adicional ,
+         ( CASE WHEN  mu_m_actividad.co_clase in (2,3) THEN
+	         ~"(~"||Nvl(mu_soli_hilaza.co_color,'')||~") ~"||Trim(mu_soli_hilaza.de_color)
+           ELSE
+              ~"0~"
+            END ) color_hilaza, ~"~" de_color, 0 sw_color_hil
+    FROM mu_gantt,  dt_mu_ord, m_muestras, OUTER mu_soli_hilaza, OUTER mu_m_actividad  
+   WHERE ( mu_gantt.nu_orden    = :a_nu_orden )
+     AND ( mu_gantt.nu_orden    = dt_mu_ord.nu_orden )
+     AND ( dt_mu_ord.co_fabrica = m_muestras.co_fabrica )
+     AND ( dt_mu_ord.co_linea   = m_muestras.co_linea )
+     AND ( dt_mu_ord.co_muestra = m_muestras.co_muestra )
+
+     AND ( mu_soli_hilaza.nu_orden = mu_gantt.nu_orden )
+     AND ( mu_soli_hilaza.consec   = mu_gantt.consec )
+     AND ( mu_m_actividad.id_actividad = mu_gantt.id_actividad )" update="mu_gantt" updatewhere=0 updatekeyinplace=yes arguments=(("a_nu_orden", number))  sort="posicion A " )
+text(band=header alignment="2" text="" border="6" color="0" x="52" y="52" height="370" width="370" html.valueishtml="0"  name=t_cont visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Pos" border="6" color="33554432" x="476" y="52" height="370" width="661" html.valueishtml="0"  name=posicion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Color" border="6" color="33554432" x="1190" y="52" height="370" width="1799" html.valueishtml="0"  name=co_color_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Des Color" border="6" color="33554432" x="3042" y="52" height="370" width="2301" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="S.S." border="6" color="33554432" x="5397" y="52" height="370" width="714" html.valueishtml="0"  name=nu_sol_serv_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Estado" border="6" color="33554432" x="10927" y="52" height="370" width="1957" html.valueishtml="0"  name=de_estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Min" border="6" color="0" x="12938" y="52" height="370" width="1164" html.valueishtml="0"  name=minutos_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n grupo" border="6" color="0" x="26114" y="52" height="370" width="3836" html.valueishtml="0"  name=de_grupo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Id Maq." border="6" color="33554432" x="30003" y="52" height="370" width="1931" html.valueishtml="0"  name=cs_maquina_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n m$$HEX1$$e100$$ENDHEX$$quina" border="6" color="0" x="31988" y="52" height="370" width="6244" html.valueishtml="0"  name=de_maq_tin_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Condici$$HEX1$$f300$$ENDHEX$$n" border="6" color="33554432" x="14155" y="52" height="370" width="2275" html.valueishtml="0"  name=condicion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Act." border="6" color="0" x="6164" y="52" height="370" width="793" html.valueishtml="0"  name=id_actividad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Oper" border="6" color="0" x="7011" y="52" height="370" width="926" html.valueishtml="0"  name=co_operacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Tarea" border="6" color="0" x="7990" y="52" height="370" width="2883" html.valueishtml="0"  name=descripcion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="F. Ini (Reg)" border="6" color="33554432" x="21325" y="52" height="370" width="2301" html.valueishtml="0"  name=f_prog_ini_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+text(band=header alignment="2" text="F. Fin (Reg)" border="6" color="33554432" x="23680" y="52" height="370" width="2381" html.valueishtml="0"  name=f_prog_fin_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+text(band=header alignment="2" text="F. Ini (Mov)" border="6" color="33554432" x="16483" y="52" height="370" width="2381" html.valueishtml="0"  name=f_mov_ini_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+text(band=header alignment="2" text="F. Fin (Mov)" border="6" color="33554432" x="18917" y="52" height="370" width="2354" html.valueishtml="0"  name=f_mov_fin_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+text(band=header alignment="2" text="F. Ini (Real)" border="6" color="33554432" x="38285" y="52" height="370" width="2301" html.valueishtml="0"  name=fe_ini_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15793151" )
+text(band=header alignment="2" text="F. Fin (Real)" border="6" color="33554432" x="40640" y="52" height="370" width="2301" html.valueishtml="0"  name=fe_fin_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15793151" )
+text(band=header alignment="2" text="Iniciado por" border="6" color="33554432" x="42994" y="52" height="370" width="1666" html.valueishtml="0"  name=co_ctecnicoi_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Finalizado por" border="6" color="33554432" x="44714" y="52" height="370" width="1931" html.valueishtml="0"  name=co_ctecnicof_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="De Color" border="6" color="33554432" x="48895" y="52" height="370" width="3889" html.valueishtml="0"  name=de_color_t visible="0"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Sw Color Hil" border="6" color="33554432" x="46698" y="52" height="370" width="2143" html.valueishtml="0"  name=sw_color_hil_t visible="0"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+compute(band=detail alignment="2" expression="getrow()"border="5" color="16711680" x="52" y="0" height="396" width="370" format="[GENERAL]" html.valueishtml="0"  name=compute_cont visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="15780518~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=8 alignment="1" tabsequence=80 border="5" color="33554432" x="12938" y="0" height="396" width="1164" format="[general]" html.valueishtml="0"  name=minutos visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.imemode=2 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="1073741824~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=31 alignment="0" tabsequence=60 border="5" color="33554432" x="7990" y="0" height="396" width="2883" format="[general]" html.valueishtml="0"  name=descripcion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=2 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=30 alignment="0" tabsequence=70 border="5" color="33554432" x="10927" y="0" height="396" width="1957" format="[general]" html.valueishtml="0"  name=de_estado visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=2 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=5 alignment="1" tabsequence=40 border="5" color="33554432" x="6164" y="0" height="396" width="793" format="[general]" html.valueishtml="0"  name=id_actividad visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.nilisnull=yes edit.imemode=2 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=6 alignment="1" tabsequence=50 border="5" color="33554432" x="7011" y="0" height="396" width="926" format="[general]" html.valueishtml="0"  name=co_operacion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.nilisnull=yes edit.imemode=2 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=3 alignment="1" tabsequence=30 border="5" color="33554432" x="5397" y="0" height="396" width="714" format="[general]" html.valueishtml="0"  name=nu_sol_serv  tag="NO VISIBLE" visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=2 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=28 alignment="0" tabsequence=140 border="5" color="33554432" x="26114" y="0" height="396" width="3836" format="[general]" html.valueishtml="0"  name=de_grupo visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=2 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=29 alignment="0" tabsequence=160 border="5" color="33554432" x="31988" y="0" height="396" width="6244" format="[general]" html.valueishtml="0"  name=de_maq_tin visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=26 alignment="0" tabsequence=90 border="5" color="33554432" x="14155" y="0" height="396" width="2275" format="[general]" html.valueishtml="0" protect="0~t1"  name=condicion visible="1" dddw.name=d_dddw_mu_cond_gantt dddw.displaycolumn=de_condicion dddw.datacolumn=condicion dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=32 alignment="1" tabsequence=20 border="5" color="33554432" x="1190" y="0" height="396" width="1799" format="[general]" html.valueishtml="0"  name=co_color visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=2 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=27 alignment="1" tabsequence=10 border="5" color="33554432" x="476" y="0" height="396" width="661" format="[General]" html.valueishtml="0"  name=posicion  tag="" visible="1" edit.name="#####" editmask.mask="#####" editmask.imemode=2  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=16 alignment="1" tabsequence=150 border="5" color="33554432" x="30003" y="0" height="396" width="1931" format="[general]" html.valueishtml="0"  name=cs_maquina visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=19 alignment="1" tabsequence=170 border="5" color="33554432" x="38285" y="0" height="396" width="2301" format="[shortdate] [time]" html.valueishtml="0" protect="0~t1"  name=fe_ini visible="1" editmask.mask="yyyy/mm/dd hh:mm" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=10 alignment="1" tabsequence=120 border="5" color="33554432" x="21325" y="0" height="396" width="2301" format="[shortdate] [time]" html.valueishtml="0" protect="0~t1"  name=f_prog_ini visible="1" editmask.mask="yyyy/mm/dd hh:mm" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=11 alignment="1" tabsequence=130 border="5" color="33554432" x="23680" y="0" height="396" width="2381" format="[shortdate] [time]" html.valueishtml="0" protect="0~t1"  name=f_prog_fin visible="1" editmask.mask="yyyy/mm/dd hh:mm" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=12 alignment="1" tabsequence=100 border="5" color="33554432" x="16483" y="0" height="396" width="2381" format="[shortdate] [time]" html.valueishtml="0" protect="0~t1"  name=f_mov_ini visible="1" editmask.mask="yyyy/mm/dd hh:mm" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=13 alignment="1" tabsequence=110 border="5" color="33554432" x="18917" y="0" height="396" width="2354" format="[shortdate] [time]" html.valueishtml="0" protect="0~t1"  name=f_mov_fin visible="1" editmask.mask="yyyy/mm/dd hh:mm" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=20 alignment="1" tabsequence=180 border="5" color="33554432" x="40640" y="0" height="396" width="2301" format="[shortdate] [time]" html.valueishtml="0" protect="0~t1"  name=fe_fin visible="1" editmask.mask="yyyy/mm/dd hh:mm" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=33 alignment="0" tabsequence=32766 border="5" color="33554432" x="42994" y="0" height="396" width="1666" format="[general]" html.valueishtml="0"  name=co_ctecnicoi visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=34 alignment="0" tabsequence=32766 border="5" color="33554432" x="44714" y="0" height="396" width="1931" format="[general]" html.valueishtml="0"  name=co_ctecnicof visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif( tarea_adicional ='N',76788149,14540032)" )
+column(band=detail id=37 alignment="0" tabsequence=200 border="5" color="33554432" x="48895" y="0" height="396" width="3889" format="[general]" html.valueishtml="0"  name=de_color visible="0" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=38 alignment="0" tabsequence=190 border="5" color="33554432" x="46698" y="0" height="396" width="2143" format="[general]" html.valueishtml="0"  name=sw_color_hil visible="0" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+compute(band=detail alignment="0" expression="If( sw_color_hil = 0, If( co_color = 0,  color_hilaza  , ~"(~"+String(co_color)+~") ~"+Trim(de_color)),
+Trim(de_color) )"border="5" color="33554432" x="3042" y="0" height="396" width="2301" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
