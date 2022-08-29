@@ -1,0 +1,50 @@
+HA$PBExportHeader$d_select_opciones_perfil.srd
+$PBExportComments$DataWindow que contiene las opciones no permitidas para el perfil de una aplicaci$$HEX1$$f300$$ENDHEX$$n.
+release 7;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=124 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_opcion dbname="co_opcion" )
+ column=(type=long updatewhereclause=yes name=cs_nivel dbname="cs_nivel" )
+ column=(type=long updatewhereclause=yes name=cs_prim_nivel dbname="cs_prim_nivel" )
+ column=(type=long updatewhereclause=yes name=cs_seg_nivel dbname="cs_seg_nivel" )
+ column=(type=long updatewhereclause=yes name=cs_ter_nivel dbname="cs_ter_nivel" )
+ column=(type=long updatewhereclause=yes name=cs_cuar_nivel dbname="cs_cuar_nivel" )
+ column=(type=char(40) updatewhereclause=yes name=nom_obj_ventana dbname="nom_obj_ventana" )
+ retrieve="  SELECT dt_opcxapl.co_opcion,   
+         dt_opcxapl.cs_nivel,   
+         dt_opcxapl.cs_prim_nivel,   
+         dt_opcxapl.cs_seg_nivel,   
+         dt_opcxapl.cs_ter_nivel,   
+         dt_opcxapl.cs_cuar_nivel,
+         dt_opcxapl.nom_obj_ventana  
+    FROM dt_opcxapl,   
+         dt_opcxper  
+   WHERE dt_opcxapl.co_aplicacion = :an_aplicacion AND  
+         dt_opcxper.co_perfil = :an_perfil AND
+			dt_opcxapl.co_aplicacion = dt_opcxper.co_aplicacion AND 
+			dt_opcxapl.co_opcion = dt_opcxper.co_opcion" arguments=(("an_aplicacion", number),("an_perfil", number))  sort="co_opcion A " )
+text(band=header alignment="2" text="Dt Opcxapl
+Co Opcion" border="0" color="0" x="9" y="8" height="112" width="329"  name=dt_opcxapl_co_opcion_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dt Opcxapl
+Cs Nivel" border="0" color="0" x="347" y="8" height="112" width="480"  name=dt_opcxapl_cs_nivel_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dt Opcxapl
+Cs Prim Nivel" border="0" color="0" x="837" y="8" height="112" width="521"  name=dt_opcxapl_cs_prim_nivel_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dt Opcxapl
+Cs Seg Nivel" border="0" color="0" x="1367" y="8" height="112" width="489"  name=dt_opcxapl_cs_seg_nivel_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dt Opcxapl
+Cs Ter Nivel" border="0" color="0" x="1865" y="8" height="112" width="480"  name=dt_opcxapl_cs_ter_nivel_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="0" color="0" x="9" y="4" height="60" width="329" format="[general]"  name=co_opcion edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=32766 border="0" color="0" x="347" y="4" height="60" width="480" format="[general]"  name=cs_nivel edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=32766 border="0" color="0" x="837" y="4" height="60" width="521" format="[general]"  name=cs_prim_nivel edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="1" tabsequence=32766 border="0" color="0" x="1367" y="4" height="60" width="489" format="[general]"  name=cs_seg_nivel edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="1" tabsequence=32766 border="0" color="0" x="1865" y="4" height="60" width="480" format="[general]"  name=cs_ter_nivel edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dt Opcxapl
+Cs Cuar Nivel" border="0" color="0" x="2354" y="8" height="112" width="677"  name=dt_opcxapl_cs_cuar_nivel_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Nom Obj Ventana" border="0" color="0" x="3040" y="8" height="112" width="914"  name=t_1  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="1" tabsequence=32766 border="0" color="0" x="2354" y="4" height="60" width="677" format="[general]"  name=cs_cuar_nivel edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=0 border="0" color="0" x="3045" y="4" height="60" width="910"  name=nom_obj_ventana  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
