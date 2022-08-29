@@ -1,0 +1,40 @@
+HA$PBExportHeader$d_color_mat_prima_prod.srd
+$PBExportComments$Para mostrar una lista con los colores de la materia prima
+release 9;
+datawindow(units=3 timer_interval=0 color=77442227 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 635 print.margin.right = 635 print.margin.top = 635 print.margin.bottom = 635 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=476 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=529 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_color dbname="m_prod_proveedor.co_color" )
+ column=(type=char(25) updatewhereclause=yes name=de_color dbname="m_colores_mp.de_color" )
+ column=(type=long updatewhereclause=yes name=co_matiz dbname="m_prod_proveedor.co_matiz" )
+ column=(type=long updatewhereclause=yes name=co_caracteristica dbname="m_prod_proveedor.co_caracteristica" )
+ column=(type=char(1) updatewhereclause=yes name=estado dbname="m_prod_proveedor.estado" )
+ retrieve="  SELECT UNIQUE m_prod_proveedor.co_color,   
+         m_colores_mp.de_color, m_prod_proveedor.co_matiz, 
+         m_prod_proveedor.co_caracteristica,
+         m_prod_proveedor.estado
+    FROM m_prod_proveedor,   
+         m_colores_mp  
+   WHERE ( m_prod_proveedor.co_color     = m_colores_mp.co_color ) and  
+         ( ( m_prod_proveedor.co_fabrica = :a_fabrica ) AND  
+         ( m_prod_proveedor.co_producto  = :a_producto ) AND
+         ( m_prod_proveedor.estado not in ('O','D') ))    
+
+" arguments=(("a_fabrica", number),("a_producto", number))  sort="co_color A " )
+text(band=header alignment="2" text="C$$HEX1$$f300$$ENDHEX$$digo" border="6" color="0" x="52" y="52" height="370" width="1931" html.valueishtml="0"  name=co_color_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="77442227" )
+text(band=header alignment="2" text="Color" border="6" color="0" x="2037" y="52" height="370" width="4101" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="77442227" )
+text(band=header alignment="2" text="Mt" border="6" color="0" x="6191" y="52" height="370" width="476" html.valueishtml="0"  name=m_prod_proveedor_co_matiz_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="77442227" )
+text(band=header alignment="2" text="Cr" border="6" color="0" x="6720" y="52" height="370" width="476" html.valueishtml="0"  name=m_prod_proveedor_co_caracteristica_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="77442227" )
+text(band=header alignment="2" text="Estado" border="6" color="0" x="7249" y="52" height="370" width="873" html.valueishtml="0"  name=m_prod_proveedor_estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="77442227" )
+column(band=detail id=1 alignment="1" tabsequence=10 border="5" color="0" x="52" y="26" height="449" width="1931" format="[general]" html.valueishtml="0"  name=co_color visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="5" color="0" x="2037" y="26" height="449" width="4101" format="[general]" html.valueishtml="0"  name=de_color visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=20 border="5" color="0" x="6191" y="26" height="449" width="476" format="[general]" html.valueishtml="0"  name=co_matiz visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=30 border="5" color="0" x="6720" y="26" height="449" width="476" format="[general]" html.valueishtml="0"  name=co_caracteristica visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="2" tabsequence=40 border="5" color="0" x="7249" y="26" height="449" width="873" format="[general]" html.valueishtml="0"  name=estado visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
