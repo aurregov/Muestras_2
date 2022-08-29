@@ -1,0 +1,15 @@
+HA$PBExportHeader$d_ext_fe_ini_prog.srd
+$PBExportComments$DWO ext. para la captura de la fecha inicial de programaci$$HEX1$$f300$$ENDHEX$$n en la registro de las programaciones de las ordenes
+release 8;
+datawindow(units=0 timer_interval=0 color=67108864 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=148 color="536870912" )
+table(column=(type=datetime updatewhereclause=yes name=fe_ini_prog dbname="fe_ini_prog" )
+ )
+text(band=detail alignment="0" text="Fecha Inicial de programaci$$HEX1$$f300$$ENDHEX$$n:" border="0" color="8388608" x="14" y="8" height="56" width="777" html.valueishtml="0"  name=fe_inicial_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="" border="0" color="16711680" x="805" y="8" height="56" width="635" html.valueishtml="0"  name=fe_ini_prog_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Formato: yyyy/mm/dd - hh:mm" border="0" color="8388608" x="14" y="72" height="56" width="777" html.valueishtml="0"  name=formato_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=10 border="5" color="33554432" x="809" y="72" height="60" width="626" format="yyyy/mm/dd - hh:mm" html.valueishtml="0"  name=fe_ini_prog visible="1" editmask.useformat=yes editmask.mask="yyyy/mm/dd - hh:mm" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
