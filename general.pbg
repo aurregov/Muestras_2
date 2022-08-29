@@ -1,0 +1,42 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "general.pbl" "";
+@end;
+@begin Objects
+ "u_p_base.sru" "general.pbl";
+ "w_login.srw" "general.pbl";
+ "u_cst_sort.sru" "general.pbl";
+ "w_find.srw" "general.pbl";
+ "w_print.srw" "general.pbl";
+ "d_objetos_libreria_all.srd" "general.pbl";
+ "w_zoom.srw" "general.pbl";
+ "s_menu.srs" "general.pbl";
+ "w_sort.srw" "general.pbl";
+ "d_external_find_origen.srd" "general.pbl";
+ "d_external_sort_origen.srd" "general.pbl";
+ "n_cst_dt_muestras_ref.sru" "general.pbl";
+ "d_recursos_permitidos.srd" "general.pbl";
+ "u_cst_progressbar.sru" "general.pbl";
+ "d_dt_opc_x_apl.srd" "general.pbl";
+ "d_select_server.srd" "general.pbl";
+ "n_cst_paramlogin.sru" "general.pbl";
+ "w_refrescar_menu.srw" "general.pbl";
+ "f_parsetoarray.srf" "general.pbl";
+ "u_ddlb_base.sru" "general.pbl";
+ "n_cst_param.sru" "general.pbl";
+ "d_external_find_destino.srd" "general.pbl";
+ "d_select_opciones_perfil.srd" "general.pbl";
+ "u_cst_login.sru" "general.pbl";
+ "u_cbx_base.sru" "general.pbl";
+ "u_em_base.sru" "general.pbl";
+ "u_gb_base.sru" "general.pbl";
+ "u_rb_base.sru" "general.pbl";
+ "u_sle_base.sru" "general.pbl";
+ "u_st_base.sru" "general.pbl";
+ "u_cst_find.sru" "general.pbl";
+ "n_cst_audit.sru" "general.pbl";
+ "u_cst_print.sru" "general.pbl";
+ "d_external_sort_destino.srd" "general.pbl";
+ "n_cst_security.sru" "general.pbl";
+ "u_cst_zoom.sru" "general.pbl";
+@end;
