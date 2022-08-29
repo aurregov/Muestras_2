@@ -1,0 +1,41 @@
+HA$PBExportHeader$d_inf_det_ref1_bas.srd
+$PBExportComments$Para las medidas b$$HEX1$$e100$$ENDHEX$$sicas que se estan planteando
+release 9;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 0 print.margin.right = 0 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=84 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=char(6) updatewhereclause=yes name=id_med_rep dbname="m_tipo_med_rep.id_med_rep" )
+ column=(type=char(60) updatewhereclause=yes name=desc_tipo_med dbname="m_tipo_med_rep.desc_tipo_med" )
+ column=(type=decimal(2) updatewhereclause=yes name=ca_cm dbname="dt_med_ref_rep.ca_cm" )
+ retrieve="  SELECT m_tipo_med_rep.id_med_rep,   
+         m_tipo_med_rep.desc_tipo_med,   
+         dt_med_ref_rep.ca_cm  
+    FROM dt_med_ref_rep,   
+         m_tipo_med_rep  
+   WHERE ( m_tipo_med_rep.id_med_rep = dt_med_ref_rep.id_med_rep ) and  
+         ( dt_med_ref_rep.co_centro = :a_centro ) AND  
+         ( dt_med_ref_rep.co_subcentro = :a_subcentro ) AND  
+         ( dt_med_ref_rep.co_recurso = :a_recurso ) AND  
+         ( dt_med_ref_rep.co_fabrica = :a_fabrica ) AND  
+         ( dt_med_ref_rep.co_linea = :a_linea ) AND  
+         ( dt_med_ref_rep.co_referencia = :a_referencia ) AND  
+         ( dt_med_ref_rep.co_talla = :a_talla ) AND  
+         ( dt_med_ref_rep.co_calidad = :a_calidad ) AND  
+         ( dt_med_ref_rep.co_diseno = :a_diseno )    
+ 
+" arguments=(("a_centro", number),("a_subcentro", number),("a_recurso", number),("a_fabrica", number),("a_linea", number),("a_referencia", number),("a_talla", number),("a_calidad", number),("a_diseno", number))  sort="id_med_rep A " )
+rectangle(band=header x="9" y="4" height="80" width="923"  name=r_1 visible="1" brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+text(band=header alignment="2" text="Parte" border="0" color="0" x="27" y="16" height="60" width="539" html.valueishtml="0"  name=m_partebas_de_partebas_t visible="1"  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+rectangle(band=header x="928" y="4" height="80" width="361"  name=r_3 visible="1" brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+text(band=header alignment="0" text="Medida" border="0" color="0" x="987" y="16" height="60" width="187" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+rectangle(band=detail x="9" y="0" height="76" width="923"  name=r_2 visible="1" brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+compute(band=detail alignment="0" expression="~"(~"+ id_med_rep +~") ~"+ desc_tipo_med "border="0" color="0" x="27" y="12" height="52" width="850" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+rectangle(band=detail x="928" y="0" height="76" width="361"  name=r_4 visible="1" brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+column(band=detail id=3 alignment="1" tabsequence=32766 border="0" color="0" x="965" y="12" height="52" width="279" format="[general]" html.valueishtml="0"  name=ca_cm visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
