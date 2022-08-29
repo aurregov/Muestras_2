@@ -1,0 +1,38 @@
+HA$PBExportHeader$d_verif_combina.srd
+$PBExportComments$para verificar combinaciones en la copia de materia prima de muestras
+release 7;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=144 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=92 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_combinacion dbname="m_combina_muestras.co_combinacion" )
+ column=(type=char(30) updatewhereclause=yes name=de_combinacion dbname="m_combina_muestras.de_combinacion" )
+ column=(type=char(30) updatewhereclause=yes name=de_combinacion_1 dbname="m_combina_muestras.de_combinacion" )
+ retrieve="  SELECT m_combina_muestras_a.co_combinacion,   
+         m_combina_muestras_a.de_combinacion,   
+         m_combina_muestras_b.de_combinacion  
+    FROM m_combina_muestras m_combina_muestras_a,   
+         m_combina_muestras m_combina_muestras_b  
+   WHERE ( m_combina_muestras_a.co_combinacion = m_combina_muestras_b.co_combinacion ) and  
+         ( m_combina_muestras_a.de_combinacion <> m_combina_muestras_b.de_combinacion ) and  
+         ( ( m_combina_muestras_a.co_fabrica = :a_fabrica ) AND  
+         ( m_combina_muestras_a.co_linea = :a_linea ) AND  
+         ( m_combina_muestras_a.co_muestra = :a_muestra ) AND  
+         ( m_combina_muestras_a.co_talla = :a_talla ) ) and
+			( ( m_combina_muestras_b.co_fabrica = :a_fabrica1 ) AND  
+         ( m_combina_muestras_b.co_linea = :a_linea1 ) AND  
+         ( m_combina_muestras_b.co_muestra = :a_muestra1 ) AND  
+         ( m_combina_muestras_b.co_talla = :a_talla1 ) )       
+" arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number),("a_talla", number),("a_fabrica1", number),("a_linea1", number),("a_muestra1", number),("a_talla1", number)) )
+text(band=header alignment="2" text="M Combina Muestras
+Co Combinacion" border="0" color="0" x="9" y="8" height="128" width="567"  name=m_combina_muestras_co_combinacion_t  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="M Combina Muestras
+De Combinacion" border="0" color="0" x="585" y="8" height="128" width="850"  name=m_combina_muestras_de_combinacion_t  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="M Combina Muestras
+De Combinacion" border="0" color="0" x="1445" y="8" height="128" width="850"  name=m_combina_muestras_de_combinacion_t_1_t  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="0" color="0" x="9" y="8" height="76" width="567" format="[general]"  name=co_combinacion edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="585" y="8" height="76" width="850" format="[general]"  name=de_combinacion edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="1445" y="8" height="76" width="850" format="[general]"  name=de_combinacion_1 edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
