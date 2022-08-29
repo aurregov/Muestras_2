@@ -1,0 +1,66 @@
+HA$PBExportHeader$d_dt_fmp_observacion_sin.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=80 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=92 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_fabrica dbname="dt_fmp_observacion_sin.co_fabrica" )
+ column=(type=long updatewhereclause=yes name=co_linea dbname="dt_fmp_observacion_sin.co_linea" )
+ column=(type=long updatewhereclause=yes name=co_referencia dbname="dt_fmp_observacion_sin.co_referencia" )
+ column=(type=long updatewhereclause=yes name=co_talla dbname="dt_fmp_observacion_sin.co_talla" )
+ column=(type=long updatewhereclause=yes name=co_calidad dbname="dt_fmp_observacion_sin.co_calidad" )
+ column=(type=long updatewhereclause=yes name=co_diseno dbname="dt_fmp_observacion_sin.co_diseno" )
+ column=(type=long updatewhereclause=yes name=co_muestrario dbname="dt_fmp_observacion_sin.co_muestrario" )
+ column=(type=char(300) updatewhereclause=yes name=obs_fmp dbname="dt_fmp_observacion_sin.obs_fmp" )
+ column=(type=datetime updatewhereclause=yes name=fe_creacion dbname="dt_fmp_observacion_sin.fe_creacion" )
+ column=(type=datetime updatewhereclause=yes name=fe_actualizacion dbname="dt_fmp_observacion_sin.fe_actualizacion" )
+ column=(type=char(8) updatewhereclause=yes name=usuario dbname="dt_fmp_observacion_sin.usuario" )
+ column=(type=char(20) updatewhereclause=yes name=instancia dbname="dt_fmp_observacion_sin.instancia" )
+ retrieve="  select dt_fmp_observacion_sin.co_fabrica,   
+         dt_fmp_observacion_sin.co_linea,
+         dt_fmp_observacion_sin.co_referencia,   
+         dt_fmp_observacion_sin.co_talla,   
+         dt_fmp_observacion_sin.co_calidad,   
+         dt_fmp_observacion_sin.co_diseno,   
+         dt_fmp_observacion_sin.co_muestrario,   
+         dt_fmp_observacion_sin.obs_fmp,   
+         dt_fmp_observacion_sin.fe_creacion,   
+         dt_fmp_observacion_sin.fe_actualizacion,   
+         dt_fmp_observacion_sin.usuario,   
+         dt_fmp_observacion_sin.instancia  
+    from dt_fmp_observacion_sin  
+   where ( dt_fmp_observacion_sin.co_fabrica = :a_fabrica ) and  
+         ( dt_fmp_observacion_sin.co_linea = :a_linea ) and  
+         ( dt_fmp_observacion_sin.co_referencia = :a_referencia ) and  
+         ( dt_fmp_observacion_sin.co_talla = :a_talla ) and  
+         ( dt_fmp_observacion_sin.co_calidad = :a_calidad ) and  
+         ( dt_fmp_observacion_sin.co_diseno = :a_diseno ) and  
+         ( dt_fmp_observacion_sin.co_muestrario = :a_muestrario )
+" arguments=(("a_fabrica", number),("a_linea", number),("a_referencia", number),("a_talla", number),("a_calidad", number),("a_diseno", number),("a_muestrario", number)) )
+column(band=detail id=1 alignment="0" tabsequence=0 border="0" color="0" x="9" y="0" height="76" width="23" html.valueishtml="0"  name=co_fabrica visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Co Fabrica" border="0" color="0" x="5" y="4" height="76" width="27" html.valueishtml="0"  name=co_fabrica_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=0 border="0" color="0" x="46" y="0" height="76" width="23" html.valueishtml="0"  name=co_linea visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Co Linea" border="0" color="0" x="41" y="4" height="76" width="27" html.valueishtml="0"  name=co_linea_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=0 border="0" color="0" x="82" y="0" height="76" width="87" html.valueishtml="0"  name=co_referencia visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Co Referencia" border="0" color="0" x="78" y="4" height="76" width="91" html.valueishtml="0"  name=co_referencia_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=0 border="0" color="0" x="183" y="0" height="76" width="23" html.valueishtml="0"  name=co_talla visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Co Talla" border="0" color="0" x="178" y="4" height="76" width="27" html.valueishtml="0"  name=co_talla_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="0" tabsequence=0 border="0" color="0" x="219" y="0" height="76" width="23" html.valueishtml="0"  name=co_calidad visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Co Calidad" border="0" color="0" x="215" y="4" height="76" width="27" html.valueishtml="0"  name=co_calidad_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="0" tabsequence=0 border="0" color="0" x="256" y="0" height="76" width="23" html.valueishtml="0"  name=co_diseno visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Co Diseno" border="0" color="0" x="251" y="4" height="76" width="27" html.valueishtml="0"  name=co_diseno_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=7 alignment="0" tabsequence=0 border="0" color="0" x="293" y="0" height="76" width="23" html.valueishtml="0"  name=co_muestrario visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Co Muestrario" border="0" color="0" x="288" y="4" height="76" width="27" html.valueishtml="0"  name=co_muestrario_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="0" tabsequence=0 border="0" color="0" x="329" y="0" height="76" width="2734" html.valueishtml="0"  name=obs_fmp visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Obs Fmp" border="0" color="0" x="325" y="4" height="76" width="2738" html.valueishtml="0"  name=obs_fmp_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=9 alignment="0" tabsequence=0 border="0" color="0" x="3077" y="0" height="76" width="919" html.valueishtml="0"  name=fe_creacion visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Fe Creacion" border="0" color="0" x="3072" y="4" height="76" width="923" html.valueishtml="0"  name=fe_creacion_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="0" tabsequence=0 border="0" color="0" x="4009" y="0" height="76" width="919" html.valueishtml="0"  name=fe_actualizacion visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Fe Actualizacion" border="0" color="0" x="4005" y="4" height="76" width="923" html.valueishtml="0"  name=fe_actualizacion_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=11 alignment="0" tabsequence=0 border="0" color="0" x="4942" y="0" height="76" width="247" html.valueishtml="0"  name=usuario visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Usuario" border="0" color="0" x="4937" y="4" height="76" width="251" html.valueishtml="0"  name=usuario_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=12 alignment="0" tabsequence=0 border="0" color="0" x="5202" y="0" height="76" width="631" html.valueishtml="0"  name=instancia visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Instancia" border="0" color="0" x="5198" y="4" height="76" width="635" html.valueishtml="0"  name=instancia_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
