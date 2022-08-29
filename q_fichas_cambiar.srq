@@ -1,0 +1,2 @@
+HA$PBExportHeader$q_fichas_cambiar.srq
+PBSELECT( VERSION(400) TABLE(NAME="dt_ficha_mp" ) COLUMN(NAME="dt_ficha_mp.co_fabrica") COLUMN(NAME="dt_ficha_mp.co_reftel") COLUMN(NAME="dt_ficha_mp.co_caract") COLUMN(NAME="dt_ficha_mp.co_color") COLUMN(NAME="dt_ficha_mp.co_color_mp")WHERE(    EXP1 ="dt_ficha_mp.co_color"   OP ="in"    EXP2 ="2281,8052,3074,242, 912,3522"    LOGIC ="And" ) WHERE(    EXP1 ="dt_ficha_mp.co_color_mp"   OP ="in"    EXP2 ="2281,8052,3074,242, 912,3522" ) )
