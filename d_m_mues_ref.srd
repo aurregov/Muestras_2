@@ -1,0 +1,107 @@
+HA$PBExportHeader$d_m_mues_ref.srd
+$PBExportComments$Para la busqueda de la materia prima de muestras
+release 9;
+datawindow(units=0 timer_interval=0 color=77442227 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_fabrica dbname="m_muestras.co_fabrica" )
+ column=(type=long updatewhereclause=yes name=co_linea dbname="m_muestras.co_linea" )
+ column=(type=long updatewhereclause=yes name=co_muestra dbname="m_muestras.co_muestra" )
+ column=(type=char(50) updatewhereclause=yes name=de_muestra dbname="m_muestras.de_muestra" )
+ column=(type=long updatewhereclause=yes name=co_talla dbname="dt_muestras.co_talla" )
+ column=(type=long updatewhereclause=yes name=co_tipoprod dbname="m_muestras.co_tipoprod" )
+ column=(type=long updatewhereclause=yes name=co_grupo_tlla dbname="m_muestras.co_grupo_tlla" )
+ column=(type=char(40) updatewhereclause=yes name=co_referencia dbname="co_referencia" )
+ column=(type=char(40) updatewhereclause=yes name=de_referencia dbname="de_referencia" )
+ column=(type=long updatewhereclause=yes name=co_muestrario dbname="h_fmp_muestras.co_muestrario" )
+ column=(type=char(1) updatewhereclause=yes name=co_calidad dbname="dt_muestras.co_calidad" )
+ column=(type=long updatewhereclause=yes name=co_diseno dbname="m_disenos_muestras.co_diseno" )
+ column=(type=char(30) updatewhereclause=yes name=de_diseno dbname="m_disenos_muestras.de_diseno" )
+ retrieve="  SELECT DISTINCT m_muestras.co_fabrica,   
+        m_muestras.co_linea,   
+        m_muestras.co_muestra,   
+        m_muestras.de_muestra,   
+        dt_muestras.co_talla,   
+        m_muestras.co_tipoprod,   
+        m_muestras.co_grupo_tlla,
+	 	  decode ( ( select count(*)
+				from dt_muestras_ref dmr
+				where dmr.co_fabrica = m_muestras.co_fabrica
+				and dmr.co_linea = m_muestras.co_linea
+				and dmr.co_muestra = m_muestras.co_muestra 
+				and dmr.co_talla = dt_muestras.co_talla 
+				and dmr.co_talla_ref = dmr.co_talla  ), 1,  ( select DISTINCT dmr.co_referencia_ref || ~"~"
+				from dt_muestras_ref dmr
+				where dmr.co_fabrica = m_muestras.co_fabrica
+				and dmr.co_linea = m_muestras.co_linea
+				and dmr.co_muestra = m_muestras.co_muestra 
+				and dmr.co_talla = dt_muestras.co_talla 
+				and dmr.co_talla_ref = dmr.co_talla),~"~")  co_referencia,   
+   	  decode ( ( select count(*)
+				from dt_muestras_ref dmr
+				where dmr.co_fabrica = m_muestras.co_fabrica
+				and dmr.co_linea = m_muestras.co_linea
+				and dmr.co_muestra = m_muestras.co_muestra 
+				and dmr.co_talla = dt_muestras.co_talla 
+				and dmr.co_talla_ref = dmr.co_talla  ), 1, (select DISTINCT de_referencia
+						from dt_muestras_ref dmr, h_preref p
+						where p.co_fabrica =  dmr.co_fabrica
+						and p.co_linea = dmr.co_linea
+						and p.co_referencia = dmr.co_referencia_ref
+						and dmr.co_fabrica = m_muestras.co_fabrica
+						and  dmr.co_linea = m_muestras.co_linea
+						and dmr.co_muestra = m_muestras.co_muestra
+						and  dmr.co_talla = dt_muestras.co_talla
+						and dmr.co_talla_ref = dmr.co_talla
+			),0,~"~",~"Mas de un dato para Referencia - Muestra~") de_referencia, 
+		  h_fmp_muestras.co_muestrario,
+		  ~" ~" co_calidad ,
+        m_disenos_muestras.co_diseno,   
+        m_disenos_muestras.de_diseno  		
+    FROM dt_muestras,   
+         m_muestras,   
+         h_fmp_muestras , m_disenos_muestras
+   WHERE ( m_muestras.co_fabrica = dt_muestras.co_fabrica ) and  
+         ( m_muestras.co_linea = dt_muestras.co_linea ) and  
+         ( m_muestras.co_muestra = dt_muestras.co_muestra ) and  
+         ( dt_muestras.co_fabrica = h_fmp_muestras.co_fabrica ) and  
+         ( dt_muestras.co_linea = h_fmp_muestras.co_linea ) and  
+         ( dt_muestras.co_muestra = h_fmp_muestras.co_muestra ) and  
+			( m_disenos_muestras.co_diseno =  h_fmp_muestras.cnt_opcion) and  
+		 	( m_muestras.co_fabrica = m_disenos_muestras.co_fabrica ) and  
+			( m_muestras.co_linea = m_disenos_muestras.co_linea ) and  
+			( m_muestras.co_muestra = m_disenos_muestras.co_muestra ) and  
+			( h_fmp_muestras.co_talla = m_disenos_muestras.co_talla ) and  
+			( dt_muestras.co_talla = h_fmp_muestras.co_talla )    
+"  sort="co_fabrica A co_linea A co_muestra A co_talla A co_referencia A co_diseno A co_muestrario A " )
+text(band=header alignment="2" text="F" border="6" color="0" x="137" y="8" height="56" width="82" html.valueishtml="0"  name=m_muestras_co_fabrica_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="L" border="6" color="0" x="229" y="8" height="56" width="87" html.valueishtml="0"  name=m_muestras_co_linea_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Muestra" border="6" color="0" x="325" y="8" height="56" width="192" html.valueishtml="0"  name=m_muestras_co_muestra_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="De muestra" border="6" color="0" x="526" y="8" height="56" width="562" html.valueishtml="0"  name=m_muestras_de_muestra_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Tipo prod" border="6" color="0" x="1097" y="8" height="56" width="219" html.valueishtml="0"  name=m_muestras_co_tipoprod_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Talla" border="6" color="0" x="1326" y="8" height="56" width="133" html.valueishtml="0"  name=dt_muestras_co_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Referencia" border="6" color="0" x="1467" y="8" height="56" width="261" html.valueishtml="0"  name=co_referencia_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="De Referencia" border="6" color="0" x="1737" y="8" height="56" width="320" html.valueishtml="0"  name=de_referencia_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Dise$$HEX1$$f100$$ENDHEX$$o" border="6" color="0" x="2336" y="8" height="56" width="165" html.valueishtml="0"  name=m_disenos_muestras_co_diseno_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="0" text="" border="6" color="0" x="9" y="8" height="56" width="119" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="De Diseno" border="6" color="0" x="2510" y="8" height="56" width="334" html.valueishtml="0"  name=m_disenos_muestras_de_diseno_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Muestrario" border="6" color="0" x="2066" y="8" height="56" width="261" html.valueishtml="0"  name=h_fmp_muestras_co_muestrario_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=1 alignment="1" tabsequence=10 border="5" color="0" x="137" y="4" height="64" width="82" format="[general]" html.valueishtml="0"  name=co_fabrica visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=20 border="5" color="0" x="229" y="4" height="64" width="87" format="[general]" html.valueishtml="0"  name=co_linea visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=30 border="5" color="0" x="325" y="4" height="64" width="192" format="[general]" html.valueishtml="0"  name=co_muestra visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="1" tabsequence=32766 border="5" color="0" x="1326" y="4" height="64" width="133" format="[general]" html.valueishtml="0"  name=co_talla visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=40 border="5" color="0" x="1467" y="4" height="64" width="261" format="[general]" html.valueishtml="0"  name=co_referencia visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=50 border="5" color="0" x="1737" y="4" height="64" width="320" format="[general]" html.valueishtml="0"  name=de_referencia visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=70 border="5" color="0" x="2336" y="4" height="64" width="165" format="[general]" html.valueishtml="0"  name=co_diseno visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="1" tabsequence=32766 border="5" color="0" x="1097" y="4" height="64" width="219" format="[general]" html.valueishtml="0"  name=co_tipoprod visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="5" color="0" x="526" y="4" height="64" width="562" format="[general]" html.valueishtml="0"  name=de_muestra visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression="getrow()"border="0" color="134217730" x="9" y="4" height="64" width="119" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=13 alignment="0" tabsequence=80 border="5" color="0" x="2510" y="4" height="64" width="334" format="[general]" html.valueishtml="0"  name=de_diseno visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=60 border="0" color="0" x="2066" y="4" height="64" width="261" format="[general]" html.valueishtml="0"  name=co_muestrario visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
