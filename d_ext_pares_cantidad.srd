@@ -1,0 +1,19 @@
+HA$PBExportHeader$d_ext_pares_cantidad.srd
+$PBExportComments$Para parametrizar la cantidad de pares a tejer y a despachar
+release 9;
+datawindow(units=0 timer_interval=0 color=67108864 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=number updatewhereclause=yes name=pares_tejer dbname="pares_tejer" validation="IsNumber(GetText()) and Long(GetText()) >= 0" validationmsg="'El Dato ~~'' + pares_tejer + '~~' No es v$$HEX1$$e100$$ENDHEX$$lido, por favor verifique.'" )
+ column=(type=number updatewhereclause=yes name=pares_despachar dbname="pares_despachar" validation="IsNumber(GetText()) and Long(GetText()) >= 0" validationmsg="'El Dato ~~'' + pares_despachar + '~~' No es v$$HEX1$$e100$$ENDHEX$$lido, por favor verifique.'" )
+ )
+text(band=detail alignment="0" text="Cant Tejer:" border="0" color="33554432" x="37" y="8" height="56" width="274" html.valueishtml="0"  name=pares_tejer_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Cant Despachar:" border="0" color="33554432" x="709" y="8" height="56" width="421" html.valueishtml="0"  name=pares_despachar_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=10 border="5" color="33554432" x="338" y="8" height="60" width="311" format="[general]" html.valueishtml="0"  name=pares_tejer visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=2 alignment="1" tabsequence=20 border="5" color="33554432" x="1161" y="8" height="60" width="311" format="[general]" html.valueishtml="0"  name=pares_despachar visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
