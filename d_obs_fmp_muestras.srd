@@ -1,0 +1,43 @@
+HA$PBExportHeader$d_obs_fmp_muestras.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="dt_fmp_obs_muestras.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_linea dbname="dt_fmp_obs_muestras.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_muestra dbname="dt_fmp_obs_muestras.co_muestra" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_talla dbname="dt_fmp_obs_muestras.co_talla" )
+ column=(type=char(300) update=yes updatewhereclause=yes name=obs_fmp dbname="dt_fmp_obs_muestras.obs_fmp" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_creacion dbname="dt_fmp_obs_muestras.fe_creacion" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="dt_fmp_obs_muestras.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="dt_fmp_obs_muestras.usuario" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="dt_fmp_obs_muestras.instancia" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_diseno dbname="dt_fmp_obs_muestras.co_diseno" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_muestrario dbname="dt_fmp_obs_muestras.co_muestrario" )
+ retrieve="  SELECT dt_fmp_obs_muestras.co_fabrica,   
+         dt_fmp_obs_muestras.co_linea,   
+         dt_fmp_obs_muestras.co_muestra,   
+         dt_fmp_obs_muestras.co_talla,   
+         dt_fmp_obs_muestras.obs_fmp,   
+         dt_fmp_obs_muestras.fe_creacion,   
+         dt_fmp_obs_muestras.fe_actualizacion,   
+         dt_fmp_obs_muestras.usuario,   
+         dt_fmp_obs_muestras.instancia,   
+         dt_fmp_obs_muestras.co_diseno,   
+         dt_fmp_obs_muestras.co_muestrario  
+    FROM dt_fmp_obs_muestras  
+   WHERE ( dt_fmp_obs_muestras.co_fabrica    = :a_fabrica ) AND  
+         ( dt_fmp_obs_muestras.co_linea      = :a_linea ) AND  
+         ( dt_fmp_obs_muestras.co_muestra    = :a_muestra ) AND  
+         ( dt_fmp_obs_muestras.co_talla      = :a_talla ) AND  
+         ( dt_fmp_obs_muestras.co_muestrario = :an_muestrario ) AND  
+         ( dt_fmp_obs_muestras.co_diseno     = :an_diseno )    
+" update="dt_fmp_obs_muestras" updatewhere=0 updatekeyinplace=yes arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number),("a_talla", number),("an_muestrario", number),("an_diseno", number))  sort="co_fabrica A co_linea A co_muestra A co_talla A obs_fmp A co_diseno A co_muestrario A " )
+text(band=header alignment="2" text="Obs Fmp" border="0" color="0" x="9" y="8" height="64" width="2519" html.valueishtml="0"  name=obs_fmp_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=10 border="5" color="0" x="9" y="4" height="64" width="2519" format="[general]" html.valueishtml="0"  name=obs_fmp visible="1" edit.limit=300 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
