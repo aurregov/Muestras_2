@@ -1,0 +1,67 @@
+HA$PBExportHeader$d_m_preref1_sin.srd
+$PBExportComments$de las ref en firme
+release 8;
+datawindow(units=0 timer_interval=0 color=76788149 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_fabrica dbname="m_proref_sin.co_fabrica" )
+ column=(type=long updatewhereclause=yes name=co_linea dbname="m_proref_sin.co_linea" )
+ column=(type=long updatewhereclause=yes name=co_referencia dbname="m_proref_sin.co_referencia" )
+ column=(type=long updatewhereclause=yes name=co_talla dbname="m_proref_sin.co_talla" )
+ column=(type=long updatewhereclause=yes name=co_calidad dbname="m_proref_sin.co_calidad" )
+ column=(type=long updatewhereclause=yes name=co_operacion dbname="m_proref_sin.co_operacion" )
+ column=(type=long updatewhereclause=yes name=orden_operacion dbname="m_proref_sin.orden_operacion" )
+ column=(type=long updatewhereclause=yes name=co_planta dbname="m_proref_sin.co_planta" )
+ column=(type=long updatewhereclause=yes name=co_centro dbname="m_proref_sin.co_centro" )
+ column=(type=long updatewhereclause=yes name=co_subcentro dbname="m_proref_sin.co_subcentro" )
+ column=(type=long updatewhereclause=yes name=co_recurso dbname="m_proref_sin.co_recurso" )
+ column=(type=long updatewhereclause=yes identity=yes name=cs_proref dbname="m_proref_sin.cs_proref" )
+ column=(type=datetime updatewhereclause=yes name=fe_actualizacion dbname="m_proref_sin.fe_actualizacion" )
+ column=(type=char(8) updatewhereclause=yes name=usuario dbname="m_proref_sin.usuario" )
+ column=(type=char(20) updatewhereclause=yes name=instancia dbname="m_proref_sin.instancia" )
+ column=(type=char(50) updatewhereclause=yes name=cde_subcentro dbname="cde_subcentro" )
+ column=(type=char(50) updatewhereclause=yes name=cde_recurso dbname="cde_recurso" )
+ column=(type=long updatewhereclause=yes name=ccambio_operacion dbname="ccambio_operacion" )
+ column=(type=char(50) updatewhereclause=yes name=cde_operacion dbname="cde_operacion" )
+ column=(type=long updatewhereclause=yes name=chk dbname="chk" values="	1/	0" )
+ retrieve="SELECT  m_proref_sin.co_fabrica ,
+        m_proref_sin.co_linea ,
+		  m_proref_sin.co_referencia ,
+		  m_proref_sin.co_talla ,
+		  m_proref_sin.co_calidad ,
+		  m_proref_sin.co_operacion ,
+		  m_proref_sin.orden_operacion ,
+		  m_proref_sin.co_planta ,
+		  m_proref_sin.co_centro ,
+		  m_proref_sin.co_subcentro ,
+		  m_proref_sin.co_recurso ,
+		  m_proref_sin.cs_proref ,
+		  m_proref_sin.fe_actualizacion ,
+		  m_proref_sin.usuario ,
+		  m_proref_sin.instancia ,
+		  sp_nom_subcentro(10,co_centro,co_subcentro) as cde_subcentro,
+		  sp_mu_rec_mo(co_operacion,co_recurso)  as cde_recurso,
+		  0 as ccambio_operacion,
+		  sp_nom_mu_m_opera(10,co_operacion) as cde_operacion,
+        1 as chk
+               
+     FROM        m_proref_sin      
+    WHERE ( m_proref_sin.co_fabrica = :a_fabrica ) And
+          ( m_proref_sin.co_linea = :a_linea ) And
+          ( m_proref_sin.co_referencia = :a_referencia ) and
+          ( m_proref_sin.co_talla = :a_talla ) and
+          ( m_proref_sin.co_calidad = :a_calidad )   " arguments=(("a_fabrica", number),("a_linea", number),("a_referencia", number),("a_talla", number),("a_calidad", number))  sort="orden_operacion A " )
+text(band=header alignment="2" text="Recurso" border="6" color="0" x="1454" y="8" height="56" width="805" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+text(band=header alignment="0" text="" border="6" color="0" x="9" y="8" height="56" width="78" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+text(band=header alignment="2" text="Subcentro" border="6" color="0" x="101" y="8" height="56" width="549" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+text(band=header alignment="2" text="Operaci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="663" y="8" height="56" width="777" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+text(band=header alignment="2" text="Selec" border="6" color="0" x="2267" y="8" height="56" width="197" html.valueishtml="0"  name=chk_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=17 alignment="0" tabsequence=32766 border="5" color="0" x="1454" y="0" height="60" width="805" format="[general]" html.valueishtml="0"  name=cde_recurso visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+column(band=detail id=20 alignment="2" tabsequence=10 border="5" color="0" x="2267" y="0" height="60" width="197" format="[general]" html.valueishtml="0"  name=chk visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=16 alignment="0" tabsequence=32766 border="5" color="0" x="101" y="0" height="60" width="549" format="[general]" html.valueishtml="0"  name=cde_subcentro visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+column(band=detail id=19 alignment="0" tabsequence=32766 border="5" color="0" x="663" y="0" height="60" width="777" format="[general]" html.valueishtml="0"  name=cde_operacion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+compute(band=detail alignment="2" expression="getRow()"border="5" color="16711680" x="9" y="0" height="60" width="78" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
