@@ -1,0 +1,72 @@
+HA$PBExportHeader$d_dt_muestras_fert.srd
+$PBExportComments$para mantenimeinto de la tabla dt_muestra_ref
+release 9;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="dt_muestras_fert.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_linea dbname="dt_muestras_fert.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_muestra dbname="dt_muestras_fert.co_muestra" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_talla dbname="dt_muestras_fert.co_talla" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_color dbname="dt_muestras_fert.co_color" )
+ column=(type=char(18) update=yes updatewhereclause=yes key=yes name=co_fert dbname="dt_muestras_fert.co_fert" )
+ column=(type=char(16) update=yes updatewhereclause=yes key=yes name=co_categoria dbname="dt_muestras_fert.co_categoria" )
+ column=(type=char(2) update=yes updatewhereclause=yes key=yes name=co_talla_fert dbname="dt_muestras_fert.co_talla_fert" )
+ column=(type=char(6) update=yes updatewhereclause=yes key=yes name=co_color_fert dbname="dt_muestras_fert.co_color_fert" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=co_temporada dbname="dt_muestras_fert.co_temporada" )
+ column=(type=char(4) update=yes updatewhereclause=yes name=co_coleccion dbname="dt_muestras_fert.co_coleccion" )
+ column=(type=char(4) update=yes updatewhereclause=yes name=co_tema dbname="dt_muestras_fert.co_tema" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="dt_muestras_fert.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="dt_muestras_fert.usuario" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="dt_muestras_fert.instancia" )
+ column=(type=char(1) updatewhereclause=yes name=de_temporada dbname="de_temporada" )
+ retrieve="  SELECT dt_muestras_fert.co_fabrica,   
+         dt_muestras_fert.co_linea,   
+         dt_muestras_fert.co_muestra,   
+         dt_muestras_fert.co_talla,   
+         dt_muestras_fert.co_color,
+         dt_muestras_fert.co_fert,   
+         dt_muestras_fert.co_categoria,   
+         dt_muestras_fert.co_talla_fert,   
+         dt_muestras_fert.co_color_fert,   
+         dt_muestras_fert.co_temporada,  
+         dt_muestras_fert.co_coleccion,   
+         dt_muestras_fert.co_tema,    
+         dt_muestras_fert.fe_actualizacion,   
+         dt_muestras_fert.usuario,   
+         dt_muestras_fert.instancia,
+         '' de_temporada
+    FROM dt_muestras_fert  
+   WHERE ( dt_muestras_fert.co_fabrica = :an_co_fabrica ) AND  
+         ( dt_muestras_fert.co_linea = :an_co_linea ) AND  
+         ( dt_muestras_fert.co_muestra = :an_co_muestra ) AND  
+         ( dt_muestras_fert.co_talla = :an_co_talla )  
+            
+" update="dt_muestras_fert" updatewhere=0 updatekeyinplace=yes arguments=(("an_co_fabrica", number),("an_co_linea", number),("an_co_muestra", number),("an_co_talla", number)) )
+text(band=header alignment="2" text=" Fert" border="6" color="0" x="9" y="8" height="56" width="434" html.valueishtml="0"  name=co_fert_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Talla Fert" border="6" color="0" x="453" y="8" height="56" width="302" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="De Talla" border="6" color="0" x="763" y="8" height="56" width="402" html.valueishtml="0"  name=co_talla_fert_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Color Fert" border="6" color="0" x="1175" y="8" height="56" width="453" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="De Color" border="6" color="0" x="1637" y="8" height="56" width="402" html.valueishtml="0"  name=co_color_fert_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Temporada" border="6" color="0" x="2048" y="8" height="56" width="439" html.valueishtml="0"  name=co_temporada_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Colecci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="2496" y="8" height="56" width="379" html.valueishtml="0"  name=co_coleccion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Co Color" border="0" color="0" x="4201" y="4" height="76" width="78" html.valueishtml="0"  name=co_color_t visible="0"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="Tema" border="6" color="0" x="2885" y="8" height="56" width="265" html.valueishtml="0"  name=co_tema_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="De Temporada" border="6" color="0" x="3159" y="8" height="56" width="1033" html.valueishtml="0"  name=de_temporada_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=10 border="5" color="0" x="9" y="4" height="64" width="434" format="[general]" html.valueishtml="0"  name=co_fert  tag="&NN=Fert" visible="1" edit.limit=18 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="0" tabsequence=20 border="5" color="0" x="453" y="4" height="64" width="302" format="[general]" html.valueishtml="0"  name=co_talla_fert_1  tag="&NN=Talla Fert" visible="1" edit.limit=2 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="0" tabsequence=30 border="5" color="0" x="763" y="4" height="64" width="402" format="[general]" html.valueishtml="0"  name=co_talla_fert  tag="&NN=Talla Fert" visible="1" dddw.name=d_dddw_tb_talla dddw.displaycolumn=de_talla dddw.datacolumn=co_talla dddw.percentwidth=200 dddw.lines=0 dddw.limit=0 dddw.allowedit=yes dddw.useasborder=no dddw.case=any dddw.nilisnull=yes dddw.imemode=0 dddw.hscrollbar=yes dddw.vscrollbar=yes dddw.autoretrieve=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=9 alignment="0" tabsequence=40 border="5" color="0" x="1175" y="4" height="64" width="453" format="[general]" html.valueishtml="0"  name=co_color_fert_1  tag="&NN=Color Fert" visible="1" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=9 alignment="0" tabsequence=50 border="5" color="0" x="1637" y="4" height="68" width="402" format="[general]" html.valueishtml="0"  name=co_color_fert  tag="&NN=Color Fert" visible="1" dddw.name=d_dddw_tb_color dddw.displaycolumn=de_color dddw.datacolumn=co_color dddw.percentwidth=200 dddw.lines=0 dddw.limit=0 dddw.allowedit=yes dddw.useasborder=no dddw.case=any dddw.nilisnull=yes dddw.imemode=0 dddw.hscrollbar=yes dddw.vscrollbar=yes dddw.autoretrieve=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="0" tabsequence=60 border="5" color="0" x="2048" y="4" height="64" width="439" format="[general]" html.valueishtml="0"  name=co_temporada  tag="&NN=Temporada" visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=11 alignment="0" tabsequence=70 border="5" color="0" x="2496" y="4" height="64" width="379" format="[general]" html.valueishtml="0"  name=co_coleccion  tag="&NN=Colecci$$HEX1$$f300$$ENDHEX$$n" visible="1" edit.limit=4 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="4201" y="4" height="76" width="78" format="[general]" html.valueishtml="0"  name=co_color visible="0" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=12 alignment="0" tabsequence=80 border="5" color="0" x="2885" y="4" height="64" width="265" format="[general]" html.valueishtml="0"  name=co_tema  tag="&NN=Tema" visible="1" edit.limit=4 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=16 alignment="0" tabsequence=90 border="5" color="0" x="3159" y="4" height="64" width="1033" format="[general]" html.valueishtml="0"  name=de_temporada visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
