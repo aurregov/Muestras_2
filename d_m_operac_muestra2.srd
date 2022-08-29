@@ -1,0 +1,64 @@
+HA$PBExportHeader$d_m_operac_muestra2.srd
+$PBExportComments$DWO para el manejo de los datos maestro del registro de las actividades de muestras en el mantenimiento
+release 9;
+datawindow(units=0 timer_interval=0 color=67108864 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=288 color="536870912" )
+table(column=(type=char(50) updatewhereclause=yes name=de_operacion dbname="de_operacion" )
+ column=(type=long update=yes updatewhereclause=yes name=orden_operacion dbname="m_operac_muestra.orden_operacion" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=co_estado dbname="m_operac_muestra.co_estado" )
+ column=(type=char(20) updatewhereclause=yes name=de_estado dbname="de_estado" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=sw_pares dbname="m_operac_muestra.sw_pares" initial="N" values="SI	S/NO	N/" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=sw_ajuste_maq dbname="m_operac_muestra.sw_ajuste_maq" initial="N" values="SI	S/NO	N/" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=sw_ajustexcol dbname="m_operac_muestra.sw_ajustexcol" initial="N" values="SI	S/NO	N/" )
+ column=(type=long update=yes updatewhereclause=yes name=criterio_tiempo dbname="m_operac_muestra.criterio_tiempo" initial="1" values="1.( constante )	1/2.( cilindros ) + ( nuevo // reforma )	2/3.( tipo de producto ) + ( tipo de tejido ) + (Cilindros)	3/4.( grupo de talla ) + ( talla )	4/5.( tono )	5/6.(prenda//alimentadores)	6/" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="m_operac_muestra.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="m_operac_muestra.usuario" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=instancia dbname="m_operac_muestra.instancia" )
+ column=(type=long update=yes updatewhereclause=yes name=sw_aprobar dbname="m_operac_muestra.sw_aprobar" values="Si	1/No	0/" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_operacion dbname="m_operac_muestra.co_operacion" validation="Integer(gettext())>0" validationmsg="'C$$HEX1$$f300$$ENDHEX$$digo de la operaci$$HEX1$$f300$$ENDHEX$$n no v$$HEX1$$e100$$ENDHEX$$lido'" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_tipoprod dbname="m_operac_muestra.co_tipoprod" )
+ retrieve="  SELECT trim(sp_nom_mu_m_opera(m_operac_muestra.co_tipoprod  ,m_operac_muestra.co_operacion)) AS de_operacion,   
+         m_operac_muestra.orden_operacion,   
+         m_operac_muestra.co_estado,   
+         trim(sp_nom_m_est_mue(m_operac_muestra.co_estado)) AS de_estado,   
+         m_operac_muestra.sw_pares,   
+         m_operac_muestra.sw_ajuste_maq,   
+         m_operac_muestra.sw_ajustexcol,   
+         m_operac_muestra.criterio_tiempo,   
+         m_operac_muestra.fe_actualizacion,   
+         m_operac_muestra.usuario,   
+         m_operac_muestra.instancia,   
+         m_operac_muestra.sw_aprobar,   
+         m_operac_muestra.co_operacion,   
+         m_operac_muestra.co_tipoprod  
+    FROM m_operac_muestra  
+   WHERE ( m_operac_muestra.co_operacion = :al_operacion ) AND  
+         ( m_operac_muestra.co_tipoprod = :al_tipoprod )    
+" update="m_operac_muestra" updatewhere=0 updatekeyinplace=yes arguments=(("al_operacion", number),("al_tipoprod", number)) )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="5" color="0" x="407" y="76" height="60" width="928" format="[general]" html.valueishtml="0"  name=de_operacion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=detail alignment="0" text="Descripci$$HEX1$$f300$$ENDHEX$$n de Operaci$$HEX1$$f300$$ENDHEX$$n" border="0" color="33554432" x="402" y="4" height="56" width="928" html.valueishtml="0"  name=de_operacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Cod. Operaci$$HEX1$$f300$$ENDHEX$$n" border="0" color="33554432" x="41" y="4" height="56" width="343" html.valueishtml="0"  name=co_operacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=14 alignment="0" tabsequence=20 border="5" color="0" x="1358" y="76" height="60" width="485" format="[general]" html.valueishtml="0"  name=co_tipoprod visible="1" dddw.name=d_dddw_m_tipoprod dddw.displaycolumn=de_tipoprod dddw.datacolumn=co_tipoprod dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.required=yes dddw.nilisnull=yes dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Tipo Prod" border="0" color="33554432" x="1353" y="4" height="56" width="489" html.valueishtml="0"  name=co_tipoprod_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="Estado" border="0" color="33554432" x="1861" y="4" height="56" width="594" html.valueishtml="0"  name=co_estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=30 border="5" color="0" x="1865" y="76" height="60" width="594" format="[general]" html.valueishtml="0"  name=co_estado  tag="&NN=C$$HEX1$$f300$$ENDHEX$$digo de estado" visible="1" dddw.name=d_dddw_m_estado_muestra dddw.displaycolumn=co_estado dddw.datacolumn=co_estado dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.nilisnull=yes dddw.imemode=0 dddw.hscrollbar=yes dddw.autoretrieve=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="5" color="0" x="2482" y="76" height="60" width="741" format="[general]" html.valueishtml="0"  name=de_estado visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=detail alignment="0" text="Descripci$$HEX1$$f300$$ENDHEX$$n de Estado" border="0" color="33554432" x="2482" y="4" height="56" width="594" html.valueishtml="0"  name=de_estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="1" tabsequence=10 border="5" color="0" x="41" y="76" height="60" width="343" format="[general]" html.valueishtml="0"  name=co_operacion  tag="&NN=Cod. operaci$$HEX1$$f300$$ENDHEX$$n" visible="1" edit.name="#####" editmask.mask="#####" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=detail alignment="0" text="Considera Cantidades?" border="0" color="0" x="41" y="156" height="56" width="512" html.valueishtml="0"  name=sw_pares_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217747" )
+column(band=detail id=5 alignment="0" tabsequence=40 border="5" color="0" x="41" y="224" height="60" width="512" format="[general]" html.valueishtml="0"  name=sw_pares  tag="&NN=Considera pares" visible="1" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.nilisnull=yes ddlb.showlist=yes ddlb.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=detail alignment="0" text="Ajuste Maq. x Col." border="0" color="0" x="937" y="152" height="56" width="384" html.valueishtml="0"  name=sw_ajustexcol_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="134217747" )
+text(band=detail alignment="0" text="Ajuste M$$HEX1$$e100$$ENDHEX$$quina" border="0" color="0" x="576" y="152" height="56" width="338" html.valueishtml="0"  name=sw_ajuste_maq_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217747" )
+column(band=detail id=7 alignment="0" tabsequence=60 border="5" color="0" x="937" y="224" height="60" width="384" format="[general]" html.valueishtml="0"  name=sw_ajustexcol  tag="&NN=Ajuste de m$$HEX1$$e100$$ENDHEX$$quina por color" visible="1" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.nilisnull=yes ddlb.showlist=yes ddlb.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=6 alignment="0" tabsequence=50 border="5" color="0" x="576" y="224" height="60" width="338" format="[general]" html.valueishtml="0"  name=sw_ajuste_maq  tag="&NN=Ajuste de m$$HEX1$$e100$$ENDHEX$$quina" visible="1" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.nilisnull=yes ddlb.showlist=yes ddlb.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=detail alignment="0" text="Criterio Tiempo" border="0" color="33554432" x="1339" y="152" height="56" width="754" html.valueishtml="0"  name=criterio_tiempo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=8 alignment="0" tabsequence=70 border="5" color="0" x="1344" y="220" height="60" width="1138" format="[general]" html.valueishtml="0"  name=criterio_tiempo  tag="&NN=Criterio de tiempo" visible="1" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.nilisnull=yes ddlb.vscrollbar=yes ddlb.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=12 alignment="0" tabsequence=80 border="5" color="0" x="2505" y="220" height="60" width="485" format="[general]" html.valueishtml="0"  name=sw_aprobar visible="1" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=detail alignment="0" text="Proceso aprobaci$$HEX1$$f300$$ENDHEX$$n" border="0" color="33554432" x="2505" y="152" height="56" width="489" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
