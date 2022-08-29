@@ -1,0 +1,18 @@
+HA$PBExportHeader$d_inf_actividades_tarea.srd
+$PBExportComments$Es para mostrar resumen de los procesos registrados en las tareas de la orden
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=nu_orden dbname="mu_gantt.nu_orden" )
+ column=(type=long updatewhereclause=yes name=id_actividad dbname="mu_gantt.id_actividad" )
+ column=(type=char(50) updatewhereclause=yes name=de_actividad dbname="de_actividad" )
+ retrieve="PBSELECT( VERSION(400) DISTINCT ()TABLE(NAME=~"mu_gantt~" ) COLUMN(NAME=~"mu_gantt.nu_orden~") COLUMN(NAME=~"mu_gantt.id_actividad~") COMPUTE(NAME=~"trim(sp_nom_mu_m_activ(mu_gantt.id_actividad)) AS de_actividad~")WHERE(    EXP1 =~"mu_gantt.nu_orden~"   OP =~"=~"    EXP2 =~":an_orden~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"mu_gantt.id_actividad~"   OP =~"is not~"    EXP2 =~"NULL~" ) ) ARG(NAME = ~"an_orden~" TYPE = number) " arguments=(("an_orden", number)) )
+column(band=detail id=2 alignment="1" tabsequence=32766 border="0" color="0" x="9" y="4" height="60" width="306" format="[general]" html.valueishtml="0"  name=id_actividad visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="325" y="4" height="60" width="791" format="[general]" html.valueishtml="0"  name=de_actividad visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="Actividad" border="0" color="0" x="9" y="8" height="56" width="306" html.valueishtml="0"  name=id_actividad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n" border="0" color="0" x="325" y="8" height="56" width="791" html.valueishtml="0"  name=de_actividad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
