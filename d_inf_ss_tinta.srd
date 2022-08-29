@@ -1,0 +1,72 @@
+HA$PBExportHeader$d_inf_ss_tinta.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 1 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=744 color="536870912" )
+summary(height=312 color="536870912" )
+footer(height=148 color="536870912" )
+detail(height=76 color="536870912"  height.autosize=yes)
+table(column=(type=long updatewhereclause=yes name=nu_sol_serv dbname="mu_gantt.nu_sol_serv" )
+ column=(type=long updatewhereclause=yes name=mu_soli_tinta_id_tinta dbname="mu_soli_tinta.id_tinta" )
+ column=(type=char(50) updatewhereclause=yes name=mu_soli_tinta_de_tinta dbname="mu_soli_tinta.de_tinta" )
+ column=(type=long updatewhereclause=yes name=mu_soli_tinta_id_base dbname="mu_soli_tinta.id_base" )
+ column=(type=char(40) updatewhereclause=yes name=mu_m_base_de_base dbname="mu_m_base.de_base" )
+ column=(type=decimal(2) updatewhereclause=yes name=mu_soli_tinta_ca_kilos dbname="mu_soli_tinta.ca_kilos" )
+ column=(type=char(500) updatewhereclause=yes name=observacion dbname="mu_gantt.observacion" )
+ retrieve="  SELECT mu_gantt.nu_sol_serv,
+         mu_soli_tinta.id_tinta,
+         mu_soli_tinta.de_tinta,   
+         mu_soli_tinta.id_base,
+         mu_m_base.de_base, 
+         mu_soli_tinta.ca_kilos, 
+         mu_soli_serv.observacion  
+    FROM mu_gantt,   
+         mu_m_actividad,   
+         mu_soli_tinta,  mu_m_base, 
+         outer(mu_soli_serv)
+   WHERE ( mu_gantt.id_actividad = mu_m_actividad.id_actividad ) and  
+         ( mu_soli_tinta.nu_orden = mu_gantt.nu_orden ) and  
+         ( mu_soli_tinta.consec = mu_gantt.consec ) and  
+         ( mu_soli_serv.nu_orden = mu_gantt.nu_orden ) and  
+         ( mu_soli_serv.consec = mu_gantt.consec ) and  
+         ( mu_gantt.nu_orden = :an_orden ) AND  
+         ( mu_gantt.condicion <> 8 ) and
+         ( mu_m_actividad.co_clase = :an_clase_ss) and
+         ( mu_soli_tinta.id_base = mu_m_base.id_base )  " arguments=(("an_orden", number),("an_clase_ss", number)) )
+text(band=header alignment="0" text="solicitud de servicio:" border="0" color="0" x="425" y="108" height="80" width="759" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="F/L/DLLO : " border="0" color="0" x="55" y="260" height="60" width="279" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="" border="0" color="0" x="1202" y="108" height="80" width="1911" html.valueishtml="0"  name=de_clase_ss visible="1"  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="No de orden: " border="0" color="0" x="3058" y="28" height="80" width="475" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=header alignment="0" expression=" an_orden "border="0" color="33554432" x="3557" y="28" height="80" width="297" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="ESTILO CLIENTE:" border="0" color="0" x="2249" y="260" height="60" width="517" html.valueishtml="0"  name=t_7 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="NOMBRE DLLO:" border="0" color="0" x="2249" y="348" height="60" width="517" html.valueishtml="0"  name=t_9 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="CLIENTE:" border="0" color="0" x="2249" y="440" height="60" width="517" html.valueishtml="0"  name=t_8 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="" border="0" color="0" x="2811" y="260" height="60" width="919" html.valueishtml="0"  name=estilo_cliente visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="" border="0" color="0" x="2811" y="348" height="60" width="919" html.valueishtml="0"  name=nombre_dllo visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="" border="0" color="0" x="2811" y="440" height="60" width="919" html.valueishtml="0"  name=cliente visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="" border="0" color="0" x="617" y="260" height="60" width="1202" html.valueishtml="0"  name=f_l_dllo visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="CODIGO DISE$$HEX1$$d100$$ENDHEX$$O:" border="0" color="0" x="55" y="348" height="60" width="457" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="DESARROLLADOR: " border="0" color="0" x="55" y="444" height="60" width="517" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="" border="0" color="0" x="617" y="348" height="60" width="1202" html.valueishtml="0"  name=codigo_diseno visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="" border="0" color="0" x="617" y="444" height="60" width="1202" html.valueishtml="0"  name=desarrollador visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="BASE" border="2" color="33554432" x="1458" y="676" height="56" width="1115" html.valueishtml="0"  name=t_18 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="OBSERVACIONES" border="2" color="33554432" x="2926" y="676" height="56" width="1518" html.valueishtml="0"  name=t_15 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="SS" border="2" color="33554432" x="14" y="676" height="56" width="155" html.valueishtml="0"  name=mu_gantt_nu_sol_serv_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="COLOR TINTA" border="2" color="33554432" x="174" y="676" height="56" width="1280" html.valueishtml="0"  name=t_14 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Kilos" border="2" color="33554432" x="2578" y="676" height="56" width="343" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="33554432" x="18" y="12" height="56" width="155" format="[general]" html.valueishtml="0"  name=nu_sol_serv visible="1" edit.limit=0 edit.case=any edit.format="###,##.##" edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="33554432" x="215" y="12" height="56" width="302" format="[general]" html.valueishtml="0"  name=mu_soli_tinta_id_tinta visible="1" edit.limit=0 edit.case=any edit.format="###,##.##" edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="33554432" x="544" y="8" height="56" width="905" format="[general]" html.valueishtml="0"  name=mu_soli_tinta_de_tinta visible="1" edit.limit=0 edit.case=any edit.format="###,##.##" edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="33554432" x="1495" y="12" height="56" width="133" format="[general]" html.valueishtml="0"  name=mu_soli_tinta_id_base visible="1" edit.limit=0 edit.case=any edit.format="###,##.##" edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="33554432" x="1655" y="12" height="56" width="919" format="[general]" html.valueishtml="0"  name=mu_m_base_de_base visible="1" edit.limit=0 edit.case=any edit.format="###,##.##" edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="2" tabsequence=32766 border="0" color="33554432" x="2606" y="12" height="56" width="297" format="[general]" html.valueishtml="0"  name=mu_soli_tinta_ca_kilos visible="1" edit.limit=0 edit.case=any edit.format="###,##.##" edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="33554432" x="2926" y="12" height="56" width="1522" format="[general]" html.valueishtml="0"  name=observacion visible="1" edit.limit=0 edit.case=any edit.format="###,##.##" edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=summary alignment="0" text="OBSERVACIONES:" border="0" color="0" x="96" y="60" height="56" width="416" html.valueishtml="0"  name=t_16 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+line(band=summary x1="110" y1="168" x2="4247" y2="168"  name=l_1 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=summary x1="110" y1="228" x2="4247" y2="228"  name=l_2 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=summary x1="110" y1="292" x2="4247" y2="292"  name=l_3 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+compute(band=footer alignment="0" expression="today()"border="0" color="0" x="55" y="44" height="64" width="448" format="[SHORTDATE] [TIME]" html.valueishtml="0"  name=compute_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
