@@ -1,0 +1,140 @@
+HA$PBExportHeader$d_tareas_grupo_lista.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 selected.mouse=no )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=actividad dbname="actividad" )
+ column=(type=long updatewhereclause=yes name=operacion dbname="operacion" )
+ column=(type=char(50) updatewhereclause=yes name=des_act_oper dbname="des_act_oper" )
+ column=(type=long updatewhereclause=yes name=co_estado dbname="mu_gantt.co_estado" )
+ column=(type=char(20) updatewhereclause=yes name=de_estado dbname="de_estado" )
+ column=(type=long updatewhereclause=yes name=cons_color dbname="cons_color" )
+ column=(type=long updatewhereclause=yes name=nu_sol_serv dbname="nu_sol_serv" )
+ column=(type=decimal(0) updatewhereclause=yes name=tiempo dbname="tiempo" )
+ column=(type=long updatewhereclause=yes name=posicion dbname="posicion" )
+ column=(type=long updatewhereclause=yes name=nu_orden dbname="nu_orden" )
+ column=(type=long updatewhereclause=yes name=consec dbname="consec" )
+ column=(type=decimal(0) updatewhereclause=yes name=cantidad dbname="cantidad" )
+ column=(type=long updatewhereclause=yes name=co_grupo dbname="mu_gantt.co_grupo" validation="Integer(GetText()) > 0" validationmsg="'El codigo del grupo no es v$$HEX1$$e100$$ENDHEX$$lido'" )
+ column=(type=char(50) updatewhereclause=yes name=de_grupo dbname="de_grupo" )
+ column=(type=datetime updatewhereclause=yes name=f_mov_ini dbname="mu_gantt.f_mov_ini" )
+ column=(type=datetime updatewhereclause=yes name=f_mov_fin dbname="mu_gantt.f_mov_fin" )
+ column=(type=long updatewhereclause=yes name=nu_orden dbname="mu_gantt.nu_orden" )
+ retrieve="SELECT   0 as actividad,
+         0 as operacion,
+         sp_nom_ao_tarea(0,0,0) des_act_oper,
+         co_estado,
+         sp_nom_m_est_mue(co_estado) de_estado,
+			0 as cons_color,
+			0 as nu_sol_serv,
+			sum(minutos) as tiempo,
+			min(posicion) as posicion,
+         0 as nu_orden,
+			0 as consec,
+			count(*) as cantidad, 
+			co_grupo,
+			sp_desc_m_mu_grupo(co_grupo) de_grupo,
+         f_mov_ini,
+         f_mov_fin,
+         nu_orden
+ FROM    mu_gantt
+WHERE  	( mu_gantt.co_grupo= :an_grupo ) and
+			( mu_gantt.nu_sol_serv=0 ) and
+			( mu_gantt.cons_color=0 ) and
+         ( mu_gantt.condicion in (1,2,3) ) and
+         ( Date(mu_gantt.f_mov_ini) = Date(Current) )
+GROUP BY co_estado, co_grupo, f_mov_ini, f_mov_fin, nu_orden
+
+UNION
+
+  SELECT 0 as actividad,
+         mu_gantt.co_operacion,
+         sp_nom_ao_tarea(mu_gantt.co_operacion,0, m_muestras.co_tipoprod) des_act_oper,
+         mu_gantt.co_estado,
+         sp_nom_m_est_mue(co_estado) de_estado,
+         mu_gantt.cons_color,
+         0 as nu_sol_serv,
+         mu_gantt.minutos,
+         mu_gantt.posicion,
+			mu_gantt.nu_orden,
+         mu_gantt.consec,
+         1 as cantidad,
+         co_grupo,
+			sp_desc_m_mu_grupo(co_grupo) de_grupo,
+         f_mov_ini,
+         f_mov_fin,
+         mu_gantt.nu_orden
+    FROM mu_gantt ,  dt_mu_ord, m_muestras  
+   WHERE ( mu_gantt.nu_orden    = dt_mu_ord.nu_orden )      AND          
+         ( dt_mu_ord.co_fabrica = m_muestras.co_fabrica )        AND  
+         ( dt_mu_ord.co_linea   = m_muestras.co_linea )      AND  
+         ( dt_mu_ord.co_muestra = m_muestras.co_muestra ) AND
+         ( mu_gantt.co_grupo = :an_grupo ) AND
+         ( mu_gantt.cons_color > 0 ) AND
+         ( mu_gantt.nu_sol_serv = 0 ) AND
+         ( mu_gantt.condicion in (1,2,3) ) AND 
+         ( Date(f_mov_ini) = Date(Current) )
+
+UNION
+
+  SELECT mu_gantt.id_actividad,
+         mu_gantt.co_operacion,
+         sp_nom_ao_tarea(mu_gantt.co_operacion,mu_gantt.id_actividad, m_muestras.co_tipoprod) des_act_oper,
+         mu_gantt.co_estado,
+         sp_nom_m_est_mue(co_estado) de_estado, 
+         mu_gantt.cons_color,
+         mu_gantt.nu_sol_serv,
+         mu_gantt.minutos,
+         mu_gantt.posicion,
+         mu_gantt.nu_orden,
+         mu_gantt.consec,
+         1 as cantidad,
+         co_grupo,
+			sp_desc_m_mu_grupo(co_grupo) de_grupo,
+         f_mov_ini,
+         f_mov_fin,
+         mu_gantt.nu_orden
+    FROM mu_gantt ,  dt_mu_ord, m_muestras  
+   WHERE ( mu_gantt.nu_orden    = dt_mu_ord.nu_orden )      AND          
+         ( dt_mu_ord.co_fabrica = m_muestras.co_fabrica )        AND  
+         ( dt_mu_ord.co_linea   = m_muestras.co_linea )      AND  
+         ( dt_mu_ord.co_muestra = m_muestras.co_muestra ) AND
+         ( mu_gantt.co_grupo = :an_grupo ) AND
+         ( mu_gantt.nu_sol_serv > 0 ) AND
+         ( mu_gantt.condicion in (1,2,3) ) ANd
+         ( Date(f_mov_ini) = Date(Current) )   ;" arguments=(("an_grupo", number)) )
+text(band=header alignment="2" text="Orden" border="6" color="33554432" x="9" y="8" height="60" width="192" html.valueishtml="0"  name=nu_orden_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Consec" border="6" color="33554432" x="210" y="8" height="60" width="169" html.valueishtml="0"  name=consec_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Actividad" border="6" color="33554432" x="389" y="8" height="60" width="219" html.valueishtml="0"  name=actividad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Operaci$$HEX1$$f300$$ENDHEX$$n" border="6" color="33554432" x="617" y="8" height="60" width="233" html.valueishtml="0"  name=operacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="859" y="8" height="60" width="485" html.valueishtml="0"  name=des_act_oper_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Estado" border="6" color="33554432" x="1353" y="8" height="60" width="155" html.valueishtml="0"  name=co_estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="1518" y="8" height="60" width="274" html.valueishtml="0"  name=de_estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Cons. Color" border="6" color="33554432" x="1801" y="8" height="60" width="261" html.valueishtml="0"  name=cons_color_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="No. Sol. Serv." border="6" color="33554432" x="2071" y="8" height="60" width="315" html.valueishtml="0"  name=nu_sol_serv_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Tiempo" border="6" color="33554432" x="2395" y="8" height="60" width="210" html.valueishtml="0"  name=tiempo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Posici$$HEX1$$f300$$ENDHEX$$n" border="6" color="33554432" x="2615" y="8" height="60" width="206" html.valueishtml="0"  name=posicion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Cant." border="6" color="33554432" x="2830" y="8" height="60" width="151" html.valueishtml="0"  name=cantidad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Grupo" border="6" color="33554432" x="2990" y="8" height="60" width="178" html.valueishtml="0"  name=co_grupo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="3177" y="8" height="60" width="512" html.valueishtml="0"  name=de_grupo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=17 alignment="1" tabsequence=10 border="5" color="33554432" x="9" y="8" height="60" width="192" format="[general]" html.valueishtml="0"  name=nu_orden visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=11 alignment="1" tabsequence=20 border="5" color="33554432" x="210" y="8" height="60" width="169" format="[general]" html.valueishtml="0"  name=consec visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=1 alignment="1" tabsequence=30 border="5" color="33554432" x="389" y="8" height="60" width="219" format="[general]" html.valueishtml="0"  name=actividad visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=2 alignment="1" tabsequence=40 border="5" color="33554432" x="617" y="8" height="60" width="233" format="[general]" html.valueishtml="0"  name=operacion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=3 alignment="0" tabsequence=50 border="5" color="33554432" x="859" y="8" height="60" width="485" format="[general]" html.valueishtml="0"  name=des_act_oper visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=4 alignment="1" tabsequence=60 border="5" color="33554432" x="1353" y="8" height="60" width="155" format="[general]" html.valueishtml="0"  name=co_estado visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=5 alignment="0" tabsequence=70 border="5" color="33554432" x="1518" y="8" height="60" width="274" format="[general]" html.valueishtml="0"  name=de_estado visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=6 alignment="1" tabsequence=80 border="5" color="33554432" x="1801" y="8" height="60" width="261" format="[general]" html.valueishtml="0"  name=cons_color visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=7 alignment="1" tabsequence=90 border="5" color="33554432" x="2071" y="8" height="60" width="315" format="[general]" html.valueishtml="0"  name=nu_sol_serv visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=8 alignment="1" tabsequence=100 border="5" color="33554432" x="2395" y="8" height="60" width="210" format="[general]" html.valueishtml="0"  name=tiempo visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=9 alignment="1" tabsequence=110 border="5" color="33554432" x="2615" y="8" height="60" width="206" format="[general]" html.valueishtml="0"  name=posicion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=12 alignment="1" tabsequence=120 border="5" color="33554432" x="2830" y="8" height="60" width="151" format="[general]" html.valueishtml="0"  name=cantidad visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=13 alignment="1" tabsequence=130 border="5" color="33554432" x="2990" y="8" height="60" width="178" format="[general]" html.valueishtml="0"  name=co_grupo visible="1" editmask.mask="#####" editmask.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=14 alignment="0" tabsequence=140 border="5" color="33554432" x="3177" y="8" height="60" width="512" format="[general]" html.valueishtml="0"  name=de_grupo visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
