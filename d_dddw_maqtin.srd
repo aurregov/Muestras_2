@@ -1,0 +1,17 @@
+HA$PBExportHeader$d_dddw_maqtin.srd
+$PBExportComments$dddw para la solicitud de informaci$$HEX1$$f300$$ENDHEX$$n de las m$$HEX1$$e100$$ENDHEX$$quinas de tintorer$$HEX1$$ed00$$ENDHEX$$a en el registro del grupos...
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_maquina dbname="mu_maq_tin.co_maquina" )
+ column=(type=char(80) updatewhereclause=yes name=de_maquina dbname="de_maquina" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"mu_maq_tin~" ) COLUMN(NAME=~"mu_maq_tin.co_maquina~") COMPUTE(NAME=~"sp_nom_m_maquina(mu_maq_tin.co_maquina) AS de_maquina~")) " filter="/* match(  upper(  disponible  ) , upper( 'S' ) ) */" sort="co_maquina A " )
+text(band=header alignment="2" text="M$$HEX1$$e100$$ENDHEX$$quina TIN" border="0" color="33554432" x="9" y="8" height="56" width="343" html.valueishtml="0"  name=co_maquina_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n M$$HEX1$$e100$$ENDHEX$$quina" border="0" color="0" x="361" y="4" height="56" width="1536" html.valueishtml="0"  name=de_maquina_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=1 alignment="1" tabsequence=10 border="0" color="33554432" x="9" y="4" height="60" width="343" format="[general]" html.valueishtml="0"  name=co_maquina visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="33554432" x="361" y="4" height="60" width="1536" format="[general]" html.valueishtml="0"  name=de_maquina visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
