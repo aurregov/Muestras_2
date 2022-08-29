@@ -1,0 +1,25 @@
+HA$PBExportHeader$d_operacion_centro_cons.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=128 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=char(30) updatewhereclause=yes name=de_operacion dbname="m_operacio_ct.de_operacion" )
+ retrieve="  SELECT m_operacio_ct.de_operacion  
+    FROM m_operacio_ct,   
+         m_rutas  
+   WHERE ( m_operacio_ct.co_tipoprod = m_rutas.co_tipoprod ) and  
+         ( m_operacio_ct.co_operacion = m_rutas.co_operacion ) and  
+         ( ( m_operacio_ct.co_tipoprod = :a_tipoprod ) AND  
+         ( m_rutas.co_tipoprod = :a_tipoprod ) AND 
+			( m_operacio_ct.co_operacion = :a_operacion )  AND
+         ( m_rutas.co_centro = :a_centro ) AND  
+         ( m_rutas.co_subcentro = :a_subcentro ) AND  
+         ( m_rutas.co_centro in ( :a_centros_permiso ) ) )  
+" arguments=(("a_tipoprod", number),("a_operacion", number),("a_centro", number),("a_subcentro", number),("a_centros_permiso", numberlist)) )
+text(band=header alignment="2" text="M Operacio Ct
+De Operacion" border="0" color="33554432" x="9" y="8" height="112" width="709" html.valueishtml="0"  name=m_operacio_ct_de_operacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="33554432" x="9" y="8" height="68" width="709" format="[general]" html.valueishtml="0"  name=de_operacion visible="1" edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
