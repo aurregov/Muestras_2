@@ -1,0 +1,85 @@
+HA$PBExportHeader$d_inf_det_mue.srd
+$PBExportComments$Detalle de las medidas de una muestra
+release 7;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=176 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=char(30) updatewhereclause=yes name=m_partebas_de_partebas dbname="m_partebas.de_partebas" )
+ column=(type=long updatewhereclause=yes name=m_partebas_orden_partebas dbname="m_partebas.orden_partebas" )
+ column=(type=decimal(2) updatewhereclause=yes name=ca_largo dbname="dt_medidas_est.ca_largo" )
+ column=(type=decimal(2) updatewhereclause=yes name=ca_ancho dbname="dt_medidas_est.ca_ancho" )
+ column=(type=decimal(2) updatewhereclause=yes name=ca_largo_sine dbname="dt_medidas_est.ca_largo_sine" )
+ column=(type=decimal(2) updatewhereclause=yes name=ca_ancho_sine dbname="dt_medidas_est.ca_ancho_sine" )
+ column=(type=decimal(2) updatewhereclause=yes name=ca_ancho_maq dbname="dt_medidas_est.ca_ancho_maq" )
+ column=(type=decimal(2) updatewhereclause=yes name=ca_largo_repos dbname="dt_medidas_est.ca_largo_repos" )
+ column=(type=decimal(2) updatewhereclause=yes name=ca_ancho_repos dbname="dt_medidas_est.ca_ancho_repos" )
+ column=(type=char(20) updatewhereclause=yes name=cadena dbname="dt_medidas_est.cadena" )
+ column=(type=char(20) updatewhereclause=yes name=pasadas dbname="dt_medidas_est.pasadas" )
+ retrieve="  SELECT m_partebas.de_partebas,   
+         m_partebas.orden_partebas,   
+         dt_medidas_est.ca_largo,   
+         dt_medidas_est.ca_ancho,   
+         dt_medidas_est.ca_largo_sine,   
+         dt_medidas_est.ca_ancho_sine,   
+         dt_medidas_est.ca_ancho_maq,   
+         dt_medidas_est.ca_largo_repos,   
+         dt_medidas_est.ca_ancho_repos,
+         dt_medidas_est.cadena,
+         dt_medidas_est.pasadas  
+    FROM dt_medidas_est,   
+         m_partebas  
+   WHERE ( dt_medidas_est.co_recurso = :a_recurso ) and
+         ( dt_medidas_est.co_fabrica = :a_fabrica ) AND  
+         ( dt_medidas_est.co_linea = :a_linea ) AND  
+         ( dt_medidas_est.co_muestra = :a_muestra ) AND  
+         ( dt_medidas_est.co_talla = :a_talla ) AND  
+         ( dt_medidas_est.co_diseno = :a_diseno ) and    
+			( m_partebas.co_tipoprod = dt_medidas_est.co_tipoprod ) and  
+         ( m_partebas.co_partebas = dt_medidas_est.co_partebas ) 
+         " arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number),("a_talla", number),("a_diseno", number),("a_recurso", number))  sort="m_partebas_orden_partebas A " )
+rectangle(band=detail x="663" y="0" height="72" width="201"  name=r_4 brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+rectangle(band=detail x="859" y="0" height="72" width="201"  name=r_6 brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+text(band=header alignment="0" text="MEDIDAS TEJIDO" border="0" color="0" x="18" y="8" height="64" width="498"  name=t_6  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+rectangle(band=header x="9" y="92" height="80" width="658"  name=r_1 brush.hatch="6" brush.color="12632256" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+text(band=header alignment="2" text="Parte" border="0" color="0" x="27" y="104" height="56" width="617"  name=m_partebas_de_partebas_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+rectangle(band=header x="2075" y="92" height="80" width="256"  name=r_19 brush.hatch="6" brush.color="12632256" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+rectangle(band=header x="1646" y="92" height="80" width="434"  name=r_17 brush.hatch="6" brush.color="12632256" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+rectangle(band=header x="1449" y="92" height="80" width="201"  name=r_11 brush.hatch="6" brush.color="12632256" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+rectangle(band=header x="1253" y="92" height="80" width="201"  name=r_9 brush.hatch="6" brush.color="12632256" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+rectangle(band=header x="1056" y="92" height="80" width="201"  name=r_7 brush.hatch="6" brush.color="12632256" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+rectangle(band=header x="859" y="92" height="80" width="201"  name=r_5 brush.hatch="6" brush.color="12632256" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+rectangle(band=header x="663" y="92" height="80" width="201"  name=r_3 brush.hatch="6" brush.color="12632256" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+text(band=header alignment="2" text="Largo" border="0" color="0" x="681" y="104" height="56" width="146"  name=dt_medidas_est_ref_ca_largo_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Ancho" border="0" color="0" x="873" y="104" height="56" width="160"  name=dt_medidas_est_ref_ca_ancho_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="L sn E" border="0" color="0" x="1070" y="104" height="56" width="160"  name=t_1  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="A sn E" border="0" color="0" x="1271" y="104" height="56" width="160"  name=t_2  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="A Maq" border="0" color="0" x="1472" y="104" height="56" width="155"  name=t_3  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Cadena" border="0" color="0" x="1664" y="104" height="56" width="187"  name=t_7  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Pasadas" border="0" color="0" x="2094" y="104" height="56" width="210"  name=t_8  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="MEDIDAS EN REPOSO" border="0" color="0" x="2382" y="8" height="64" width="635"  name=t_9  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+rectangle(band=header x="2386" y="92" height="80" width="201"  name=r_13 brush.hatch="6" brush.color="12632256" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+text(band=header alignment="2" text="L Rep" border="0" color="0" x="2400" y="104" height="60" width="169"  name=t_4  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+rectangle(band=header x="2583" y="92" height="80" width="201"  name=r_14 brush.hatch="6" brush.color="12632256" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+text(band=header alignment="2" text="A Rep" border="0" color="0" x="2592" y="104" height="60" width="174"  name=t_5  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+rectangle(band=detail x="2075" y="0" height="72" width="256"  name=r_20 brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+rectangle(band=detail x="1646" y="0" height="72" width="434"  name=r_18 brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+rectangle(band=detail x="1445" y="0" height="72" width="201"  name=r_12 brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+rectangle(band=detail x="9" y="0" height="72" width="658"  name=r_2 brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+rectangle(band=detail x="1056" y="0" height="72" width="201"  name=r_8 brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+rectangle(band=detail x="1248" y="0" height="72" width="201"  name=r_10 brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="23" y="12" height="48" width="585" format="[general]"  name=m_partebas_de_partebas edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="1" tabsequence=32766 border="0" color="0" x="887" y="12" height="48" width="142" format="[general]"  name=ca_ancho visible="1~tif(ca_ancho>0,1,0)" editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="1" tabsequence=32766 border="0" color="0" x="1083" y="12" height="48" width="142" format="[general]"  name=ca_largo_sine visible="1~tif(ca_largo_sine>0,1,0)" editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="1" tabsequence=32766 border="0" color="0" x="1285" y="12" height="48" width="142" format="[general]"  name=ca_ancho_sine visible="1~tif(ca_ancho_sine>0,1,0)" editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="1" tabsequence=32766 border="0" color="0" x="1477" y="12" height="48" width="142" format="[general]"  name=ca_ancho_maq visible="1~tif(ca_ancho_maq>0,1,0)" editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="1659" y="12" height="48" width="393" format="[general]"  name=cadena edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+rectangle(band=detail x="2382" y="0" height="72" width="201"  name=r_15 brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+rectangle(band=detail x="2578" y="0" height="72" width="201"  name=r_16 brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+column(band=detail id=9 alignment="1" tabsequence=32766 border="0" color="0" x="2606" y="12" height="48" width="142" format="[general]"  name=ca_ancho_repos visible="1~tif(ca_largo_repos>0,1,0)" edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.italic="1" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="1" tabsequence=32766 border="0" color="0" x="2405" y="12" height="48" width="142" format="[general]"  name=ca_largo_repos visible="1~tif(ca_largo_repos>0,1,0)" edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.italic="1" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=32766 border="0" color="0" x="686" y="12" height="48" width="142" format="[general]"  name=ca_largo visible="1~tif(ca_largo>0,1,0)" editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="0" x="2107" y="12" height="48" width="187" format="[general]"  name=pasadas edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
