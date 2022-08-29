@@ -1,0 +1,132 @@
+HA$PBExportHeader$d_inf_ss_tenir_hilaza.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=0 HTMLDW=no print.printername="" print.documentname="FT SS" print.orientation = 0 print.margin.left = 87 print.margin.right = 0 print.margin.top = 76 print.margin.bottom = 0 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=352 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=72 color="536870912" )
+detail(height=1232 color="536870912"  height.autosize=yes)
+table(column=(type=long update=yes updatewhereclause=yes name=co_fabrica dbname="m_muestras.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes name=co_linea dbname="m_muestras.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes name=co_muestra dbname="m_muestras.co_muestra" )
+ column=(type=char(50) updatewhereclause=yes name=de_muestra dbname="m_muestras.de_muestra" )
+ column=(type=long updatewhereclause=yes name=co_cliente dbname="m_muestras.co_cliente" )
+ column=(type=long updatewhereclause=yes name=co_sucursal dbname="m_muestras.co_sucursal" )
+ column=(type=char(15) updatewhereclause=yes name=co_ref_exp dbname="m_muestras.co_ref_exp" )
+ column=(type=char(10) updatewhereclause=yes name=co_diseno_muestra dbname="m_muestras.co_diseno_muestra" )
+ column=(type=char(15) updatewhereclause=yes name=de_talla dbname="de_talla" )
+ column=(type=char(30) updatewhereclause=yes name=desarrollador dbname="desarrollador" )
+ column=(type=long updatewhereclause=yes name=co_talla dbname="dt_muestras.co_talla" )
+ column=(type=char(50) updatewhereclause=yes name=de_cliente dbname="de_cliente" )
+ column=(type=char(1) updatewhereclause=yes name=co_ref_crystal dbname="co_ref_crystal" )
+ column=(type=char(1) updatewhereclause=yes name=cantidad dbname="cantidad" )
+ column=(type=char(1) updatewhereclause=yes name=materia_prima dbname="materia_prima" )
+ column=(type=char(1) updatewhereclause=yes name=proveedor dbname="proveedor" )
+ column=(type=char(1) updatewhereclause=yes name=no_lote dbname="no_lote" )
+ column=(type=char(1) updatewhereclause=yes name=titulo dbname="titulo" )
+ column=(type=char(1) updatewhereclause=yes name=co_color_exp dbname="co_color_exp" )
+ column=(type=char(1) updatewhereclause=yes name=de_color_exp dbname="de_color_exp" )
+ retrieve="  SELECT m_muestras.co_fabrica,   
+         m_muestras.co_linea,   
+         m_muestras.co_muestra,   
+         m_muestras.de_muestra,   
+         m_muestras.co_cliente,   
+         m_muestras.co_sucursal,   
+         m_muestras.co_ref_exp,   
+         m_muestras.co_diseno_muestra,   
+         sp_desc_talla_x_grupo(m_muestras.co_grupo_tlla,dt_muestras.co_talla) de_talla,   
+         sp_desc_desarrollador(dt_mu_ord.co_ctecnico) AS desarrollador,   
+         dt_muestras.co_talla,   
+         sp_nom_cliente(m_muestras.tipo_muestra,m_muestras.co_cliente,m_muestras.co_sucursal) AS de_cliente,   
+         ('0') AS co_ref_crystal,   
+         ('') AS cantidad,   
+         ('') AS materia_prima,   
+         ('') AS proveedor,   
+         ('') AS no_lote,   
+         ('') AS titulo,   
+         ('') AS co_color_exp,   
+         ('') AS de_color_exp  
+    FROM m_muestras,   
+         dt_muestras,   
+         dt_mu_ord  
+   WHERE ( m_muestras.co_fabrica = dt_muestras.co_fabrica ) and  
+         ( m_muestras.co_linea = dt_muestras.co_linea ) and  
+         ( m_muestras.co_muestra = dt_muestras.co_muestra ) and  
+         ( dt_mu_ord.co_fabrica = m_muestras.co_fabrica ) and  
+         ( dt_mu_ord.co_linea = m_muestras.co_linea ) and  
+         ( dt_mu_ord.co_muestra = m_muestras.co_muestra ) and  
+         ( ( m_muestras.co_fabrica = :an_fabrica ) AND  
+         ( m_muestras.co_linea = :an_linea ) AND  
+         ( m_muestras.co_muestra = :an_muestra ) AND  
+         ( dt_mu_ord.nu_orden = :an_orden ) )    
+" arguments=(("an_fabrica", number),("an_linea", number),("an_muestra", number),("an_orden", number)) )
+bitmap(band=header filename="X:\Muestras Crystal\pbls\crystalblack.jpg" x="27" y="24" height="288" width="704" border="2"  name=p_crystal visible="1" )
+line(band=header x1="5" y1="340" x2="3282" y2="336"  name=l_7 visible="1" pen.style="0" pen.width="9" pen.color="0"  background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="SOLICITUD DE SERVICIO: Te$$HEX1$$f100$$ENDHEX$$ir Hilaza" border="0" color="0" x="827" y="124" height="80" width="1353" html.valueishtml="0"  name=title_t visible="1"  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=header alignment="0" expression="'P$$HEX1$$e100$$ENDHEX$$gina ' + page() + ' de ' + pageCount()"border="0" color="0" x="2286" y="16" height="60" width="997" format="[general]" html.valueishtml="0"  name=page_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=header alignment="0" expression="'Fecha de impresi$$HEX1$$f300$$ENDHEX$$n: '+String(today(),'yyyy/mm/dd hh:mm:ss')"border="0" color="0" x="2286" y="80" height="60" width="997" format="" html.valueishtml="0"  name=date_impresion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Fecha Proceso :" border="0" color="0" x="2286" y="144" height="56" width="997" html.valueishtml="0"  name=fecha_proceso_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Hora Proceso :" border="0" color="0" x="2286" y="204" height="56" width="997" html.valueishtml="0"  name=hora_proceso_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Usuario:" border="0" color="0" x="2286" y="264" height="56" width="997" html.valueishtml="0"  name=usuario_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="0" color="0" x="430" y="492" height="60" width="1134" format="[general]" html.valueishtml="0"  name=cantidad visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=19 alignment="0" tabsequence=32766 border="0" color="0" x="466" y="572" height="60" width="1097" format="[general]" html.valueishtml="0"  name=co_color_exp visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+bitmap(band=detail filename="X:\Muestras Crystal\pbls\barcode1.jpg" x="2377" y="916" height="300" width="800" border="0"  name=p_barcode visible="1"  slideup=allabove )
+text(band=detail alignment="0" text="ESTILO CLIENTE:" border="0" color="33554432" x="1582" y="104" height="56" width="407" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="C$$HEX1$$d300$$ENDHEX$$DIGO CLIENTE:" border="0" color="33554432" x="1582" y="28" height="56" width="425" html.valueishtml="0"  name=co_cliente_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="302" y="28" height="56" width="1266" format="[general]" html.valueishtml="0"  name=de_cliente visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="0" expression="co_fabrica +~"/~"+ co_linea +~"/~"+ co_muestra"border="0" color="0" x="302" y="104" height="56" width="1266" format="[GENERAL]" html.valueishtml="0"  name=compute_flmdllo visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+line(band=detail x1="297" y1="76" x2="1563" y2="76"  name=l_8 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=detail x1="302" y1="152" x2="1563" y2="152"  name=l_9 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+compute(band=detail alignment="0" expression=" co_talla +~" - ~"+ trim(de_talla)"border="0" color="0" x="247" y="328" height="60" width="1317" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+line(band=detail x1="247" y1="380" x2="1559" y2="380"  name=l_20 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=detail x1="41" y1="868" x2="3310" y2="868"  name=l_1 visible="1"  slideup=allabove pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=detail x1="37" y1="936" x2="2327" y2="936"  name=l_4 visible="1"  slideup=allabove pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=detail x1="37" y1="1000" x2="2327" y2="1000"  name=l_2 visible="1"  slideup=allabove pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=detail x1="37" y1="1068" x2="2327" y2="1068"  name=l_3 visible="1"  slideup=allabove pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=detail x1="37" y1="1136" x2="2327" y2="1136"  name=l_5 visible="1"  slideup=allabove pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=detail x1="37" y1="1208" x2="2327" y2="1208"  name=l_6 visible="1"  slideup=allabove pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="466" y="180" height="56" width="1097" format="[general]" html.valueishtml="0"  name=co_diseno_muestra visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+line(band=detail x1="466" y1="228" x2="1559" y2="228"  name=l_10 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="F/L/DLLO:" border="0" color="33554432" x="50" y="104" height="56" width="238" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="NOMBRE DEL DLLO:" border="0" color="33554432" x="50" y="252" height="56" width="471" html.valueishtml="0"  name=de_muestra_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="CLIENTE:" border="0" color="33554432" x="50" y="28" height="56" width="238" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="C$$HEX1$$d300$$ENDHEX$$DIGO DISE$$HEX1$$d100$$ENDHEX$$O:" border="0" color="33554432" x="50" y="180" height="56" width="402" html.valueishtml="0"  name=co_diseno_muestra_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="TALLA:" border="0" color="33554432" x="50" y="328" height="60" width="183" html.valueishtml="0"  name=talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="OBSERVACIONES:" border="0" color="0" x="50" y="744" height="56" width="425" html.valueishtml="0"  name=t_6 visible="1"  slideup=allabove  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="MATERIA PRIMA:" border="0" color="0" x="1582" y="328" height="60" width="411" html.valueishtml="0"  name=materia_prima_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="PROVEEDOR:" border="0" color="0" x="1582" y="408" height="60" width="320" html.valueishtml="0"  name=proveedor_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="No. LOTE:" border="0" color="0" x="1582" y="492" height="60" width="238" html.valueishtml="0"  name=no_lote_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="T$$HEX1$$cd00$$ENDHEX$$TULO:" border="0" color="0" x="50" y="408" height="56" width="192" html.valueishtml="0"  name=titulo_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="DESC. CLIENTE:" border="0" color="0" x="1582" y="572" height="60" width="370" html.valueishtml="0"  name=de_cliente_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="DESARROLLADOR:" border="0" color="0" x="1582" y="180" height="56" width="443" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=18 alignment="0" tabsequence=32766 border="0" color="0" x="256" y="408" height="56" width="1307" format="[general]" html.valueishtml="0"  name=titulo visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+line(band=detail x1="247" y1="456" x2="1563" y2="456"  name=l_21 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=detail x1="430" y1="540" x2="1559" y2="540"  name=l_22 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=detail x1="462" y1="624" x2="1559" y2="624"  name=l_24 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+column(band=detail id=20 alignment="0" tabsequence=32766 border="0" color="0" x="1966" y="572" height="60" width="1317" format="[general]" html.valueishtml="0"  name=de_color_exp visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=17 alignment="0" tabsequence=32766 border="0" color="0" x="1833" y="492" height="60" width="1449" format="[general]" html.valueishtml="0"  name=no_lote visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=16 alignment="0" tabsequence=32766 border="0" color="0" x="1915" y="408" height="60" width="1367" format="[general]" html.valueishtml="0"  name=proveedor visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="0" color="0" x="2007" y="328" height="60" width="1275" format="[general]" html.valueishtml="0"  name=materia_prima visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="0" expression=" co_cliente +~" Scsal: ~"+ co_sucursal "border="0" color="0" x="2025" y="28" height="56" width="1257" format="[GENERAL]" html.valueishtml="0"  name=compute_cliente visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+line(band=detail x1="2025" y1="76" x2="3282" y2="76"  name=l_11 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="2007" y="104" height="56" width="1275" format="[general]" html.valueishtml="0"  name=co_ref_exp visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+line(band=detail x1="2002" y1="152" x2="3282" y2="152"  name=l_12 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=detail x1="1915" y1="460" x2="3282" y2="460"  name=l_17 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=detail x1="1833" y1="544" x2="3282" y2="544"  name=l_18 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=detail x1="2016" y1="380" x2="3282" y2="380"  name=l_16 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=detail x1="1961" y1="624" x2="3282" y2="624"  name=l_15 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="2039" y="180" height="56" width="1243" format="[general]" html.valueishtml="0"  name=desarrollador visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+line(band=detail x1="2034" y1="228" x2="3282" y2="228"  name=l_25 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="549" y="252" height="56" width="2734" format="[general]" html.valueishtml="0"  name=de_muestra visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+line(band=detail x1="530" y1="300" x2="3282" y2="300"  name=l_14 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="COLOR CLIENTE:" border="0" color="0" x="50" y="572" height="60" width="402" html.valueishtml="0"  name=color_cliente_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="CANTIDAD(Kg):" border="0" color="0" x="50" y="492" height="60" width="366" html.valueishtml="0"  name=composicion_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="0" tabsequence=32766 border="0" color="0" x="2245" y="1308" height="56" width="1253" format="[general]" html.valueishtml="0"  name=co_ref_crystal visible="0" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+line(band=detail x1="2245" y1="1356" x2="3497" y2="1356"  name=l_13 visible="0" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="ESTILO CRYSTAL:" border="0" color="0" x="1801" y="1308" height="56" width="430" html.valueishtml="0"  name=t_3 visible="0"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=footer alignment="0" text="dwo:" border="0" color="0" x="0" y="4" height="56" width="1637" html.valueishtml="0"  name=dwo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=footer alignment="1" text="Aplicaci$$HEX1$$f300$$ENDHEX$$n:" border="0" color="33554432" x="1815" y="4" height="56" width="1467" html.valueishtml="0"  name=appl_t visible="1"  slideup=allabove  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
