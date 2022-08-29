@@ -1,0 +1,109 @@
+HA$PBExportHeader$d_dt_fmp_mue1_atrib.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=79017397 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="dt_fmp_mue1.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_linea dbname="dt_fmp_mue1.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_muestra dbname="dt_fmp_mue1.co_muestra" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_talla dbname="dt_fmp_mue1.co_talla" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_color dbname="dt_fmp_mue1.co_color" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=cnt_opcion dbname="dt_fmp_mue1.cnt_opcion" )
+ column=(type=long update=yes updatewhereclause=yes name=co_centro dbname="dt_fmp_mue1.co_centro" initial="12" )
+ column=(type=long update=yes updatewhereclause=yes name=nu_partemp dbname="dt_fmp_mue1.nu_partemp" initial="1" )
+ column=(type=long update=yes updatewhereclause=yes name=nu_mp dbname="dt_fmp_mue1.nu_mp" initial="1" )
+ column=(type=long update=yes updatewhereclause=yes name=co_tipoprod dbname="dt_fmp_mue1.co_tipoprod" )
+ column=(type=long update=yes updatewhereclause=yes name=co_partemp dbname="dt_fmp_mue1.co_partemp" )
+ column=(type=long update=yes updatewhereclause=yes name=co_combinacion dbname="dt_fmp_mue1.co_combinacion" )
+ column=(type=long update=yes updatewhereclause=yes name=co_fabrica_mp dbname="dt_fmp_mue1.co_fabrica_mp" initial="2" )
+ column=(type=long update=yes updatewhereclause=yes name=co_producto_mp dbname="dt_fmp_mue1.co_producto_mp" )
+ column=(type=char(60) update=yes updatewhereclause=yes name=de_producto dbname="dt_fmp_mue1.de_producto" )
+ column=(type=long update=yes updatewhereclause=yes name=co_color_mp dbname="dt_fmp_mue1.co_color_mp" )
+ column=(type=char(60) update=yes updatewhereclause=yes name=de_color dbname="dt_fmp_mue1.de_color" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=peso_mp dbname="dt_fmp_mue1.peso_mp" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=nu_conos dbname="dt_fmp_mue1.nu_conos" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_creacion dbname="dt_fmp_mue1.fe_creacion" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="dt_fmp_mue1.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="dt_fmp_mue1.usuario" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="dt_fmp_mue1.instancia" )
+ column=(type=char(60) updatewhereclause=yes name=de_parte_combinacion dbname="de_parte_combinacion" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=consec dbname="dt_fmp_mue1.consec" )
+ column=(type=decimal(2) updatewhereclause=yes name=peso_muestra dbname="peso_muestra" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=alimentador dbname="dt_fmp_mue1.alimentador" )
+ column=(type=char(6) update=yes updatewhereclause=yes name=portahilo dbname="dt_fmp_mue1.portahilo" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=enhebrado dbname="dt_fmp_mue1.enhebrado" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=posicion dbname="dt_fmp_mue1.posicion" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=tension dbname="dt_fmp_mue1.tension" )
+ column=(type=long updatewhereclause=yes name=co_diseno dbname="dt_fmp_mue1.co_diseno" )
+ retrieve="  SELECT dt_fmp_mue1.co_fabrica,   
+         dt_fmp_mue1.co_linea,   
+         dt_fmp_mue1.co_muestra,   
+         dt_fmp_mue1.co_talla,   
+         dt_fmp_mue1.co_color,   
+         dt_fmp_mue1.cnt_opcion,   
+         dt_fmp_mue1.co_centro,   
+         dt_fmp_mue1.nu_partemp,   
+         dt_fmp_mue1.nu_mp,   
+         dt_fmp_mue1.co_tipoprod,   
+         dt_fmp_mue1.co_partemp,   
+         dt_fmp_mue1.co_combinacion,   
+         dt_fmp_mue1.co_fabrica_mp,   
+         dt_fmp_mue1.co_producto_mp,   
+         dt_fmp_mue1.de_producto,   
+         dt_fmp_mue1.co_color_mp,   
+         dt_fmp_mue1.de_color,   
+         dt_fmp_mue1.peso_mp,   
+         dt_fmp_mue1.nu_conos,   
+         dt_fmp_mue1.fe_creacion,   
+         dt_fmp_mue1.fe_actualizacion,   
+         dt_fmp_mue1.usuario,   
+         dt_fmp_mue1.instancia,   
+         to_char60() as de_parte_combinacion,   
+         dt_fmp_mue1.consec,   
+         peso_mp - peso_mp as peso_muestra,   
+         dt_fmp_mue1.alimentador,   
+         dt_fmp_mue1.portahilo,   
+         dt_fmp_mue1.enhebrado,   
+         dt_fmp_mue1.posicion,   
+         dt_fmp_mue1.tension,
+			dt_fmp_mue1.co_diseno
+    FROM dt_fmp_mue1  
+   WHERE ( dt_fmp_mue1.co_fabrica = :a_fabrica ) AND  
+         ( dt_fmp_mue1.co_linea = :a_linea ) AND  
+         ( dt_fmp_mue1.co_muestra = :a_muestra )    
+" update="dt_fmp_mue1" updatewhere=0 updatekeyinplace=yes arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number))  sort="co_fabrica A co_linea A co_muestra A co_talla A co_color A cnt_opcion A consec A " )
+text(band=header alignment="2" text="Parte" border="0" color="0" x="9" y="8" height="56" width="142" html.valueishtml="0"  name=co_partemp_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Comb" border="0" color="0" x="160" y="8" height="56" width="169" html.valueishtml="0"  name=co_combinacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Producto" border="0" color="0" x="1047" y="8" height="56" width="224" html.valueishtml="0"  name=co_producto_mp_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Producto" border="0" color="0" x="1280" y="8" height="56" width="608" html.valueishtml="0"  name=de_producto_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Color" border="0" color="0" x="1897" y="8" height="56" width="407" html.valueishtml="0"  name=co_color_mp_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="De Color" border="0" color="0" x="2313" y="8" height="56" width="603" html.valueishtml="0"  name=de_color_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Parte/combi" border="0" color="0" x="338" y="8" height="56" width="571" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="0" text="F Mp" border="0" color="0" x="919" y="8" height="56" width="119" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Conos" border="0" color="0" x="2926" y="8" height="56" width="247" html.valueishtml="0"  name=nu_conos_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Alim" border="0" color="0" x="3182" y="8" height="56" width="151" html.valueishtml="0"  name=alimentador_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Ph" border="0" color="0" x="3342" y="8" height="56" width="151" html.valueishtml="0"  name=portahilo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Enh" border="0" color="0" x="3502" y="8" height="56" width="151" html.valueishtml="0"  name=enhebrado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Pos" border="0" color="0" x="3662" y="8" height="56" width="151" html.valueishtml="0"  name=posicion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Tens" border="0" color="0" x="3822" y="8" height="56" width="151" html.valueishtml="0"  name=tension_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=11 alignment="1" tabsequence=10 border="5" color="0" x="9" y="4" height="60" width="142" format="[general]" html.valueishtml="0"  name=co_partemp visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=12 alignment="1" tabsequence=20 border="5" color="0" x="160" y="4" height="60" width="169" format="[general]" html.valueishtml="0"  name=co_combinacion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=14 alignment="1" tabsequence=30 border="5" color="0" x="1047" y="4" height="60" width="224" format="[general]" html.valueishtml="0"  name=co_producto_mp visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=15 alignment="0" tabsequence=40 border="5" color="0" x="1280" y="4" height="60" width="608" format="[general]" html.valueishtml="0"  name=de_producto  tag="&NN=Descripci$$HEX1$$f300$$ENDHEX$$n de producto" visible="1" edit.limit=60 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=16 alignment="1" tabsequence=50 border="5" color="0" x="1897" y="4" height="60" width="407" format="000000" html.valueishtml="0"  name=co_color_mp visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=17 alignment="0" tabsequence=60 border="5" color="0" x="2313" y="4" height="60" width="603" format="[general]" html.valueishtml="0"  name=de_color  tag="&NN=Descripci$$HEX1$$f300$$ENDHEX$$n de color" visible="1" edit.limit=60 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=24 alignment="0" tabsequence=32766 border="5" color="0" x="338" y="4" height="60" width="571" format="[general]" html.valueishtml="0"  name=de_parte_combinacion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=13 alignment="2" tabsequence=32766 border="5" color="0" x="919" y="4" height="60" width="119" format="[general]" html.valueishtml="0"  name=co_fabrica_mp visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=19 alignment="1" tabsequence=70 border="5" color="0" x="2926" y="4" height="60" width="247" format="[general]" html.valueishtml="0"  name=nu_conos visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=27 alignment="1" tabsequence=80 border="5" color="0" x="3182" y="4" height="60" width="151" format="[general]" html.valueishtml="0"  name=alimentador visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=28 alignment="1" tabsequence=90 border="5" color="0" x="3342" y="4" height="60" width="151" format="[general]" html.valueishtml="0"  name=portahilo visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=29 alignment="1" tabsequence=100 border="5" color="0" x="3502" y="4" height="60" width="151" format="[general]" html.valueishtml="0"  name=enhebrado visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=30 alignment="1" tabsequence=110 border="5" color="0" x="3662" y="4" height="60" width="151" format="[general]" html.valueishtml="0"  name=posicion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=31 alignment="1" tabsequence=120 border="5" color="0" x="3822" y="4" height="60" width="151" format="[general]" html.valueishtml="0"  name=tension visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
