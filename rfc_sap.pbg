@@ -1,0 +1,19 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "rfc_sap.pbl" "";
+@end;
+@begin Objects
+ "dt_fmp_mue1.srd" "rfc_sap.pbl";
+ "n_cst_materia_prima.sru" "rfc_sap.pbl";
+ "n_cst_rfc_reserva_sap.sru" "rfc_sap.pbl";
+ "fabricaslineas.srd" "rfc_sap.pbl";
+ "d_ex_gr_validarnecesidadenpdn.srd" "rfc_sap.pbl";
+ "str_retorno_sap.srs" "rfc_sap.pbl";
+ "n_cst_rfc_sap.sru" "rfc_sap.pbl";
+ "dt_fmp_muestras.srd" "rfc_sap.pbl";
+ "str_parametros_sap.srs" "rfc_sap.pbl";
+ "w_actualizarivan.srw" "rfc_sap.pbl";
+ "h_fmp_muetras.srd" "rfc_sap.pbl";
+ "str_param_sap.srs" "rfc_sap.pbl";
+ "str_parametros_conexion.srs" "rfc_sap.pbl";
+@end;
