@@ -1,0 +1,34 @@
+HA$PBExportHeader$d_grupos_seleccion2.srd
+$PBExportComments$DWO utilizado para cargar los grupos con su cola respectiva desde el gantt para un determinado conjunto de grupos y el conjunto de valores para el campo 'condicion' que son condici$$HEX1$$f300$$ENDHEX$$n de la consulta.
+release 9;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_grupo dbname="mu_gantt.co_grupo" )
+ column=(type=long updatewhereclause=yes name=cola_grupo dbname="mu_gantt.cola_grupo" )
+ column=(type=datetime updatewhereclause=yes name=f_mov_fin dbname="f_mov_fin" )
+ retrieve="SELECT mu_gantt.co_grupo ,
+		 mu_gantt.cola_grupo ,
+		 max(f_mov_fin) as f_mov_fin    
+  FROM mu_gantt ,
+	    dt_mu_ord     
+ WHERE ( dt_mu_ord.nu_orden = mu_gantt.nu_orden ) and
+		 ( ( mu_gantt.co_grupo in ( :al_vector_grupo ) ) And
+		 ( mu_gantt.condicion in (2,3,4,5,6) ) and 
+ 		 ( mu_gantt.f_mov_fin >= :adtm_fh_prog ) and
+		 ( dt_mu_ord.condicion in (2,3) ) ) 
+ GROUP BY mu_gantt.co_grupo ,
+           mu_gantt.cola_grupo   " arguments=(("al_vector_grupo", numberlist),("adtm_fh_prog", datetime)) )
+text(band=header alignment="2" text="F Mov Fin" border="0" color="33554432" x="494" y="8" height="56" width="686" html.valueishtml="0"  name=f_mov_fin_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Grupo" border="0" color="33554432" x="9" y="8" height="56" width="219" html.valueishtml="0"  name=co_grupo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Cola Grupo" border="0" color="33554432" x="238" y="8" height="56" width="247" html.valueishtml="0"  name=cola_grupo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=32766 border="5" color="33554432" x="238" y="8" height="60" width="247" format="[general]" html.valueishtml="0"  name=cola_grupo visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="5" color="33554432" x="494" y="8" height="60" width="686" format="[shortdate] [time]" html.valueishtml="0"  name=f_mov_fin visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="5" color="33554432" x="9" y="8" height="60" width="219" format="[general]" html.valueishtml="0"  name=co_grupo visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
