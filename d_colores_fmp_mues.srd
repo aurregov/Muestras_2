@@ -1,0 +1,74 @@
+HA$PBExportHeader$d_colores_fmp_mues.srd
+$PBExportComments$Detalle de la materia prima de muestras
+release 9;
+datawindow(units=0 timer_interval=0 color=79017397 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=64 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="h_fmp_muestras.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_linea dbname="h_fmp_muestras.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_muestra dbname="h_fmp_muestras.co_muestra" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_talla dbname="h_fmp_muestras.co_talla" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_color dbname="h_fmp_muestras.co_color" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=cnt_opcion dbname="h_fmp_muestras.cnt_opcion" )
+ column=(type=long update=yes updatewhereclause=yes name=co_recurso dbname="h_fmp_muestras.co_recurso" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=id_peso dbname="h_fmp_muestras.id_peso" initial="D" values="D	D/P	P/" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_creacion dbname="h_fmp_muestras.fe_creacion" )
+ column=(type=long update=yes updatewhereclause=yes name=sw_excepcion dbname="h_fmp_muestras.sw_excepcion" initial="0" values="SI	1/NO	0/" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=de_cnt_opcion dbname="h_fmp_muestras.de_cnt_opcion" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="h_fmp_muestras.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="h_fmp_muestras.usuario" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="h_fmp_muestras.instancia" )
+ column=(type=char(60) updatewhereclause=yes name=de_color dbname="de_color" )
+ column=(type=char(60) updatewhereclause=yes name=de_recurso dbname="de_recurso" )
+ column=(type=decimal(2) updatewhereclause=yes name=peso_color dbname="peso_color" )
+ column=(type=long update=yes updatewhereclause=yes name=co_muestrario dbname="h_fmp_muestras.co_muestrario" )
+ column=(type=long update=yes updatewhereclause=yes name=co_diseno dbname="h_fmp_muestras.co_diseno" )
+ retrieve="  SELECT h_fmp_muestras.co_fabrica,   
+         h_fmp_muestras.co_linea,   
+         h_fmp_muestras.co_muestra,   
+         h_fmp_muestras.co_talla,   
+         h_fmp_muestras.co_color,   
+         h_fmp_muestras.cnt_opcion,   
+         h_fmp_muestras.co_recurso,   
+         h_fmp_muestras.id_peso,   
+         h_fmp_muestras.fe_creacion,   
+         h_fmp_muestras.sw_excepcion,   
+         h_fmp_muestras.de_cnt_opcion,   
+         h_fmp_muestras.fe_actualizacion,   
+         h_fmp_muestras.usuario,   
+         h_fmp_muestras.instancia,   
+         to_char60() as de_color,   
+         to_char60() as de_recurso,   
+         0.01 as peso_color,   
+         h_fmp_muestras.co_muestrario,
+			h_fmp_muestras.co_diseno
+    FROM h_fmp_muestras
+   WHERE ( h_fmp_muestras.co_fabrica = :a_fabrica ) 
+	AND  ( h_fmp_muestras.co_linea = :a_linea ) 
+	AND  ( h_fmp_muestras.co_muestra = :a_muestra ) 
+	AND  ( h_fmp_muestras.co_talla = :a_talla ) 
+	AND (h_fmp_muestras.co_muestrario = :an_muestrario ) 
+	AND ( h_fmp_muestras.co_recurso = :al_recurso) 
+" update="h_fmp_muestras" updatewhere=0 updatekeyinplace=yes arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number),("a_talla", number),("an_muestrario", number),("al_recurso", number))  sort="co_color A cnt_opcion A " )
+text(band=header alignment="2" text="Color" border="6" color="0" x="183" y="4" height="56" width="466" html.valueishtml="0"  name=co_color_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Peso" border="6" color="0" x="1559" y="4" height="56" width="169" html.valueishtml="0"  name=id_peso_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Rec" border="6" color="0" x="658" y="4" height="56" width="219" html.valueishtml="0"  name=co_recurso_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Recurso" border="6" color="0" x="887" y="4" height="56" width="663" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Peso Color" border="6" color="0" x="1737" y="4" height="56" width="416" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Muestrario" border="6" color="0" x="2162" y="4" height="56" width="293" html.valueishtml="0"  name=co_muestrario_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+compute(band=detail alignment="0" expression="~"~""border="0" color="0" x="9" y="0" height="60" width="73" format="[GENERAL]" html.valueishtml="0"  name=compute_2 visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+compute(band=detail alignment="2" expression="GetRow()"border="5" color="16711680" x="91" y="0" height="60" width="82" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="79017397" )
+column(band=detail id=8 alignment="0" tabsequence=30 border="5" color="0" x="1559" y="0" height="60" width="169" format="[general]" html.valueishtml="0"  name=id_peso  tag="&NN=Peso" visible="1" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="1088874214~tIf (GetRow()=1,1073741824,76788149)" )
+column(band=detail id=7 alignment="1" tabsequence=20 border="5" color="0" x="658" y="0" height="60" width="219" format="[general]" html.valueishtml="0"  name=co_recurso  tag="&NN=Recurso" visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=16 alignment="0" tabsequence=32766 border="5" color="0" x="887" y="0" height="60" width="663" format="[general]" html.valueishtml="0"  name=de_recurso visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=5 alignment="1" tabsequence=10 border="5" color="0" x="183" y="0" height="60" width="466" format="000000" html.valueishtml="0"  name=co_color  tag="&A&NN=Color" visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=17 alignment="1" tabsequence=32766 border="5" color="0" x="1737" y="0" height="60" width="416" format="#,###.00" html.valueishtml="0"  name=peso_color visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+button(band=detail text="" enabled=yes action="0" border="0" color="0" x="0" y="0" height="60" width="87" vtextalign="0" htextalign="0"  name=b_copiadorcol visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=18 alignment="0" tabsequence=40 border="0" color="0" x="2162" y="0" height="60" width="293" format="[general]" html.valueishtml="0"  name=co_muestrario visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
