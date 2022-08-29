@@ -1,0 +1,13 @@
+HA$PBExportHeader$d_recup_talla.srd
+$PBExportComments$DWO que recupera los datos referentes a los datos de la talla de la muestra para las ordenes de producci$$HEX1$$f300$$ENDHEX$$n
+release 8;
+datawindow(units=0 timer_interval=0 color=67108864 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_talla dbname="dt_muestras.co_talla" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"dt_muestras~" ) COLUMN(NAME=~"dt_muestras.co_talla~")WHERE(    EXP1 =~"dt_muestras.co_fabrica~"   OP =~"=~"    EXP2 =~":al_fabrica~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"dt_muestras.co_linea~"   OP =~"=~"    EXP2 =~":al_linea~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"dt_muestras.co_muestra~"   OP =~"=~"    EXP2 =~":al_muestra~" ) ) ARG(NAME = ~"al_fabrica~" TYPE = number)  ARG(NAME = ~"al_linea~" TYPE = number)  ARG(NAME = ~"al_muestra~" TYPE = number) " arguments=(("al_fabrica", number),("al_linea", number),("al_muestra", number)) )
+text(band=detail alignment="1" text="Cod. Talla" border="0" color="33554432" x="9" y="4" height="56" width="229" html.valueishtml="0"  name=co_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="5" color="33554432" x="256" y="4" height="56" width="274" format="[general]" html.valueishtml="0"  name=co_talla visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
