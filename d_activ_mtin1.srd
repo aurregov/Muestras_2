@@ -1,0 +1,22 @@
+HA$PBExportHeader$d_activ_mtin1.srd
+$PBExportComments$DWO para los datos detalle del registro de actividades en el registro de maquinas de tintoreria.
+release 8;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="mu_maqtin_activ.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=cs_maquina dbname="mu_maqtin_activ.cs_maquina" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=id_actividad dbname="mu_maqtin_activ.id_actividad" validation="Integer(Gettext())>0" validationmsg="'C$$HEX1$$f300$$ENDHEX$$digo de la actividad no v$$HEX1$$e100$$ENDHEX$$lido'" )
+ column=(type=char(50) updatewhereclause=yes name=de_actividad dbname="de_actividad" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="mu_maqtin_activ.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="mu_maqtin_activ.usuario" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="mu_maqtin_activ.instancia" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"mu_maqtin_activ~" ) COLUMN(NAME=~"mu_maqtin_activ.co_fabrica~") COLUMN(NAME=~"mu_maqtin_activ.cs_maquina~") COLUMN(NAME=~"mu_maqtin_activ.id_actividad~") COMPUTE(NAME=~"upper(trim(sp_nom_mu_m_activ(mu_maqtin_activ.id_actividad))) AS de_actividad~") COLUMN(NAME=~"mu_maqtin_activ.fe_actualizacion~") COLUMN(NAME=~"mu_maqtin_activ.usuario~") COLUMN(NAME=~"mu_maqtin_activ.instancia~")WHERE(    EXP1 =~"mu_maqtin_activ.co_fabrica~"   OP =~"=~"    EXP2 =~":an_fabrica~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"mu_maqtin_activ.cs_maquina~"   OP =~"=~"    EXP2 =~":an_maquina~" ) ) ARG(NAME = ~"an_fabrica~" TYPE = number)  ARG(NAME = ~"an_maquina~" TYPE = number) " update="mu_maqtin_activ" updatewhere=1 updatekeyinplace=yes arguments=(("an_fabrica", number),("an_maquina", number))  sort="id_actividad A " )
+text(band=header alignment="2" text="Actividad" border="6" color="33554432" x="9" y="8" height="56" width="357" html.valueishtml="0"  name=id_actividad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n" border="6" color="33554432" x="375" y="8" height="56" width="1061" html.valueishtml="0"  name=de_actividad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=10 border="5" color="33554432" x="9" y="8" height="60" width="357" format="[general]" html.valueishtml="0"  name=id_actividad  tag="&NN=Id. actividad" visible="1" edit.name="#####" editmask.mask="#####" editmask.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=4 alignment="0" tabsequence=20 border="5" color="33554432" x="375" y="8" height="60" width="1061" format="[general]" html.valueishtml="0"  name=de_actividad visible="1" edit.limit=12 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
