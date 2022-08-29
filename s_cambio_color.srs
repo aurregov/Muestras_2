@@ -1,0 +1,8 @@
+HA$PBExportHeader$s_cambio_color.srs
+$PBExportComments$Para permitir adicionar y modificar colores
+global type s_cambio_color from structure
+	long		num1
+	long		num2
+	n_ds_base		ds1
+end type
+
