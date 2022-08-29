@@ -2,17 +2,20 @@ HA$PBExportHeader$w_depuracion_adm_recurso.srw
 forward
 global type w_depuracion_adm_recurso from w_sheet
 end type
+type st_1 from statictext within w_depuracion_adm_recurso
+end type
 type dw_recurso from u_dw_application within w_depuracion_adm_recurso
 end type
 end forward
 
 global type w_depuracion_adm_recurso from w_sheet
-integer width = 1125
+integer width = 2254
 integer height = 1164
 string title = "Agrupacion Recurso para Depuracion"
 string menuname = "m_sheet_solicitud"
 boolean maxbox = true
 boolean resizable = true
+st_1 st_1
 dw_recurso dw_recurso
 end type
 global w_depuracion_adm_recurso w_depuracion_adm_recurso
@@ -67,14 +70,17 @@ int iCurrent
 call super::create
 if IsValid(this.MenuID) then destroy(this.MenuID)
 if this.MenuName = "m_sheet_solicitud" then this.MenuID = create m_sheet_solicitud
+this.st_1=create st_1
 this.dw_recurso=create dw_recurso
 iCurrent=UpperBound(this.Control)
-this.Control[iCurrent+1]=this.dw_recurso
+this.Control[iCurrent+1]=this.st_1
+this.Control[iCurrent+2]=this.dw_recurso
 end on
 
 on w_depuracion_adm_recurso.destroy
 call super::destroy
 if IsValid(MenuID) then destroy(MenuID)
+destroy(this.st_1)
 destroy(this.dw_recurso)
 end on
 
@@ -105,6 +111,24 @@ dw_recurso.Retrieve( )
 
 
 end event
+
+type st_1 from statictext within w_depuracion_adm_recurso
+integer x = 1449
+integer y = 60
+integer width = 608
+integer height = 120
+integer textsize = -14
+integer weight = 700
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Arial"
+long textcolor = 33554432
+long backcolor = 67108864
+string text = "753"
+alignment alignment = center!
+boolean focusrectangle = false
+end type
 
 type dw_recurso from u_dw_application within w_depuracion_adm_recurso
 integer x = 18
