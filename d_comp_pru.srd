@@ -1,0 +1,14 @@
+HA$PBExportHeader$d_comp_pru.srd
+release 7;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=5 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=4 color="536870912" )
+footer(height=4 color="536870912" )
+detail(height=484 color="536870912"  height.autosize=yes)
+table(column=(type=char(10) updatewhereclause=yes name=a dbname="a" )
+ unbound = "yes"arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number),("a_talla", number),("a_color", number),("a_opcion", number)) )
+report(band=detail dataobject="d_comp_mues_destr" x="9" y="332" height="136" width="2080" border="0"  height.autosize=yes criteria="" nest_arguments=((" a_fabrica "),(" a_linea "),(" a_muestra "),("a_talla "),(" a_color "),(" a_opcion ")) trail_footer = yes  name=dw_2  slideleft=yes  slideup=directlyabove )
+compute(band=detail alignment="0" expression="~"COMPOSICION MAT PRIMA COLOR: ~"+ a_color +~" OPCION: ~"+ a_opcion "border="0" color="0" x="9" y="12" height="56" width="2075" format="[general]"  name=page_1  slideup=directlyabove  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+report(band=detail dataobject="d_comp_mues" x="9" y="100" height="120" width="2075" border="0"  height.autosize=yes criteria="" nest_arguments=((" a_fabrica "),(" a_linea "),(" a_muestra "),(" a_talla "),(" a_color "),(" a_opcion ")) trail_footer = yes  name=dw_1  slideleft=yes  slideup=directlyabove )
+compute(band=detail alignment="0" expression="~"COMPOSICION DESTRUCCION  COLOR: ~"+ a_color +~" OPCION: ~"+ a_opcion "border="0" color="0" x="9" y="244" height="56" width="2071" format="[general]"  name=compute_1  slideup=directlyabove  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
