@@ -1,0 +1,35 @@
+HA$PBExportHeader$d_recursos_permitidos.srd
+$PBExportComments$Para tener la lista de los recursos permitidos por usuario en la conexi$$HEX1$$f300$$ENDHEX$$n a seguridad
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_aplicacion dbname="co_aplicacion" )
+ column=(type=char(40) updatewhereclause=yes name=co_ventana dbname="co_ventana" )
+ column=(type=long updatewhereclause=yes name=co_opcion dbname="co_opcion" )
+ retrieve="  select dt_opcxperj.co_aplicacion,   
+         dt_opcxperj.co_ventana,   
+         dt_opcxperj.co_opcion  
+    from dt_usuxper,
+         dt_opcxperj  
+   where ( dt_usuxper.co_aplicacion = :a_aplicacion ) and
+         ( dt_usuxper.co_usuario 	= :a_usuario ) and
+         ( dt_usuxper.co_perfil 		= dt_opcxperj.co_perfil ) and
+			( dt_usuxper.co_aplicacion = dt_opcxperj.co_aplicacion ) 
+union
+  select dt_opcxusuj.co_aplicacion,   
+         dt_opcxusuj.co_ventana,   
+         dt_opcxusuj.co_opcion  
+    from dt_opcxusuj  
+   where ( dt_opcxusuj.co_aplicacion = :a_aplicacion ) and  
+         ( dt_opcxusuj.co_usuario = :a_usuario )" arguments=(("a_aplicacion", number),("a_usuario", string)) )
+text(band=header alignment="0" text="Dt Opcxperj Co Aplicacion" border="0" color="0" x="9" y="4" height="56" width="224" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16250871" )
+text(band=header alignment="0" text="Dt Opcxperj Co Ventana" border="0" color="0" x="242" y="4" height="56" width="658" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16250871" )
+text(band=header alignment="0" text="Dt Opcxperj Co Opcion" border="0" color="0" x="910" y="4" height="56" width="507" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16250871" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="4" height="64" width="224" format="[general]" html.valueishtml="0"  name=co_aplicacion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16250871" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="242" y="4" height="64" width="658" format="[general]" html.valueishtml="0"  name=co_ventana visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16250871" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="910" y="4" height="64" width="507" format="[general]" html.valueishtml="0"  name=co_opcion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16250871" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
