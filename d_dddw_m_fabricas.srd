@@ -1,0 +1,17 @@
+HA$PBExportHeader$d_dddw_m_fabricas.srd
+$PBExportComments$Listado de fabricas visibles para un usuario
+release 7;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=60 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=60 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_fabrica dbname="m_fabricas.co_fabrica" )
+ column=(type=char(50) updatewhereclause=yes name=razon_social dbname="m_fabricas.razon_social" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"cf_user~" )  TABLE(NAME=~"m_fabricas~" ) COLUMN(NAME=~"m_fabricas.co_fabrica~") COLUMN(NAME=~"m_fabricas.razon_social~")    JOIN (LEFT=~"m_fabricas.co_fabrica~"    OP =~"=~"RIGHT=~"cf_user.co_fabrica~" )WHERE(    EXP1 =~"cf_user.usuario~"   OP =~"=~"    EXP2 =~":a_usuario~" ) ) ARG(NAME = ~"a_usuario~" TYPE = string) " arguments=(("a_usuario", string))  sort="co_fabrica A " )
+text(band=header alignment="2" text="C$$HEX1$$f300$$ENDHEX$$digo" border="0" color="0" x="9" y="0" height="56" width="187"  name=t_1  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+text(band=header alignment="2" text="F$$HEX1$$e100$$ENDHEX$$brica" border="0" color="0" x="206" y="0" height="56" width="951"  name=t_2  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+column(band=detail id=1 alignment="2" tabsequence=32766 border="0" color="0" x="9" y="0" height="56" width="187" format="[general]"  name=co_fabrica edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="206" y="0" height="56" width="951" format="[general]"  name=razon_social edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
