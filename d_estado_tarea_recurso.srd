@@ -1,0 +1,43 @@
+HA$PBExportHeader$d_estado_tarea_recurso.srd
+$PBExportComments$DWObject para la consulta de las actividades y operaciones de los recursos + estado
+release 8;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_estado dbname="mu_m_actividad.co_estado" )
+ column=(type=long updatewhereclause=yes name=id_actividad dbname="mu_rec_activ.id_actividad" )
+ column=(type=long updatewhereclause=yes name=co_operacion dbname="co_operacion" )
+ column=(type=long updatewhereclause=yes name=co_recurso dbname="mu_rec_activ.co_recurso" )
+ retrieve="  SELECT mu_m_actividad.co_estado,   
+         mu_rec_activ.id_actividad,   
+         (0) AS co_operacion,   
+         mu_rec_activ.co_recurso  
+    FROM mu_rec_activ,   
+         mu_m_actividad  
+   WHERE ( mu_m_actividad.id_actividad = mu_rec_activ.id_actividad )   
+
+UNION
+
+  SELECT m_operac_muestra.co_estado,   
+         (0) AS id_actividad,   
+         mu_rec_oper.co_operacion,   
+         mu_rec_oper.co_recurso  
+    FROM mu_rec_oper,   
+         m_operac_muestra  
+   WHERE ( m_operac_muestra.co_operacion = mu_rec_oper.co_operacion )   ;
+
+
+   
+" )
+text(band=header alignment="2" text="Co Estado" border="0" color="33554432" x="9" y="8" height="56" width="274" html.valueishtml="0"  name=co_estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Id Actividad" border="0" color="33554432" x="293" y="8" height="56" width="293" html.valueishtml="0"  name=id_actividad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Recurso" border="0" color="33554432" x="969" y="8" height="56" width="293" html.valueishtml="0"  name=co_recurso_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Operacion" border="0" color="33554432" x="594" y="8" height="56" width="366" html.valueishtml="0"  name=co_operacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="5" color="33554432" x="9" y="8" height="60" width="274" format="[general]" html.valueishtml="0"  name=co_estado visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=32766 border="5" color="33554432" x="293" y="8" height="60" width="293" format="[general]" html.valueishtml="0"  name=id_actividad visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="1" tabsequence=32766 border="5" color="33554432" x="969" y="8" height="60" width="293" format="[general]" html.valueishtml="0"  name=co_recurso visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=32766 border="5" color="33554432" x="594" y="8" height="60" width="366" format="[general]" html.valueishtml="0"  name=co_operacion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
