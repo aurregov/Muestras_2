@@ -1,0 +1,25 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "servicios_comunes.pbl" "";
+@end;
+@begin Objects
+ "d_sq_gr_tr_modfmp.srd" "servicios_comunes.pbl";
+ "n_cst_dt_mu_rec_gru.sru" "servicios_comunes.pbl";
+ "n_cst_tb_ordenprevfab.sru" "servicios_comunes.pbl";
+ "n_cst_recurso_cotizado.sru" "servicios_comunes.pbl";
+ "n_cst_log_reccotizado.sru" "servicios_comunes.pbl";
+ "n_cst_c_tr_modfmp.sru" "servicios_comunes.pbl";
+ "n_cst_estado_muestra.sru" "servicios_comunes.pbl";
+ "n_cst_tr_modfmp.sru" "servicios_comunes.pbl";
+ "n_cst_importfile.sru" "servicios_comunes.pbl";
+ "n_cst_tb_ordenprevfab_bk.sru" "servicios_comunes.pbl";
+ "n_cst_dt_muestras.sru" "servicios_comunes.pbl";
+ "d_sq_gr_db2_tb_ordenprevfab_color_mae.srd" "servicios_comunes.pbl";
+ "n_cst_seg_muestras.sru" "servicios_comunes.pbl";
+ "d_sq_gr_db2_tb_ordenprevfab_bk.srd" "servicios_comunes.pbl";
+ "d_sq_gr_log_reccotizado.srd" "servicios_comunes.pbl";
+ "n_cst_c_log_reccotizado.sru" "servicios_comunes.pbl";
+ "n_cst_string.sru" "servicios_comunes.pbl";
+ "d_sq_gr_db2_tb_ordenprevfab.srd" "servicios_comunes.pbl";
+ "n_cst_conexiondb2.sru" "servicios_comunes.pbl";
+@end;
