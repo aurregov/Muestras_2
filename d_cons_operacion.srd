@@ -1,0 +1,51 @@
+HA$PBExportHeader$d_cons_operacion.srd
+$PBExportComments$DWO para la consulta de actividades de las muestras
+release 9;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=60 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=long updatewhereclause=yes key=yes name=co_operacion dbname="m_operac_muestra.co_operacion" )
+ column=(type=long updatewhereclause=yes name=co_estado dbname="m_operac_muestra.co_estado" )
+ column=(type=char(1) updatewhereclause=yes name=sw_pares dbname="m_operac_muestra.sw_pares" values="SI	S/NO	N/" )
+ column=(type=char(1) updatewhereclause=yes name=sw_ajuste_maq dbname="m_operac_muestra.sw_ajuste_maq" values="SI	S/NO	N/" )
+ column=(type=char(1) updatewhereclause=yes name=sw_ajustexcol dbname="m_operac_muestra.sw_ajustexcol" values="SI	S/NO	N/" )
+ column=(type=long updatewhereclause=yes name=criterio_tiempo dbname="m_operac_muestra.criterio_tiempo" )
+ column=(type=char(50) updatewhereclause=yes name=de_operacion dbname="de_operacion" )
+ column=(type=char(20) updatewhereclause=yes name=de_estado dbname="de_estado" )
+ column=(type=long updatewhereclause=yes key=yes name=co_tipoprod dbname="m_operac_muestra.co_tipoprod" )
+ retrieve="  SELECT DISTINCT m_operac_muestra.co_operacion,   
+         m_operac_muestra.co_estado,   
+         m_operac_muestra.sw_pares,   
+         m_operac_muestra.sw_ajuste_maq,   
+         m_operac_muestra.sw_ajustexcol,   
+         m_operac_muestra.criterio_tiempo,   
+         upper(trim(sp_nom_mu_m_opera(m_operac_muestra.co_tipoprod ,m_operac_muestra.co_operacion))) AS de_operacion,   
+         upper(trim(sp_nom_m_est_mue(m_operac_muestra.co_estado))) AS de_estado,   
+         m_operac_muestra.co_tipoprod  
+    FROM m_operac_muestra   
+" update="m_operac_muestra" updatewhere=0 updatekeyinplace=no  sort="de_operacion A " )
+text(band=header alignment="2" text="C$$HEX1$$f300$$ENDHEX$$d" border="6" color="0" x="9" y="4" height="56" width="192" html.valueishtml="0"  name=co_operacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="210" y="4" height="56" width="891" html.valueishtml="0"  name=de_operacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Tipo Prod" border="6" color="0" x="1111" y="4" height="56" width="297" html.valueishtml="0"  name=co_tipoprod_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Est" border="6" color="0" x="1417" y="4" height="56" width="142" html.valueishtml="0"  name=co_estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="1568" y="4" height="56" width="581" html.valueishtml="0"  name=de_estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Criterio Tiempo" border="6" color="0" x="2158" y="4" height="56" width="325" html.valueishtml="0"  name=criterio_tiempo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Pares" border="6" color="0" x="2491" y="4" height="56" width="146" html.valueishtml="0"  name=sw_pares_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Ajuste Maq" border="6" color="0" x="2647" y="4" height="56" width="251" html.valueishtml="0"  name=sw_ajuste_maq_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="AjustexCol" border="6" color="0" x="2907" y="4" height="56" width="261" html.valueishtml="0"  name=sw_ajustexcol_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=1 alignment="1" tabsequence=10 border="5" color="0" x="9" y="0" height="60" width="192" format="[general]" html.valueishtml="0"  name=co_operacion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=7 alignment="0" tabsequence=20 border="5" color="0" x="210" y="0" height="60" width="891" format="[general]" html.valueishtml="0"  name=de_operacion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=9 alignment="0" tabsequence=30 border="5" color="0" x="1111" y="0" height="60" width="297" format="[general]" html.valueishtml="0"  name=co_tipoprod visible="1" dddw.name=d_dddw_m_tipoprod dddw.displaycolumn=de_tipoprod dddw.datacolumn=co_tipoprod dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=2 alignment="1" tabsequence=40 border="5" color="0" x="1417" y="0" height="60" width="142" format="[general]" html.valueishtml="0"  name=co_estado visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=8 alignment="0" tabsequence=50 border="5" color="0" x="1568" y="0" height="60" width="581" format="[general]" html.valueishtml="0"  name=de_estado visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=6 alignment="1" tabsequence=60 border="5" color="0" x="2158" y="0" height="60" width="325" format="[general]" html.valueishtml="0"  name=criterio_tiempo visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="5" color="0" x="2491" y="0" height="60" width="146" format="[general]" html.valueishtml="0"  name=sw_pares visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes edit.codetable=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="5" color="0" x="2647" y="0" height="60" width="251" format="[general]" html.valueishtml="0"  name=sw_ajuste_maq visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes edit.codetable=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="5" color="0" x="2907" y="0" height="60" width="261" format="[general]" html.valueishtml="0"  name=sw_ajustexcol visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes edit.codetable=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
