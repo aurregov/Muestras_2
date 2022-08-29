@@ -1,0 +1,29 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "ancestor.pbl" "";
+@end;
+@begin Objects
+ "m_base.srm" "ancestor.pbl";
+ "w_sheet.srw" "ancestor.pbl";
+ "w_base.srw" "ancestor.pbl";
+ "w_report.srw" "ancestor.pbl";
+ "n_cst_application_base.sru" "ancestor.pbl";
+ "n_cst_file_base.sru" "ancestor.pbl";
+ "dw_rep_planeador_fabrica.srd" "ancestor.pbl";
+ "n_registrar_sql.sru" "ancestor.pbl";
+ "s_file_datetime.srs" "ancestor.pbl";
+ "s_file_data.srs" "ancestor.pbl";
+ "n_cst_codbar.sru" "ancestor.pbl";
+ "n_ds_base.sru" "ancestor.pbl";
+ "n_ms_base.sru" "ancestor.pbl";
+ "n_tmg_base.sru" "ancestor.pbl";
+ "n_tr_base.sru" "ancestor.pbl";
+ "u_cb_base.sru" "ancestor.pbl";
+ "u_dw_base.sru" "ancestor.pbl";
+ "u_tv_base.sru" "ancestor.pbl";
+ "uo_dsbase.sru" "ancestor.pbl";
+ "ancestor.sra" "ancestor.pbl";
+ "w_response.srw" "ancestor.pbl";
+ "w_simple.srw" "ancestor.pbl";
+ "w_frame.srw" "ancestor.pbl";
+@end;
