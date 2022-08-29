@@ -1,0 +1,20 @@
+HA$PBExportHeader$d_lista_m_rec_restri.srd
+$PBExportComments$Lista de recursos restrictivos
+release 7;
+datawindow(units=0 timer_interval=0 color=79017397 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=id dbname="m_rec_restri.id" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=rec_rest dbname="m_rec_restri.rec_rest" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=cil_agu_gal dbname="m_rec_restri.cil_agu_gal" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"m_rec_restri~" ) COLUMN(NAME=~"m_rec_restri.id~") COLUMN(NAME=~"m_rec_restri.rec_rest~") COLUMN(NAME=~"m_rec_restri.cil_agu_gal~")) " update="m_rec_restri" updatewhere=1 updatekeyinplace=no  sort="id A " )
+text(band=header alignment="2" text="id" border="0" color="0" x="9" y="8" height="56" width="110"  name=id_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Recurso restric" border="0" color="0" x="128" y="8" height="56" width="480"  name=rec_rest_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Caracteristicas" border="0" color="0" x="617" y="8" height="56" width="599"  name=cil_agu_gal_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=30 border="5" color="0" x="617" y="4" height="60" width="599" format="[general]"  name=cil_agu_gal  tag="" edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=10 border="5" color="0" x="9" y="4" height="60" width="110" format="[general]"  name=id  tag="" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=20 border="5" color="0" x="128" y="4" height="60" width="480" format="[general]"  name=rec_rest  tag="" edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
