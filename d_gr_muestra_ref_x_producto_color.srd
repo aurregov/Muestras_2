@@ -1,0 +1,76 @@
+HA$PBExportHeader$d_gr_muestra_ref_x_producto_color.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=112 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_muestra dbname="dt_fmp_muestras.co_muestra" )
+ column=(type=long updatewhereclause=yes name=co_referencia_ref dbname="dt_muestras_ref.co_referencia_ref" )
+ column=(type=long updatewhereclause=yes name=co_talla dbname="dt_fmp_muestras.co_talla" )
+ column=(type=long updatewhereclause=yes name=co_color dbname="dt_fmp_muestras.co_color" )
+ column=(type=long updatewhereclause=yes name=co_partemp dbname="dt_fmp_muestras.co_partemp" )
+ column=(type=long updatewhereclause=yes name=co_combinacion dbname="dt_fmp_muestras.co_combinacion" )
+ column=(type=long updatewhereclause=yes name=co_producto_mp dbname="dt_fmp_muestras.co_producto_mp" )
+ column=(type=long updatewhereclause=yes name=co_color_mp dbname="dt_fmp_muestras.co_color_mp" )
+ column=(type=long updatewhereclause=yes name=calidad_mp dbname="dt_fmp_muestras.calidad_mp" )
+ column=(type=long updatewhereclause=yes name=co_matiz_mp dbname="dt_fmp_muestras.co_matiz_mp" )
+ column=(type=long updatewhereclause=yes name=co_caracteristi_mp dbname="dt_fmp_muestras.co_caracteristi_mp" )
+ column=(type=long updatewhereclause=yes name=co_fabrica dbname="dt_fmp_muestras.co_fabrica" )
+ column=(type=long updatewhereclause=yes name=co_linea dbname="dt_fmp_muestras.co_linea" )
+ column=(type=long updatewhereclause=yes name=cnt_opcion dbname="dt_fmp_muestras.cnt_opcion" )
+ column=(type=char(1) updatewhereclause=yes name=seleccionar dbname="seleccionar" values="	S/	N" )
+ retrieve="  SELECT DISTINCT dt_fmp_muestras.co_muestra,   
+         dt_muestras_ref.co_referencia_ref,   
+         dt_fmp_muestras.co_talla,   
+         dt_fmp_muestras.co_color,   
+         dt_fmp_muestras.co_partemp,   
+         dt_fmp_muestras.co_combinacion,   
+         dt_fmp_muestras.co_producto_mp,   
+         dt_fmp_muestras.co_color_mp,   
+         dt_fmp_muestras.calidad_mp,   
+         dt_fmp_muestras.co_matiz_mp,   
+         dt_fmp_muestras.co_caracteristi_mp,
+			dt_fmp_muestras.co_fabrica,
+			dt_fmp_muestras.co_linea,
+			dt_fmp_muestras.cnt_opcion,
+			' ' As Seleccionar
+    FROM dt_fmp_muestras,   
+         dt_muestras_ref  
+   WHERE ( dt_fmp_muestras.co_fabrica = dt_muestras_ref.co_fabrica ) and  
+         ( dt_fmp_muestras.co_linea = dt_muestras_ref.co_linea ) 		and  
+         ( dt_fmp_muestras.co_muestra = dt_muestras_ref.co_muestra ) and  
+         ( dt_fmp_muestras.co_talla = dt_muestras_ref.co_talla ) 		and  
+         (	(dt_fmp_muestras.co_fabrica IN (:an_fabrica) )	AND  
+				(dt_fmp_muestras.co_linea IN (:an_linea) )		AND  
+				(dt_fmp_muestras.co_producto_mp = :an_producto )AND  
+         	(dt_fmp_muestras.co_color_mp = :an_color )		AND  
+         	(dt_fmp_muestras.calidad_mp = :an_calidad 					OR		:an_calidad = -1) AND  
+         	(dt_fmp_muestras.co_matiz_mp = :an_matiz 						OR		:an_matiz = -1) AND  
+         	(dt_fmp_muestras.co_caracteristi_mp = :an_caracteristica OR	:an_caracteristica = -1) 
+			)" arguments=(("an_producto", number),("an_color", number),("an_calidad", number),("an_matiz", number),("an_caracteristica", number),("an_fabrica", numberlist),("an_linea", numberlist))  sort="co_fabrica A co_linea A co_muestra A co_referencia_ref A co_talla A co_color A " )
+text(band=header alignment="2" text="Color" border="6" color="33554432" x="1819" y="8" height="100" width="370" html.valueishtml="0"  name=dt_fmp_muestras_co_color_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Referencia" border="6" color="33554432" x="1024" y="8" height="100" width="407" html.valueishtml="0"  name=dt_muestras_ref_co_referencia_ref_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Muestra" border="6" color="33554432" x="640" y="8" height="100" width="375" html.valueishtml="0"  name=dt_fmp_muestras_co_muestra_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Linea" border="6" color="33554432" x="389" y="8" height="100" width="242" html.valueishtml="0"  name=dt_fmp_muestras_co_linea_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Fabrica" border="6" color="33554432" x="187" y="8" height="100" width="192" html.valueishtml="0"  name=dt_fmp_muestras_co_fabrica_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Parte" border="6" color="33554432" x="2199" y="8" height="100" width="370" html.valueishtml="0"  name=dt_fmp_muestras_co_partemp_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Combinacion" border="6" color="33554432" x="2578" y="8" height="100" width="370" html.valueishtml="0"  name=dt_fmp_muestras_co_combinacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Talla" border="6" color="33554432" x="1440" y="8" height="100" width="370" html.valueishtml="0"  name=dt_fmp_muestras_co_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Seleccionar" border="6" color="33554432" x="2958" y="8" height="100" width="270" html.valueishtml="0"  name=seleccionar_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="# Reg" border="6" color="33554432" x="9" y="8" height="100" width="169" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=32766 border="5" color="33554432" x="1024" y="8" height="68" width="407" format="[general]" html.valueishtml="0"  name=co_referencia_ref visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=4 alignment="1" tabsequence=32766 border="5" color="33554432" x="1819" y="8" height="68" width="370" format="[general]" html.valueishtml="0"  name=co_color visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=5 alignment="1" tabsequence=32766 border="5" color="33554432" x="2199" y="8" height="68" width="370" format="[general]" html.valueishtml="0"  name=co_partemp visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="5" color="33554432" x="640" y="8" height="68" width="375" format="[General]" html.valueishtml="0"  name=co_muestra visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="5" color="33554432" x="187" y="8" height="68" width="192" format="[General]" html.valueishtml="0"  name=co_fabrica visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=13 alignment="0" tabsequence=32766 border="5" color="33554432" x="389" y="8" height="68" width="242" format="[General]" html.valueishtml="0"  name=co_linea visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=15 alignment="2" tabsequence=10 border="5" color="33554432" x="2958" y="8" height="68" width="270" format="[general]" html.valueishtml="0"  name=seleccionar visible="1" checkbox.text="" checkbox.on="S" checkbox.off="N" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=3 alignment="1" tabsequence=32766 border="5" color="33554432" x="1440" y="8" height="68" width="370" format="[general]" html.valueishtml="0"  name=co_talla visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=6 alignment="1" tabsequence=32766 border="5" color="33554432" x="2578" y="8" height="68" width="370" format="[general]" html.valueishtml="0"  name=co_combinacion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+compute(band=detail alignment="0" expression="getRow()"border="5" color="33554432" x="9" y="8" height="68" width="169" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
