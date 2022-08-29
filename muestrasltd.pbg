@@ -1,0 +1,34 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "muestrasltd.pbl" "";
+@end;
+@begin Objects
+ "q_1.srq" "muestrasltd.pbl";
+ "d_ext_bus_cliente.srd" "muestrasltd.pbl";
+ "d_dddw_mctecnico.srd" "muestrasltd.pbl";
+ "d_dt_solicitudes_ex1_una.srd" "muestrasltd.pbl";
+ "d_dddw_talla_exp.srd" "muestrasltd.pbl";
+ "d_dt_est_solicitudes.srd" "muestrasltd.pbl";
+ "d_inf_dt_solicitudes_ex1.srd" "muestrasltd.pbl";
+ "d_inf_h_solicitudes.srd" "muestrasltd.pbl";
+ "dddw_tipos_pedidos.srd" "muestrasltd.pbl";
+ "d_consulta_sol.srd" "muestrasltd.pbl";
+ "d_ext_busca_solicitud.srd" "muestrasltd.pbl";
+ "dddw_tipo_solicitud.srd" "muestrasltd.pbl";
+ "d_bus_m_clientes.srd" "muestrasltd.pbl";
+ "d_dt_solicitudes_ex.srd" "muestrasltd.pbl";
+ "d_dt_solicitudes.srd" "muestrasltd.pbl";
+ "d_h_solicitudes.srd" "muestrasltd.pbl";
+ "d_bus_m_clientes_exp.srd" "muestrasltd.pbl";
+ "w_inf_solicitud.srw" "muestrasltd.pbl";
+ "w_opc_solicitud.srw" "muestrasltd.pbl";
+ "w_opc_cliente.srw" "muestrasltd.pbl";
+ "w_lista_colore_x_cliente.srw" "muestrasltd.pbl";
+ "d_lista_colores_x_cliente.srd" "muestrasltd.pbl";
+ "w_correodb.srw" "muestrasltd.pbl";
+ "w_solicitud.srw" "muestrasltd.pbl";
+ "d_dt_solicitudes1.srd" "muestrasltd.pbl";
+ "d_dt_solicitudes_ex1.srd" "muestrasltd.pbl";
+ "d_ext_solicitud1.srd" "muestrasltd.pbl";
+ "w_cambio_estado_solicitud.srw" "muestrasltd.pbl";
+@end;
