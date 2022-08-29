@@ -1,0 +1,76 @@
+HA$PBExportHeader$d_dt_muestras_col.srd
+release 9;
+datawindow(units=3 timer_interval=0 color=76788149 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 635 print.margin.right = 635 print.margin.top = 635 print.margin.bottom = 635 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=502 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=449 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="dt_muestras_col.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_linea dbname="dt_muestras_col.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_muestra dbname="dt_muestras_col.co_muestra" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_talla dbname="dt_muestras_col.co_talla" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_color dbname="dt_muestras_col.co_color" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=co_color_exp dbname="dt_muestras_col.co_color_exp" validationmsg="'Dato no v$$HEX1$$e100$$ENDHEX$$lido.'" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="dt_muestras_col.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="dt_muestras_col.usuario" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="dt_muestras_col.instancia" )
+ column=(type=long update=yes updatewhereclause=yes name=co_estado dbname="dt_muestras_col.co_estado" initial="1" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_estado dbname="dt_muestras_col.fe_estado" )
+ column=(type=char(30) updatewhereclause=yes name=de_color dbname="de_color" )
+ column=(type=char(8) updatewhereclause=yes name=co_ctecnico dbname="dt_muestras_col.co_ctecnico" )
+ column=(type=long update=yes updatewhereclause=yes name=pares_tejer dbname="dt_muestras_col.pares_tejer" initial="0" validation="IsNumber(GetText()) and Long(GetText()) >= 0 " validationmsg="~"Datos <~" + GetText() +~"> no es valido!. Deber ser mayor o igual a 0!.~"" )
+ column=(type=long update=yes updatewhereclause=yes name=pares_despachar dbname="dt_muestras_col.pares_despachar" initial="0" validation="IsNumber(GetText()) and Long(GetText()) >= 0" validationmsg="~"Datos <~" + GetText() +~"> no es valido!. Deber ser mayor o igual a 0!.~"" )
+ column=(type=long update=yes updatewhereclause=yes name=co_formula dbname="dt_muestras_col.co_formula" )
+ column=(type=long update=yes updatewhereclause=yes name=sw_enpdn dbname="dt_muestras_col.sw_enpdn" values="	1/	0" )
+ retrieve="SELECT dt_muestras_col.co_fabrica ,
+		dt_muestras_col.co_linea ,
+		dt_muestras_col.co_muestra ,
+		dt_muestras_col.co_talla ,
+		dt_muestras_col.co_color ,
+		dt_muestras_col.co_color_exp ,
+		dt_muestras_col.fe_actualizacion ,
+		dt_muestras_col.usuario ,
+		dt_muestras_col.instancia ,
+		dt_muestras_col.co_estado ,
+		dt_muestras_col.fe_estado ,
+		sp_nom_m_colores(:a_fabrica,:a_linea,co_color) as de_color,
+		dt_muestras_col.co_ctecnico ,
+		dt_muestras_col.pares_tejer ,
+		dt_muestras_col.pares_despachar ,
+		dt_muestras_col.co_formula ,
+		dt_muestras_col.sw_enpdn
+	FROM dt_muestras_col      
+	WHERE	( dt_muestras_col.co_fabrica	= :a_fabrica ) 
+	and	( dt_muestras_col.co_linea		= :a_linea ) 
+	and	( dt_muestras_col.co_muestra	= :a_muestra )   
+	and	( dt_muestras_col.co_talla		= :a_talla Or :a_talla = 0 )   
+	and	( dt_muestras_col.co_color		= :a_color Or :a_color = 0 )   " update="dt_muestras_col" updatewhere=0 updatekeyinplace=yes arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number),("a_talla", number),("a_color", number))  sort="co_fabrica A co_linea A co_muestra A co_talla A co_color A " )
+text(band=header alignment="2" text="Color Cli" border="6" color="8388736" x="555" y="52" height="370" width="3968" html.valueishtml="0"  name=co_color_exp_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="0" text="" border="6" color="0" x="52" y="52" height="370" width="449" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Color" border="6" color="0" x="4577" y="52" height="370" width="1984" html.valueishtml="0"  name=co_color_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Color" border="6" color="0" x="6614" y="52" height="370" width="2169" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Cant Tejer" border="6" color="0" x="8837" y="52" height="370" width="1852" html.valueishtml="0"  name=pares_tejer_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Cant Despachar" border="6" color="0" x="10742" y="52" height="370" width="2301" html.valueishtml="0"  name=pares_despachar_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Formula" border="6" color="0" x="13096" y="52" height="370" width="1481" html.valueishtml="0"  name=co_formula_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Estado" border="6" color="0" x="14631" y="52" height="370" width="1640" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Fe Estado" border="6" color="0" x="16324" y="52" height="370" width="2090" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="T$$HEX1$$e900$$ENDHEX$$cnico" border="6" color="0" x="18467" y="52" height="370" width="2645" html.valueishtml="0"  name=co_ctecnico_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="En producci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="21166" y="52" height="370" width="1878" html.valueishtml="0"  name=sw_enpdn_t visible="0"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+compute(band=detail alignment="2" expression="GetRow()"border="5" color="16711680" x="52" y="27" height="370" width="449" format="[GENERAL]" html.valueishtml="0"  name=filaa visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+column(band=detail id=6 alignment="0" tabsequence=10 border="5" color="0" x="555" y="27" height="370" width="3968" format="[general]" html.valueishtml="0"  name=co_color_exp visible="1" dddw.name=d_dddw_colores_sol dddw.displaycolumn=de_color dddw.datacolumn=co_color_exp dddw.percentwidth=300 dddw.lines=0 dddw.limit=30 dddw.allowedit=yes dddw.useasborder=no dddw.case=upper dddw.autohscroll=yes dddw.imemode=0 dddw.showlist=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=5 alignment="0" tabsequence=20 border="5" color="0" x="4577" y="27" height="370" width="1984" format="000000" html.valueishtml="0"  name=co_color visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="5" color="0" x="6614" y="27" height="370" width="2169" format="[general]" html.valueishtml="0"  name=de_color visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="79017397" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="5" color="0" x="14631" y="27" height="370" width="1640" format="[general]" html.valueishtml="0"  name=co_estado visible="1" dddw.name=d_dddw_m_estado_muestra dddw.displaycolumn=de_estado dddw.datacolumn=co_estado dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="79017397" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="5" color="0" x="16324" y="27" height="370" width="2090" format="[shortdate] [time]" html.valueishtml="0"  name=fe_estado visible="1" editmask.mask="YYYY/MM/DD" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="79017397" )
+column(band=detail id=14 alignment="1" tabsequence=30 border="5" color="0" x="8837" y="27" height="370" width="1852" format="[general]" html.valueishtml="0"  name=pares_tejer visible="1" editmask.mask="#####" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=15 alignment="1" tabsequence=40 border="5" color="0" x="10742" y="27" height="370" width="2301" format="[general]" html.valueishtml="0"  name=pares_despachar visible="1" editmask.mask="#####" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=16 alignment="1" tabsequence=50 border="5" color="0" x="13096" y="27" height="370" width="1481" format="[general]" html.valueishtml="0"  name=co_formula visible="1" editmask.mask="#####" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=13 alignment="0" tabsequence=32766 border="5" color="0" x="18467" y="27" height="370" width="2645" format="[general]" html.valueishtml="0"  name=co_ctecnico visible="1" dddw.name=d_dddw_mctecnico dddw.displaycolumn=de_ctecnico dddw.datacolumn=co_ctecnico dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=17 alignment="2" tabsequence=60 border="5" color="0" x="21166" y="27" height="370" width="1878" format="[general]" html.valueishtml="0" protect="0~t1"  name=sw_enpdn visible="0" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+compute(band=summary alignment="1" expression="sum(pares_tejer for all)"border="5" color="0" x="8837" y="0" height="370" width="1852" format="[general]" html.valueishtml="0"  name=compute_ptejer visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+compute(band=summary alignment="1" expression="sum(pares_despachar for all)"border="5" color="0" x="10742" y="0" height="370" width="2301" format="[general]" html.valueishtml="0"  name=compute_pdespa visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
