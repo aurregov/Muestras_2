@@ -6,7 +6,7 @@ type cb_aceptar from commandbutton within w_generar_muestra
 end type
 type cb_cancelar from commandbutton within w_generar_muestra
 end type
-type st_1 from statictext within w_generar_muestra
+type st_159 from statictext within w_generar_muestra
 end type
 end forward
 
@@ -18,7 +18,7 @@ string menuname = ""
 boolean maxbox = true
 cb_aceptar cb_aceptar
 cb_cancelar cb_cancelar
-st_1 st_1
+st_159 st_159
 end type
 global w_generar_muestra w_generar_muestra
 
@@ -27,18 +27,18 @@ int iCurrent
 call super::create
 this.cb_aceptar=create cb_aceptar
 this.cb_cancelar=create cb_cancelar
-this.st_1=create st_1
+this.st_159=create st_159
 iCurrent=UpperBound(this.Control)
 this.Control[iCurrent+1]=this.cb_aceptar
 this.Control[iCurrent+2]=this.cb_cancelar
-this.Control[iCurrent+3]=this.st_1
+this.Control[iCurrent+3]=this.st_159
 end on
 
 on w_generar_muestra.destroy
 call super::destroy
 destroy(this.cb_aceptar)
 destroy(this.cb_cancelar)
-destroy(this.st_1)
+destroy(this.st_159)
 end on
 
 event open;//open(w_seleccion_fabrica)
@@ -241,7 +241,7 @@ end type
 event clicked;CLOSE (PARENT)
 end event
 
-type st_1 from statictext within w_generar_muestra
+type st_159 from statictext within w_generar_muestra
 integer x = 1559
 integer y = 284
 integer width = 521
