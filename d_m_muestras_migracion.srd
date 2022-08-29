@@ -1,0 +1,108 @@
+HA$PBExportHeader$d_m_muestras_migracion.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="m_muestras.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_linea dbname="m_muestras.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_muestra dbname="m_muestras.co_muestra" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=tipo_muestra dbname="m_muestras.tipo_muestra" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=de_muestra dbname="m_muestras.de_muestra" )
+ column=(type=long update=yes updatewhereclause=yes name=nu_solicitud dbname="m_muestras.nu_solicitud" )
+ column=(type=long update=yes updatewhereclause=yes name=co_cliente dbname="m_muestras.co_cliente" )
+ column=(type=long update=yes updatewhereclause=yes name=co_sucursal dbname="m_muestras.co_sucursal" )
+ column=(type=char(15) update=yes updatewhereclause=yes name=co_ref_exp dbname="m_muestras.co_ref_exp" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=de_coleccion dbname="m_muestras.de_coleccion" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=co_diseno_muestra dbname="m_muestras.co_diseno_muestra" )
+ column=(type=long update=yes updatewhereclause=yes name=co_grupo_vta dbname="m_muestras.co_grupo_vta" )
+ column=(type=long update=yes updatewhereclause=yes name=co_sgrupo_vta dbname="m_muestras.co_sgrupo_vta" )
+ column=(type=long update=yes updatewhereclause=yes name=co_tipoprod dbname="m_muestras.co_tipoprod" )
+ column=(type=long update=yes updatewhereclause=yes name=co_tipo_tejido dbname="m_muestras.co_tipo_tejido" )
+ column=(type=long update=yes updatewhereclause=yes name=co_grupo_tlla dbname="m_muestras.co_grupo_tlla" )
+ column=(type=long update=yes updatewhereclause=yes name=co_fabrica_ref dbname="m_muestras.co_fabrica_ref" )
+ column=(type=long update=yes updatewhereclause=yes name=co_linea_ref dbname="m_muestras.co_linea_ref" )
+ column=(type=long update=yes updatewhereclause=yes name=co_referencia dbname="m_muestras.co_referencia" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=bpl_co_tipoprod dbname="m_muestras.bpl_co_tipoprod" )
+ column=(type=char(1000) update=yes updatewhereclause=yes name=de_observacion dbname="m_muestras.de_observacion" )
+ column=(type=long update=yes updatewhereclause=yes name=co_caract_mp dbname="m_muestras.co_caract_mp" )
+ column=(type=long update=yes updatewhereclause=yes name=co_diseno dbname="m_muestras.co_diseno" )
+ column=(type=long update=yes updatewhereclause=yes name=co_puno dbname="m_muestras.co_puno" )
+ column=(type=long update=yes updatewhereclause=yes name=co_largo dbname="m_muestras.co_largo" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="m_muestras.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="m_muestras.usuario" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="m_muestras.instancia" )
+ column=(type=long update=yes updatewhereclause=yes name=id_tipo_med dbname="m_muestras.id_tipo_med" )
+ column=(type=long update=yes updatewhereclause=yes name=id_tipo_graf dbname="m_muestras.id_tipo_graf" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=desarrollador dbname="m_muestras.desarrollador" )
+ column=(type=long update=yes updatewhereclause=yes name=co_ejecutiva dbname="m_muestras.co_ejecutiva" )
+ column=(type=date update=yes updatewhereclause=yes name=fe_desarrollo dbname="m_muestras.fe_desarrollo" )
+ column=(type=date update=yes updatewhereclause=yes name=fe_entrega dbname="m_muestras.fe_entrega" )
+ column=(type=long update=yes updatewhereclause=yes name=co_grupoprod dbname="m_muestras.co_grupoprod" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=ciclo_tejido dbname="m_muestras.ciclo_tejido" )
+ column=(type=long update=yes updatewhereclause=yes name=ca_alimentadores dbname="m_muestras.ca_alimentadores" )
+ column=(type=long update=yes updatewhereclause=yes name=base_peso dbname="m_muestras.base_peso" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=dificultad dbname="m_muestras.dificultad" )
+ retrieve="  SELECT m_muestras.co_fabrica,   
+         m_muestras.co_linea,   
+         m_muestras.co_muestra,   
+         m_muestras.tipo_muestra,   
+         m_muestras.de_muestra,   
+         m_muestras.nu_solicitud,   
+         m_muestras.co_cliente,   
+         m_muestras.co_sucursal,   
+         m_muestras.co_ref_exp,   
+         m_muestras.de_coleccion,   
+         m_muestras.co_diseno_muestra,   
+         m_muestras.co_grupo_vta,   
+         m_muestras.co_sgrupo_vta,   
+         m_muestras.co_tipoprod,   
+         m_muestras.co_tipo_tejido,   
+         m_muestras.co_grupo_tlla,   
+         m_muestras.co_fabrica_ref,   
+         m_muestras.co_linea_ref,   
+         m_muestras.co_referencia,   
+         m_muestras.bpl_co_tipoprod,   
+         m_muestras.de_observacion,   
+         m_muestras.co_caract_mp,   
+         m_muestras.co_diseno,   
+         m_muestras.co_puno,   
+         m_muestras.co_largo,   
+         m_muestras.fe_actualizacion,   
+         m_muestras.usuario,   
+         m_muestras.instancia,   
+         m_muestras.id_tipo_med,   
+         m_muestras.id_tipo_graf,   
+         m_muestras.desarrollador,   
+         m_muestras.co_ejecutiva,   
+         m_muestras.fe_desarrollo,   
+         m_muestras.fe_entrega,   
+         m_muestras.co_grupoprod,   
+         m_muestras.ciclo_tejido,   
+         m_muestras.ca_alimentadores,   
+         m_muestras.base_peso,   
+         m_muestras.dificultad  
+    FROM m_muestras  
+   WHERE ( m_muestras.co_fabrica = :AL_FABRICA ) AND  
+         ( m_muestras.co_linea = :AL_LINEA ) AND  
+         ( m_muestras.co_muestra >= :AL_MUESTRAINI ) AND  
+         ( m_muestras.co_muestra <= :AL_MUESTRAFIN ) AND
+			( m_muestras.fe_actualizacion < TO_DATE ('2014-04-04' ,'%Y-%m-%d' ) ) AND 
+			( m_muestras.co_muestra not in (select co_muestra from h_fmp_muestras
+														where co_muestrario >= 102
+														and co_linea = :AL_FABRICA
+														and co_fabrica = :AL_LINEA
+														and co_diseno = 1))
+			" update="m_muestras" updatewhere=1 updatekeyinplace=no arguments=(("AL_FABRICA", number),("AL_LINEA", number),("AL_MUESTRAINI", number),("AL_MUESTRAFIN", number)) )
+text(band=header alignment="2" text="Co Fabrica" border="0" color="33554432" x="9" y="8" height="56" width="274" html.valueishtml="0"  name=co_fabrica_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Linea" border="0" color="33554432" x="293" y="8" height="56" width="274" html.valueishtml="0"  name=co_linea_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Muestra" border="0" color="33554432" x="576" y="8" height="56" width="274" html.valueishtml="0"  name=co_muestra_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=10 border="0" color="33554432" x="9" y="8" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_fabrica visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=20 border="0" color="33554432" x="293" y="8" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_linea visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=30 border="0" color="33554432" x="576" y="8" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_muestra visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
