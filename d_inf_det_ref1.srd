@@ -1,0 +1,45 @@
+HA$PBExportHeader$d_inf_det_ref1.srd
+release 7;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 0 print.margin.right = 0 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=84 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=char(30) updatewhereclause=yes name=de_partebas dbname="m_partebas.de_partebas" )
+ column=(type=long updatewhereclause=yes name=m_partebas_orden_partebas dbname="m_partebas.orden_partebas" )
+ column=(type=char(20) updatewhereclause=yes name=cadena dbname="dt_medidas_est_ref.cadena" )
+ column=(type=char(20) updatewhereclause=yes name=pasadas dbname="dt_medidas_est_ref.pasadas" )
+ column=(type=char(250) updatewhereclause=yes name=de_observacion dbname="dt_medidas_est_ref.de_observacion" )
+ retrieve="  SELECT m_partebas.de_partebas,   
+         m_partebas.orden_partebas,   
+         dt_medidas_est_ref.cadena,   
+         dt_medidas_est_ref.pasadas,   
+         dt_medidas_est_ref.de_observacion  
+    FROM dt_medidas_est_ref,   
+         m_partebas  
+   WHERE ( m_partebas.co_tipoprod = dt_medidas_est_ref.co_tipoprod ) and  
+         ( m_partebas.co_partebas = dt_medidas_est_ref.co_partebas ) and  
+         ( ( dt_medidas_est_ref.co_centro = :a_centro ) AND  
+         ( dt_medidas_est_ref.co_subcentro = :a_subcentro ) AND  
+         ( dt_medidas_est_ref.co_recurso = :a_recurso ) AND  
+         ( dt_medidas_est_ref.co_fabrica = :a_fabrica ) AND  
+         ( dt_medidas_est_ref.co_linea = :a_linea ) AND  
+         ( dt_medidas_est_ref.co_referencia = :a_referencia ) AND  
+         ( dt_medidas_est_ref.co_talla = :a_talla ) AND  
+         ( dt_medidas_est_ref.co_calidad = :a_calidad ) AND  
+         ( dt_medidas_est_ref.co_diseno = :a_diseno ) )    
+" arguments=(("a_centro", number),("a_subcentro", number),("a_recurso", number),("a_fabrica", number),("a_linea", number),("a_referencia", number),("a_talla", number),("a_calidad", number),("a_diseno", number))  sort="m_partebas_orden_partebas A " )
+rectangle(band=header x="9" y="4" height="80" width="613"  name=r_1 brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+text(band=header alignment="2" text="Parte" border="0" color="0" x="27" y="16" height="60" width="539"  name=m_partebas_de_partebas_t  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+rectangle(band=header x="617" y="4" height="80" width="553"  name=r_3 brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+text(band=header alignment="2" text="Cadena" border="0" color="0" x="635" y="16" height="60" width="521"  name=t_1  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+rectangle(band=header x="1166" y="4" height="80" width="425"  name=r_5 brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+text(band=header alignment="0" text="Pasadas" border="0" color="0" x="1193" y="16" height="60" width="379"  name=t_2  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+rectangle(band=detail x="9" y="0" height="72" width="613"  name=r_2 brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="27" y="12" height="48" width="571" format="[general]"  name=de_partebas edit.limit=30 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+rectangle(band=detail x="617" y="0" height="72" width="553"  name=r_4 brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="635" y="12" height="48" width="521" format="[general]"  name=cadena edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+rectangle(band=detail x="1166" y="0" height="72" width="425"  name=r_6 brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="0" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="1193" y="12" height="48" width="379" format="[general]"  name=pasadas edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
