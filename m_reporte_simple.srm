@@ -1,0 +1,820 @@
+HA$PBExportHeader$m_reporte_simple.srm
+forward
+global type m_reporte_simple from m_report
+end type
+end forward
+
+global type m_reporte_simple from m_report
+event create ( )
+event destroy ( )
+end type
+global m_reporte_simple m_reporte_simple
+
+on m_reporte_simple.create
+m_reporte_simple=this
+call super::create
+this.text = "m_reporte_simple"
+end on
+
+on m_reporte_simple.destroy
+call super::destroy
+end on
+
+type m_archivo from m_report`m_archivo within m_reporte_simple
+event create ( )
+event destroy ( )
+end type
+
+on m_archivo.create
+call super::create
+end on
+
+on m_archivo.destroy
+call super::destroy
+end on
+
+type m_buscar from m_report`m_buscar within m_archivo
+event create ( )
+event destroy ( )
+end type
+
+on m_buscar.create
+call super::create
+this.visible = false
+this.enabled = false
+this.toolbaritemvisible = false
+end on
+
+on m_buscar.destroy
+call super::destroy
+end on
+
+type m_-9 from m_report`m_-9 within m_archivo
+event create ( )
+event destroy ( )
+end type
+
+on m_-9.create
+call super::create
+end on
+
+on m_-9.destroy
+call super::destroy
+end on
+
+type m_nuevo from m_report`m_nuevo within m_archivo
+event create ( )
+event destroy ( )
+end type
+
+on m_nuevo.create
+call super::create
+end on
+
+on m_nuevo.destroy
+call super::destroy
+end on
+
+type m_abrir from m_report`m_abrir within m_archivo
+event create ( )
+event destroy ( )
+end type
+
+on m_abrir.create
+call super::create
+end on
+
+on m_abrir.destroy
+call super::destroy
+end on
+
+type m_cerrar from m_report`m_cerrar within m_archivo
+event create ( )
+event destroy ( )
+end type
+
+on m_cerrar.create
+call super::create
+end on
+
+on m_cerrar.destroy
+call super::destroy
+end on
+
+type m_-1 from m_report`m_-1 within m_archivo
+event create ( )
+event destroy ( )
+end type
+
+on m_-1.create
+call super::create
+end on
+
+on m_-1.destroy
+call super::destroy
+end on
+
+type m_guardar from m_report`m_guardar within m_archivo
+event create ( )
+event destroy ( )
+end type
+
+on m_guardar.create
+call super::create
+end on
+
+on m_guardar.destroy
+call super::destroy
+end on
+
+type m_guardarcomo from m_report`m_guardarcomo within m_archivo
+event create ( )
+event destroy ( )
+end type
+
+on m_guardarcomo.create
+call super::create
+end on
+
+on m_guardarcomo.destroy
+call super::destroy
+end on
+
+type m_-10 from m_report`m_-10 within m_archivo
+event create ( )
+event destroy ( )
+end type
+
+on m_-10.create
+call super::create
+end on
+
+on m_-10.destroy
+call super::destroy
+end on
+
+type m_presentaci$$HEX1$$f300$$ENDHEX$$npreliminar from m_report`m_presentaci$$HEX1$$f300$$ENDHEX$$npreliminar within m_archivo
+event create ( )
+event destroy ( )
+end type
+
+on m_presentaci$$HEX1$$f300$$ENDHEX$$npreliminar.create
+call super::create
+end on
+
+on m_presentaci$$HEX1$$f300$$ENDHEX$$npreliminar.destroy
+call super::destroy
+end on
+
+type m_imprimir from m_report`m_imprimir within m_archivo
+event create ( )
+event destroy ( )
+end type
+
+on m_imprimir.create
+call super::create
+end on
+
+on m_imprimir.destroy
+call super::destroy
+end on
+
+type m_configurar_impresora from m_report`m_configurar_impresora within m_archivo
+event create ( )
+event destroy ( )
+end type
+
+on m_configurar_impresora.create
+call super::create
+end on
+
+on m_configurar_impresora.destroy
+call super::destroy
+end on
+
+type m_-40 from m_report`m_-40 within m_archivo
+event create ( )
+event destroy ( )
+end type
+
+on m_-40.create
+call super::create
+end on
+
+on m_-40.destroy
+call super::destroy
+end on
+
+type m_salir from m_report`m_salir within m_archivo
+event create ( )
+event destroy ( )
+end type
+
+on m_salir.create
+call super::create
+end on
+
+on m_salir.destroy
+call super::destroy
+end on
+
+type m_edicion from m_report`m_edicion within m_reporte_simple
+event create ( )
+event destroy ( )
+end type
+
+on m_edicion.create
+call super::create
+end on
+
+on m_edicion.destroy
+call super::destroy
+end on
+
+type m_deshacer from m_report`m_deshacer within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_deshacer.create
+call super::create
+end on
+
+on m_deshacer.destroy
+call super::destroy
+end on
+
+type m_- from m_report`m_- within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_-.create
+call super::create
+end on
+
+on m_-.destroy
+call super::destroy
+end on
+
+type m_cortar from m_report`m_cortar within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_cortar.create
+call super::create
+end on
+
+on m_cortar.destroy
+call super::destroy
+end on
+
+type m_copiar from m_report`m_copiar within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_copiar.create
+call super::create
+end on
+
+on m_copiar.destroy
+call super::destroy
+end on
+
+type m_pegar from m_report`m_pegar within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_pegar.create
+call super::create
+end on
+
+on m_pegar.destroy
+call super::destroy
+end on
+
+type m_-6 from m_report`m_-6 within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_-6.create
+call super::create
+end on
+
+on m_-6.destroy
+call super::destroy
+end on
+
+type m_insertar from m_report`m_insertar within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_insertar.create
+call super::create
+end on
+
+on m_insertar.destroy
+call super::destroy
+end on
+
+type m_clear from m_report`m_clear within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_clear.create
+call super::create
+end on
+
+on m_clear.destroy
+call super::destroy
+end on
+
+type m_-4 from m_report`m_-4 within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_-4.create
+call super::create
+end on
+
+on m_-4.destroy
+call super::destroy
+end on
+
+type m_ordenar from m_report`m_ordenar within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_ordenar.create
+call super::create
+this.visible = false
+this.enabled = false
+this.toolbaritemvisible = false
+end on
+
+on m_ordenar.destroy
+call super::destroy
+end on
+
+type m_filtrar from m_report`m_filtrar within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_filtrar.create
+call super::create
+end on
+
+on m_filtrar.destroy
+call super::destroy
+end on
+
+type m_-5 from m_report`m_-5 within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_-5.create
+call super::create
+end on
+
+on m_-5.destroy
+call super::destroy
+end on
+
+type m_primera_pagina from m_report`m_primera_pagina within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_primera_pagina.create
+call super::create
+this.visible = false
+this.enabled = false
+this.toolbaritemvisible = false
+end on
+
+on m_primera_pagina.destroy
+call super::destroy
+end on
+
+type m_pagina_anteriror from m_report`m_pagina_anteriror within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_pagina_anteriror.create
+call super::create
+this.visible = false
+this.enabled = false
+this.toolbaritemvisible = false
+end on
+
+on m_pagina_anteriror.destroy
+call super::destroy
+end on
+
+type m_pagina_siguiente from m_report`m_pagina_siguiente within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_pagina_siguiente.create
+call super::create
+this.visible = false
+this.enabled = false
+this.toolbaritemvisible = false
+end on
+
+on m_pagina_siguiente.destroy
+call super::destroy
+end on
+
+type m_ultima_pagina from m_report`m_ultima_pagina within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_ultima_pagina.create
+call super::create
+this.visible = false
+this.enabled = false
+this.toolbaritemvisible = false
+end on
+
+on m_ultima_pagina.destroy
+call super::destroy
+end on
+
+type m_-11 from m_report`m_-11 within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_-11.create
+call super::create
+end on
+
+on m_-11.destroy
+call super::destroy
+end on
+
+type m_zoom from m_report`m_zoom within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_zoom.create
+call super::create
+end on
+
+on m_zoom.destroy
+call super::destroy
+end on
+
+type m_regla from m_report`m_regla within m_edicion
+event create ( )
+event destroy ( )
+end type
+
+on m_regla.create
+call super::create
+end on
+
+on m_regla.destroy
+call super::destroy
+end on
+
+type m_configuracion from m_report`m_configuracion within m_reporte_simple
+event create ( )
+event destroy ( )
+end type
+
+on m_configuracion.create
+call super::create
+end on
+
+on m_configuracion.destroy
+call super::destroy
+end on
+
+type m_movimientos from m_report`m_movimientos within m_reporte_simple
+event create ( )
+event destroy ( )
+end type
+
+on m_movimientos.create
+call super::create
+end on
+
+on m_movimientos.destroy
+call super::destroy
+end on
+
+type m_procesos from m_report`m_procesos within m_reporte_simple
+event create ( )
+event destroy ( )
+end type
+
+on m_procesos.create
+call super::create
+end on
+
+on m_procesos.destroy
+call super::destroy
+end on
+
+type m_reportes from m_report`m_reportes within m_reporte_simple
+event create ( )
+event destroy ( )
+end type
+
+on m_reportes.create
+call super::create
+end on
+
+on m_reportes.destroy
+call super::destroy
+end on
+
+type m_ventana from m_report`m_ventana within m_reporte_simple
+event create ( )
+event destroy ( )
+end type
+
+on m_ventana.create
+call super::create
+end on
+
+on m_ventana.destroy
+call super::destroy
+end on
+
+type m_vertical from m_report`m_vertical within m_ventana
+event create ( )
+event destroy ( )
+end type
+
+on m_vertical.create
+call super::create
+end on
+
+on m_vertical.destroy
+call super::destroy
+end on
+
+type m_horizontal from m_report`m_horizontal within m_ventana
+event create ( )
+event destroy ( )
+end type
+
+on m_horizontal.create
+call super::create
+end on
+
+on m_horizontal.destroy
+call super::destroy
+end on
+
+type m_completa from m_report`m_completa within m_ventana
+event create ( )
+event destroy ( )
+end type
+
+on m_completa.create
+call super::create
+end on
+
+on m_completa.destroy
+call super::destroy
+end on
+
+type m_cascada from m_report`m_cascada within m_ventana
+event create ( )
+event destroy ( )
+end type
+
+on m_cascada.create
+call super::create
+end on
+
+on m_cascada.destroy
+call super::destroy
+end on
+
+type m_-2 from m_report`m_-2 within m_ventana
+event create ( )
+event destroy ( )
+end type
+
+on m_-2.create
+call super::create
+end on
+
+on m_-2.destroy
+call super::destroy
+end on
+
+type m_arreglar_iconos from m_report`m_arreglar_iconos within m_ventana
+event create ( )
+event destroy ( )
+end type
+
+on m_arreglar_iconos.create
+call super::create
+end on
+
+on m_arreglar_iconos.destroy
+call super::destroy
+end on
+
+type m_-3 from m_report`m_-3 within m_ventana
+event create ( )
+event destroy ( )
+end type
+
+on m_-3.create
+call super::create
+end on
+
+on m_-3.destroy
+call super::destroy
+end on
+
+type m_barra from m_report`m_barra within m_ventana
+event create ( )
+event destroy ( )
+end type
+
+on m_barra.create
+call super::create
+end on
+
+on m_barra.destroy
+call super::destroy
+end on
+
+type m_arriba from m_report`m_arriba within m_barra
+event create ( )
+event destroy ( )
+end type
+
+on m_arriba.create
+call super::create
+end on
+
+on m_arriba.destroy
+call super::destroy
+end on
+
+type m_abajo from m_report`m_abajo within m_barra
+event create ( )
+event destroy ( )
+end type
+
+on m_abajo.create
+call super::create
+end on
+
+on m_abajo.destroy
+call super::destroy
+end on
+
+type m_izquierda from m_report`m_izquierda within m_barra
+event create ( )
+event destroy ( )
+end type
+
+on m_izquierda.create
+call super::create
+end on
+
+on m_izquierda.destroy
+call super::destroy
+end on
+
+type m_derecha from m_report`m_derecha within m_barra
+event create ( )
+event destroy ( )
+end type
+
+on m_derecha.create
+call super::create
+end on
+
+on m_derecha.destroy
+call super::destroy
+end on
+
+type m_-7 from m_report`m_-7 within m_barra
+event create ( )
+event destroy ( )
+end type
+
+on m_-7.create
+call super::create
+end on
+
+on m_-7.destroy
+call super::destroy
+end on
+
+type m_ocultar_barra from m_report`m_ocultar_barra within m_barra
+event create ( )
+event destroy ( )
+end type
+
+on m_ocultar_barra.create
+call super::create
+end on
+
+on m_ocultar_barra.destroy
+call super::destroy
+end on
+
+type m_-8 from m_report`m_-8 within m_barra
+event create ( )
+event destroy ( )
+end type
+
+on m_-8.create
+call super::create
+end on
+
+on m_-8.destroy
+call super::destroy
+end on
+
+type m_mostrar_textos from m_report`m_mostrar_textos within m_barra
+event create ( )
+event destroy ( )
+end type
+
+on m_mostrar_textos.create
+call super::create
+end on
+
+on m_mostrar_textos.destroy
+call super::destroy
+end on
+
+type m_ayuda from m_report`m_ayuda within m_reporte_simple
+event create ( )
+event destroy ( )
+end type
+
+on m_ayuda.create
+call super::create
+end on
+
+on m_ayuda.destroy
+call super::destroy
+end on
+
+type m_contenido from m_report`m_contenido within m_ayuda
+event create ( )
+event destroy ( )
+end type
+
+on m_contenido.create
+call super::create
+end on
+
+on m_contenido.destroy
+call super::destroy
+end on
+
+type m_2 from m_report`m_2 within m_ayuda
+event create ( )
+event destroy ( )
+end type
+
+on m_2.create
+call super::create
+end on
+
+on m_2.destroy
+call super::destroy
+end on
+
+type m_acerca from m_report`m_acerca within m_ayuda
+event create ( )
+event destroy ( )
+end type
+
+on m_acerca.create
+call super::create
+end on
+
+on m_acerca.destroy
+call super::destroy
+end on
+
