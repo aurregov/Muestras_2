@@ -1,0 +1,16 @@
+HA$PBExportHeader$d_nro_tecnico.srd
+$PBExportComments$DWO para el calculo del n$$HEX1$$fa00$$ENDHEX$$mero de ocurrencias de un tecnico en los grupos registrados. Verifica si alg$$HEX1$$fa00$$ENDHEX$$n t$$HEX1$$e900$$ENDHEX$$cnico se encuentra registrado en alg$$HEX1$$fa00$$ENDHEX$$n grupo y obtiene el nombre del grupo.
+release 8;
+datawindow(units=0 timer_interval=0 color=67108864 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=176 color="536870912" )
+table(column=(type=char(50) updatewhereclause=yes name=de_grupo dbname="m_mu_grupo.de_grupo" )
+ column=(type=long updatewhereclause=yes name=id_grupo dbname="dt_mu_grupo.id_grupo" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"dt_mu_grupo~" )  TABLE(NAME=~"m_mu_grupo~" ) COLUMN(NAME=~"m_mu_grupo.de_grupo~") COLUMN(NAME=~"dt_mu_grupo.id_grupo~")    JOIN (LEFT=~"m_mu_grupo.id_grupo~"    OP =~"=~"RIGHT=~"dt_mu_grupo.id_grupo~" )WHERE(    EXP1 =~"dt_mu_grupo.co_ctecnico~"   OP =~"like~"    EXP2 =~":as_ctecnico~" ) ) ARG(NAME = ~"as_ctecnico~" TYPE = string) " arguments=(("as_ctecnico", string)) )
+column(band=detail id=2 alignment="0" tabsequence=0 border="5" color="0" x="361" y="104" height="56" width="357" html.valueishtml="0"  name=id_grupo visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="5" color="0" x="361" y="16" height="56" width="357" format="[general]" html.valueishtml="0"  name=de_grupo visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=detail alignment="1" text="Desc. Grupo:" border="0" color="33554432" x="37" y="16" height="56" width="297" html.valueishtml="0"  name=de_grupo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Id. Grupo:" border="0" color="33554432" x="37" y="100" height="56" width="297" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
