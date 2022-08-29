@@ -1,0 +1,13 @@
+HA$PBExportHeader$d_dt_correo.srd
+release 7;
+datawindow(units=0 timer_interval=0 color=77442227 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912"  height.autosize=yes)
+table(column=(type=char(250) updatewhereclause=yes name=cuerpo dbname="m_correos.cuerpo" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"m_correos~" ) COLUMN(NAME=~"m_correos.cuerpo~")WHERE(    EXP1 =~"m_correos.cs_correo~"   OP =~"=~"    EXP2 =~":a_correo~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"m_correos.usuario_de~"   OP =~"=~"    EXP2 =~":a_usuario_de~" ) ) ARG(NAME = ~"a_correo~" TYPE = number)  ARG(NAME = ~"a_usuario_de~" TYPE = string) " arguments=(("a_correo", number),("a_usuario_de", string)) )
+text(band=header alignment="2" text="Cuerpo" border="6" color="0" x="9" y="8" height="56" width="2656"  name=cuerpo_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="5" color="0" x="9" y="8" height="60" width="2656" format="[general]"  name=cuerpo height.autosize=yes edit.limit=250 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
