@@ -1,0 +1,16 @@
+HA$PBExportHeader$d_mu_activ_t3_busca.srd
+$PBExportComments$DWO para la recuperaci$$HEX1$$f300$$ENDHEX$$n del campo minutos de las actividades para el criterio de tiempo # 3
+release 8;
+datawindow(units=0 timer_interval=0 color=67108864 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=152 color="536870912" )
+table(column=(type=decimal(2) updatewhereclause=yes name=minutos dbname="mu_activ_t3.minutos" )
+ column=(type=decimal(2) updatewhereclause=yes name=min_alista dbname="mu_activ_t3.min_alista" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"mu_activ_t3~" ) COLUMN(NAME=~"mu_activ_t3.minutos~") COLUMN(NAME=~"mu_activ_t3.min_alista~")WHERE(    EXP1 =~"mu_activ_t3.id_actividad~"   OP =~"=~"    EXP2 =~":a_id_actividad~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"mu_activ_t3.co_tipoprod~"   OP =~"=~"    EXP2 =~":a_tipoprod~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"mu_activ_t3.co_tipo_tejido~"   OP =~"=~"    EXP2 =~":a_tipotejido~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"mu_activ_t3.cilindros~"   OP =~"=~"    EXP2 =~":a_cilindros~" ) ) ARG(NAME = ~"a_id_actividad~" TYPE = number)  ARG(NAME = ~"a_tipoprod~" TYPE = number)  ARG(NAME = ~"a_tipotejido~" TYPE = number)  ARG(NAME = ~"a_cilindros~" TYPE = number) " arguments=(("a_id_actividad", number),("a_tipoprod", number),("a_tipotejido", number),("a_cilindros", number)) )
+text(band=detail alignment="1" text="Minutos:" border="0" color="33554432" x="37" y="4" height="60" width="183" html.valueishtml="0"  name=minutos_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Min.Alista" border="0" color="33554432" x="9" y="80" height="56" width="210" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="5" color="33554432" x="238" y="4" height="60" width="274" format="[general]" html.valueishtml="0"  name=minutos visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="5" color="33554432" x="238" y="84" height="56" width="274" format="[general]" html.valueishtml="0"  name=min_alista visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
