@@ -1,0 +1,28 @@
+HA$PBExportHeader$d_cant_colas_x_maquina.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=88 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="mu_maq_tin.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=cs_maquina dbname="mu_maq_tin.cs_maquina" )
+ column=(type=long update=yes updatewhereclause=yes name=cantidad_colas dbname="mu_maq_tin.cantidad_colas" )
+ column=(type=long updatewhereclause=yes name=id_turno dbname="mu_maq_tin.id_turno" )
+ retrieve="SELECT  mu_maq_tin.co_fabrica,
+        mu_maq_tin.cs_maquina ,
+		  mu_maq_tin.cantidad_colas ,
+		  mu_maq_tin.id_turno     
+  FROM  mu_maq_tin      
+  WHERE ( mu_maq_tin.co_fabrica = :an_fabrica ) And
+        ( mu_maq_tin.cs_maquina = :an_maquina )   " update="mu_maq_tin" updatewhere=1 updatekeyinplace=yes arguments=(("an_fabrica", number),("an_maquina", number)) )
+text(band=header alignment="2" text="cantidad_colas" border="0" color="33554432" x="9" y="8" height="56" width="512" html.valueishtml="0"  name=cantidad_colas_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Co Fabrica" border="0" color="0" x="535" y="8" height="56" width="279" html.valueishtml="0"  name=co_fabrica_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Cs Maquina" border="0" color="0" x="823" y="8" height="56" width="329" html.valueishtml="0"  name=cs_maquina_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="1" tabsequence=10 border="0" color="33554432" x="9" y="8" height="60" width="512" format="[General]" html.valueishtml="0"  name=cantidad_colas  tag="" visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="33554432" x="535" y="8" height="72" width="279" format="[general]" html.valueishtml="0"  name=co_fabrica visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="33554432" x="823" y="8" height="72" width="329" format="[general]" html.valueishtml="0"  name=cs_maquina visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=0 border="0" color="33554432" x="1166" y="12" height="56" width="297" html.valueishtml="0"  name=id_turno visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Id Turno" border="0" color="0" x="1161" y="4" height="76" width="302" html.valueishtml="0"  name=id_turno_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
