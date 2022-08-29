@@ -1,0 +1,122 @@
+HA$PBExportHeader$d_com_lista_materialesbk.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=120 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_muestrario dbname="h_fmp_muestras.co_muestrario" )
+ column=(type=long updatewhereclause=yes name=co_talla dbname="dt_fmp_muestras.co_talla" )
+ column=(type=char(1) updatewhereclause=yes name=id_peso dbname="h_fmp_muestras.id_peso" )
+ column=(type=char(3) updatewhereclause=yes name=grupo dbname="m_grupos.abrv_grupo" )
+ column=(type=long updatewhereclause=yes name=co_producto dbname="m_matprimas.co_producto" )
+ column=(type=char(40) updatewhereclause=yes name=de_producto dbname="m_matprimas.de_producto" )
+ column=(type=long updatewhereclause=yes name=co_color_mp dbname="dt_fmp_muestras.co_color_mp" )
+ column=(type=long updatewhereclause=yes name=pinta dbname="dt_fmp_muestras.pinta" )
+ column=(type=decimal(2) updatewhereclause=yes name=peso_mp dbname="peso_mp" )
+ column=(type=long updatewhereclause=yes name=co_recurso dbname="h_fmp_muestras.co_recurso" )
+ column=(type=long updatewhereclause=yes name=referencia dbname="dt_muestras_ref.co_referencia_ref" )
+ retrieve="SELECT h.co_muestrario,                             
+		dt.co_talla,
+		h.id_peso,
+		mg.abrv_grupo,                                
+		m.co_producto,                                
+		m.de_producto,                                
+		dt.co_color_mp,                                
+		dt.co_color pinta,                             
+		sum(peso_mp) peso_mp, 
+		h.co_recurso , 
+		r.co_referencia_ref                          
+FROM  h_fmp_muestras h ,dt_fmp_muestras dt,
+		m_matprimas m , m_grupos mg, dt_muestras_ref  r                                 
+WHERE h.co_fabrica = dt.co_fabrica
+AND h.co_linea = dt.co_linea
+AND h.co_muestra = dt.co_muestra
+AND h.co_talla = dt.co_talla
+AND h.co_color = dt.co_color
+and r.co_fabrica = dt.co_fabrica
+AND r.co_linea = dt.co_linea
+AND r.co_muestra = dt.co_muestra
+AND r.co_talla = dt.co_talla     
+AND h.co_diseno = dt.co_diseno
+AND m.co_producto = dt.co_producto_mp
+AND mg.co_grupo = m.co_grupo
+AND h.co_fabrica = :al_fabrica
+AND h.co_linea = :al_linea
+AND h.co_talla = :al_talla
+AND ( dt.co_muestra = :al_muestra) 
+AND h.co_recurso = :al_recurso
+AND ( h.co_muestrario = :al_muestrario)
+AND dt.co_partemp not in ( 205,206 ) 
+group by 1,2,3,4,5,6,7,8,10,11
+UNION ALL
+SELECT h.co_muestrario,                             
+		dt.co_talla,
+		h.id_peso,                               
+		mg.abrv_grupo,                                
+		m.co_producto,                                
+		m.de_producto,                                
+		dt.co_color_mp,                               
+		dt.co_color pinta,                            
+		sum(peso_mp) peso_mp,
+		h.co_recurso, 
+		r.co_referencia_ref
+FROM  h_fmp_muestras h ,dt_fmp_muestras dt, 
+		m_matprimas m , m_grupos mg, dt_muestras_ref r                     
+WHERE h.co_fabrica = dt.co_fabrica
+AND h.co_linea = dt.co_linea
+AND h.co_muestra = dt.co_muestra
+AND h.co_talla = dt.co_talla
+AND h.co_color = dt.co_color
+and r.co_fabrica = dt.co_fabrica
+AND r.co_linea = dt.co_linea
+AND r.co_muestra = dt.co_muestra
+AND r.co_talla = dt.co_talla
+AND h.co_diseno = dt.co_diseno
+AND m.co_producto = dt.co_producto_mp
+AND mg.co_grupo = m.co_grupo
+AND h.co_fabrica = :al_fabrica
+AND h.co_linea = :al_linea
+AND h.co_talla = :al_talla
+AND ( dt.co_muestra = :al_muestra) 
+AND h.co_recurso = :al_recurso
+AND ( h.co_muestrario = :al_muestrario)
+AND dt.co_partemp  in ( 205,206 )                      
+group by 1,2,3,4,5,6,7,8,10,11" arguments=(("al_fabrica", number),("al_linea", number),("al_talla", number),("al_muestra", number),("al_recurso", number),("al_muestrario", number)) )
+text(band=header alignment="2" text="H Fmp Muestras
+Co Muestrario" border="0" color="33554432" x="5" y="4" height="112" width="357" html.valueishtml="0"  name=h_fmp_muestras_co_muestrario_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dt Fmp Muestras
+Co Talla" border="0" color="33554432" x="366" y="4" height="112" width="370" html.valueishtml="0"  name=dt_fmp_muestras_co_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="H Fmp Muestras
+Id Peso" border="0" color="33554432" x="741" y="4" height="112" width="357" html.valueishtml="0"  name=h_fmp_muestras_id_peso_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="M Grupos
+Abrv Grupo" border="0" color="33554432" x="1106" y="4" height="112" width="261" html.valueishtml="0"  name=m_grupos_abrv_grupo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="M Matprimas
+Co Producto" border="0" color="33554432" x="1371" y="4" height="112" width="274" html.valueishtml="0"  name=m_matprimas_co_producto_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="M Matprimas
+De Producto" border="0" color="33554432" x="1650" y="4" height="112" width="937" html.valueishtml="0"  name=m_matprimas_de_producto_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dt Fmp Muestras
+Co Color Mp" border="0" color="33554432" x="2592" y="4" height="112" width="370" html.valueishtml="0"  name=dt_fmp_muestras_co_color_mp_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dt Fmp Muestras
+Pinta" border="0" color="33554432" x="2967" y="4" height="112" width="370" html.valueishtml="0"  name=dt_fmp_muestras_pinta_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Peso Mp" border="0" color="33554432" x="3342" y="4" height="56" width="274" html.valueishtml="0"  name=peso_mp_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="H Fmp Muestras
+Co Recurso" border="0" color="33554432" x="3621" y="4" height="112" width="357" html.valueishtml="0"  name=h_fmp_muestras_co_recurso_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dt Muestras Ref
+Co Referencia Ref" border="0" color="33554432" x="3982" y="4" height="112" width="407" html.valueishtml="0"  name=dt_muestras_ref_co_referencia_ref_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="0" color="33554432" x="5" y="4" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_muestrario visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=32766 border="0" color="33554432" x="366" y="4" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_talla visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="33554432" x="741" y="4" height="68" width="46" format="[general]" html.valueishtml="0"  name=id_peso visible="1" edit.limit=1 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="33554432" x="1106" y="4" height="68" width="87" format="[general]" html.valueishtml="0"  name=grupo visible="1" edit.limit=3 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="1" tabsequence=32766 border="0" color="33554432" x="1371" y="4" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_producto visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="33554432" x="1650" y="4" height="68" width="937" format="[general]" html.valueishtml="0"  name=de_producto visible="1" edit.limit=40 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="1" tabsequence=32766 border="0" color="33554432" x="2592" y="4" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_color_mp visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="1" tabsequence=32766 border="0" color="33554432" x="2962" y="4" height="68" width="274" format="[general]" html.valueishtml="0"  name=pinta visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="1" tabsequence=32766 border="0" color="33554432" x="3342" y="4" height="68" width="274" format="[general]" html.valueishtml="0"  name=peso_mp visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="1" tabsequence=32766 border="0" color="33554432" x="3621" y="4" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_recurso visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="1" tabsequence=32766 border="0" color="33554432" x="3982" y="4" height="68" width="274" format="[general]" html.valueishtml="0"  name=referencia visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
