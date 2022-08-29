@@ -6,6 +6,8 @@ type cb_aceptar from commandbutton within w_generar_muestra
 end type
 type cb_cancelar from commandbutton within w_generar_muestra
 end type
+type st_1 from statictext within w_generar_muestra
+end type
 end forward
 
 global type w_generar_muestra from w_simple
@@ -16,6 +18,7 @@ string menuname = ""
 boolean maxbox = true
 cb_aceptar cb_aceptar
 cb_cancelar cb_cancelar
+st_1 st_1
 end type
 global w_generar_muestra w_generar_muestra
 
@@ -24,15 +27,18 @@ int iCurrent
 call super::create
 this.cb_aceptar=create cb_aceptar
 this.cb_cancelar=create cb_cancelar
+this.st_1=create st_1
 iCurrent=UpperBound(this.Control)
 this.Control[iCurrent+1]=this.cb_aceptar
 this.Control[iCurrent+2]=this.cb_cancelar
+this.Control[iCurrent+3]=this.st_1
 end on
 
 on w_generar_muestra.destroy
 call super::destroy
 destroy(this.cb_aceptar)
 destroy(this.cb_cancelar)
+destroy(this.st_1)
 end on
 
 event open;//open(w_seleccion_fabrica)
@@ -234,4 +240,22 @@ end type
 
 event clicked;CLOSE (PARENT)
 end event
+
+type st_1 from statictext within w_generar_muestra
+integer x = 1559
+integer y = 284
+integer width = 521
+integer height = 152
+boolean bringtotop = true
+integer textsize = -20
+integer weight = 400
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Arial"
+long textcolor = 33554432
+long backcolor = 67108864
+string text = "SOL-159"
+boolean focusrectangle = false
+end type
 
