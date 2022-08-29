@@ -1,0 +1,58 @@
+HA$PBExportHeader$d_inf_ss_dllo_color_det.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=272 color="536870912" )
+summary(height=356 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912"  height.autosize=yes)
+table(column=(type=long updatewhereclause=yes name=nu_sol_serv dbname="mu_gantt.nu_sol_serv" )
+ column=(type=long updatewhereclause=yes name=id_actividad dbname="mu_gantt.id_actividad" )
+ column=(type=long updatewhereclause=yes name=co_color dbname="dt_muestras_col.co_color" )
+ column=(type=char(30) updatewhereclause=yes name=co_color_exp dbname="dt_muestras_col.co_color_exp" )
+ column=(type=char(30) updatewhereclause=yes name=de_color dbname="de_color" )
+ column=(type=char(500) updatewhereclause=yes name=observacion dbname="mu_gantt.observacion" )
+ retrieve="  SELECT mu_gantt.nu_sol_serv,   
+         mu_gantt.id_actividad,   
+         dt_muestras_col.co_color,   
+         dt_muestras_col.co_color_exp,   
+         sp_nom_m_colores(dt_muestras_col.co_fabrica,dt_muestras_col.co_linea,dt_muestras_col.co_color) as de_color,   
+         mu_soli_serv.observacion 
+    FROM mu_gantt,
+         mu_m_actividad,   
+         dt_mu_ord_col,   
+         dt_mu_ord,   
+         dt_muestras_col,
+         outer(mu_soli_serv)     
+   WHERE ( mu_gantt.nu_orden = :an_orden ) AND  
+         ( mu_m_actividad.co_clase = :a_clase_ss  )    and
+         ( mu_gantt.id_actividad = mu_m_actividad.id_actividad ) and  
+         ( mu_gantt.nu_orden = dt_mu_ord_col.nu_orden ) and  
+         ( mu_gantt.cons_color = dt_mu_ord_col.cons_color ) and  
+         ( dt_mu_ord.nu_orden = dt_mu_ord_col.nu_orden ) and  
+         ( dt_mu_ord.co_fabrica = dt_muestras_col.co_fabrica ) and  
+         ( dt_mu_ord.co_linea = dt_muestras_col.co_linea ) and  
+         ( dt_mu_ord.co_muestra = dt_muestras_col.co_muestra ) and  
+         ( dt_mu_ord_col.co_color = dt_muestras_col.co_color ) and  
+         ( mu_gantt.nu_orden = mu_soli_serv.nu_orden ) AND
+         ( mu_gantt.consec = mu_soli_serv.consec )
+" arguments=(("an_orden", number),("a_clase_ss", number)) )
+compute(band=detail alignment="0" expression="~"(~"+co_color +~") ~"+ de_color "border="2" color="33554432" x="114" y="4" height="64" width="658" format="[GENERAL]" html.valueishtml="0"  name=compute_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="2" tabsequence=32766 border="2" color="33554432" x="14" y="4" height="64" width="96" format="[general]" html.valueishtml="0"  name=nu_sol_serv visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="2" color="33554432" x="1659" y="4" height="64" width="1819" format="[general]" html.valueishtml="0"  name=observacion visible="1" height.autosize=yes edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="2" color="33554432" x="777" y="4" height="64" width="878" format="[general]" html.valueishtml="0"  name=co_color_exp visible="1" edit.limit=10 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=summary alignment="0" text="OBSERVACIONES:" border="0" color="0" x="96" y="20" height="56" width="416" html.valueishtml="0"  name=t_16 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+line(band=summary x1="110" y1="136" x2="3122" y2="136"  name=l_1 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=summary x1="110" y1="196" x2="3122" y2="196"  name=l_2 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=summary x1="110" y1="260" x2="3122" y2="260"  name=l_3 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="SS" border="2" color="33554432" x="14" y="212" height="56" width="96" html.valueishtml="0"  name=mu_gantt_nu_sol_serv_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="COLOR CRYSTAL" border="2" color="33554432" x="114" y="212" height="56" width="663" html.valueishtml="0"  name=t_14 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="MUESTRAS:_________" border="0" color="0" x="1815" y="8" height="60" width="599" html.valueishtml="0"  name=t_13 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="OBSERVACIONES" border="2" color="33554432" x="1659" y="212" height="56" width="1819" html.valueishtml="0"  name=t_15 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="COLOR CLIENTE" border="2" color="33554432" x="782" y="212" height="56" width="873" html.valueishtml="0"  name=dt_muestras_col_co_color_exp_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="DESTINO:" border="0" color="0" x="91" y="8" height="60" width="256" html.valueishtml="0"  name=t_11 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="LAB DIPS:__________" border="0" color="0" x="713" y="8" height="60" width="576" html.valueishtml="0"  name=t_12 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
