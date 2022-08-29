@@ -1,0 +1,62 @@
+HA$PBExportHeader$d_det_tallas_colores_vta.srd
+release 9;
+datawindow(units=3 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 635 print.margin.right = 635 print.margin.top = 635 print.margin.bottom = 635 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=449 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=476 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_fabricas dbname="dt_surt_pdn.co_fabricas" )
+ column=(type=long updatewhereclause=yes name=co_lineas dbname="dt_surt_pdn.co_lineas" )
+ column=(type=long updatewhereclause=yes name=co_referencias dbname="dt_surt_pdn.co_referencias" )
+ column=(type=long updatewhereclause=yes name=co_tallas dbname="dt_surt_pdn.co_tallas" )
+ column=(type=char(15) updatewhereclause=yes name=de_talla dbname="m_tallas.de_talla" )
+ column=(type=long updatewhereclause=yes name=co_colors dbname="dt_surt_pdn.co_colors" )
+ column=(type=char(30) updatewhereclause=yes name=de_color dbname="m_colores.de_color" )
+ column=(type=long updatewhereclause=yes name=co_muestrario dbname="dt_surt_pdn.co_muestrario" )
+ column=(type=long updatewhereclause=yes name=co_calidads dbname="dt_surt_pdn.co_calidads" )
+ column=(type=long updatewhereclause=yes name=sw_surtido dbname="dt_surt_pdn.sw_surtido" )
+ retrieve="SELECT UNIQUE
+       dt_surt_pdn.co_fabricas,   
+       dt_surt_pdn.co_lineas,   
+       dt_surt_pdn.co_referencias,   
+       dt_surt_pdn.co_tallas,   
+       m_tallas.de_talla ,
+       dt_surt_pdn.co_colors,   
+       m_colores.de_color,
+       dt_surt_pdn.co_muestrario,   
+       dt_surt_pdn.co_calidads, 
+		 dt_surt_pdn.sw_surtido
+  FROM dt_surt_pdn, m_ref_vta,  OUTER m_tallas,   OUTER m_colores	    
+ WHERE ( m_ref_vta.co_fabricav      = dt_surt_pdn.co_fabricas  ) and  
+       ( m_ref_vta.co_lineav        = dt_surt_pdn.co_lineas    ) and  
+       ( m_ref_vta.co_referenciav   = dt_surt_pdn.co_referencias ) and 
+       ( m_ref_vta.co_tallav        = dt_surt_pdn.co_tallas    ) and 
+       ( m_ref_vta.co_calidadv      = dt_surt_pdn.co_calidads  ) and 
+       ( m_tallas.co_fabrica        = m_ref_vta.co_fabricav ) and
+       ( m_tallas.co_linea          = m_ref_vta.co_lineav ) and
+       ( m_tallas.co_talla          = m_ref_vta.co_tallav ) and
+       ( m_tallas.cs_talla          = m_ref_vta.cs_tallav ) and
+       ( m_colores.co_fabrica       = dt_surt_pdn.co_fabricas ) and  
+       ( m_colores.co_linea         = dt_surt_pdn.co_lineas   ) and  
+       ( m_colores.co_color         = dt_surt_pdn.co_colors   ) and 
+       ( dt_surt_pdn.co_fabricas    = :an_fabrica_vta ) and  
+       ( dt_surt_pdn.co_lineas      = :an_linea_vta ) and  
+       ( dt_surt_pdn.co_referencias = :an_referencia_vta ) and 
+       ( dt_surt_pdn.co_muestrario  = :an_muestrario ) and 
+       ( dt_surt_pdn.co_calidads    = :an_calidad_vta )" arguments=(("an_fabrica_vta", number),("an_linea_vta", number),("an_referencia_vta", number),("an_muestrario", number),("an_calidad_vta", number)) )
+text(band=header alignment="2" text="Talla" border="6" color="0" x="661" y="26" height="370" width="1005" html.valueishtml="0"  name=dt_surt_pdn_co_tallas_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="1719" y="26" height="370" width="1666" html.valueishtml="0"  name=m_tallas_de_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="Color" border="6" color="0" x="3439" y="26" height="370" width="2010" html.valueishtml="0"  name=dt_surt_pdn_co_colors_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="5503" y="26" height="370" width="1984" html.valueishtml="0"  name=m_colores_de_color_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Sw_Surtido" border="6" color="0" x="7540" y="26" height="370" width="1587" html.valueishtml="0"  name=dt_surt_pdn_sw_surtido_t visible="0"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=10 border="5" color="33554432" x="661" y="27" height="370" width="1005" format="[general]" html.valueishtml="0"  name=co_tallas visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="0" tabsequence=20 border="5" color="33554432" x="3439" y="27" height="370" width="2010" format="[general]" html.valueishtml="0"  name=co_colors visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="5" color="33554432" x="1719" y="27" height="370" width="1666" format="[general]" html.valueishtml="0"  name=de_talla visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="5" color="33554432" x="5503" y="27" height="370" width="1984" format="[general]" html.valueishtml="0"  name=de_color visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+compute(band=detail alignment="0" expression="GetRow()"border="6" color="16711680" x="52" y="53" height="370" width="555" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="0" tabsequence=30 border="0" color="33554432" x="7540" y="27" height="423" width="1587" format="[general]" html.valueishtml="0"  name=sw_surtido visible="0" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
