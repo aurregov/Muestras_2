@@ -1,0 +1,17 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "gantt.pbl" "";
+@end;
+@begin Objects
+ "d_ext_ordenes_criterio.srd" "gantt.pbl";
+ "d_ext_recursos_tarea.srd" "gantt.pbl";
+ "d_ext_recursos_lista.srd" "gantt.pbl";
+ "d_tareas_orden_grupo.srd" "gantt.pbl";
+ "d_ordenes_grupo.srd" "gantt.pbl";
+ "w_sel_open_appl.srw" "gantt.pbl";
+ "w_generar_gantt.srw" "gantt.pbl";
+ "d_tareas_orden.srd" "gantt.pbl";
+ "d_ordenes_criterio.srd" "gantt.pbl";
+ "n_cst_gantt.sru" "gantt.pbl";
+ "w_opc_gantt.srw" "gantt.pbl";
+@end;
