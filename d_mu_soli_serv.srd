@@ -1,0 +1,58 @@
+HA$PBExportHeader$d_mu_soli_serv.srd
+release 9;
+datawindow(units=3 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 635 print.margin.right = 635 print.margin.top = 635 print.margin.bottom = 635 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=476 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=476 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=nu_orden dbname="mu_soli_serv.nu_orden" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=consec dbname="mu_soli_serv.consec" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="mu_soli_serv.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="mu_soli_serv.usuario" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="mu_soli_serv.instancia" )
+ column=(type=long updatewhereclause=yes name=nu_sol_serv dbname="mu_gantt.nu_sol_serv" )
+ column=(type=long updatewhereclause=yes name=co_color dbname="co_color" )
+ column=(type=long updatewhereclause=yes name=id_actividad dbname="mu_gantt.id_actividad" )
+ column=(type=char(50) updatewhereclause=yes name=de_actividad dbname="de_actividad" )
+ column=(type=char(2048) update=yes updatewhereclause=yes name=observacion dbname="observacion" )
+ column=(type=char(30) updatewhereclause=yes name=color_cli dbname="color_cli" )
+ column=(type=char(30) updatewhereclause=yes name=color_hilaza dbname="color_hilaza" )
+ retrieve="  SELECT mu_soli_serv.nu_orden,   
+         mu_soli_serv.consec,   
+         mu_soli_serv.fe_actualizacion,   
+         mu_soli_serv.usuario,   
+         mu_soli_serv.instancia,   
+         mu_gantt.nu_sol_serv,   
+         sp_col_orden(mu_gantt.nu_orden,mu_gantt.cons_color) as co_color,   
+         mu_gantt.id_actividad,   
+         sp_nom_mu_m_activ(mu_gantt.id_actividad) as de_actividad,   
+         trim(mu_soli_serv.observacion) as observacion,
+         sp_col_orden_cli(mu_gantt.nu_orden,mu_gantt.cons_color) as color_cli,
+         sp_mu_col_hilaza(mu_gantt.nu_orden, mu_gantt.consec, mu_gantt.id_actividad) as color_hilaza  
+    FROM mu_soli_serv,   
+         mu_gantt  
+   WHERE ( mu_gantt.nu_orden = mu_soli_serv.nu_orden ) and  
+         ( mu_gantt.consec = mu_soli_serv.consec ) and  
+         ( ( mu_soli_serv.nu_orden = :a_orden ) AND  
+         ( mu_gantt.nu_orden = :a_orden ) AND  
+         ( mu_gantt.condicion <> 8 ) )    
+" update="mu_soli_serv" updatewhere=0 updatekeyinplace=no arguments=(("a_orden", number))  sort="nu_sol_serv A " )
+text(band=header alignment="2" text="Sol" border="0" color="0" x="52" y="26" height="370" width="635" html.valueishtml="0"  name=mu_gantt_nu_sol_serv_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Observacion" border="0" color="33554432" x="12065" y="26" height="370" width="9842" html.valueishtml="0"  name=observacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Color" border="0" color="0" x="4550" y="26" height="370" width="1878" html.valueishtml="0"  name=co_color_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Act" border="0" color="0" x="740" y="26" height="370" width="820" html.valueishtml="0"  name=mu_gantt_id_actividad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="De Actividad" border="0" color="0" x="1613" y="26" height="370" width="2883" html.valueishtml="0"  name=de_actividad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Color Carta Cliente" border="0" color="0" x="6482" y="26" height="370" width="2381" html.valueishtml="0"  name=color_cli_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Color " border="0" color="0" x="8916" y="26" height="370" width="3095" html.valueishtml="0"  name=color_hilaza_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="5" color="33554432" x="4550" y="0" height="396" width="1878" format="[general]" html.valueishtml="0"  name=co_color visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="5" color="33554432" x="52" y="0" height="396" width="635" format="[general]" html.valueishtml="0"  name=nu_sol_serv visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="5" color="33554432" x="740" y="0" height="396" width="820" format="[general]" html.valueishtml="0"  name=id_actividad visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="5" color="33554432" x="1613" y="0" height="396" width="2883" format="[general]" html.valueishtml="0"  name=de_actividad visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="5" color="33554432" x="6482" y="0" height="396" width="2381" format="[general]" html.valueishtml="0"  name=color_cli visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=10 alignment="0" tabsequence=10 border="5" color="33554432" x="12065" y="0" height="396" width="9842" format="[general]" html.valueishtml="0"  name=observacion visible="1" edit.limit=500 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="5" color="33554432" x="8916" y="0" height="396" width="3095" format="[general]" html.valueishtml="0"  name=color_hilaza visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
