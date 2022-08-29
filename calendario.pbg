@@ -1,0 +1,12 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "calendario.pbl" "";
+@end;
+@begin Objects
+ "gf_dw_pop_calendar.srf" "calendario.pbl";
+ "u_pb_calendar.sru" "calendario.pbl";
+ "w_pb_calendar.srw" "calendario.pbl";
+ "d_date_value.srd" "calendario.pbl";
+ "d_calendar.srd" "calendario.pbl";
+ "str_calendar.srs" "calendario.pbl";
+@end;
