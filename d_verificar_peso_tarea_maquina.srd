@@ -1,0 +1,34 @@
+HA$PBExportHeader$d_verificar_peso_tarea_maquina.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_fabrica dbname="mu_maq_tin.co_fabrica" )
+ column=(type=long updatewhereclause=yes name=cs_maquina dbname="mu_maq_tin.cs_maquina" )
+ column=(type=decimal(3) updatewhereclause=yes name=peso_min dbname="m_maq_tin.peso_min" )
+ column=(type=decimal(3) updatewhereclause=yes name=peso_max dbname="m_maq_tin.peso_max" )
+ retrieve="SELECT  mu_maq_tin.co_fabrica,
+        mu_maq_tin.cs_maquina,
+        m_maq_tin.peso_min,
+        m_maq_tin.peso_max    
+  FROM  m_maq_tin ,
+	     mu_maq_tin,
+        m_maquinas_fab    
+  WHERE ( m_maq_tin.co_maquina = m_maquinas_fab.co_maquina ) And
+        ( m_maquinas_fab.co_fabrica = mu_maq_tin.co_fabrica ) And
+		  ( m_maquinas_fab.cs_maquina = mu_maq_tin.cs_maquina) And  
+        ( ( mu_maq_tin.co_fabrica = :an_fabrica ) And
+          ( mu_maq_tin.cs_maquina = :an_maquina ) And
+          ( mu_maq_tin.disponible = 'S' ) )  " arguments=(("an_fabrica", number),("an_maquina", number)) )
+text(band=header alignment="0" text="Co Fabrica" border="0" color="0" x="9" y="4" height="56" width="270" html.valueishtml="0"  name=co_fabrica_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="0" height="76" width="270" format="[general]" html.valueishtml="0"  name=co_fabrica visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="288" y="0" height="76" width="293" format="[general]" html.valueishtml="0"  name=cs_maquina visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="590" y="0" height="76" width="251" format="[general]" html.valueishtml="0"  name=peso_min visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="850" y="0" height="76" width="297" format="[general]" html.valueishtml="0"  name=peso_max visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Cs Maquina" border="0" color="0" x="288" y="4" height="56" width="293" html.valueishtml="0"  name=cs_maquina_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Peso Min" border="0" color="0" x="590" y="4" height="56" width="251" html.valueishtml="0"  name=peso_min_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Peso Max" border="0" color="0" x="850" y="4" height="56" width="297" html.valueishtml="0"  name=peso_max_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
