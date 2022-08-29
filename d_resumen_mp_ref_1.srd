@@ -1,0 +1,51 @@
+HA$PBExportHeader$d_resumen_mp_ref_1.srd
+$PBExportComments$Resumen de materia prima por referencia modificado
+release 7;
+datawindow(units=0 timer_interval=0 color=79017397 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=72 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=char(3) updatewhereclause=yes name=abrv_grupo dbname="m_grupos.abrv_grupo" )
+ column=(type=long updatewhereclause=yes name=co_producto dbname="m_matprimas.co_producto" )
+ column=(type=char(25) updatewhereclause=yes name=de_producto dbname="m_matprimas.de_producto" )
+ column=(type=decimal(2) updatewhereclause=yes name=sum_peso dbname="sum_peso" )
+ retrieve="  SELECT m_grupos.abrv_grupo, 
+         m_matprimas.co_producto,
+         m_matprimas.de_producto,  
+         sum(r_fmp.peso_mp) as sum_peso
+    FROM r_fmp, outer(m_grupos,   
+         m_matprimas)
+   WHERE ( m_grupos.co_grupo = m_matprimas.co_grupo ) and  
+         ( m_matprimas.co_producto = r_fmp.co_producto_mp ) and  
+         ( ( r_fmp.co_fabrica = :a_fabrica ) AND  
+         ( r_fmp.co_linea = :a_linea ) AND  
+         ( r_fmp.co_referencia = :a_referencia ) AND  
+         ( r_fmp.co_talla = :a_talla ) AND  
+         ( r_fmp.co_calidad = :a_calidad ) AND  
+         ( r_fmp.co_diseno = :a_diseno ) AND  
+         ( r_fmp.co_color = :a_color ) AND  
+         ( r_fmp.co_muestrario = :a_muestrario ) )   
+GROUP BY m_grupos.abrv_grupo, 
+         m_matprimas.co_producto,
+         m_matprimas.de_producto  " arguments=(("a_fabrica", number),("a_linea", number),("a_referencia", number),("a_talla", number),("a_calidad", number),("a_diseno", number),("a_color", number),("a_muestrario", number))  sort="abrv_grupo A " )
+group(level=1 header.height=0 trailer.height=64 by=("abrv_grupo" ) header.color="536870912" trailer.color="12639424" )
+text(band=header alignment="2" text="Grupo" border="0" color="0" x="9" y="8" height="56" width="201"  name=m_grupos_abrv_grupo_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Cod" border="0" color="0" x="219" y="8" height="56" width="151"  name=m_matprimas_co_producto_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Producto" border="0" color="0" x="379" y="8" height="56" width="896"  name=m_matprimas_de_producto_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="5" color="0" x="9" y="4" height="52" width="201" format="[general]"  name=abrv_grupo edit.limit=3 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=32766 border="5" color="0" x="219" y="4" height="52" width="151" format="[general]"  name=co_producto edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="5" color="0" x="379" y="4" height="52" width="896" format="[general]"  name=de_producto edit.limit=25 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="1" tabsequence=32766 border="5" color="0" x="1285" y="4" height="52" width="288" format="###,###.00"  name=sum_peso edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=trailer.1 alignment="0" expression="~"Total ~"+ abrv_grupo +~": ~""border="5" color="8388736" x="379" y="4" height="52" width="896" format="[GENERAL]"  name=compute_4  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+compute(band=trailer.1 alignment="1" expression="sum(sum_peso for group 1)"border="5" color="8388736" x="1285" y="4" height="52" width="288" format="###,###.00"  name=total1  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+compute(band=footer alignment="1" expression="sum(sum_peso for all)"border="5" color="16711680" x="1285" y="8" height="52" width="288" format="###,###.00"  name=total  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=footer alignment="1" text="Total: " border="5" color="16711680" x="379" y="8" height="52" width="896"  name=t_2  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="1" expression="sum_peso/total*100"border="5" color="8388736" x="1582" y="4" height="52" width="306" format="###,###.00"  name=compute_1  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=trailer.1 alignment="1" expression="total1/total*100"border="5" color="8388736" x="1582" y="4" height="52" width="306" format="###,###.00"  name=compute_2  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+compute(band=footer alignment="1" expression="total/total*100"border="5" color="16711680" x="1582" y="8" height="52" width="306" format="###,###.00"  name=compute_3  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Peso" border="0" color="0" x="1285" y="8" height="56" width="288"  name=sum_peso_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Porcentaje" border="0" color="0" x="1582" y="8" height="56" width="306"  name=t_1  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+
+sparse(names="abrv_grupo")htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
