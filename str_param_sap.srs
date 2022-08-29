@@ -1,0 +1,8 @@
+HA$PBExportHeader$str_param_sap.srs
+$PBExportComments$/***********************************************************~r~nSA55583 - Ceiba/jjmonsal - 22-11-2016 ~r~nComentario: E00572 - Muestra b$$HEX1$$e100$$ENDHEX$$sica~r~nStr para entrada de datos SAP ZEPP0070 ~r~n***********************************************************/
+global type str_param_sap from structure
+	string		centro[]
+	string		materialh[]
+	string		vmatrizh[]
+end type
+
