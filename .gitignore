@@ -5,3 +5,5 @@ calendario.pbl
 *.pbc
 *.pbt
 *.pbd
+*.opt
+*.pbg
