@@ -2,6 +2,8 @@ HA$PBExportHeader$w_procesar_muestras.srw
 forward
 global type w_procesar_muestras from window
 end type
+type cb_6 from commandbutton within w_procesar_muestras
+end type
 type st_10 from statictext within w_procesar_muestras
 end type
 type cb_5 from commandbutton within w_procesar_muestras
@@ -61,8 +63,8 @@ end type
 end forward
 
 global type w_procesar_muestras from window
-integer width = 2533
-integer height = 932
+integer width = 2560
+integer height = 948
 boolean titlebar = true
 string title = "Migrar Muestra "
 boolean controlmenu = true
@@ -70,6 +72,7 @@ windowtype windowtype = response!
 long backcolor = 67108864
 string icon = "AppIcon!"
 boolean center = true
+cb_6 cb_6
 st_10 st_10
 cb_5 cb_5
 cb_3 cb_3
@@ -892,6 +895,7 @@ return 1
 end function
 
 on w_procesar_muestras.create
+this.cb_6=create cb_6
 this.st_10=create st_10
 this.cb_5=create cb_5
 this.cb_3=create cb_3
@@ -920,7 +924,8 @@ this.proceso=create proceso
 this.cb_1=create cb_1
 this.muestraini=create muestraini
 this.muestrafin=create muestrafin
-this.Control[]={this.st_10,&
+this.Control[]={this.cb_6,&
+this.st_10,&
 this.cb_5,&
 this.cb_3,&
 this.sle_2,&
@@ -951,6 +956,7 @@ this.muestrafin}
 end on
 
 on w_procesar_muestras.destroy
+destroy(this.cb_6)
 destroy(this.st_10)
 destroy(this.cb_5)
 destroy(this.cb_3)
@@ -980,6 +986,21 @@ destroy(this.cb_1)
 destroy(this.muestraini)
 destroy(this.muestrafin)
 end on
+
+type cb_6 from commandbutton within w_procesar_muestras
+integer x = 978
+integer y = 712
+integer width = 343
+integer height = 100
+integer taborder = 60
+integer textsize = -8
+integer weight = 400
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Arial"
+string text = "753"
+end type
 
 type st_10 from statictext within w_procesar_muestras
 integer x = 983
