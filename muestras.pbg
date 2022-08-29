@@ -1,0 +1,25 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "muestras.pbl" "";
+@end;
+@begin Objects
+ "w_seleccion_fabrica.srw" "muestras.pbl";
+ "d_tmp.srd" "muestras.pbl";
+ "w_recursos_restringidos.srw" "muestras.pbl";
+ "d__m_ref_vta_h_preref.srd" "muestras.pbl";
+ "d_actualizar_datos_symphony.srd" "muestras.pbl";
+ "dgr_m_operaciones.srd" "muestras.pbl";
+ "d_dt_mues_config.srd" "muestras.pbl";
+ "q_fichas_cambiar.srq" "muestras.pbl";
+ "p_a_muestras_exe.srj" "muestras.pbl";
+ "s_base_parametros.srs" "muestras.pbl";
+ "d_estado_muestra.srd" "muestras.pbl";
+ "w_m_operaciones.srw" "muestras.pbl";
+ "w_generar_muestra.srw" "muestras.pbl";
+ "d_fabricas_usuario.srd" "muestras.pbl";
+ "p_a_muestras_exe1.srj" "muestras.pbl";
+ "a_muestras.sra" "muestras.pbl";
+ "q1.srq" "muestras.pbl";
+ "q2.srq" "muestras.pbl";
+ "w_graph_type.srw" "muestras.pbl";
+@end;
