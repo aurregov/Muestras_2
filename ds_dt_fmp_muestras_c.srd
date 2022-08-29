@@ -1,0 +1,56 @@
+HA$PBExportHeader$ds_dt_fmp_muestras_c.srd
+$PBExportComments$detalle de la ficha de materia prima muestras
+release 9;
+datawindow(units=0 timer_interval=0 color=77442227 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=4 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_fabrica dbname="dt_fmp_muestras.co_fabrica" )
+ column=(type=long updatewhereclause=yes name=co_linea dbname="dt_fmp_muestras.co_linea" )
+ column=(type=long updatewhereclause=yes name=co_muestra dbname="dt_fmp_muestras.co_muestra" )
+ column=(type=long updatewhereclause=yes name=co_talla dbname="dt_fmp_muestras.co_talla" )
+ column=(type=long updatewhereclause=yes name=co_centro dbname="dt_fmp_muestras.co_centro" )
+ column=(type=long updatewhereclause=yes name=nu_partemp dbname="dt_fmp_muestras.nu_partemp" )
+ column=(type=long updatewhereclause=yes name=co_tipoprod dbname="dt_fmp_muestras.co_tipoprod" )
+ column=(type=long updatewhereclause=yes name=co_partemp dbname="dt_fmp_muestras.co_partemp" )
+ column=(type=long updatewhereclause=yes name=co_combinacion dbname="dt_fmp_muestras.co_combinacion" )
+ column=(type=char(74) updatewhereclause=yes name=de_parte_combinacion dbname="de_parte_combinacion" )
+ retrieve="  SELECT DISTINCT dt_fmp_muestras.co_fabrica,   
+         dt_fmp_muestras.co_linea,   
+         dt_fmp_muestras.co_muestra,   
+         dt_fmp_muestras.co_talla,   
+         dt_fmp_muestras.co_centro,   
+         dt_fmp_muestras.nu_partemp,   
+         dt_fmp_muestras.co_tipoprod,   
+         dt_fmp_muestras.co_partemp,   
+         dt_fmp_muestras.co_combinacion,   
+         '                                                                          ' as de_parte_combinacion  
+    FROM dt_fmp_muestras,   
+         h_fmp_muestras  
+   WHERE ( h_fmp_muestras.co_fabrica = dt_fmp_muestras.co_fabrica ) and  
+         ( h_fmp_muestras.co_linea = dt_fmp_muestras.co_linea ) and  
+         ( h_fmp_muestras.co_muestra = dt_fmp_muestras.co_muestra ) and  
+         ( h_fmp_muestras.co_talla = dt_fmp_muestras.co_talla ) and  
+         ( h_fmp_muestras.co_color = dt_fmp_muestras.co_color ) and  
+         ( h_fmp_muestras.co_diseno = dt_fmp_muestras.co_diseno ) and  
+         ( ( dt_fmp_muestras.co_fabrica = :a_fabrica ) AND  
+         ( dt_fmp_muestras.co_linea = :a_linea ) AND  
+         ( dt_fmp_muestras.co_muestra = :a_muestra ) AND  
+         ( dt_fmp_muestras.co_talla = :a_talla ) AND  
+         ( h_fmp_muestras.co_recurso = :al_recurso ) AND  
+         ( h_fmp_muestras.co_muestrario = :an_muestrario ) )    
+" arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number),("a_talla", number),("al_recurso", number),("an_muestrario", number))  sort="nu_partemp A " )
+text(band=header alignment="2" text="Parte" border="0" color="0" x="201" y="8" height="56" width="247" html.valueishtml="0"  name=co_partemp_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Comb" border="0" color="0" x="457" y="8" height="56" width="224" html.valueishtml="0"  name=co_combinacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="" border="0" color="0" x="9" y="8" height="56" width="183" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n" border="0" color="0" x="690" y="8" height="56" width="1038" html.valueishtml="0"  name=de_parte_combinacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="2" expression="GetRow()"border="5" color="16711680" x="9" y="4" height="64" width="183" format="[GENERAL]" html.valueishtml="0"  name=filaa visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=8 alignment="1" tabsequence=10 border="5" color="0" x="201" y="4" height="64" width="247" format="[general]" html.valueishtml="0"  name=co_partemp visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=9 alignment="1" tabsequence=20 border="5" color="0" x="457" y="4" height="64" width="224" format="[general]" html.valueishtml="0"  name=co_combinacion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=10 alignment="0" tabsequence=30 border="5" color="0" x="690" y="4" height="64" width="1038" format="[general]" html.valueishtml="0"  name=de_parte_combinacion visible="1" edit.limit=74 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
