@@ -1,0 +1,14 @@
+HA$PBExportHeader$s_file_data.srs
+global type s_file_data from structure
+	unsignedlong		ul_fileattributes
+	s_file_datetime		str_creationtime
+	s_file_datetime		str_lastaccesstime
+	s_file_datetime		str_lastwritetime
+	unsignedlong		ul_filesizehigh
+	unsignedlong		ul_filesizelow
+	unsignedlong		ul_reserved0
+	unsignedlong		ul_reserved1
+	character		ch_filename[260]
+	character		ch_alternatefilename[14]
+end type
+
