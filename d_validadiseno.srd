@@ -1,0 +1,77 @@
+HA$PBExportHeader$d_validadiseno.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=120 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=m_muestras_co_fabrica dbname="m_muestras.co_fabrica" )
+ column=(type=long updatewhereclause=yes name=m_muestras_co_linea dbname="m_muestras.co_linea" )
+ column=(type=long updatewhereclause=yes name=m_muestras_co_muestra dbname="m_muestras.co_muestra" )
+ column=(type=char(50) updatewhereclause=yes name=m_muestras_de_muestra dbname="m_muestras.de_muestra" )
+ column=(type=long updatewhereclause=yes name=co_tipoprod dbname="m_muestras.co_tipoprod" )
+ column=(type=long updatewhereclause=yes name=co_grupo_tlla dbname="m_muestras.co_grupo_tlla" )
+ column=(type=long updatewhereclause=yes name=co_talla dbname="dt_muestras.co_talla" )
+ column=(type=long updatewhereclause=yes name=co_diseno dbname="dt_med_mue.co_diseno" )
+ column=(type=char(30) updatewhereclause=yes name=de_diseno dbname="m_disenos_muestras.de_diseno" )
+ column=(type=long updatewhereclause=yes name=co_recurso dbname="dt_med_mue.co_recurso" )
+ column=(type=char(30) updatewhereclause=yes name=de_recurso dbname="de_recurso" )
+ column=(type=char(10) updatewhereclause=yes name=m_muestras_co_diseno_muestra dbname="m_muestras.co_diseno_muestra" )
+ retrieve="SELECT DISTINCT m_muestras.co_fabrica, m_muestras.co_linea, m_muestras.co_muestra, m_muestras.de_muestra, m_muestras.co_tipoprod, m_muestras.co_grupo_tlla,
+              dt_muestras.co_talla, dt_med_mue.co_diseno , m_disenos_muestras.de_diseno, dt_med_mue.co_recurso , sp_nom_m_recursos_tj(dt_med_mue.co_recurso) de_recurso, co_diseno_muestra
+FROM m_muestras, dt_muestras, dt_med_mue , m_disenos_muestras 
+WHERE ( dt_muestras.co_fabrica = m_muestras.co_fabrica ) 
+and ( dt_muestras.co_linea = m_muestras.co_linea ) 
+and ( dt_muestras.co_muestra = m_muestras.co_muestra ) 
+and ( dt_med_mue.co_fabrica = dt_muestras.co_fabrica ) 
+and ( dt_med_mue.co_linea = dt_muestras.co_linea ) 
+and ( dt_med_mue.co_muestra = dt_muestras.co_muestra ) 
+and ( dt_med_mue.co_talla = dt_muestras.co_talla )  
+and ( dt_muestras.co_fabrica = m_disenos_muestras.co_fabrica ) 
+and ( dt_muestras.co_linea = m_disenos_muestras.co_linea ) 
+and ( dt_muestras.co_muestra = m_disenos_muestras.co_muestra ) 
+and ( dt_med_mue.co_talla = m_disenos_muestras.co_talla ) 
+and ( dt_med_mue.co_diseno = m_disenos_muestras.co_diseno) 
+and (m_muestras.co_muestra=:al_muestra ) 
+and (dt_med_mue.co_recurso = :al_recurso)
+" arguments=(("al_muestra", number),("al_recurso", number)) )
+text(band=header alignment="2" text="M Muestras
+Co Tipoprod" border="0" color="33554432" x="2011" y="4" height="112" width="274" html.valueishtml="0"  name=m_muestras_co_tipoprod_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="M Muestras
+Co Grupo Tlla" border="0" color="33554432" x="2290" y="4" height="112" width="297" html.valueishtml="0"  name=m_muestras_co_grupo_tlla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dt Muestras
+Co Talla" border="0" color="33554432" x="2592" y="4" height="112" width="274" html.valueishtml="0"  name=dt_muestras_co_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dt Med Mue
+Co Diseno" border="0" color="33554432" x="2871" y="4" height="112" width="274" html.valueishtml="0"  name=dt_med_mue_co_diseno_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="M Disenos Muestras
+De Diseno" border="0" color="33554432" x="3154" y="4" height="112" width="709" html.valueishtml="0"  name=m_disenos_muestras_de_diseno_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dt Med Mue
+Co Recurso" border="0" color="33554432" x="3867" y="4" height="112" width="274" html.valueishtml="0"  name=dt_med_mue_co_recurso_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="De Recurso" border="0" color="33554432" x="4146" y="4" height="56" width="709" html.valueishtml="0"  name=de_recurso_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="M Muestras
+Co Diseno Muestra" border="0" color="33554432" x="4859" y="4" height="112" width="416" html.valueishtml="0"  name=m_muestras_co_diseno_muestra_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="2" tabsequence=32766 border="0" color="33554432" x="3154" y="4" height="68" width="709" format="[general]" html.valueishtml="0"  name=de_diseno visible="1" edit.limit=30 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="2" tabsequence=32766 border="0" color="33554432" x="2011" y="4" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_tipoprod visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="2" tabsequence=32766 border="0" color="33554432" x="2290" y="4" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_grupo_tlla visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="2" tabsequence=32766 border="0" color="33554432" x="2592" y="4" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_talla visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="2" tabsequence=32766 border="0" color="33554432" x="2871" y="4" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_diseno visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="2" tabsequence=32766 border="0" color="33554432" x="3867" y="4" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_recurso visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="2" tabsequence=32766 border="0" color="33554432" x="4146" y="4" height="68" width="709" format="[general]" html.valueishtml="0"  name=de_recurso visible="1" edit.limit=30 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="2" tabsequence=32766 border="0" color="33554432" x="4859" y="4" height="68" width="251" format="[general]" html.valueishtml="0"  name=m_muestras_co_diseno_muestra visible="1" edit.limit=10 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="M Muestras
+Co Fabrica" border="0" color="33554432" x="5" y="4" height="112" width="274" html.valueishtml="0"  name=m_muestras_co_fabrica_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="M Muestras
+Co Linea" border="0" color="33554432" x="283" y="4" height="112" width="274" html.valueishtml="0"  name=m_muestras_co_linea_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="M Muestras
+Co Muestra" border="0" color="33554432" x="562" y="4" height="112" width="274" html.valueishtml="0"  name=m_muestras_co_muestra_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="M Muestras
+De Muestra" border="0" color="33554432" x="841" y="4" height="112" width="1166" html.valueishtml="0"  name=m_muestras_de_muestra_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="2" tabsequence=32766 border="0" color="33554432" x="5" y="4" height="68" width="274" format="[general]" html.valueishtml="0"  name=m_muestras_co_fabrica visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="2" tabsequence=32766 border="0" color="33554432" x="283" y="4" height="68" width="274" format="[general]" html.valueishtml="0"  name=m_muestras_co_linea visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="2" tabsequence=32766 border="0" color="33554432" x="562" y="4" height="68" width="274" format="[general]" html.valueishtml="0"  name=m_muestras_co_muestra visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="2" tabsequence=32766 border="0" color="33554432" x="841" y="4" height="68" width="1166" format="[general]" html.valueishtml="0"  name=m_muestras_de_muestra visible="1" edit.limit=50 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
