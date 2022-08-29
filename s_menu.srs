@@ -1,0 +1,9 @@
+HA$PBExportHeader$s_menu.srs
+$PBExportComments$Estructura para abrir la ventana de actualizar un men$$HEX2$$fa002000$$ENDHEX$$en la base de datos
+global type s_menu from structure
+	long		aplicacion
+	string		ventana
+	menu		menu
+	window		ventana_obj
+end type
+
