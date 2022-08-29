@@ -1,0 +1,21 @@
+HA$PBExportHeader$d_operaciones_mo.srd
+release 7;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=144 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=92 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=orden_operacion dbname="m_proref_muestras.orden_operacion" )
+ column=(type=long updatewhereclause=yes name=co_centro dbname="m_proref_muestras.co_centro" )
+ column=(type=char(30) updatewhereclause=yes name=de_operacion dbname="m_operacio_ct.de_operacion" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"m_proref_muestras~" )  TABLE(NAME=~"m_operacio_ct~" ) COLUMN(NAME=~"m_proref_muestras.orden_operacion~") COLUMN(NAME=~"m_proref_muestras.co_centro~") COLUMN(NAME=~"m_operacio_ct.de_operacion~")    JOIN (LEFT=~"m_proref_muestras.co_tipoprod~"    OP =~"=~"RIGHT=~"m_operacio_ct.co_tipoprod~" )    JOIN (LEFT=~"m_proref_muestras.co_operacion~"    OP =~"=~"RIGHT=~"m_operacio_ct.co_operacion~" )WHERE(    EXP1 =~"m_proref_muestras.co_fabrica~"   OP =~"=~"    EXP2 =~":a_fabrica~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"m_proref_muestras.co_linea~"   OP =~"=~"    EXP2 =~":a_linea~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"m_proref_muestras.co_muestra~"   OP =~"=~"    EXP2 =~":a_muestra~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"m_proref_muestras.co_talla~"   OP =~"=~"    EXP2 =~":a_talla~" ) ) ARG(NAME = ~"a_fabrica~" TYPE = number)  ARG(NAME = ~"a_linea~" TYPE = number)  ARG(NAME = ~"a_muestra~" TYPE = number)  ARG(NAME = ~"a_talla~" TYPE = number) " arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number),("a_talla", number))  sort="orden_operacion A " )
+text(band=header alignment="2" text="M Proref Muestras
+Orden Operacion" border="0" color="0" x="9" y="8" height="128" width="489"  name=m_proref_muestras_orden_operacion_t  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="M Proref Muestras
+Co Centro" border="0" color="0" x="507" y="8" height="128" width="489"  name=m_proref_muestras_co_centro_t  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="0" color="0" x="9" y="8" height="76" width="489" format="[general]"  name=orden_operacion edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=32766 border="0" color="0" x="507" y="8" height="76" width="489" format="[general]"  name=co_centro edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=0 border="0" color="0" x="1010" y="0" height="64" width="800"  name=de_operacion  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="M Operacio Ct De Operacion" border="0" color="0" x="1006" y="4" height="76" width="805"  name=t_1  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
