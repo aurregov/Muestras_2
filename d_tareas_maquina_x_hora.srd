@@ -1,0 +1,108 @@
+HA$PBExportHeader$d_tareas_maquina_x_hora.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=88 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=nu_orden dbname="mu_gantt.nu_orden" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=consec dbname="mu_gantt.consec" )
+ column=(type=long update=yes updatewhereclause=yes name=id_actividad dbname="mu_gantt.id_actividad" )
+ column=(type=long update=yes updatewhereclause=yes name=co_operacion dbname="mu_gantt.co_operacion" )
+ column=(type=long update=yes updatewhereclause=yes name=cola_tin dbname="mu_gantt.cola_tin" )
+ column=(type=datetime update=yes updatewhereclause=yes name=f_prog_ini dbname="mu_gantt.f_prog_ini" )
+ column=(type=datetime update=yes updatewhereclause=yes name=f_prog_fin dbname="mu_gantt.f_prog_fin" )
+ column=(type=datetime update=yes updatewhereclause=yes name=f_mov_ini dbname="mu_gantt.f_mov_ini" )
+ column=(type=datetime update=yes updatewhereclause=yes name=f_mov_fin dbname="mu_gantt.f_mov_fin" )
+ retrieve="SELECT mu_gantt.nu_orden,   
+		 mu_gantt.consec,   
+		 mu_gantt.id_actividad,   
+		 mu_gantt.co_operacion,   
+		 mu_gantt.cola_tin,   
+		 mu_gantt.f_prog_ini,   
+		 mu_gantt.f_prog_fin,   
+		 mu_gantt.f_mov_ini,   
+		 mu_gantt.f_mov_fin  
+FROM   mu_gantt
+WHERE  mu_gantt.co_fabrica = :an_fabrica
+ANd    mu_gantt.cs_maquina = :an_maquina
+AND    mu_gantt.f_prog_ini <= :adt_fecha_ini
+AND    mu_gantt.f_prog_fin >= :adt_fecha_fin
+
+UNION
+
+SELECT mu_gantt.nu_orden,   
+		 mu_gantt.consec,   
+		 mu_gantt.id_actividad,   
+		 mu_gantt.co_operacion,   
+		 mu_gantt.cola_tin,   
+		 mu_gantt.f_prog_ini,   
+		 mu_gantt.f_prog_fin,   
+		 mu_gantt.f_mov_ini,   
+		 mu_gantt.f_mov_fin
+FROM   mu_gantt
+WHERE  mu_gantt.co_fabrica = :an_fabrica
+ANd    mu_gantt.cs_maquina = :an_maquina
+AND    mu_gantt.f_prog_ini <= :adt_fecha_ini
+AND    mu_gantt.f_prog_fin >= :adt_fecha_ini
+
+UNION
+
+SELECT mu_gantt.nu_orden,   
+		 mu_gantt.consec,   
+		 mu_gantt.id_actividad,   
+		 mu_gantt.co_operacion,   
+		 mu_gantt.cola_tin,   
+		 mu_gantt.f_prog_ini,   
+		 mu_gantt.f_prog_fin,   
+		 mu_gantt.f_mov_ini,   
+		 mu_gantt.f_mov_fin
+FROM   mu_gantt
+WHERE  mu_gantt.co_fabrica = :an_fabrica
+ANd    mu_gantt.cs_maquina = :an_maquina
+AND    mu_gantt.f_prog_ini >= :adt_fecha_ini
+AND    mu_gantt.f_prog_fin <= :adt_fecha_fin
+
+UNION
+
+SELECT mu_gantt.nu_orden,   
+		 mu_gantt.consec,   
+		 mu_gantt.id_actividad,   
+		 mu_gantt.co_operacion,   
+		 mu_gantt.cola_tin,   
+		 mu_gantt.f_prog_ini,   
+		 mu_gantt.f_prog_fin,   
+		 mu_gantt.f_mov_ini,   
+		 mu_gantt.f_mov_fin
+FROM   mu_gantt
+WHERE  mu_gantt.co_fabrica = :an_fabrica
+ANd    mu_gantt.cs_maquina = :an_maquina
+AND    mu_gantt.f_prog_ini <= :adt_fecha_fin
+AND    mu_gantt.f_prog_fin >= :adt_fecha_fin  
+
+
+
+
+
+   
+" update="mu_gantt" updatewhere=1 updatekeyinplace=yes arguments=(("an_fabrica", number),("an_maquina", number),("adt_fecha_ini", datetime),("adt_fecha_fin", datetime)) )
+text(band=header alignment="2" text="Nu Orden" border="0" color="33554432" x="9" y="8" height="56" width="439" html.valueishtml="0"  name=nu_orden_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Consec" border="0" color="33554432" x="457" y="8" height="56" width="439" html.valueishtml="0"  name=consec_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Id Actividad" border="0" color="33554432" x="905" y="8" height="56" width="439" html.valueishtml="0"  name=id_actividad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Operacion" border="0" color="33554432" x="1353" y="8" height="56" width="439" html.valueishtml="0"  name=co_operacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="F Prog Ini" border="0" color="33554432" x="1801" y="8" height="56" width="805" html.valueishtml="0"  name=f_prog_ini_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="F Prog Fin" border="0" color="33554432" x="2615" y="8" height="56" width="805" html.valueishtml="0"  name=f_prog_fin_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="F Mov Ini" border="0" color="0" x="3429" y="4" height="56" width="1065" html.valueishtml="0"  name=f_mov_ini_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="F Mov Fin" border="0" color="0" x="4503" y="4" height="56" width="1065" html.valueishtml="0"  name=f_mov_fin_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Cola Tin" border="0" color="0" x="5577" y="4" height="56" width="311" html.valueishtml="0"  name=cola_tin_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="1" tabsequence=10 border="0" color="33554432" x="9" y="8" height="72" width="439" format="[general]" html.valueishtml="0"  name=nu_orden visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=20 border="0" color="33554432" x="457" y="8" height="72" width="439" format="[general]" html.valueishtml="0"  name=consec visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=30 border="0" color="33554432" x="905" y="8" height="72" width="439" format="[general]" html.valueishtml="0"  name=id_actividad visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="1" tabsequence=40 border="0" color="33554432" x="1353" y="8" height="72" width="439" format="[general]" html.valueishtml="0"  name=co_operacion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=50 border="0" color="33554432" x="1801" y="8" height="72" width="805" format="[shortdate] [time]" html.valueishtml="0"  name=f_prog_ini visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=60 border="0" color="33554432" x="2615" y="8" height="72" width="805" format="[shortdate] [time]" html.valueishtml="0"  name=f_prog_fin visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="33554432" x="3429" y="0" height="60" width="1065" format="[shortdate] [time]" html.valueishtml="0"  name=f_mov_ini visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="33554432" x="4503" y="0" height="60" width="1065" format="[shortdate] [time]" html.valueishtml="0"  name=f_mov_fin visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="33554432" x="5577" y="0" height="56" width="311" format="[general]" html.valueishtml="0"  name=cola_tin visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
