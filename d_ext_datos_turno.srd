@@ -1,0 +1,16 @@
+HA$PBExportHeader$d_ext_datos_turno.srd
+$PBExportComments$DWO para la consulta de los turnos
+release 8;
+datawindow(units=0 timer_interval=0 color=67108864 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=172 color="536870912" )
+table(column=(type=long updatewhereclause=no name=id_turno dbname="id_turno" validation="Integer(GetText())>0" validationmsg="'C$$HEX1$$f300$$ENDHEX$$digo del turno no v$$HEX1$$e100$$ENDHEX$$lido.Deber ser mayor a cero'" )
+ column=(type=char(80) updatewhereclause=no name=de_turno dbname="de_turno" )
+ )
+text(band=detail alignment="1" text="C$$HEX1$$f300$$ENDHEX$$digo Turno:" border="0" color="33554432" x="18" y="20" height="56" width="306" html.valueishtml="0"  name=id_turno_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Descripci$$HEX1$$f300$$ENDHEX$$n:" border="0" color="33554432" x="50" y="100" height="56" width="274" html.valueishtml="0"  name=de_turno_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=10 border="5" color="33554432" x="334" y="16" height="60" width="690" format="#####" html.valueishtml="0"  name=id_turno visible="1" editmask.mask="#####" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=2 alignment="0" tabsequence=20 border="5" color="33554432" x="334" y="100" height="60" width="690" format="[General]" html.valueishtml="0"  name=de_turno visible="1" edit.limit=80 edit.case=upper edit.format="" edit.focusrectangle=no edit.autoselect=no edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
