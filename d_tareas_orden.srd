@@ -1,0 +1,98 @@
+HA$PBExportHeader$d_tareas_orden.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=64 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=id_actividad dbname="mu_gantt.id_actividad" )
+ column=(type=long updatewhereclause=yes name=co_operacion dbname="mu_gantt.co_operacion" )
+ column=(type=char(50) updatewhereclause=yes name=descripcion dbname="descripcion" )
+ column=(type=long updatewhereclause=yes name=co_estado dbname="mu_gantt.co_estado" )
+ column=(type=char(20) updatewhereclause=yes name=de_estado dbname="de_estado" )
+ column=(type=datetime updatewhereclause=yes name=f_mov_ini dbname="mu_gantt.f_mov_ini" )
+ column=(type=datetime updatewhereclause=yes name=f_mov_fin dbname="mu_gantt.f_mov_fin" )
+ column=(type=long updatewhereclause=yes name=minutos dbname="mu_gantt.minutos" )
+ column=(type=long updatewhereclause=yes name=co_grupo dbname="mu_gantt.co_grupo" )
+ column=(type=char(50) updatewhereclause=yes name=de_grupo dbname="de_grupo" )
+ column=(type=char(50) updatewhereclause=yes name=de_maquina dbname="de_maquina" )
+ column=(type=long updatewhereclause=yes name=consec dbname="mu_gantt.consec" )
+ column=(type=long updatewhereclause=yes name=cs_maquina dbname="mu_gantt.cs_maquina" )
+ column=(type=long updatewhereclause=yes name=posicion dbname="mu_gantt.posicion" )
+ column=(type=long updatewhereclause=yes name=cons_color dbname="mu_gantt.cons_color" )
+ column=(type=long updatewhereclause=yes name=co_color dbname="co_color" )
+ column=(type=long updatewhereclause=yes name=condicion dbname="mu_gantt.condicion" )
+ column=(type=long updatewhereclause=yes name=nu_sol_serv dbname="mu_gantt.nu_sol_serv" )
+ column=(type=datetime updatewhereclause=yes name=fe_fin dbname="mu_gantt.fe_fin" )
+ retrieve="  SELECT mu_gantt.id_actividad,
+  			mu_gantt.co_operacion,
+			trim(upper(sp_nom_ao_tarea(mu_gantt.co_operacion,mu_gantt.id_actividad, m_muestras.co_tipoprod))) AS descripcion,
+         mu_gantt.co_estado,
+			trim(upper(sp_nom_m_est_mue(mu_gantt.co_estado))) AS de_estado,
+         mu_gantt.f_mov_ini,
+			mu_gantt.f_mov_fin,         
+         mu_gantt.minutos,         
+         mu_gantt.co_grupo,
+		 	trim(upper(sp_desc_m_mu_grupo(mu_gantt.co_grupo))) AS de_grupo,
+		 	trim(upper(sp_nom_m_maquina(mu_gantt.co_fabrica,mu_gantt.cs_maquina))) AS de_maquina,
+			mu_gantt.consec,
+         mu_gantt.cs_maquina,
+         mu_gantt.posicion,
+         mu_gantt.cons_color,
+         sp_col_orden(mu_gantt.nu_orden,mu_gantt.cons_color) as co_color,
+         mu_gantt.condicion,
+         mu_gantt.nu_sol_serv,
+         mu_gantt.fe_fin
+    FROM mu_gantt,  dt_mu_ord, m_muestras  
+   WHERE ( mu_gantt.nu_orden    = dt_mu_ord.nu_orden )      AND          
+         ( dt_mu_ord.co_fabrica = m_muestras.co_fabrica )        AND  
+         ( dt_mu_ord.co_linea   = m_muestras.co_linea )      AND        
+         ( dt_mu_ord.co_muestra = m_muestras.co_muestra ) AND
+	      ( mu_gantt.nu_orden = :al_nu_orden ) and
+         ( mu_gantt.condicion <> 8 )
+			
+order by mu_gantt.posicion
+" arguments=(("al_nu_orden", number))  sort="posicion A " )
+text(band=header alignment="2" text="Id Actividad" border="0" color="33554432" x="9" y="8" height="56" width="274" html.valueishtml="0"  name=id_actividad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Cod. Operaci$$HEX1$$f300$$ENDHEX$$n" border="0" color="33554432" x="293" y="8" height="56" width="366" html.valueishtml="0"  name=co_operacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Descripcion" border="0" color="33554432" x="667" y="8" height="56" width="1166" html.valueishtml="0"  name=descripcion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Cod. Estado" border="0" color="33554432" x="1842" y="8" height="56" width="274" html.valueishtml="0"  name=co_estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Desc. Estado" border="0" color="33554432" x="2126" y="8" height="56" width="480" html.valueishtml="0"  name=de_estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Fe. Mov. Ini" border="0" color="33554432" x="2615" y="8" height="56" width="503" html.valueishtml="0"  name=f_mov_ini_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Fe. Mov. Fin" border="0" color="33554432" x="3127" y="8" height="56" width="503" html.valueishtml="0"  name=f_mov_fin_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Minutos" border="0" color="33554432" x="3639" y="8" height="56" width="274" html.valueishtml="0"  name=minutos_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Cod. Grupo" border="0" color="33554432" x="3922" y="8" height="56" width="274" html.valueishtml="0"  name=co_grupo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Desc. Grupo" border="0" color="33554432" x="4206" y="8" height="56" width="1166" html.valueishtml="0"  name=de_grupo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Desc. M$$HEX1$$e100$$ENDHEX$$quina" border="0" color="33554432" x="5381" y="8" height="56" width="1166" html.valueishtml="0"  name=de_maquina_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Consec" border="0" color="33554432" x="6555" y="8" height="56" width="274" html.valueishtml="0"  name=consec_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Cs Maquina" border="0" color="0" x="6839" y="4" height="56" width="169" html.valueishtml="0"  name=cs_maquina_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Posicion" border="0" color="0" x="7017" y="4" height="56" width="311" html.valueishtml="0"  name=posicion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Cons Color" border="0" color="0" x="7337" y="4" height="56" width="238" html.valueishtml="0"  name=cons_color_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Co Color" border="0" color="0" x="7584" y="4" height="56" width="325" html.valueishtml="0"  name=co_color_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Condicion" border="0" color="0" x="7918" y="4" height="56" width="283" html.valueishtml="0"  name=condicion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Nu Sol Serv" border="0" color="0" x="8210" y="4" height="56" width="343" html.valueishtml="0"  name=nu_sol_serv_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Fe Fin" border="0" color="0" x="8562" y="4" height="76" width="658" html.valueishtml="0"  name=fe_fin_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="5" color="33554432" x="9" y="8" height="60" width="274" format="[general]" html.valueishtml="0"  name=id_actividad visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=32766 border="5" color="33554432" x="293" y="8" height="60" width="366" format="[general]" html.valueishtml="0"  name=co_operacion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="5" color="33554432" x="667" y="8" height="60" width="1166" format="[general]" html.valueishtml="0"  name=descripcion visible="1" edit.limit=50 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="1" tabsequence=32766 border="5" color="33554432" x="1842" y="8" height="60" width="274" format="[general]" html.valueishtml="0"  name=co_estado visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="5" color="33554432" x="2126" y="8" height="60" width="480" format="[general]" html.valueishtml="0"  name=de_estado visible="1" edit.limit=20 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="5" color="33554432" x="2615" y="8" height="60" width="503" format="[shortdate] [time]" html.valueishtml="0"  name=f_mov_ini visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="5" color="33554432" x="3127" y="8" height="60" width="503" format="[shortdate] [time]" html.valueishtml="0"  name=f_mov_fin visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="1" tabsequence=32766 border="5" color="33554432" x="3639" y="8" height="60" width="274" format="[general]" html.valueishtml="0"  name=minutos visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="1" tabsequence=32766 border="5" color="33554432" x="3922" y="8" height="60" width="274" format="[general]" html.valueishtml="0"  name=co_grupo visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="5" color="33554432" x="4206" y="8" height="60" width="1166" format="[general]" html.valueishtml="0"  name=de_grupo visible="1" edit.limit=50 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="5" color="33554432" x="5381" y="8" height="60" width="1166" format="[general]" html.valueishtml="0"  name=de_maquina visible="1" edit.limit=50 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="1" tabsequence=32766 border="5" color="33554432" x="6555" y="8" height="60" width="274" format="[general]" html.valueishtml="0"  name=consec visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="0" tabsequence=32766 border="0" color="33554432" x="6839" y="0" height="56" width="169" format="[general]" html.valueishtml="0"  name=cs_maquina visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="0" color="33554432" x="7017" y="0" height="56" width="311" format="[general]" html.valueishtml="0"  name=posicion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="0" color="33554432" x="7337" y="0" height="56" width="238" format="[general]" html.valueishtml="0"  name=cons_color visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="0" tabsequence=32766 border="0" color="33554432" x="7584" y="0" height="56" width="325" format="[general]" html.valueishtml="0"  name=co_color visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=17 alignment="0" tabsequence=32766 border="0" color="33554432" x="7918" y="0" height="56" width="283" format="[general]" html.valueishtml="0"  name=condicion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=18 alignment="0" tabsequence=32766 border="0" color="33554432" x="8210" y="0" height="56" width="343" format="[general]" html.valueishtml="0"  name=nu_sol_serv visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=19 alignment="0" tabsequence=32766 border="0" color="33554432" x="8562" y="0" height="56" width="658" format="[shortdate] [time]" html.valueishtml="0"  name=fe_fin visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
