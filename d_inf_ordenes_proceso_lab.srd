@@ -1,0 +1,125 @@
+HA$PBExportHeader$d_inf_ordenes_proceso_lab.srd
+$PBExportComments$/***********************************************************~r~nSA54492 - Ceiba/jjmonsal - 18-03-2016~r~nComentario: Reporte de solicitudes de dllo calcetines~r~n***********************************************************/
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=148 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=m_muestras_co_tipoprod dbname="m_muestras.co_tipoprod" )
+ column=(type=long updatewhereclause=yes name=co_fabrica dbname="dt_mu_ord.co_fabrica" )
+ column=(type=long updatewhereclause=yes name=co_linea dbname="dt_mu_ord.co_linea" )
+ column=(type=long updatewhereclause=yes name=co_muestra dbname="dt_mu_ord.co_muestra" )
+ column=(type=long updatewhereclause=yes name=nu_orden dbname="dt_mu_ord.nu_orden" )
+ column=(type=char(50) updatewhereclause=yes name=de_cliente dbname="de_cliente" )
+ column=(type=char(30) updatewhereclause=yes name=de_desarrollador dbname="de_desarrollador" )
+ column=(type=char(30) updatewhereclause=yes name=de_ejecutiva dbname="de_ejecutiva" )
+ column=(type=char(50) updatewhereclause=yes name=estado_orden dbname="estado_orden" )
+ column=(type=char(20) updatewhereclause=yes name=centro_proceso dbname="centro_proceso" )
+ column=(type=char(40) updatewhereclause=yes name=grupo_proceso dbname="grupo_proceso" )
+ column=(type=datetime updatewhereclause=yes name=fecha_inicio_original dbname="fecha_inicio_original" )
+ column=(type=datetime updatewhereclause=yes name=fecha_fin_original dbname="fecha_fin_original" )
+ column=(type=datetime updatewhereclause=yes name=fecha_inicio_actual dbname="mu_gantt.fecha_inicio_actual" )
+ column=(type=datetime updatewhereclause=yes name=fecha_fin_actual dbname="mu_gantt.fecha_fin_actual" )
+ column=(type=char(29) updatewhereclause=yes name=dias_retrazo dbname="dias_retrazo" )
+ column=(type=long updatewhereclause=yes name=prioridad dbname="dt_mu_ord.prioridad" )
+ column=(type=long updatewhereclause=yes name=dias_registro dbname="dias_registro" )
+ column=(type=char(25) updatewhereclause=yes name=color_hilaza dbname="color_hilaza" )
+ column=(type=char(50) updatewhereclause=yes name=descripcion dbname="descripcion" )
+ retrieve="  SELECT m_muestras.co_tipoprod,
+			dt_mu_ord.co_fabrica,
+         dt_mu_ord.co_linea,
+         dt_mu_ord.co_muestra,
+         dt_mu_ord.nu_orden,
+         sp_nom_cliente(m_muestras.tipo_muestra,m_muestras.co_cliente,m_muestras.co_sucursal) as de_cliente,
+         sp_desc_desarrollador(dt_mu_ord.co_ctecnico) AS de_desarrollador,
+         sp_nom_ejecutivo(m_muestras.tipo_muestra,dt_mu_ord.co_ejecutiva) AS de_ejecutiva,
+			sp_nom_m_con_orden(dt_mu_ord.condicion) AS estado_orden,
+         sp_mu_centro_proce(dt_mu_ord.nu_orden) AS centro_proceso,
+			sp_mu_grupo_proce(dt_mu_ord.nu_orden) AS grupo_proceso,
+         sp_mu_feini_report(dt_mu_ord.nu_orden,1) AS fecha_inicio_original,
+         sp_mu_feini_report(dt_mu_ord.nu_orden,2)  AS fecha_fin_original,
+         mu_gantt.fe_ini  AS fecha_inicio_actual,
+         mu_gantt.fe_fin  AS fecha_fin_actual,
+			current - sp_mu_feini_report(dt_mu_ord.nu_orden,9) AS dias_retrazo,
+         dt_mu_ord.prioridad,
+			sp_dias(dt_mu_ord.fe_creacion,current)  AS dias_registro,
+			(CASE WHEN mu_soli_hilaza.de_color IS NULL THEN 
+				CAST((SELECT dt_mu_ord_col.co_color 
+							FROM dt_mu_ord_col
+							WHERE mu_gantt.nu_orden = dt_mu_ord_col.nu_orden
+								AND mu_gantt.cons_color = dt_mu_ord_col.cons_color
+						) AS CHAR(8)
+					)
+				ELSE
+					mu_soli_hilaza.de_color
+			END) AS color_hilaza,
+			trim(sp_nom_ao_tarea(mu_gantt.co_operacion,mu_gantt.id_actividad, m_muestras.co_tipoprod)) AS descripcion
+    FROM dt_mu_ord,   
+         m_muestras,
+			mu_gantt, OUTER mu_soli_hilaza         
+   WHERE ( m_muestras.co_fabrica = dt_mu_ord.co_fabrica ) AND  
+         ( m_muestras.co_linea = dt_mu_ord.co_linea ) AND  
+         ( m_muestras.co_muestra = dt_mu_ord.co_muestra ) AND
+			( mu_gantt.nu_orden    = dt_mu_ord.nu_orden ) AND 
+			( mu_soli_hilaza.nu_orden = mu_gantt.nu_orden ) AND 
+			( mu_soli_hilaza.consec   = mu_gantt.consec ) AND 
+			( (mu_gantt.f_prog_ini >= :adt_fe_inicial) OR (:adt_fe_inicial = Datetime(1900-01-01 00:00:00) Year To Fraction(5)) ) AND
+    		( (mu_gantt.f_prog_fin <= :adt_fe_final) OR (:adt_fe_final = Datetime(1900-01-01 23:59:59) Year To Fraction(5)) ) AND 
+			( (dt_mu_ord.condicion IN (2,3) AND (mu_gantt.condicion <> 8 ) ) ) AND 
+			( mu_gantt.fe_fin IS NULL ) AND 
+			( sp_mu_get_grupo_proce(dt_mu_ord.nu_orden) IN (SELECT m_mu_grupo.id_grupo FROM m_mu_grupo WHERE m_mu_grupo.SN_Dllo_Color=~"S~"))
+
+" arguments=(("adt_fe_inicial", datetime),("adt_fe_final", datetime))  sort="m_muestras_co_tipoprod A co_fabrica A co_linea A co_muestra A nu_orden A " )
+group(level=1 header.height=80 trailer.height=0 by=("m_muestras_co_tipoprod" ) header.color="536870912" trailer.color="536870912" )
+text(band=header alignment="2" text="F$$HEX1$$e100$$ENDHEX$$b." border="2" color="33554432" x="9" y="88" height="56" width="123" html.valueishtml="0"  name=co_fabrica_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="L$$HEX1$$ed00$$ENDHEX$$n." border="2" color="33554432" x="142" y="88" height="56" width="119" html.valueishtml="0"  name=co_linea_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Mue." border="2" color="33554432" x="270" y="88" height="56" width="142" html.valueishtml="0"  name=dt_mu_ord_co_muestra_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Ord." border="2" color="33554432" x="421" y="88" height="56" width="219" html.valueishtml="0"  name=dt_mu_ord_nu_orden_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+button(band=header text="Filtrar" enabled=yes action="9" border="0" color="0" x="649" y="8" height="72" width="283" vtextalign="0" htextalign="0"  name=b_filtrar visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+button(band=header text="Ordenar" enabled=yes action="8" border="0" color="0" x="1024" y="8" height="72" width="283" vtextalign="0" htextalign="0"  name=b_sort visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+text(band=header alignment="2" text="Color Hilaza" border="2" color="0" x="649" y="88" height="56" width="878" html.valueishtml="0"  name=color_hilaza_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Cliente" border="2" color="0" x="1536" y="88" height="56" width="873" html.valueishtml="0"  name=de_cliente_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Desarrollador" border="2" color="33554432" x="2418" y="88" height="56" width="800" html.valueishtml="0"  name=de_desarrollador_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Ejecutiva" border="2" color="33554432" x="3227" y="88" height="56" width="672" html.valueishtml="0"  name=de_ejecutiva_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Estado Orden" border="2" color="0" x="3909" y="88" height="56" width="718" html.valueishtml="0"  name=estado_orden_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Centro Proceso" border="2" color="33554432" x="4635" y="88" height="56" width="622" html.valueishtml="0"  name=dt_mu_ord_centro_proceso_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+compute(band=header alignment="0" expression="'Page ' + page() + ' of ' + pageCount()"border="0" color="0" x="8082" y="12" height="56" width="599" format="[general]" html.valueishtml="0"  name=page_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="Grupo Proceso" border="2" color="0" x="5266" y="88" height="56" width="960" html.valueishtml="0"  name=grupo_proceso_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Fe. Ini. Original" border="2" color="33554432" x="6235" y="88" height="56" width="398" html.valueishtml="0"  name=fecha_inicio_original_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Fe. Fin Original" border="2" color="33554432" x="6642" y="88" height="56" width="398" html.valueishtml="0"  name=fecha_fin_original_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Fe. Ini. Actual" border="2" color="33554432" x="7049" y="88" height="56" width="393" html.valueishtml="0"  name=fecha_inicio_actual_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Fe. Fin Actual" border="2" color="33554432" x="7451" y="88" height="56" width="398" html.valueishtml="0"  name=fecha_fin_actual_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Dias Retrazo" border="2" color="33554432" x="7858" y="88" height="56" width="466" html.valueishtml="0"  name=dias_retrazo_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Dias Reg." border="2" color="0" x="8667" y="88" height="56" width="247" html.valueishtml="0"  name=dias_registro_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Descripcion Tarea" border="2" color="0" x="8923" y="88" height="56" width="818" html.valueishtml="0"  name=descripcion_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Prioridad" border="2" color="0" x="8334" y="88" height="56" width="325" html.valueishtml="0"  name=dt_mu_ord_prioridad_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header.1 alignment="2" text="Tipo Producto" border="2" color="33554432" x="27" y="12" height="56" width="375" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=header.1 id=1 alignment="0" tabsequence=32766 border="0" color="33554432" x="421" y="12" height="60" width="219" format="[general]" html.valueishtml="0"  name=m_muestras_co_tipoprod visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=header.1 id=1 alignment="0" tabsequence=32766 border="0" color="33554432" x="658" y="12" height="60" width="937" format="[general]" html.valueishtml="0"  name=m_muestras_co_tipoprod_1 visible="1" dddw.name=d_dddw_tipoprod dddw.displaycolumn=de_tipoprod dddw.datacolumn=co_tipoprod dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="2" text="# Colores por Orden:" border="2" color="33554432" x="2208" y="12" height="56" width="526" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+compute(band=header.1 alignment="0" expression="count(  nu_orden  for group 1 )"border="0" color="33554432" x="2752" y="12" height="56" width="965" format="[General]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=32766 border="4" color="33554432" x="9" y="4" height="60" width="123" format="[general]" html.valueishtml="0"  name=co_fabrica visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=32766 border="4" color="33554432" x="142" y="4" height="60" width="119" format="[general]" html.valueishtml="0"  name=co_linea visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="1" tabsequence=32766 border="4" color="33554432" x="270" y="4" height="60" width="142" format="[general]" html.valueishtml="0"  name=co_muestra visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="1" tabsequence=32766 border="4" color="33554432" x="421" y="4" height="60" width="219" format="[general]" html.valueishtml="0"  name=nu_orden visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=19 alignment="0" tabsequence=32766 border="4" color="33554432" x="649" y="4" height="60" width="878" format="[general]" html.valueishtml="0"  name=color_hilaza visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="4" color="33554432" x="1536" y="4" height="60" width="873" format="[general]" html.valueishtml="0"  name=de_cliente visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="4" color="33554432" x="2418" y="4" height="60" width="800" format="~tupper(  de_desarrollador  )" html.valueishtml="0"  name=de_desarrollador visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="4" color="33554432" x="3227" y="4" height="60" width="672" format="~tupper( de_ejecutiva )" html.valueishtml="0"  name=de_ejecutiva visible="1" edit.limit=30 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="4" color="33554432" x="3909" y="4" height="60" width="718" format="[general]" html.valueishtml="0"  name=estado_orden visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="4" color="33554432" x="4635" y="4" height="60" width="622" format="[General]~tupper( centro_proceso )" html.valueishtml="0"  name=centro_proceso visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="4" color="33554432" x="5266" y="4" height="60" width="960" format="[general]" html.valueishtml="0"  name=grupo_proceso visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="4" color="33554432" x="6235" y="4" height="60" width="398" format="yyyy/mm/dd hh:mm" html.valueishtml="0"  name=fecha_inicio_original visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="0" tabsequence=32766 border="4" color="33554432" x="6642" y="4" height="60" width="398" format="yyyy/mm/dd hh:mm" html.valueishtml="0"  name=fecha_fin_original visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="4" color="33554432" x="7049" y="4" height="60" width="393" format="yyyy/mm/dd hh:mm" html.valueishtml="0"  name=fecha_inicio_actual visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="4" color="33554432" x="7451" y="4" height="60" width="398" format="yyyy/mm/dd hh:mm" html.valueishtml="0"  name=fecha_fin_actual visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="0" tabsequence=32766 border="4" color="33554432" x="7858" y="4" height="60" width="466" format="[general]" html.valueishtml="0"  name=dias_retrazo visible="1" edit.name="###-##-####" editmask.mask="##########" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=18 alignment="2" tabsequence=32766 border="4" color="33554432" x="8667" y="4" height="60" width="247" format="[general]" html.valueishtml="0"  name=dias_registro visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=20 alignment="0" tabsequence=32766 border="4" color="33554432" x="8923" y="4" height="60" width="818" format="[general]" html.valueishtml="0"  name=descripcion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=17 alignment="2" tabsequence=32766 border="4" color="33554432" x="8334" y="4" height="60" width="325" format="[general]" html.valueishtml="0"  name=prioridad visible="1" dddw.name=d_dddw_m_prioridades dddw.displaycolumn=descripcion dddw.datacolumn=co_prior dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
