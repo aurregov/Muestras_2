@@ -1,0 +1,66 @@
+HA$PBExportHeader$d_dt_med_ref_rep.srd
+$PBExportComments$Medidas reposadas de referencias
+release 9;
+datawindow(units=0 timer_interval=0 color=79017397 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_centro dbname="dt_med_ref_rep.co_centro" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_subcentro dbname="dt_med_ref_rep.co_subcentro" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_recurso dbname="dt_med_ref_rep.co_recurso" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="dt_med_ref_rep.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_linea dbname="dt_med_ref_rep.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_referencia dbname="dt_med_ref_rep.co_referencia" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_talla dbname="dt_med_ref_rep.co_talla" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_calidad dbname="dt_med_ref_rep.co_calidad" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_diseno dbname="dt_med_ref_rep.co_diseno" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_tipoprod dbname="dt_med_ref_rep.co_tipoprod" )
+ column=(type=char(6) update=yes updatewhereclause=yes key=yes name=id_med_rep dbname="dt_med_ref_rep.id_med_rep" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=ca_cm dbname="dt_med_ref_rep.ca_cm" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="dt_med_ref_rep.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="dt_med_ref_rep.usuario" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="dt_med_ref_rep.instancia" )
+ column=(type=char(10) updatewhereclause=yes name=ca_pulg dbname="ca_pulg" )
+ retrieve="  SELECT dt_med_ref_rep.co_centro,   
+         dt_med_ref_rep.co_subcentro,   
+         dt_med_ref_rep.co_recurso,   
+         dt_med_ref_rep.co_fabrica,   
+         dt_med_ref_rep.co_linea,   
+         dt_med_ref_rep.co_referencia,   
+         dt_med_ref_rep.co_talla,   
+         dt_med_ref_rep.co_calidad,   
+         dt_med_ref_rep.co_diseno,   
+         dt_med_ref_rep.co_tipoprod,   
+         dt_med_ref_rep.id_med_rep,   
+         dt_med_ref_rep.ca_cm,   
+         dt_med_ref_rep.fe_actualizacion,    
+         dt_med_ref_rep.usuario,   
+         dt_med_ref_rep.instancia,   
+         '          ' as ca_pulg  
+    FROM dt_med_ref_rep  
+   WHERE ( dt_med_ref_rep.co_centro = 12 ) AND  
+         ( dt_med_ref_rep.co_subcentro = 12 ) AND  
+         ( dt_med_ref_rep.co_recurso = :a_recurso ) AND  
+         ( dt_med_ref_rep.co_fabrica = :a_fabrica ) AND  
+         ( dt_med_ref_rep.co_linea = :a_linea ) AND  
+         ( dt_med_ref_rep.co_referencia = :a_referencia ) AND  
+         ( dt_med_ref_rep.co_talla = :a_talla ) AND  
+         ( dt_med_ref_rep.co_calidad = :a_calidad ) AND  
+         ( dt_med_ref_rep.co_diseno = :a_diseno )    
+" update="dt_med_ref_rep" updatewhere=0 updatekeyinplace=yes arguments=(("a_fabrica", number),("a_linea", number),("a_referencia", number),("a_talla", number),("a_calidad", number),("a_diseno", number),("a_recurso", number))  sort="id_med_rep A " )
+text(band=header alignment="2" text="Medida" border="6" color="8388736" x="238" y="8" height="56" width="718" html.valueishtml="0"  name=id_med_rep_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Med" border="6" color="0" x="110" y="8" height="56" width="119" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="cm" border="6" color="0" x="965" y="8" height="56" width="265" html.valueishtml="0"  name=ca_cm_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Pulg" border="6" color="0" x="1239" y="8" height="56" width="187" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="" border="6" color="0" x="9" y="8" height="56" width="91" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=11 alignment="0" tabsequence=10 border="5" color="0" x="238" y="4" height="56" width="718" format="[general]" html.valueishtml="0"  name=id_med_rep visible="1" dddw.name=d_dddw_m_tipo_med_rep dddw.displaycolumn=desc_tipo_med dddw.datacolumn=id_med_rep dddw.percentwidth=180 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1089992695" )
+column(band=detail id=12 alignment="2" tabsequence=20 border="5" color="0" x="965" y="4" height="56" width="265" format="[general]" html.valueishtml="0"  name=ca_cm visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1089992695" )
+column(band=detail id=16 alignment="2" tabsequence=32766 border="5" color="0" x="1239" y="4" height="56" width="187" format="[general]" html.valueishtml="0"  name=ca_pulg visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1089992695" )
+column(band=detail id=11 alignment="2" tabsequence=32766 border="5" color="0" x="110" y="4" height="56" width="119" format="[general]" html.valueishtml="0"  name=id_med_rep_1 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="2" expression="GetRow()"border="5" color="16711680" x="9" y="4" height="56" width="91" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
