@@ -1,0 +1,49 @@
+HA$PBExportHeader$d_sq_gr_db2_tb_ordenprevfab_color_mae.srd
+$PBExportComments$/***********************************************************~r~nSA55169 - Ceiba/jjmonsal - 03-10-2016~r~nComentario: Conexion a Ordenes DB2~r~n***********************************************************/
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=128 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=char(10) updatewhereclause=yes name=tb_ordenprevfab_co_ordenprevisional dbname="TB_ORDENPREVFAB.CO_ORDENPREVISIONAL" )
+ column=(type=char(12) updatewhereclause=yes name=tb_ordenprevfab_co_ordenfabricacion dbname="TB_ORDENPREVFAB.CO_ORDENFABRICACION" )
+ column=(type=char(50) updatewhereclause=yes name=tb_ordenmaestra_ordenproduccion dbname="TB_ORDENMAESTRA.ORDENPRODUCCION" )
+ column=(type=long updatewhereclause=yes name=tb_ordenprevfab_cs_orden dbname="TB_ORDENPREVFAB.CS_ORDEN" )
+ retrieve="SELECT EFICIENC.TB_ORDENPREVFAB.CO_ORDENPREVISIONAL,
+		EFICIENC.TB_ORDENPREVFAB.CO_ORDENFABRICACION,
+		EFICIENC.TB_ORDENMAESTRA.ORDENPRODUCCION,
+		EFICIENC.TB_ORDENPREVFAB.CS_ORDEN
+FROM EFICIENC.TB_ORDENPREVFAB	INNER JOIN  EFICIENC.TB_COLOR  
+											ON EFICIENC.TB_ORDENPREVFAB.CO_COLOR =  EFICIENC.TB_COLOR.CO_COLOR
+										LEFT JOIN EFICIENC.TB_ORDENMAESTRA 
+											ON EFICIENC.TB_ORDENPREVFAB.CO_ORDENPREVISIONAL = EFICIENC.TB_ORDENMAESTRA.CO_ORDEN or 
+												(EFICIENC.TB_ORDENMAESTRA.CO_ORDEN = ( select unique ofx.co_ordenfabricacion
+		 																							from eficienc.tb_ordenprevisional op, 
+																											eficienc.tb_ordenprevfab opf , 
+																											eficienc.tb_ordenfabricacion ofx
+																										where op.co_ordenprevisional = opf.co_ordenprevisional 
+																											and opf.co_ordenfabricacion = EFICIENC.TB_ORDENPREVFAB.co_ordenfabricacion
+																											and ofx.co_ordenfabricacion = op.co_ordenfabricacion)
+												)
+		WHERE ( EFICIENC.TB_ORDENPREVFAB.CO_COLOR =  EFICIENC.TB_COLOR.CO_COLOR )
+		AND ( EFICIENC.TB_ORDENPREVFAB.CO_MATERIAL=:as_refer)
+		AND ( EFICIENC.TB_ORDENPREVFAB.CO_TALLA	=:as_talla)
+		AND ( EFICIENC.TB_COLOR.CO_COLORSAP			=:as_color)
+		AND ( EFICIENC.TB_ORDENPREVFAB.CO_ESTADO <> 6 ) 
+" arguments=(("as_refer", string),("as_talla", string),("as_color", string)) )
+text(band=header alignment="2" text="Tb Ordenprevfab
+Co Ordenprevisional" border="0" color="33554432" x="9" y="8" height="112" width="448" html.valueishtml="0"  name=tb_ordenprevfab_co_ordenprevisional_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Tb Ordenprevfab
+Co Ordenfabricacion" border="0" color="33554432" x="466" y="8" height="112" width="485" html.valueishtml="0"  name=tb_ordenprevfab_co_ordenfabricacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Tb Ordenmaestra Ordenproduccion" border="0" color="0" x="960" y="8" height="112" width="1161" html.valueishtml="0"  name=tb_ordenmaestra_ordenproduccion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Tb Ordenprevfab Cs Orden" border="0" color="0" x="2130" y="4" height="76" width="978" html.valueishtml="0"  name=tb_ordenprevfab_cs_orden_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="33554432" x="9" y="8" height="68" width="448" format="[general]" html.valueishtml="0"  name=tb_ordenprevfab_co_ordenprevisional visible="1" edit.limit=10 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="33554432" x="466" y="8" height="68" width="485" format="[general]" html.valueishtml="0"  name=tb_ordenprevfab_co_ordenfabricacion visible="1" edit.limit=12 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="33554432" x="960" y="8" height="68" width="1161" format="[general]" html.valueishtml="0"  name=tb_ordenmaestra_ordenproduccion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="33554432" x="2130" y="0" height="56" width="978" format="[general]" html.valueishtml="0"  name=tb_ordenprevfab_cs_orden visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
