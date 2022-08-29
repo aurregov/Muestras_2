@@ -1,0 +1,94 @@
+HA$PBExportHeader$d_rep_fichamp_det_5colores.srd
+$PBExportComments$Reporte de materia prima de una referencia solo detalle
+release 9;
+datawindow(units=3 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.printername="" print.documentname="Ficha de materia prima" print.orientation = 0 print.margin.left = 502 print.margin.right = 0 print.margin.top = 0 print.margin.bottom = 0 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+summary(height=26 color="536870912" )
+footer(height=26 color="536870912" )
+detail(height=502 color="536870912"  height.autosize=yes)
+table(column=(type=number updatewhereclause=no name=grupo dbname="grupo" )
+ column=(type=number updatewhereclause=no name=col1 dbname="col1" )
+ column=(type=number updatewhereclause=no name=col2 dbname="col2" )
+ column=(type=number updatewhereclause=no name=col3 dbname="col3" )
+ column=(type=number updatewhereclause=no name=col4 dbname="col4" )
+ column=(type=number updatewhereclause=no name=col5 dbname="col5" )
+ column=(type=number updatewhereclause=no name=nu_partemp dbname="nu_partemp" )
+ column=(type=number updatewhereclause=no name=nu_mp dbname="nu_mp" )
+ column=(type=number updatewhereclause=no name=co_partemp dbname="co_partemp" )
+ column=(type=number updatewhereclause=no name=co_combinacion dbname="co_combinacion" )
+ column=(type=char(50) updatewhereclause=no name=de_pc dbname="de_pc" )
+ column=(type=number updatewhereclause=no name=co_fabrica_mp dbname="co_fabrica_mp" )
+ column=(type=number updatewhereclause=no name=co_producto_mp dbname="co_producto_mp" )
+ column=(type=char(50) updatewhereclause=no name=de_mp dbname="de_mp" )
+ column=(type=decimal(2) updatewhereclause=no name=peso_mp dbname="peso_mp" )
+ column=(type=number updatewhereclause=no name=nu_conos dbname="nu_conos" )
+ column=(type=char(2) updatewhereclause=no name=alimentador dbname="alimentador" )
+ column=(type=char(6) updatewhereclause=no name=portahilo dbname="portahilo" )
+ column=(type=char(2) updatewhereclause=no name=enhebrado dbname="enhebrado" )
+ column=(type=char(2) updatewhereclause=no name=posicion dbname="posicion" )
+ column=(type=char(2) updatewhereclause=no name=tension dbname="tension" )
+ column=(type=number updatewhereclause=no name=c1 dbname="c1" )
+ column=(type=number updatewhereclause=no name=c2 dbname="c2" )
+ column=(type=number updatewhereclause=no name=c3 dbname="c3" )
+ column=(type=number updatewhereclause=no name=c4 dbname="c4" )
+ column=(type=number updatewhereclause=no name=c5 dbname="c5" )
+ column=(type=number updatewhereclause=no name=vis dbname="name_7" initial="1" )
+ procedure="1 execute procedure sp_ficha_muestra(:aco_fabrica,:aco_linea,:aco_muestra,:aco_talla,:aco_diseno,:aco_color,:aco_muestrario,:aco_centro)" arguments=(("aco_fabrica", number),("aco_linea", number),("aco_muestra", number),("aco_talla", number),("aco_diseno", number),("aco_color", number),("aco_muestrario", number),("aco_centro", number),("aco_tiporod", number))  sort="grupo A nu_partemp A nu_mp A " )
+group(level=1 header.height=476 trailer.height=555 by=("grupo" ) header.color="536870912" trailer.color="536870912"  sort="sum(nu_partemp for group 1) A sum(nu_mp for group 1) A " )
+group(level=2 header.height=0 trailer.height=0 by=("de_pc" ) resetpagecount=yes header.color="536870912" trailer.color="536870912" )
+group(level=3 header.height=0 trailer.height=0 by=("de_mp" ) header.color="536870912" trailer.color="536870912" )
+text(band=header.1 alignment="0" text="Ten" border="0" color="0" x="17303" y="53" height="370" width="582" html.valueishtml="0"  name=t_18 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Philo" border="0" color="0" x="14948" y="53" height="370" width="952" html.valueishtml="0"  name=t_15 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Enh" border="0" color="0" x="15980" y="53" height="370" width="582" html.valueishtml="0"  name=t_16 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Pos" border="0" color="0" x="16642" y="53" height="370" width="582" html.valueishtml="0"  name=t_17 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="2" text="Peso Mp" border="0" color="0" x="17965" y="53" height="370" width="1164" html.valueishtml="0"  name=peso_mp_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="2" text="Conos" border="0" color="0" x="19208" y="53" height="370" width="820" html.valueishtml="0"  name=nu_conos_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.1 alignment="0" text="Parte/Comb" border="0" color="0" x="26" y="53" height="317" width="4497" html.valueishtml="0"  name=de_pc_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Materia prima" border="0" color="0" x="4603" y="53" height="317" width="4894" html.valueishtml="0"  name=de_mp_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Ali" border="0" color="0" x="14287" y="53" height="370" width="582" html.valueishtml="0"  name=t_14 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=header.1 id=2 alignment="0" tabsequence=32766 border="0" color="0" x="9525" y="53" height="370" width="926" format="[general]" html.valueishtml="0"  name=col1 visible="1~tif( col1 =-1,0,1)" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=header.1 id=3 alignment="0" tabsequence=32766 border="0" color="0" x="10477" y="53" height="370" width="926" format="[general]" html.valueishtml="0"  name=col2 visible="1~tif( col2 =-1,0,1)" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=header.1 id=4 alignment="0" tabsequence=32766 border="0" color="0" x="11430" y="53" height="370" width="926" format="[general]" html.valueishtml="0"  name=col3 visible="1~tif( col3 =-1,0,1)" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=header.1 id=5 alignment="0" tabsequence=32766 border="0" color="0" x="12382" y="53" height="370" width="926" format="[general]" html.valueishtml="0"  name=col4 visible="1~t if( col4 =-1,0,1)" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=header.1 id=6 alignment="0" tabsequence=32766 border="0" color="0" x="13335" y="53" height="370" width="926" format="[general]" html.valueishtml="0"  name=col5 visible="1~t if( col5 =-1,0,1)" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=18 alignment="2" tabsequence=32766 border="0" color="0" x="14948" y="27" height="370" width="926" format="[general]" html.valueishtml="0"  name=portahilo visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=19 alignment="2" tabsequence=32766 border="0" color="0" x="15980" y="27" height="370" width="582" format="[general]" html.valueishtml="0"  name=enhebrado visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=20 alignment="2" tabsequence=32766 border="0" color="0" x="16642" y="27" height="370" width="582" format="[general]" html.valueishtml="0"  name=posicion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=21 alignment="2" tabsequence=32766 border="0" color="0" x="17303" y="27" height="370" width="582" format="[general]" html.valueishtml="0"  name=tension visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=15 alignment="1" tabsequence=32766 border="0" color="0" x="17965" y="27" height="396" width="1164" format="[general]" html.valueishtml="0"  name=peso_mp visible="1" editmask.mask="###,###.00" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="1" tabsequence=32766 border="0" color="0" x="19182" y="27" height="396" width="820" format="[general]" html.valueishtml="0"  name=nu_conos visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression="If(first( getrow() for group 2 ) = getrow(), 1, 0)"border="0" color="0" x="1058" y="80" height="370" width="1058" format="[GENERAL]" html.valueishtml="0"  name=compute_3 visible="0"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="255" )
+compute(band=detail alignment="0" expression="If(first( getrow() for group 3 ) = getrow(), 1, 0)"border="0" color="0" x="2540" y="106" height="370" width="1058" format="[GENERAL]" html.valueishtml="0"  name=compute_4 visible="0"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="255" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="0" x="26" y="27" height="396" width="4497" format="[general]" html.valueishtml="0"  name=de_pc visible="1~t/* MODIFICADO: Agosto 25 de 2009 
+   No importa el tipo de producto, siempre que cambie de parte se 
+   debe poner el codigo de la parte de resto no.
+*/
+  If(first( getrow() for group 2 ) = getrow(), 1, 0)
+
+
+/*
+MODIFICADO: Agosto 18 de 2009 - gagudelo - ohlondon
+Si el tipo de producto es 20 debe hacer rompimiento por descripcion de la parte/combinacion y descripcion de la Materia prima.
+
+Si el tipo de producto es 10 solo debe hacer rompimiento por la descripcion de la parte/combinacion.
+
+If(  aco_tiporod = 20, 
+      If(first( getrow() for group 2 ) = getrow(), 
+         If(first( getrow() for group 3 ) = getrow(), 1, 0), 
+      If(first( getrow() for group 3 ) = getrow(), 1, 0)), 
+  // Sino, si es tipoprod 10 
+  If(first( getrow() for group 2 ) = getrow(), 1, 0))
+*/" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="0" color="0" x="4603" y="27" height="396" width="4894" format="[general]" html.valueishtml="0"  name=de_mp visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=17 alignment="2" tabsequence=32766 border="0" color="0" x="14287" y="27" height="370" width="582" format="[general]" html.valueishtml="0"  name=alimentador visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=22 alignment="0" tabsequence=32766 border="0" color="0" x="9525" y="27" height="396" width="926" format="[general]" html.valueishtml="0"  name=c1 visible="1~tif( col1 =-1,0,1)" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=23 alignment="0" tabsequence=32766 border="0" color="0" x="10477" y="0" height="396" width="926" format="[general]" html.valueishtml="0"  name=c2 visible="1~tif( col2 =-1,0,1)" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=24 alignment="0" tabsequence=32766 border="0" color="0" x="11430" y="27" height="396" width="926" format="[general]" html.valueishtml="0"  name=c3 visible="1~tif( col3 =-1,0,1)" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=25 alignment="0" tabsequence=32766 border="0" color="0" x="12356" y="27" height="396" width="926" format="[general]" html.valueishtml="0"  name=c4 visible="1~tif( col4 =-1,0,1)" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=26 alignment="0" tabsequence=32766 border="0" color="0" x="13335" y="27" height="396" width="926" format="[general]" html.valueishtml="0"  name=c5 visible="1~tif( col5 =-1,0,1)" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=trailer.1 alignment="1" expression="sum(peso_mp for group 1)"border="0" color="0" x="17965" y="26" height="449" width="1164" format="###,###.00" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Draft 17cpi" font.height="-8" font.weight="700"  font.family="1" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=trailer.1 alignment="1" expression="sum(nu_conos for group 1)"border="0" color="0" x="19182" y="26" height="449" width="820" format="[general]" html.valueishtml="0"  name=compute_2 visible="1"  font.face="Draft 17cpi" font.height="-8" font.weight="700"  font.family="1" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
