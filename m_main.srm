@@ -1,0 +1,3685 @@
+HA$PBExportHeader$m_main.srm
+$PBExportComments$Men$$HEX2$$fa002000$$ENDHEX$$que se modifica para agregar opciones para una nueva aplicaci$$HEX1$$f300$$ENDHEX$$n
+forward
+global type m_main from m_base
+end type
+type m_0 from menu within m_configuracion
+end type
+type m_1 from menu within m_configuracion
+end type
+type m_3 from menu within m_configuracion
+end type
+type m_4 from menu within m_configuracion
+end type
+type m_estadosporcolordemuestra from menu within m_configuracion
+end type
+type m_5 from menu within m_configuracion
+end type
+type m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva from menu within m_configuracion
+end type
+type m_6 from menu within m_configuracion
+end type
+type m_clientesct$$HEX1$$e900$$ENDHEX$$cnico from menu within m_configuracion
+end type
+type m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas from menu within m_configuracion
+end type
+type m_cargosct$$HEX1$$e900$$ENDHEX$$cnico from menu within m_configuracion
+end type
+type m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico from menu within m_configuracion
+end type
+type m_actividadesdemuestras from menu within m_configuracion
+end type
+type m_recursosodetejidoparamuestras from menu within m_configuracion
+end type
+type m_gruposdetipodeproducto from menu within m_configuracion
+end type
+type m_autorizacionesportipodeproducto from menu within m_configuracion
+end type
+type m_codigosdedisenos from menu within m_configuracion
+end type
+type m_-00211041216 from menu within m_configuracion
+end type
+type m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n from menu within m_configuracion
+end type
+type m_mantenimientodeturnoshorarios from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_registrodeactividades from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_registrodeoperaciones from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_registrodeestados from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_registrodegruposdetrabajo from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_registrodebordados from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_registrodetintasantideslizantes from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_basesparaantideslizante from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_calibresdechablones from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_clasificaci$$HEX1$$f300$$ENDHEX$$ndesolserv from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_9 from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n from menu within m_configuracion
+m_mantenimientodeturnoshorarios m_mantenimientodeturnoshorarios
+m_registrodeactividades m_registrodeactividades
+m_registrodeoperaciones m_registrodeoperaciones
+m_registrodeestados m_registrodeestados
+m_registrodegruposdetrabajo m_registrodegruposdetrabajo
+m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan
+m_registrodebordados m_registrodebordados
+m_registrodetintasantideslizantes m_registrodetintasantideslizantes
+m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a
+m_basesparaantideslizante m_basesparaantideslizante
+m_calibresdechablones m_calibresdechablones
+m_clasificaci$$HEX1$$f300$$ENDHEX$$ndesolserv m_clasificaci$$HEX1$$f300$$ENDHEX$$ndesolserv
+m_9 m_9
+end type
+type m_dise$$HEX1$$f100$$ENDHEX$$osmuestra from menu within m_configuracion
+end type
+type m_pu$$HEX1$$f100$$ENDHEX$$osmuestras from menu within m_configuracion
+end type
+type m_largosmuestra from menu within m_configuracion
+end type
+type m_operaciones from menu within m_configuracion
+end type
+type m_recursosrestringidos from menu within m_configuracion
+end type
+type m_medidasreposadas from menu within m_configuracion
+end type
+type m_actualizacionmaterialsap from menu within m_configuracion
+end type
+type m_familias from menu within m_configuracion
+end type
+type m_gruposdecomposicion from menu within m_configuracion
+end type
+type m_00 from menu within m_configuracion
+end type
+type m_temporadassap from menu within m_configuracion
+end type
+type m_tallassap from menu within m_configuracion
+end type
+type m_coloressap from menu within m_configuracion
+end type
+type m_direccionesipporusuario from menu within m_configuracion
+end type
+type m_cantidadbasesap from menu within m_configuracion
+end type
+type m_permisosespecialesxusuario from menu within m_configuracion
+end type
+type m_-rayita2 from menu within m_configuracion
+end type
+type m_productosaltarotacion from menu within m_configuracion
+end type
+type m_configuracion from m_base`m_configuracion within m_main
+m_0 m_0
+m_1 m_1
+m_3 m_3
+m_4 m_4
+m_estadosporcolordemuestra m_estadosporcolordemuestra
+m_5 m_5
+m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva
+m_6 m_6
+m_clientesct$$HEX1$$e900$$ENDHEX$$cnico m_clientesct$$HEX1$$e900$$ENDHEX$$cnico
+m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas
+m_cargosct$$HEX1$$e900$$ENDHEX$$cnico m_cargosct$$HEX1$$e900$$ENDHEX$$cnico
+m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico
+m_actividadesdemuestras m_actividadesdemuestras
+m_recursosodetejidoparamuestras m_recursosodetejidoparamuestras
+m_gruposdetipodeproducto m_gruposdetipodeproducto
+m_autorizacionesportipodeproducto m_autorizacionesportipodeproducto
+m_codigosdedisenos m_codigosdedisenos
+m_-00211041216 m_-00211041216
+m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+m_dise$$HEX1$$f100$$ENDHEX$$osmuestra m_dise$$HEX1$$f100$$ENDHEX$$osmuestra
+m_pu$$HEX1$$f100$$ENDHEX$$osmuestras m_pu$$HEX1$$f100$$ENDHEX$$osmuestras
+m_largosmuestra m_largosmuestra
+m_operaciones m_operaciones
+m_recursosrestringidos m_recursosrestringidos
+m_medidasreposadas m_medidasreposadas
+m_actualizacionmaterialsap m_actualizacionmaterialsap
+m_familias m_familias
+m_gruposdecomposicion m_gruposdecomposicion
+m_00 m_00
+m_temporadassap m_temporadassap
+m_tallassap m_tallassap
+m_coloressap m_coloressap
+m_direccionesipporusuario m_direccionesipporusuario
+m_cantidadbasesap m_cantidadbasesap
+m_permisosespecialesxusuario m_permisosespecialesxusuario
+m_-rayita2 m_-rayita2
+m_productosaltarotacion m_productosaltarotacion
+end type
+type m_muestras from menu within m_movimientos
+end type
+type m_7 from menu within m_muestras
+end type
+type m_8 from menu within m_muestras
+end type
+type m_medidas from menu within m_muestras
+end type
+type m_manoobramuestra from menu within m_muestras
+end type
+type m_materiaprimamuestra from menu within m_muestras
+end type
+type m_copiarmuestraareferencia from menu within m_muestras
+end type
+type m_surtidos from menu within m_muestras
+end type
+type m_-0aaa from menu within m_muestras
+end type
+type m_estadosporcolor from menu within m_muestras
+end type
+type m_muestrab$$HEX1$$e100$$ENDHEX$$sica from menu within m_muestras
+end type
+type m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n from menu within m_muestras
+end type
+type m_muestras from menu within m_movimientos
+m_7 m_7
+m_8 m_8
+m_medidas m_medidas
+m_manoobramuestra m_manoobramuestra
+m_materiaprimamuestra m_materiaprimamuestra
+m_copiarmuestraareferencia m_copiarmuestraareferencia
+m_surtidos m_surtidos
+m_-0aaa m_-0aaa
+m_estadosporcolor m_estadosporcolor
+m_muestrab$$HEX1$$e100$$ENDHEX$$sica m_muestrab$$HEX1$$e100$$ENDHEX$$sica
+m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_referencia from menu within m_movimientos
+end type
+type m_medidasreferencia from menu within m_referencia
+end type
+type m_manoobraref from menu within m_referencia
+end type
+type m_materiaprima from menu within m_referencia
+end type
+type m_-5aax from menu within m_referencia
+end type
+type m_nuevasmedidas from menu within m_referencia
+end type
+type m_manoobranueva from menu within m_referencia
+end type
+type m_referencia from menu within m_movimientos
+m_medidasreferencia m_medidasreferencia
+m_manoobraref m_manoobraref
+m_materiaprima m_materiaprima
+m_-5aax m_-5aax
+m_nuevasmedidas m_nuevasmedidas
+m_manoobranueva m_manoobranueva
+end type
+type m_orden from menu within m_movimientos
+end type
+type m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes from menu within m_orden
+end type
+type m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n from menu within m_orden
+end type
+type m_-pol12112041805 from menu within m_orden
+end type
+type m_cambiartareasdegrupo from menu within m_orden
+end type
+type m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a from menu within m_orden
+end type
+type m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes from menu within m_orden
+end type
+type m_-l2601051147 from menu within m_orden
+end type
+type m_generargantt from menu within m_orden
+end type
+type m_-rayita0 from menu within m_orden
+end type
+type m_reservampcontroltecnico from menu within m_orden
+end type
+type m_reservampcontroltecnicoadicionales from menu within m_orden
+end type
+type m_orden from menu within m_movimientos
+m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes
+m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n
+m_-pol12112041805 m_-pol12112041805
+m_cambiartareasdegrupo m_cambiartareasdegrupo
+m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a
+m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes
+m_-l2601051147 m_-l2601051147
+m_generargantt m_generargantt
+m_-rayita0 m_-rayita0
+m_reservampcontroltecnico m_reservampcontroltecnico
+m_reservampcontroltecnicoadicionales m_reservampcontroltecnicoadicionales
+end type
+type m_correodb from menu within m_movimientos
+end type
+type m_movimientos from m_base`m_movimientos within m_main
+m_muestras m_muestras
+m_referencia m_referencia
+m_orden m_orden
+m_correodb m_correodb
+end type
+type m_refrescarlistas from menu within m_procesos
+end type
+type m_pasardisenored from menu within m_procesos
+end type
+type m_actualizarmateriaprimaenficha from menu within m_procesos
+end type
+type m_migrarmuestras from menu within m_procesos
+end type
+type m_procesos from m_base`m_procesos within m_main
+m_refrescarlistas m_refrescarlistas
+m_pasardisenored m_pasardisenored
+m_actualizarmateriaprimaenficha m_actualizarmateriaprimaenficha
+m_migrarmuestras m_migrarmuestras
+end type
+type m_muestras1 from menu within m_reportes
+end type
+type m_solicitud from menu within m_muestras1
+end type
+type m_medidasymo from menu within m_muestras1
+end type
+type m_11 from menu within m_muestras1
+end type
+type m_listamuestras from menu within m_muestras1
+end type
+type m_-0212 from menu within m_muestras1
+end type
+type m_cantidades from menu within m_muestras1
+end type
+type m_reporteconsolidado from menu within m_muestras1
+end type
+type m_saldos from menu within m_muestras1
+end type
+type m_-089797xxhgf from menu within m_muestras1
+end type
+type m_reporteejecutivas from menu within m_muestras1
+end type
+type m_muestrario-color from menu within m_muestras1
+end type
+type m_muestras1 from menu within m_reportes
+m_solicitud m_solicitud
+m_medidasymo m_medidasymo
+m_11 m_11
+m_listamuestras m_listamuestras
+m_-0212 m_-0212
+m_cantidades m_cantidades
+m_reporteconsolidado m_reporteconsolidado
+m_saldos m_saldos
+m_-089797xxhgf m_-089797xxhgf
+m_reporteejecutivas m_reporteejecutivas
+m_muestrario-color m_muestrario-color
+end type
+type m_referencias from menu within m_reportes
+end type
+type m_mediadas from menu within m_referencias
+end type
+type m_fichadematprima from menu within m_referencias
+end type
+type m_manodeobra from menu within m_referencias
+end type
+type m_-11weryhfdhgd from menu within m_referencias
+end type
+type m_nuevasmedidas0 from menu within m_referencias
+end type
+type m_materiaprimacolor-pinta from menu within m_referencias
+end type
+type m_listadematerialesasap from menu within m_referencias
+end type
+type m_referencias from menu within m_reportes
+m_mediadas m_mediadas
+m_fichadematprima m_fichadematprima
+m_manodeobra m_manodeobra
+m_-11weryhfdhgd m_-11weryhfdhgd
+m_nuevasmedidas0 m_nuevasmedidas0
+m_materiaprimacolor-pinta m_materiaprimacolor-pinta
+m_listadematerialesasap m_listadematerialesasap
+end type
+type m_$$HEX1$$f300$$ENDHEX$$rdenes from menu within m_reportes
+end type
+type m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso from menu within m_$$HEX1$$f300$$ENDHEX$$rdenes
+end type
+type m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo from menu within m_$$HEX1$$f300$$ENDHEX$$rdenes
+end type
+type m_ordenescompletas from menu within m_$$HEX1$$f300$$ENDHEX$$rdenes
+end type
+type m_10 from menu within m_$$HEX1$$f300$$ENDHEX$$rdenes
+end type
+type m_-rayita1 from menu within m_$$HEX1$$f300$$ENDHEX$$rdenes
+end type
+type m_reservampcontroltecnico0 from menu within m_$$HEX1$$f300$$ENDHEX$$rdenes
+end type
+type m_$$HEX1$$f300$$ENDHEX$$rdenes from menu within m_reportes
+m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso
+m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo
+m_ordenescompletas m_ordenescompletas
+m_10 m_10
+m_-rayita1 m_-rayita1
+m_reservampcontroltecnico0 m_reservampcontroltecnico0
+end type
+type m_programaci$$HEX1$$f300$$ENDHEX$$n from menu within m_reportes
+end type
+type m_grupos from menu within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_ordenesdetenidas from menu within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_usuariosprogramando from menu within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_movimientosrealizados from menu within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_ordenesenproceso from menu within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_d$$HEX1$$ed00$$ENDHEX$$asdedesarrollo from menu within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_muestrasconvertidas from menu within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_ordenesenprocesofecha from menu within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_ordenesenprocesolaboratorio from menu within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+type m_programaci$$HEX1$$f300$$ENDHEX$$n from menu within m_reportes
+m_grupos m_grupos
+m_ordenesdetenidas m_ordenesdetenidas
+m_usuariosprogramando m_usuariosprogramando
+m_movimientosrealizados m_movimientosrealizados
+m_ordenesenproceso m_ordenesenproceso
+m_d$$HEX1$$ed00$$ENDHEX$$asdedesarrollo m_d$$HEX1$$ed00$$ENDHEX$$asdedesarrollo
+m_muestrasconvertidas m_muestrasconvertidas
+m_ordenesenprocesofecha m_ordenesenprocesofecha
+m_ordenesenprocesolaboratorio m_ordenesenprocesolaboratorio
+end type
+type m_reportes from m_base`m_reportes within m_main
+m_muestras1 m_muestras1
+m_referencias m_referencias
+m_$$HEX1$$f300$$ENDHEX$$rdenes m_$$HEX1$$f300$$ENDHEX$$rdenes
+m_programaci$$HEX1$$f300$$ENDHEX$$n m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+end forward
+
+global type m_main from m_base
+end type
+global m_main m_main
+
+on m_main.create
+m_main=this
+call super::create
+end on
+
+on m_main.destroy
+call super::destroy
+end on
+
+type m_archivo from m_base`m_archivo within m_main
+end type
+
+on m_archivo.create
+call super::create
+end on
+
+on m_archivo.destroy
+call super::destroy
+end on
+
+type m_buscar from m_base`m_buscar within m_archivo
+end type
+
+on m_buscar.create
+call super::create
+this.tag = "1001"
+this.toolbaritemorder = 3
+this.toolbaritemspace = 1
+end on
+
+on m_buscar.destroy
+call super::destroy
+end on
+
+type m_-9 from m_base`m_-9 within m_archivo
+end type
+
+on m_-9.create
+call super::create
+this.tag = "1002"
+end on
+
+on m_-9.destroy
+call super::destroy
+end on
+
+type m_nuevo from m_base`m_nuevo within m_archivo
+end type
+
+on m_nuevo.create
+call super::create
+this.tag = "1003"
+this.toolbaritemorder = 1
+end on
+
+on m_nuevo.destroy
+call super::destroy
+end on
+
+type m_abrir from m_base`m_abrir within m_archivo
+end type
+
+on m_abrir.create
+call super::create
+this.tag = "1004"
+this.toolbaritemorder = 2
+end on
+
+on m_abrir.destroy
+call super::destroy
+end on
+
+type m_cerrar from m_base`m_cerrar within m_archivo
+end type
+
+on m_cerrar.create
+call super::create
+this.tag = "1005"
+this.toolbaritemorder = 21
+end on
+
+on m_cerrar.destroy
+call super::destroy
+end on
+
+type m_-1 from m_base`m_-1 within m_archivo
+end type
+
+on m_-1.create
+call super::create
+this.tag = "1006"
+end on
+
+on m_-1.destroy
+call super::destroy
+end on
+
+type m_guardar from m_base`m_guardar within m_archivo
+end type
+
+on m_guardar.create
+call super::create
+this.tag = "1007"
+this.toolbaritemorder = 4
+end on
+
+on m_guardar.destroy
+call super::destroy
+end on
+
+type m_guardarcomo from m_base`m_guardarcomo within m_archivo
+end type
+
+on m_guardarcomo.create
+call super::create
+this.tag = "1008"
+this.toolbaritemorder = 6
+end on
+
+on m_guardarcomo.destroy
+call super::destroy
+end on
+
+type m_-10 from m_base`m_-10 within m_archivo
+end type
+
+on m_-10.create
+call super::create
+this.tag = "1009"
+end on
+
+on m_-10.destroy
+call super::destroy
+end on
+
+type m_presentaci$$HEX1$$f300$$ENDHEX$$npreliminar from m_base`m_presentaci$$HEX1$$f300$$ENDHEX$$npreliminar within m_archivo
+end type
+
+on m_presentaci$$HEX1$$f300$$ENDHEX$$npreliminar.create
+call super::create
+this.tag = "1010"
+this.toolbaritemorder = 8
+this.toolbaritemspace = 1
+end on
+
+on m_presentaci$$HEX1$$f300$$ENDHEX$$npreliminar.destroy
+call super::destroy
+end on
+
+type m_imprimir from m_base`m_imprimir within m_archivo
+end type
+
+on m_imprimir.create
+call super::create
+this.tag = "1011"
+this.toolbaritemorder = 9
+end on
+
+on m_imprimir.destroy
+call super::destroy
+end on
+
+type m_configurar_impresora from m_base`m_configurar_impresora within m_archivo
+end type
+
+on m_configurar_impresora.create
+call super::create
+this.tag = "1012"
+this.toolbaritemorder = 10
+end on
+
+on m_configurar_impresora.destroy
+call super::destroy
+end on
+
+type m_-40 from m_base`m_-40 within m_archivo
+end type
+
+on m_-40.create
+call super::create
+this.tag = "1013"
+end on
+
+on m_-40.destroy
+call super::destroy
+end on
+
+type m_salir from m_base`m_salir within m_archivo
+end type
+
+on m_salir.create
+call super::create
+this.toolbaritemorder = 999
+end on
+
+on m_salir.destroy
+call super::destroy
+end on
+
+type m_edicion from m_base`m_edicion within m_main
+end type
+
+on m_edicion.create
+call super::create
+end on
+
+on m_edicion.destroy
+call super::destroy
+end on
+
+type m_deshacer from m_base`m_deshacer within m_edicion
+end type
+
+on m_deshacer.create
+call super::create
+this.tag = "2001"
+end on
+
+on m_deshacer.destroy
+call super::destroy
+end on
+
+type m_- from m_base`m_- within m_edicion
+end type
+
+on m_-.create
+call super::create
+this.tag = "2002"
+end on
+
+on m_-.destroy
+call super::destroy
+end on
+
+type m_cortar from m_base`m_cortar within m_edicion
+end type
+
+on m_cortar.create
+call super::create
+this.tag = "2003"
+end on
+
+on m_cortar.destroy
+call super::destroy
+end on
+
+type m_copiar from m_base`m_copiar within m_edicion
+end type
+
+on m_copiar.create
+call super::create
+this.tag = "2004"
+end on
+
+on m_copiar.destroy
+call super::destroy
+end on
+
+type m_pegar from m_base`m_pegar within m_edicion
+end type
+
+on m_pegar.create
+call super::create
+this.tag = "2005"
+end on
+
+on m_pegar.destroy
+call super::destroy
+end on
+
+type m_-6 from m_base`m_-6 within m_edicion
+end type
+
+on m_-6.create
+call super::create
+this.tag = "2006"
+end on
+
+on m_-6.destroy
+call super::destroy
+end on
+
+type m_insertar from m_base`m_insertar within m_edicion
+end type
+
+on m_insertar.create
+call super::create
+this.tag = "2007"
+this.toolbaritemorder = 5
+this.toolbaritemspace = 1
+end on
+
+on m_insertar.destroy
+call super::destroy
+end on
+
+type m_clear from m_base`m_clear within m_edicion
+end type
+
+on m_clear.create
+call super::create
+this.tag = "2008"
+end on
+
+on m_clear.destroy
+call super::destroy
+end on
+
+type m_-4 from m_base`m_-4 within m_edicion
+end type
+
+on m_-4.create
+call super::create
+this.tag = "2009"
+end on
+
+on m_-4.destroy
+call super::destroy
+end on
+
+type m_ordenar from m_base`m_ordenar within m_edicion
+end type
+
+on m_ordenar.create
+call super::create
+this.tag = "2010"
+this.toolbaritemorder = 7
+end on
+
+on m_ordenar.destroy
+call super::destroy
+end on
+
+type m_filtrar from m_base`m_filtrar within m_edicion
+end type
+
+on m_filtrar.create
+call super::create
+this.tag = "2011"
+this.toolbaritemorder = 14
+end on
+
+on m_filtrar.destroy
+call super::destroy
+end on
+
+type m_configuracion from m_base`m_configuracion within m_main
+m_0 m_0
+m_1 m_1
+m_3 m_3
+m_4 m_4
+m_estadosporcolordemuestra m_estadosporcolordemuestra
+m_5 m_5
+m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva
+m_6 m_6
+m_clientesct$$HEX1$$e900$$ENDHEX$$cnico m_clientesct$$HEX1$$e900$$ENDHEX$$cnico
+m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas
+m_cargosct$$HEX1$$e900$$ENDHEX$$cnico m_cargosct$$HEX1$$e900$$ENDHEX$$cnico
+m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico
+m_actividadesdemuestras m_actividadesdemuestras
+m_recursosodetejidoparamuestras m_recursosodetejidoparamuestras
+m_gruposdetipodeproducto m_gruposdetipodeproducto
+m_autorizacionesportipodeproducto m_autorizacionesportipodeproducto
+m_codigosdedisenos m_codigosdedisenos
+m_-00211041216 m_-00211041216
+m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+m_dise$$HEX1$$f100$$ENDHEX$$osmuestra m_dise$$HEX1$$f100$$ENDHEX$$osmuestra
+m_pu$$HEX1$$f100$$ENDHEX$$osmuestras m_pu$$HEX1$$f100$$ENDHEX$$osmuestras
+m_largosmuestra m_largosmuestra
+m_operaciones m_operaciones
+m_recursosrestringidos m_recursosrestringidos
+m_medidasreposadas m_medidasreposadas
+m_actualizacionmaterialsap m_actualizacionmaterialsap
+m_familias m_familias
+m_gruposdecomposicion m_gruposdecomposicion
+m_00 m_00
+m_temporadassap m_temporadassap
+m_tallassap m_tallassap
+m_coloressap m_coloressap
+m_direccionesipporusuario m_direccionesipporusuario
+m_cantidadbasesap m_cantidadbasesap
+m_permisosespecialesxusuario m_permisosespecialesxusuario
+m_-rayita2 m_-rayita2
+m_productosaltarotacion m_productosaltarotacion
+end type
+
+on m_configuracion.create
+call super::create
+this.tag = "30"
+this.m_0=create m_0
+this.m_1=create m_1
+this.m_3=create m_3
+this.m_4=create m_4
+this.m_estadosporcolordemuestra=create m_estadosporcolordemuestra
+this.m_5=create m_5
+this.m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva=create m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva
+this.m_6=create m_6
+this.m_clientesct$$HEX1$$e900$$ENDHEX$$cnico=create m_clientesct$$HEX1$$e900$$ENDHEX$$cnico
+this.m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas=create m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas
+this.m_cargosct$$HEX1$$e900$$ENDHEX$$cnico=create m_cargosct$$HEX1$$e900$$ENDHEX$$cnico
+this.m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico=create m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico
+this.m_actividadesdemuestras=create m_actividadesdemuestras
+this.m_recursosodetejidoparamuestras=create m_recursosodetejidoparamuestras
+this.m_gruposdetipodeproducto=create m_gruposdetipodeproducto
+this.m_autorizacionesportipodeproducto=create m_autorizacionesportipodeproducto
+this.m_codigosdedisenos=create m_codigosdedisenos
+this.m_-00211041216=create m_-00211041216
+this.m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n=create m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+this.m_dise$$HEX1$$f100$$ENDHEX$$osmuestra=create m_dise$$HEX1$$f100$$ENDHEX$$osmuestra
+this.m_pu$$HEX1$$f100$$ENDHEX$$osmuestras=create m_pu$$HEX1$$f100$$ENDHEX$$osmuestras
+this.m_largosmuestra=create m_largosmuestra
+this.m_operaciones=create m_operaciones
+this.m_recursosrestringidos=create m_recursosrestringidos
+this.m_medidasreposadas=create m_medidasreposadas
+this.m_actualizacionmaterialsap=create m_actualizacionmaterialsap
+this.m_familias=create m_familias
+this.m_gruposdecomposicion=create m_gruposdecomposicion
+this.m_00=create m_00
+this.m_temporadassap=create m_temporadassap
+this.m_tallassap=create m_tallassap
+this.m_coloressap=create m_coloressap
+this.m_direccionesipporusuario=create m_direccionesipporusuario
+this.m_cantidadbasesap=create m_cantidadbasesap
+this.m_permisosespecialesxusuario=create m_permisosespecialesxusuario
+this.m_-rayita2=create m_-rayita2
+this.m_productosaltarotacion=create m_productosaltarotacion
+this.Item[UpperBound(this.Item)+1]=this.m_0
+this.Item[UpperBound(this.Item)+1]=this.m_1
+this.Item[UpperBound(this.Item)+1]=this.m_3
+this.Item[UpperBound(this.Item)+1]=this.m_4
+this.Item[UpperBound(this.Item)+1]=this.m_estadosporcolordemuestra
+this.Item[UpperBound(this.Item)+1]=this.m_5
+this.Item[UpperBound(this.Item)+1]=this.m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva
+this.Item[UpperBound(this.Item)+1]=this.m_6
+this.Item[UpperBound(this.Item)+1]=this.m_clientesct$$HEX1$$e900$$ENDHEX$$cnico
+this.Item[UpperBound(this.Item)+1]=this.m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas
+this.Item[UpperBound(this.Item)+1]=this.m_cargosct$$HEX1$$e900$$ENDHEX$$cnico
+this.Item[UpperBound(this.Item)+1]=this.m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico
+this.Item[UpperBound(this.Item)+1]=this.m_actividadesdemuestras
+this.Item[UpperBound(this.Item)+1]=this.m_recursosodetejidoparamuestras
+this.Item[UpperBound(this.Item)+1]=this.m_gruposdetipodeproducto
+this.Item[UpperBound(this.Item)+1]=this.m_autorizacionesportipodeproducto
+this.Item[UpperBound(this.Item)+1]=this.m_codigosdedisenos
+this.Item[UpperBound(this.Item)+1]=this.m_-00211041216
+this.Item[UpperBound(this.Item)+1]=this.m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+this.Item[UpperBound(this.Item)+1]=this.m_dise$$HEX1$$f100$$ENDHEX$$osmuestra
+this.Item[UpperBound(this.Item)+1]=this.m_pu$$HEX1$$f100$$ENDHEX$$osmuestras
+this.Item[UpperBound(this.Item)+1]=this.m_largosmuestra
+this.Item[UpperBound(this.Item)+1]=this.m_operaciones
+this.Item[UpperBound(this.Item)+1]=this.m_recursosrestringidos
+this.Item[UpperBound(this.Item)+1]=this.m_medidasreposadas
+this.Item[UpperBound(this.Item)+1]=this.m_actualizacionmaterialsap
+this.Item[UpperBound(this.Item)+1]=this.m_familias
+this.Item[UpperBound(this.Item)+1]=this.m_gruposdecomposicion
+this.Item[UpperBound(this.Item)+1]=this.m_00
+this.Item[UpperBound(this.Item)+1]=this.m_temporadassap
+this.Item[UpperBound(this.Item)+1]=this.m_tallassap
+this.Item[UpperBound(this.Item)+1]=this.m_coloressap
+this.Item[UpperBound(this.Item)+1]=this.m_direccionesipporusuario
+this.Item[UpperBound(this.Item)+1]=this.m_cantidadbasesap
+this.Item[UpperBound(this.Item)+1]=this.m_permisosespecialesxusuario
+this.Item[UpperBound(this.Item)+1]=this.m_-rayita2
+this.Item[UpperBound(this.Item)+1]=this.m_productosaltarotacion
+end on
+
+on m_configuracion.destroy
+call super::destroy
+destroy(this.m_0)
+destroy(this.m_1)
+destroy(this.m_3)
+destroy(this.m_4)
+destroy(this.m_estadosporcolordemuestra)
+destroy(this.m_5)
+destroy(this.m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva)
+destroy(this.m_6)
+destroy(this.m_clientesct$$HEX1$$e900$$ENDHEX$$cnico)
+destroy(this.m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas)
+destroy(this.m_cargosct$$HEX1$$e900$$ENDHEX$$cnico)
+destroy(this.m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico)
+destroy(this.m_actividadesdemuestras)
+destroy(this.m_recursosodetejidoparamuestras)
+destroy(this.m_gruposdetipodeproducto)
+destroy(this.m_autorizacionesportipodeproducto)
+destroy(this.m_codigosdedisenos)
+destroy(this.m_-00211041216)
+destroy(this.m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n)
+destroy(this.m_dise$$HEX1$$f100$$ENDHEX$$osmuestra)
+destroy(this.m_pu$$HEX1$$f100$$ENDHEX$$osmuestras)
+destroy(this.m_largosmuestra)
+destroy(this.m_operaciones)
+destroy(this.m_recursosrestringidos)
+destroy(this.m_medidasreposadas)
+destroy(this.m_actualizacionmaterialsap)
+destroy(this.m_familias)
+destroy(this.m_gruposdecomposicion)
+destroy(this.m_00)
+destroy(this.m_temporadassap)
+destroy(this.m_tallassap)
+destroy(this.m_coloressap)
+destroy(this.m_direccionesipporusuario)
+destroy(this.m_cantidadbasesap)
+destroy(this.m_permisosespecialesxusuario)
+destroy(this.m_-rayita2)
+destroy(this.m_productosaltarotacion)
+end on
+
+type m_movimientos from m_base`m_movimientos within m_main
+m_muestras m_muestras
+m_referencia m_referencia
+m_orden m_orden
+m_correodb m_correodb
+end type
+
+on m_movimientos.create
+call super::create
+this.m_muestras=create m_muestras
+this.m_referencia=create m_referencia
+this.m_orden=create m_orden
+this.m_correodb=create m_correodb
+this.Item[UpperBound(this.Item)+1]=this.m_muestras
+this.Item[UpperBound(this.Item)+1]=this.m_referencia
+this.Item[UpperBound(this.Item)+1]=this.m_orden
+this.Item[UpperBound(this.Item)+1]=this.m_correodb
+end on
+
+on m_movimientos.destroy
+call super::destroy
+destroy(this.m_muestras)
+destroy(this.m_referencia)
+destroy(this.m_orden)
+destroy(this.m_correodb)
+end on
+
+type m_procesos from m_base`m_procesos within m_main
+m_refrescarlistas m_refrescarlistas
+m_pasardisenored m_pasardisenored
+m_actualizarmateriaprimaenficha m_actualizarmateriaprimaenficha
+m_migrarmuestras m_migrarmuestras
+end type
+
+on m_procesos.create
+call super::create
+this.m_refrescarlistas=create m_refrescarlistas
+this.m_pasardisenored=create m_pasardisenored
+this.m_actualizarmateriaprimaenficha=create m_actualizarmateriaprimaenficha
+this.m_migrarmuestras=create m_migrarmuestras
+this.Item[UpperBound(this.Item)+1]=this.m_refrescarlistas
+this.Item[UpperBound(this.Item)+1]=this.m_pasardisenored
+this.Item[UpperBound(this.Item)+1]=this.m_actualizarmateriaprimaenficha
+this.Item[UpperBound(this.Item)+1]=this.m_migrarmuestras
+end on
+
+on m_procesos.destroy
+call super::destroy
+destroy(this.m_refrescarlistas)
+destroy(this.m_pasardisenored)
+destroy(this.m_actualizarmateriaprimaenficha)
+destroy(this.m_migrarmuestras)
+end on
+
+type m_reportes from m_base`m_reportes within m_main
+m_muestras1 m_muestras1
+m_referencias m_referencias
+m_$$HEX1$$f300$$ENDHEX$$rdenes m_$$HEX1$$f300$$ENDHEX$$rdenes
+m_programaci$$HEX1$$f300$$ENDHEX$$n m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_reportes.create
+call super::create
+this.m_muestras1=create m_muestras1
+this.m_referencias=create m_referencias
+this.m_$$HEX1$$f300$$ENDHEX$$rdenes=create m_$$HEX1$$f300$$ENDHEX$$rdenes
+this.m_programaci$$HEX1$$f300$$ENDHEX$$n=create m_programaci$$HEX1$$f300$$ENDHEX$$n
+this.Item[UpperBound(this.Item)+1]=this.m_muestras1
+this.Item[UpperBound(this.Item)+1]=this.m_referencias
+this.Item[UpperBound(this.Item)+1]=this.m_$$HEX1$$f300$$ENDHEX$$rdenes
+this.Item[UpperBound(this.Item)+1]=this.m_programaci$$HEX1$$f300$$ENDHEX$$n
+end on
+
+on m_reportes.destroy
+call super::destroy
+destroy(this.m_muestras1)
+destroy(this.m_referencias)
+destroy(this.m_$$HEX1$$f300$$ENDHEX$$rdenes)
+destroy(this.m_programaci$$HEX1$$f300$$ENDHEX$$n)
+end on
+
+type m_ventana from m_base`m_ventana within m_main
+end type
+
+on m_ventana.create
+call super::create
+end on
+
+on m_ventana.destroy
+call super::destroy
+end on
+
+type m_vertical from m_base`m_vertical within m_ventana
+end type
+
+on m_vertical.create
+call super::create
+this.toolbaritemorder = 15
+end on
+
+on m_vertical.destroy
+call super::destroy
+end on
+
+type m_horizontal from m_base`m_horizontal within m_ventana
+end type
+
+on m_horizontal.create
+call super::create
+this.toolbaritemorder = 16
+end on
+
+on m_horizontal.destroy
+call super::destroy
+end on
+
+type m_completa from m_base`m_completa within m_ventana
+end type
+
+on m_completa.create
+call super::create
+this.toolbaritemorder = 17
+end on
+
+on m_completa.destroy
+call super::destroy
+end on
+
+type m_cascada from m_base`m_cascada within m_ventana
+end type
+
+on m_cascada.create
+call super::create
+this.toolbaritemorder = 18
+end on
+
+on m_cascada.destroy
+call super::destroy
+end on
+
+type m_-2 from m_base`m_-2 within m_ventana
+end type
+
+on m_-2.create
+call super::create
+end on
+
+on m_-2.destroy
+call super::destroy
+end on
+
+type m_arreglar_iconos from m_base`m_arreglar_iconos within m_ventana
+end type
+
+on m_arreglar_iconos.create
+call super::create
+this.toolbaritemorder = 19
+end on
+
+on m_arreglar_iconos.destroy
+call super::destroy
+end on
+
+type m_-3 from m_base`m_-3 within m_ventana
+end type
+
+on m_-3.create
+call super::create
+end on
+
+on m_-3.destroy
+call super::destroy
+end on
+
+type m_barra from m_base`m_barra within m_ventana
+end type
+
+on m_barra.create
+call super::create
+end on
+
+on m_barra.destroy
+call super::destroy
+end on
+
+type m_arriba from m_base`m_arriba within m_barra
+end type
+
+on m_arriba.create
+call super::create
+end on
+
+on m_arriba.destroy
+call super::destroy
+end on
+
+type m_abajo from m_base`m_abajo within m_barra
+end type
+
+on m_abajo.create
+call super::create
+end on
+
+on m_abajo.destroy
+call super::destroy
+end on
+
+type m_izquierda from m_base`m_izquierda within m_barra
+end type
+
+on m_izquierda.create
+call super::create
+end on
+
+on m_izquierda.destroy
+call super::destroy
+end on
+
+type m_derecha from m_base`m_derecha within m_barra
+end type
+
+on m_derecha.create
+call super::create
+end on
+
+on m_derecha.destroy
+call super::destroy
+end on
+
+type m_-7 from m_base`m_-7 within m_barra
+end type
+
+on m_-7.create
+call super::create
+end on
+
+on m_-7.destroy
+call super::destroy
+end on
+
+type m_ocultar_barra from m_base`m_ocultar_barra within m_barra
+end type
+
+on m_ocultar_barra.create
+call super::create
+end on
+
+on m_ocultar_barra.destroy
+call super::destroy
+end on
+
+type m_-8 from m_base`m_-8 within m_barra
+end type
+
+on m_-8.create
+call super::create
+end on
+
+on m_-8.destroy
+call super::destroy
+end on
+
+type m_mostrar_textos from m_base`m_mostrar_textos within m_barra
+end type
+
+on m_mostrar_textos.create
+call super::create
+end on
+
+on m_mostrar_textos.destroy
+call super::destroy
+end on
+
+type m_ayuda from m_base`m_ayuda within m_main
+end type
+
+on m_ayuda.create
+call super::create
+end on
+
+on m_ayuda.destroy
+call super::destroy
+end on
+
+type m_contenido from m_base`m_contenido within m_ayuda
+end type
+
+on m_contenido.create
+call super::create
+this.toolbaritemorder = 998
+this.toolbaritemspace = 2
+end on
+
+on m_contenido.destroy
+call super::destroy
+end on
+
+type m_2 from m_base`m_2 within m_ayuda
+end type
+
+on m_2.create
+call super::create
+end on
+
+on m_2.destroy
+call super::destroy
+end on
+
+type m_acerca from m_base`m_acerca within m_ayuda
+end type
+
+on m_acerca.create
+call super::create
+end on
+
+on m_acerca.destroy
+call super::destroy
+end on
+
+type m_0 from menu within m_configuracion
+end type
+
+event clicked;OpenSheet(w_m_tipo_procesos,ParentWindow,0,Original!)
+end event
+
+on m_0.create
+call super::create
+this.tag = "3001"
+this.text = "Tipo de &Procesos"
+this.microhelp = "Tipos de procesos"
+end on
+
+on m_0.destroy
+call super::destroy
+end on
+
+type m_1 from menu within m_configuracion
+end type
+
+event clicked;OpenSheet(w_m_tipo_tejido,ParentWindow,0,Original!)
+end event
+
+on m_1.create
+call super::create
+this.tag = "3002"
+this.text = "Tipos de &Tejido"
+this.microhelp = "Tipos de tejido"
+end on
+
+on m_1.destroy
+call super::destroy
+end on
+
+type m_3 from menu within m_configuracion
+end type
+
+event clicked;OpenSheet(w_m_tipo_solicitud,ParentWindow,0,Original!)
+end event
+
+on m_3.create
+call super::create
+this.tag = "3003"
+this.text = "Tipos de &Solicitudes"
+this.microhelp = "Tipo de solicitudes"
+end on
+
+on m_3.destroy
+call super::destroy
+end on
+
+type m_4 from menu within m_configuracion
+end type
+
+event clicked;OpenSheet(w_m_est_solicitud,ParentWindow,0,Original!)
+end event
+
+on m_4.create
+call super::create
+this.tag = "3004"
+this.visible = false
+this.text = "&Estados de la Solicitud"
+this.enabled = false
+this.microhelp = "Estados de la solicitud"
+end on
+
+on m_4.destroy
+call super::destroy
+end on
+
+type m_estadosporcolordemuestra from menu within m_configuracion
+end type
+
+event clicked;of_openWindow(w_m_est_muestras1)
+
+end event
+
+on m_estadosporcolordemuestra.create
+call super::create
+this.tag = "3005"
+this.text = "Estados por color de muestra"
+this.microhelp = "Estados por color de muestra"
+end on
+
+on m_estadosporcolordemuestra.destroy
+call super::destroy
+end on
+
+type m_5 from menu within m_configuracion
+end type
+
+event clicked;OpenSheet(w_m_partebas,ParentWindow,0,Original!)
+end event
+
+on m_5.create
+call super::create
+this.tag = "3006"
+this.text = "Partes &b$$HEX1$$e100$$ENDHEX$$sicas x Producto"
+this.microhelp = "Partes b$$HEX1$$e100$$ENDHEX$$sicas por producto"
+end on
+
+on m_5.destroy
+call super::destroy
+end on
+
+type m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva from menu within m_configuracion
+end type
+
+event clicked;of_openWindow(w_m_partebas1)
+end event
+
+on m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva.create
+call super::create
+this.tag = "3007"
+this.text = "Parte b$$HEX1$$e100$$ENDHEX$$sica nueva"
+this.microhelp = "Parte b$$HEX1$$e100$$ENDHEX$$sica nueva"
+end on
+
+on m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva.destroy
+call super::destroy
+end on
+
+type m_6 from menu within m_configuracion
+end type
+
+event clicked;OpenSheet(w_m_terceros,ParentWindow,0,Original!)
+end event
+
+on m_6.create
+call super::create
+this.tag = "3008"
+this.text = "Ter&ceros"
+this.microhelp = "Terceros"
+end on
+
+on m_6.destroy
+call super::destroy
+end on
+
+type m_clientesct$$HEX1$$e900$$ENDHEX$$cnico from menu within m_configuracion
+end type
+
+event clicked;OpenSheet(w_ctencico_cliente,ParentWindow,0,Original!)
+end event
+
+on m_clientesct$$HEX1$$e900$$ENDHEX$$cnico.create
+call super::create
+this.tag = "3009"
+this.text = "Clientes / C. T$$HEX1$$e900$$ENDHEX$$cnico"
+this.microhelp = "Clientes / C. T$$HEX1$$e900$$ENDHEX$$cnico"
+end on
+
+on m_clientesct$$HEX1$$e900$$ENDHEX$$cnico.destroy
+call super::destroy
+end on
+
+type m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas from menu within m_configuracion
+end type
+
+event clicked;of_openWindow(w_oparaciones_basicas)
+end event
+
+on m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas.create
+call super::create
+this.tag = "3010"
+this.text = "Operaciones b$$HEX1$$e100$$ENDHEX$$sicas"
+this.microhelp = "Operaciones b$$HEX1$$e100$$ENDHEX$$sicas."
+end on
+
+on m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas.destroy
+call super::destroy
+end on
+
+type m_cargosct$$HEX1$$e900$$ENDHEX$$cnico from menu within m_configuracion
+end type
+
+event clicked;of_openWindow(w_m_mues_cargo)
+end event
+
+on m_cargosct$$HEX1$$e900$$ENDHEX$$cnico.create
+call super::create
+this.tag = "3011"
+this.text = "Cargos C. T$$HEX1$$e900$$ENDHEX$$cnico"
+end on
+
+on m_cargosct$$HEX1$$e900$$ENDHEX$$cnico.destroy
+call super::destroy
+end on
+
+type m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico from menu within m_configuracion
+end type
+
+event clicked;of_openWindow(w_m_ctecnico)
+end event
+
+on m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico.create
+call super::create
+this.tag = "3012"
+this.text = "Funcionarios C. T$$HEX1$$e900$$ENDHEX$$cnico"
+end on
+
+on m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico.destroy
+call super::destroy
+end on
+
+type m_actividadesdemuestras from menu within m_configuracion
+end type
+
+event clicked;Of_OpenWindow(w_mu_m_actividad)
+end event
+
+on m_actividadesdemuestras.create
+call super::create
+this.tag = "3013"
+this.text = "Actividades de muestras..."
+end on
+
+on m_actividadesdemuestras.destroy
+call super::destroy
+end on
+
+type m_recursosodetejidoparamuestras from menu within m_configuracion
+end type
+
+event clicked;Of_OpenWindow(w_mu_recurso_ct)
+end event
+
+on m_recursosodetejidoparamuestras.create
+call super::create
+this.tag = "3014"
+this.text = "Recursos de tejido para muestras"
+end on
+
+on m_recursosodetejidoparamuestras.destroy
+call super::destroy
+end on
+
+type m_gruposdetipodeproducto from menu within m_configuracion
+end type
+
+event clicked;Of_OpenWindow(w_m_grupoprod)
+end event
+
+on m_gruposdetipodeproducto.create
+call super::create
+this.tag = "3022"
+this.text = "Grupos de Tipo de Producto"
+end on
+
+on m_gruposdetipodeproducto.destroy
+call super::destroy
+end on
+
+type m_autorizacionesportipodeproducto from menu within m_configuracion
+end type
+
+event clicked;Of_OpenWindow(w_m_usuario_aut)
+end event
+
+on m_autorizacionesportipodeproducto.create
+call super::create
+this.tag = "3023"
+this.text = "Autorizaciones por tipo de producto "
+end on
+
+on m_autorizacionesportipodeproducto.destroy
+call super::destroy
+end on
+
+type m_codigosdedisenos from menu within m_configuracion
+end type
+
+event clicked;/*
+* MODIFICADO: Noviembre 23 de 2010 - gagudelo - ohlondon
+* Abre la ventana w_m_codigos_disenos de la biblioteca muestrasw.pbl
+*/
+Open(w_m_codigos_disenos)
+end event
+
+on m_codigosdedisenos.create
+call super::create
+this.tag = "3026"
+this.text = "C$$HEX1$$f300$$ENDHEX$$digos de Dise$$HEX1$$f100$$ENDHEX$$os"
+this.microhelp = "C$$HEX1$$f300$$ENDHEX$$digos de Dise$$HEX1$$f100$$ENDHEX$$os"
+this.toolbaritemtext = "C$$HEX1$$f300$$ENDHEX$$digos de Dise$$HEX1$$f100$$ENDHEX$$os"
+end on
+
+on m_codigosdedisenos.destroy
+call super::destroy
+end on
+
+type m_-00211041216 from menu within m_configuracion
+end type
+
+on m_-00211041216.create
+call super::create
+this.tag = "3024"
+this.text = "-"
+end on
+
+on m_-00211041216.destroy
+call super::destroy
+end on
+
+type m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n from menu within m_configuracion
+m_mantenimientodeturnoshorarios m_mantenimientodeturnoshorarios
+m_registrodeactividades m_registrodeactividades
+m_registrodeoperaciones m_registrodeoperaciones
+m_registrodeestados m_registrodeestados
+m_registrodegruposdetrabajo m_registrodegruposdetrabajo
+m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan
+m_registrodebordados m_registrodebordados
+m_registrodetintasantideslizantes m_registrodetintasantideslizantes
+m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a
+m_basesparaantideslizante m_basesparaantideslizante
+m_calibresdechablones m_calibresdechablones
+m_clasificaci$$HEX1$$f300$$ENDHEX$$ndesolserv m_clasificaci$$HEX1$$f300$$ENDHEX$$ndesolserv
+m_9 m_9
+end type
+
+on m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n.create
+call super::create
+this.tag = "3015"
+this.text = "Mantenimiento de Programaci$$HEX1$$f300$$ENDHEX$$n"
+this.m_mantenimientodeturnoshorarios=create m_mantenimientodeturnoshorarios
+this.m_registrodeactividades=create m_registrodeactividades
+this.m_registrodeoperaciones=create m_registrodeoperaciones
+this.m_registrodeestados=create m_registrodeestados
+this.m_registrodegruposdetrabajo=create m_registrodegruposdetrabajo
+this.m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan=create m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan
+this.m_registrodebordados=create m_registrodebordados
+this.m_registrodetintasantideslizantes=create m_registrodetintasantideslizantes
+this.m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a=create m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a
+this.m_basesparaantideslizante=create m_basesparaantideslizante
+this.m_calibresdechablones=create m_calibresdechablones
+this.m_clasificaci$$HEX1$$f300$$ENDHEX$$ndesolserv=create m_clasificaci$$HEX1$$f300$$ENDHEX$$ndesolserv
+this.m_9=create m_9
+this.Item[UpperBound(this.Item)+1]=this.m_mantenimientodeturnoshorarios
+this.Item[UpperBound(this.Item)+1]=this.m_registrodeactividades
+this.Item[UpperBound(this.Item)+1]=this.m_registrodeoperaciones
+this.Item[UpperBound(this.Item)+1]=this.m_registrodeestados
+this.Item[UpperBound(this.Item)+1]=this.m_registrodegruposdetrabajo
+this.Item[UpperBound(this.Item)+1]=this.m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan
+this.Item[UpperBound(this.Item)+1]=this.m_registrodebordados
+this.Item[UpperBound(this.Item)+1]=this.m_registrodetintasantideslizantes
+this.Item[UpperBound(this.Item)+1]=this.m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a
+this.Item[UpperBound(this.Item)+1]=this.m_basesparaantideslizante
+this.Item[UpperBound(this.Item)+1]=this.m_calibresdechablones
+this.Item[UpperBound(this.Item)+1]=this.m_clasificaci$$HEX1$$f300$$ENDHEX$$ndesolserv
+this.Item[UpperBound(this.Item)+1]=this.m_9
+end on
+
+on m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n.destroy
+call super::destroy
+destroy(this.m_mantenimientodeturnoshorarios)
+destroy(this.m_registrodeactividades)
+destroy(this.m_registrodeoperaciones)
+destroy(this.m_registrodeestados)
+destroy(this.m_registrodegruposdetrabajo)
+destroy(this.m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan)
+destroy(this.m_registrodebordados)
+destroy(this.m_registrodetintasantideslizantes)
+destroy(this.m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a)
+destroy(this.m_basesparaantideslizante)
+destroy(this.m_calibresdechablones)
+destroy(this.m_clasificaci$$HEX1$$f300$$ENDHEX$$ndesolserv)
+destroy(this.m_9)
+end on
+
+type m_mantenimientodeturnoshorarios from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;/*-------------------------------------------------
+	Develr.	: Carlos Andr$$HEX1$$e900$$ENDHEX$$s Rico
+	Date		: Viernes 15 de Octubre de 2004.H:17:43
+---------------------------------------------------
+---------------------------------------------------*/
+of_OpenWindow(w_turno)
+//-------------------------------------------------
+end event
+
+on m_mantenimientodeturnoshorarios.create
+call super::create
+this.tag = "301501"
+this.text = "Mantenimiento de Turnos/Horarios"
+this.microhelp = "Manejo de turnos"
+this.toolbaritemvisible = false
+end on
+
+on m_mantenimientodeturnoshorarios.destroy
+call super::destroy
+end on
+
+type m_registrodeactividades from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;/*-------------------------------------------------
+	Develr.	: Carlos Andr$$HEX1$$e900$$ENDHEX$$s Rico
+	Date		: Jueves 21 de Octubre de 2004.H:15:03
+---------------------------------------------------
+---------------------------------------------------*/
+of_OpenWindow(w_actividad_muestra)
+//--------------------------------------------------
+end event
+
+on m_registrodeactividades.create
+call super::create
+this.tag = "301502"
+this.text = "Registro de Actividades"
+this.microhelp = "Manejo de actividades"
+this.toolbaritemvisible = false
+end on
+
+on m_registrodeactividades.destroy
+call super::destroy
+end on
+
+type m_registrodeoperaciones from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;/*-------------------------------------------------
+	Develr.	: Carlos Andr$$HEX1$$e900$$ENDHEX$$s Rico
+	Date		: Viernes 29 de Octubre de 2004.H:12:02
+---------------------------------------------------
+---------------------------------------------------*/
+of_OpenWindow(w_proceso_muestras)
+//--------------------------------------------------
+end event
+
+on m_registrodeoperaciones.create
+call super::create
+this.tag = "301503"
+this.text = "Registro de Operaciones"
+this.microhelp = "Manejo de operaciones"
+this.toolbaritemvisible = false
+end on
+
+on m_registrodeoperaciones.destroy
+call super::destroy
+end on
+
+type m_registrodeestados from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;/*-------------------------------------------------
+	Develr.	: Carlos Andr$$HEX1$$e900$$ENDHEX$$s Rico
+	Date		: Mi$$HEX1$$e900$$ENDHEX$$rcoles 03 de Noviembre de 2004.H:12:02
+---------------------------------------------------
+---------------------------------------------------*/
+of_OpenWindow(w_m_est_muestras2)
+//--------------------------------------------------
+end event
+
+on m_registrodeestados.create
+call super::create
+this.tag = "301504"
+this.text = "Registro de Estados"
+this.microhelp = "Manejo de estados"
+end on
+
+on m_registrodeestados.destroy
+call super::destroy
+end on
+
+type m_registrodegruposdetrabajo from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;/*-------------------------------------------------
+	Develr.	: Carlos Andr$$HEX1$$e900$$ENDHEX$$s Rico
+	Date		: Viernes 05 de Noviembre de 2004.H:18:02
+---------------------------------------------------
+---------------------------------------------------*/
+of_OpenWindow(w_registro_grupo)
+//--------------------------------------------------
+end event
+
+on m_registrodegruposdetrabajo.create
+call super::create
+this.tag = "301505"
+this.text = "Registro de Grupos de Trabajo"
+end on
+
+on m_registrodegruposdetrabajo.destroy
+call super::destroy
+end on
+
+type m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;/*-------------------------------------------------
+	Develr.	: Carlos Andr$$HEX1$$e900$$ENDHEX$$s Rico
+	Date		: Lunes 08 de Noviembre de 2004.H:14:56
+---------------------------------------------------
+---------------------------------------------------*/
+of_OpenWindow(w_registro_chablon)
+//--------------------------------------------------
+end event
+
+on m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan.create
+call super::create
+this.tag = "301506"
+this.text = "Registro de Chablones/Gr$$HEX1$$e100$$ENDHEX$$ficos Antideslizantes"
+this.toolbaritemvisible = false
+end on
+
+on m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan.destroy
+call super::destroy
+end on
+
+type m_registrodebordados from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;/*-------------------------------------------------
+	Develr.	: Carlos Andr$$HEX1$$e900$$ENDHEX$$s Rico
+	Date		: Jueves 11 de Noviembre de 2004.H:17:39
+---------------------------------------------------
+---------------------------------------------------*/
+of_OpenWindow(w_registro_bordado)
+//---------------------------------------------------
+end event
+
+on m_registrodebordados.create
+call super::create
+this.tag = "301507"
+this.text = "Registro de Bordados"
+this.toolbaritemvisible = false
+end on
+
+on m_registrodebordados.destroy
+call super::destroy
+end on
+
+type m_registrodetintasantideslizantes from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;/*-------------------------------------------------
+	Develr.	: Carlos Andr$$HEX1$$e900$$ENDHEX$$s Rico
+	Date		: Martes 16 de Noviembre de 2004.H:11:37
+---------------------------------------------------
+---------------------------------------------------*/
+of_OpenWindow(w_tinta_antideslizante)
+//---------------------------------------------------
+end event
+
+on m_registrodetintasantideslizantes.create
+call super::create
+this.tag = "301508"
+this.text = "Registro de Tintas Antideslizantes"
+end on
+
+on m_registrodetintasantideslizantes.destroy
+call super::destroy
+end on
+
+type m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;/*-------------------------------------------------
+	Develr.	: Carlos Andr$$HEX1$$e900$$ENDHEX$$s Rico
+	Date		: Martes 16 de Noviembre de 2004.H:11:37
+---------------------------------------------------
+---------------------------------------------------*/
+of_OpenWindow(w_registro_maq_tin)
+//---------------------------------------------------
+end event
+
+on m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a.create
+call super::create
+this.tag = "301509"
+this.text = "Registro de Maquinas de Tintorer$$HEX1$$ed00$$ENDHEX$$a"
+end on
+
+on m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a.destroy
+call super::destroy
+end on
+
+type m_basesparaantideslizante from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;of_OpenWindow(w_mu_m_base)
+end event
+
+on m_basesparaantideslizante.create
+call super::create
+this.tag = "301510"
+this.text = "Bases para antideslizante"
+end on
+
+on m_basesparaantideslizante.destroy
+call super::destroy
+end on
+
+type m_calibresdechablones from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;of_OpenWindow(w_mu_m_calibre_chab)
+end event
+
+on m_calibresdechablones.create
+call super::create
+this.tag = "301511"
+this.text = "Calibres de chablones"
+end on
+
+on m_calibresdechablones.destroy
+call super::destroy
+end on
+
+type m_clasificaci$$HEX1$$f300$$ENDHEX$$ndesolserv from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;of_OpenWindow(w_mu_m_clase_ss)
+end event
+
+on m_clasificaci$$HEX1$$f300$$ENDHEX$$ndesolserv.create
+call super::create
+this.tag = "301512"
+this.text = "Clasificaci$$HEX1$$f300$$ENDHEX$$n de Sol. Serv."
+end on
+
+on m_clasificaci$$HEX1$$f300$$ENDHEX$$ndesolserv.destroy
+call super::destroy
+end on
+
+type m_9 from menu within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;of_OpenWindow(w_m_prioridad_cliente)
+end event
+
+on m_9.create
+call super::create
+this.tag = "301513"
+this.text = "Prioridad por Ciente"
+end on
+
+on m_9.destroy
+call super::destroy
+end on
+
+type m_dise$$HEX1$$f100$$ENDHEX$$osmuestra from menu within m_configuracion
+end type
+
+event clicked;Of_OpenWindow(w_mu_m_diseno)
+end event
+
+on m_dise$$HEX1$$f100$$ENDHEX$$osmuestra.create
+call super::create
+this.tag = "3016"
+this.text = "Dise$$HEX1$$f100$$ENDHEX$$os muestra"
+end on
+
+on m_dise$$HEX1$$f100$$ENDHEX$$osmuestra.destroy
+call super::destroy
+end on
+
+type m_pu$$HEX1$$f100$$ENDHEX$$osmuestras from menu within m_configuracion
+end type
+
+event clicked;Of_OpenWindow(w_mu_m_puno)
+end event
+
+on m_pu$$HEX1$$f100$$ENDHEX$$osmuestras.create
+call super::create
+this.tag = "3017"
+this.text = "Pu$$HEX1$$f100$$ENDHEX$$os muestras"
+end on
+
+on m_pu$$HEX1$$f100$$ENDHEX$$osmuestras.destroy
+call super::destroy
+end on
+
+type m_largosmuestra from menu within m_configuracion
+end type
+
+event clicked;Of_OpenWindow(w_mu_m_largo)
+end event
+
+on m_largosmuestra.create
+call super::create
+this.tag = "3018"
+this.text = "Largos Muestra"
+end on
+
+on m_largosmuestra.destroy
+call super::destroy
+end on
+
+type m_operaciones from menu within m_configuracion
+end type
+
+event clicked;of_openWindow(w_m_operaciones)
+end event
+
+on m_operaciones.create
+call super::create
+this.tag = "3019"
+this.text = "Operaciones"
+end on
+
+on m_operaciones.destroy
+call super::destroy
+end on
+
+type m_recursosrestringidos from menu within m_configuracion
+end type
+
+event clicked;of_openWindow(w_recursos_restringidos)
+end event
+
+on m_recursosrestringidos.create
+call super::create
+this.tag = "3020"
+this.text = "Recursos Restringidos"
+end on
+
+on m_recursosrestringidos.destroy
+call super::destroy
+end on
+
+type m_medidasreposadas from menu within m_configuracion
+end type
+
+event clicked;/*
+* MODIFICADO: Agosto 05 de 2009 - ohlondon
+* Abre la ventana w_mtto_medidas_reposadas de la biblioteca muestrasw.pbl
+*/
+of_openWindow(w_mtto_medidas_reposadas)
+end event
+
+on m_medidasreposadas.create
+call super::create
+this.tag = "3025"
+this.text = "Medidas Reposadas"
+this.microhelp = "Medidas Reposadas"
+this.toolbaritemtext = "Medidas Reposadas"
+end on
+
+on m_medidasreposadas.destroy
+call super::destroy
+end on
+
+type m_actualizacionmaterialsap from menu within m_configuracion
+end type
+
+event clicked;/*
+* MODIFICADO: Mayo 05 de 2009 - ohlondon
+* Abre la ventana w_m_prod_proveedor de la biblioteca muestrasw.pbl
+*/
+of_openWindow(w_m_prod_proveedor)
+end event
+
+on m_actualizacionmaterialsap.create
+call super::create
+this.tag = "3021"
+this.text = "Equivalencia Material SAP"
+this.microhelp = "Equivalencia Material SAP"
+this.toolbaritemtext = "Equivalencia Material SAP"
+end on
+
+on m_actualizacionmaterialsap.destroy
+call super::destroy
+end on
+
+type m_familias from menu within m_configuracion
+end type
+
+event clicked;/*
+* -----------------------------------------------------------------------------
+* MODIFICADO: Julio 29 de 2011 - ohlondon
+* -----------------------------------------------------------------------------
+* Abre la ventana w_m_familias de la biblioteca
+* muestrasw.pbl
+* -----------------------------------------------------------------------------
+*/
+OpenSheet(w_m_familias,ParentWindow,1,Original!) 
+
+
+end event
+
+on m_familias.create
+call super::create
+this.tag = "3022"
+this.text = "Familias"
+this.microhelp = "Familias"
+this.toolbaritemtext = "Maestro de Familias"
+end on
+
+on m_familias.destroy
+call super::destroy
+end on
+
+type m_gruposdecomposicion from menu within m_configuracion
+end type
+
+on m_gruposdecomposicion.create
+call super::create
+this.text = "&Grupos de Composici$$HEX1$$f300$$ENDHEX$$n"
+this.microhelp = "Grupos de Composici$$HEX1$$f300$$ENDHEX$$n"
+this.toolbaritemtext = "Grupos de Composici$$HEX1$$f300$$ENDHEX$$n"
+end on
+
+on m_gruposdecomposicion.destroy
+call super::destroy
+end on
+
+event clicked;/*
+* -----------------------------------------------------------------------------
+* MODIFICADO: Noviembre 23 de 2011 - gagudelo - ohlondon
+* -----------------------------------------------------------------------------
+* Abre la ventana w_m_grupos_cmps de la biblioteca
+* muestrasw.pbl
+* -----------------------------------------------------------------------------
+*/  
+OpenSheet(w_m_grupos_cmps,ParentWindow,6,Original!)
+end event
+
+type m_00 from menu within m_configuracion
+end type
+
+on m_00.create
+call super::create
+this.text = "-"
+end on
+
+on m_00.destroy
+call super::destroy
+end on
+
+type m_temporadassap from menu within m_configuracion
+end type
+
+event clicked;/*
+* -----------------------------------------------------------------------------
+* MODIFICADO: Diciembre 21 de 2011 -  ohlondon
+* -----------------------------------------------------------------------------
+* Abre la ventana w_tb_temporada de la biblioteca en muestrasw.pbl
+* -----------------------------------------------------------------------------
+*/  
+OpenSheet(w_tb_temporada,ParentWindow,6,Original!)
+end event
+
+on m_temporadassap.create
+call super::create
+this.text = "Temporadas Sap"
+this.microhelp = "Temporadas Sap"
+this.toolbaritemtext = "Temporadas Sap"
+end on
+
+on m_temporadassap.destroy
+call super::destroy
+end on
+
+type m_tallassap from menu within m_configuracion
+end type
+
+on m_tallassap.create
+call super::create
+this.text = "Tallas Sap"
+this.microhelp = "Tallas Sap"
+this.toolbaritemtext = "Tallas Sap"
+end on
+
+on m_tallassap.destroy
+call super::destroy
+end on
+
+event clicked;/*
+* -----------------------------------------------------------------------------
+* MODIFICADO: Diciembre 21 de 2011 -  ohlondon
+* -----------------------------------------------------------------------------
+* Abre la ventana w_tb_talla de la biblioteca en muestrasw.pbl
+* -----------------------------------------------------------------------------
+*/  
+OpenSheet(w_tb_talla,ParentWindow,6,Original!)
+end event
+
+type m_coloressap from menu within m_configuracion
+end type
+
+on m_coloressap.create
+call super::create
+this.text = "Colores Sap"
+this.microhelp = "Colores Sap"
+this.toolbaritemtext = "Colores Sap"
+end on
+
+on m_coloressap.destroy
+call super::destroy
+end on
+
+event clicked;/*
+* -----------------------------------------------------------------------------
+* MODIFICADO: Diciembre 21 de 2011 -  ohlondon
+* -----------------------------------------------------------------------------
+* Abre la ventana w_tb_color de la biblioteca en muestrasw.pbl
+* -----------------------------------------------------------------------------
+*/  
+OpenSheet(w_tb_color,ParentWindow,6,Original!)
+end event
+
+type m_direccionesipporusuario from menu within m_configuracion
+end type
+
+event clicked;/*
+* -----------------------------------------------------------------------------
+* MODIFICADO: Marzo 13 de 2012 -  ohlondon
+* -----------------------------------------------------------------------------
+* Abre la ventana w_m_ipxusuario de la biblioteca en mue_a_ref.pbl
+* -----------------------------------------------------------------------------
+*/  
+OpenSheet(w_m_ipxusuario,ParentWindow,6,Original!)
+end event
+
+on m_direccionesipporusuario.create
+call super::create
+this.text = "Direcciones IP por Usuario"
+this.microhelp = "Direcciones IP por Usuario"
+this.toolbaritemtext = "Direcciones IP por Usuario"
+end on
+
+on m_direccionesipporusuario.destroy
+call super::destroy
+end on
+
+type m_cantidadbasesap from menu within m_configuracion
+end type
+
+event clicked;OpenSheet(w_tb_cabase,ParentWindow,6,Original!)
+
+end event
+
+on m_cantidadbasesap.create
+call super::create
+this.text = "Cantidad Base Sap"
+end on
+
+on m_cantidadbasesap.destroy
+call super::destroy
+end on
+
+type m_permisosespecialesxusuario from menu within m_configuracion
+end type
+
+event clicked;OpenSheet(w_cfg_param_perespxapli,ParentWindow,6,Original!)
+end event
+
+on m_permisosespecialesxusuario.create
+call super::create
+this.text = "Permisos Especiales x Usuario"
+end on
+
+on m_permisosespecialesxusuario.destroy
+call super::destroy
+end on
+
+type m_-rayita2 from menu within m_configuracion
+end type
+
+on m_-rayita2.create
+call super::create
+this.text = "-"
+end on
+
+on m_-rayita2.destroy
+call super::destroy
+end on
+
+type m_productosaltarotacion from menu within m_configuracion
+end type
+
+event clicked;OpenSheet(w_maestro_producto_alta_rotacion,ParentWindow,6,Original!)
+
+end event
+
+on m_productosaltarotacion.create
+call super::create
+this.text = "Productos Alta Rotacion"
+end on
+
+on m_productosaltarotacion.destroy
+call super::destroy
+end on
+
+type m_muestras from menu within m_movimientos
+m_7 m_7
+m_8 m_8
+m_medidas m_medidas
+m_manoobramuestra m_manoobramuestra
+m_materiaprimamuestra m_materiaprimamuestra
+m_copiarmuestraareferencia m_copiarmuestraareferencia
+m_surtidos m_surtidos
+m_-0aaa m_-0aaa
+m_estadosporcolor m_estadosporcolor
+m_muestrab$$HEX1$$e100$$ENDHEX$$sica m_muestrab$$HEX1$$e100$$ENDHEX$$sica
+m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_muestras.create
+call super::create
+this.text = "Desarrollo"
+this.m_7=create m_7
+this.m_8=create m_8
+this.m_medidas=create m_medidas
+this.m_manoobramuestra=create m_manoobramuestra
+this.m_materiaprimamuestra=create m_materiaprimamuestra
+this.m_copiarmuestraareferencia=create m_copiarmuestraareferencia
+this.m_surtidos=create m_surtidos
+this.m_-0aaa=create m_-0aaa
+this.m_estadosporcolor=create m_estadosporcolor
+this.m_muestrab$$HEX1$$e100$$ENDHEX$$sica=create m_muestrab$$HEX1$$e100$$ENDHEX$$sica
+this.m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n=create m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n
+this.Item[UpperBound(this.Item)+1]=this.m_7
+this.Item[UpperBound(this.Item)+1]=this.m_8
+this.Item[UpperBound(this.Item)+1]=this.m_medidas
+this.Item[UpperBound(this.Item)+1]=this.m_manoobramuestra
+this.Item[UpperBound(this.Item)+1]=this.m_materiaprimamuestra
+this.Item[UpperBound(this.Item)+1]=this.m_copiarmuestraareferencia
+this.Item[UpperBound(this.Item)+1]=this.m_surtidos
+this.Item[UpperBound(this.Item)+1]=this.m_-0aaa
+this.Item[UpperBound(this.Item)+1]=this.m_estadosporcolor
+this.Item[UpperBound(this.Item)+1]=this.m_muestrab$$HEX1$$e100$$ENDHEX$$sica
+this.Item[UpperBound(this.Item)+1]=this.m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n
+end on
+
+on m_muestras.destroy
+call super::destroy
+destroy(this.m_7)
+destroy(this.m_8)
+destroy(this.m_medidas)
+destroy(this.m_manoobramuestra)
+destroy(this.m_materiaprimamuestra)
+destroy(this.m_copiarmuestraareferencia)
+destroy(this.m_surtidos)
+destroy(this.m_-0aaa)
+destroy(this.m_estadosporcolor)
+destroy(this.m_muestrab$$HEX1$$e100$$ENDHEX$$sica)
+destroy(this.m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n)
+end on
+
+type m_7 from menu within m_muestras
+event clicked ( )
+end type
+
+event clicked;Of_OpenWindow(w_solicitud)
+end event
+
+on m_7.create
+call super::create
+this.tag = "400101"
+this.text = "Solicitud"
+this.microhelp = "Solicitud"
+this.toolbaritemname = "ComputePage!"
+this.toolbaritemtext = "Solicitud"
+this.toolbaritemorder = 100
+end on
+
+on m_7.destroy
+call super::destroy
+end on
+
+type m_8 from menu within m_muestras
+event clicked ( )
+end type
+
+event clicked;Of_OpenWindow(w_sheet_muestras)
+end event
+
+on m_8.create
+call super::create
+this.tag = "400102"
+this.text = "Muestra"
+this.microhelp = "Muestra"
+this.toolbaritemname = "DeleteWatch5!"
+this.toolbaritemtext = "Muestra"
+this.toolbaritemorder = 101
+end on
+
+on m_8.destroy
+call super::destroy
+end on
+
+type m_medidas from menu within m_muestras
+end type
+
+on m_medidas.create
+call super::create
+this.tag = "400103"
+this.text = "Medidas"
+this.microhelp = "Medidas"
+this.toolbaritemname = "Custom041!"
+this.toolbaritemtext = "Medidas muestra"
+this.toolbaritemorder = 102
+end on
+
+on m_medidas.destroy
+call super::destroy
+end on
+
+event clicked;//Of_OpenWindow(w_medidas_muestra)
+Of_OpenWindow(w_medidas_muestra_ref)
+
+end event
+
+type m_manoobramuestra from menu within m_muestras
+event clicked ( )
+end type
+
+event clicked;Of_OpenWindow(w_mano_obra_mues)
+end event
+
+on m_manoobramuestra.create
+call super::create
+this.tag = "400104"
+this.text = "Mano Obra"
+this.microhelp = "Mano de obra"
+this.toolbaritemname = "Query!"
+this.toolbaritemtext = "Mano Obra Muestra"
+this.toolbaritemorder = 103
+end on
+
+on m_manoobramuestra.destroy
+call super::destroy
+end on
+
+type m_materiaprimamuestra from menu within m_muestras
+event clicked ( )
+end type
+
+event clicked;//Of_OpenWindow(w_materia_prima_muestra_c)
+//Of_OpenWindow(w_materia_prima_muestra_ref)
+of_openwindow(w_materia_prima_muestra_ref)
+
+end event
+
+on m_materiaprimamuestra.create
+call super::create
+this.tag = "400105"
+this.text = "Materia prima"
+this.microhelp = "Materia prima"
+this.toolbaritemname = "CheckOut!"
+this.toolbaritemtext = "Mat Prima Muestra"
+this.toolbaritemorder = 104
+end on
+
+on m_materiaprimamuestra.destroy
+call super::destroy
+end on
+
+type m_copiarmuestraareferencia from menu within m_muestras
+event clicked ( )
+end type
+
+event clicked;Of_OpenWindow(w_copia_mta_ref)
+end event
+
+on m_copiarmuestraareferencia.create
+call super::create
+this.tag = "400106"
+this.text = "Convertir a referencia"
+this.microhelp = "Convertir a referencia"
+end on
+
+on m_copiarmuestraareferencia.destroy
+call super::destroy
+end on
+
+type m_surtidos from menu within m_muestras
+end type
+
+event clicked;/*
+* -----------------------------------------------------------------------------
+* MODIFICADO: Diciembre 28 de 2011 -  ohlondon
+* -----------------------------------------------------------------------------
+* Abre la ventana w_inf_relacion_surtidos de la biblioteca en muestras_mtto.pbl
+* -----------------------------------------------------------------------------
+*/  
+OpenSheet(w_inf_relacion_surtidos,ParentWindow,6,Original!)
+end event
+
+on m_surtidos.create
+call super::create
+this.tag = "400111"
+this.text = "Surtidos"
+this.microhelp = "Surtidos"
+this.toolbaritemtext = "Surtidos"
+end on
+
+on m_surtidos.destroy
+call super::destroy
+end on
+
+type m_-0aaa from menu within m_muestras
+end type
+
+on m_-0aaa.create
+call super::create
+this.tag = "400107"
+this.text = "-"
+end on
+
+on m_-0aaa.destroy
+call super::destroy
+end on
+
+type m_estadosporcolor from menu within m_muestras
+end type
+
+event clicked;//open(w_cambio_estado_color_gen)
+Of_OpenWindow(w_cambio_estado_color_gen1)
+end event
+
+on m_estadosporcolor.create
+call super::create
+this.tag = "400108"
+this.text = "Actualizaci$$HEX1$$f300$$ENDHEX$$n estados por Desarrollo"
+this.microhelp = "Actualizar estados por desarrollo"
+end on
+
+on m_estadosporcolor.destroy
+call super::destroy
+end on
+
+type m_muestrab$$HEX1$$e100$$ENDHEX$$sica from menu within m_muestras
+end type
+
+event clicked;Of_OpenWindow(w_sheet_muestras1)
+end event
+
+on m_muestrab$$HEX1$$e100$$ENDHEX$$sica.create
+call super::create
+this.tag = "400109"
+this.text = "Muestra b$$HEX1$$e100$$ENDHEX$$sica"
+this.microhelp = "Muestra b$$HEX1$$e100$$ENDHEX$$sica"
+this.toolbaritemname = "ArrangeTables!"
+this.toolbaritemtext = "Muestra b$$HEX1$$e100$$ENDHEX$$sica"
+this.toolbaritemorder = 105
+this.toolbaritemspace = 1
+end on
+
+on m_muestrab$$HEX1$$e100$$ENDHEX$$sica.destroy
+call super::destroy
+end on
+
+type m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n from menu within m_muestras
+end type
+
+on m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n.create
+call super::create
+this.tag = "400110"
+this.text = "Orden de Producci$$HEX1$$f300$$ENDHEX$$n"
+this.microhelp = "Orden de Producci$$HEX1$$f300$$ENDHEX$$n"
+this.toolbaritemname = "ArrangeTables5!"
+this.toolbaritemtext = "Orden de Producci$$HEX1$$f300$$ENDHEX$$n"
+this.toolbaritemorder = 106
+end on
+
+on m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n.destroy
+call super::destroy
+end on
+
+event clicked;/*-------------------------------------------------
+	Develr.	: Carlos Andr$$HEX1$$e900$$ENDHEX$$s Rico
+	Date		: Miercoles 22 de Septiembre de 2004.H_12:51
+---------------------------------------------------
+Llamada a la ventana para la orden de producci$$HEX1$$f300$$ENDHEX$$n
+---------------------------------------------------*/
+Of_OpenWindow(w_orden_pdn)
+//-------------------------------------------------
+end event
+
+type m_referencia from menu within m_movimientos
+m_medidasreferencia m_medidasreferencia
+m_manoobraref m_manoobraref
+m_materiaprima m_materiaprima
+m_-5aax m_-5aax
+m_nuevasmedidas m_nuevasmedidas
+m_manoobranueva m_manoobranueva
+end type
+
+on m_referencia.create
+call super::create
+this.text = "Referencia"
+this.m_medidasreferencia=create m_medidasreferencia
+this.m_manoobraref=create m_manoobraref
+this.m_materiaprima=create m_materiaprima
+this.m_-5aax=create m_-5aax
+this.m_nuevasmedidas=create m_nuevasmedidas
+this.m_manoobranueva=create m_manoobranueva
+this.Item[UpperBound(this.Item)+1]=this.m_medidasreferencia
+this.Item[UpperBound(this.Item)+1]=this.m_manoobraref
+this.Item[UpperBound(this.Item)+1]=this.m_materiaprima
+this.Item[UpperBound(this.Item)+1]=this.m_-5aax
+this.Item[UpperBound(this.Item)+1]=this.m_nuevasmedidas
+this.Item[UpperBound(this.Item)+1]=this.m_manoobranueva
+end on
+
+on m_referencia.destroy
+call super::destroy
+destroy(this.m_medidasreferencia)
+destroy(this.m_manoobraref)
+destroy(this.m_materiaprima)
+destroy(this.m_-5aax)
+destroy(this.m_nuevasmedidas)
+destroy(this.m_manoobranueva)
+end on
+
+type m_medidasreferencia from menu within m_referencia
+event clicked ( )
+end type
+
+event clicked;Of_OpenWindow(w_medidas_referencia)
+end event
+
+on m_medidasreferencia.create
+call super::create
+this.tag = "400201"
+this.text = "Medidas referencia"
+this.microhelp = "Medidas de referencia"
+this.toolbaritemtext = "Medidas Referencia"
+this.toolbaritemorder = 200
+this.toolbaritemspace = 2
+end on
+
+on m_medidasreferencia.destroy
+call super::destroy
+end on
+
+type m_manoobraref from menu within m_referencia
+event clicked ( )
+end type
+
+event clicked;Of_OpenWindow(w_mano_obra_ref)
+end event
+
+on m_manoobraref.create
+call super::create
+this.tag = "400202"
+this.text = "Mano Obra"
+this.microhelp = "Mano de obra"
+end on
+
+on m_manoobraref.destroy
+call super::destroy
+end on
+
+type m_materiaprima from menu within m_referencia
+event clicked ( )
+end type
+
+event clicked;Of_OpenWindow(w_materia_prima_referencia_c)
+//
+end event
+
+on m_materiaprima.create
+call super::create
+this.tag = "400203"
+this.text = "Materia prima"
+this.microhelp = "Materia prima"
+this.toolbaritemname = "CheckOut5!"
+this.toolbaritemtext = "Materia prima Referencia"
+this.toolbaritemorder = 202
+end on
+
+on m_materiaprima.destroy
+call super::destroy
+end on
+
+type m_-5aax from menu within m_referencia
+end type
+
+on m_-5aax.create
+call super::create
+this.tag = "400204"
+this.text = "-"
+end on
+
+on m_-5aax.destroy
+call super::destroy
+end on
+
+type m_nuevasmedidas from menu within m_referencia
+end type
+
+on m_nuevasmedidas.create
+call super::create
+this.tag = "400205"
+this.text = "Nuevas medidas"
+this.microhelp = "Nuevas medidas"
+this.toolbaritemname = "DesignMode!"
+this.toolbaritemtext = "Nuevas medidas referencia"
+this.toolbaritemorder = 205
+end on
+
+on m_nuevasmedidas.destroy
+call super::destroy
+end on
+
+event clicked;Of_OpenWindow(w_med_ref)
+end event
+
+type m_manoobranueva from menu within m_referencia
+end type
+
+event clicked;Of_OpenWindow(w_mano_obra_ref_new)
+end event
+
+on m_manoobranueva.create
+call super::create
+this.tag = "400206"
+this.text = "Mano obra nueva..."
+this.toolbaritemname = "SingletonReturn!"
+this.toolbaritemtext = "Mano de obra de referencia"
+this.toolbaritemorder = 201
+this.toolbaritemspace = 1
+end on
+
+on m_manoobranueva.destroy
+call super::destroy
+end on
+
+type m_orden from menu within m_movimientos
+m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes
+m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n
+m_-pol12112041805 m_-pol12112041805
+m_cambiartareasdegrupo m_cambiartareasdegrupo
+m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a
+m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes
+m_-l2601051147 m_-l2601051147
+m_generargantt m_generargantt
+m_-rayita0 m_-rayita0
+m_reservampcontroltecnico m_reservampcontroltecnico
+m_reservampcontroltecnicoadicionales m_reservampcontroltecnicoadicionales
+end type
+
+on m_orden.create
+call super::create
+this.text = "Orden"
+this.m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes=create m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes
+this.m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n=create m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n
+this.m_-pol12112041805=create m_-pol12112041805
+this.m_cambiartareasdegrupo=create m_cambiartareasdegrupo
+this.m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a=create m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a
+this.m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes=create m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes
+this.m_-l2601051147=create m_-l2601051147
+this.m_generargantt=create m_generargantt
+this.m_-rayita0=create m_-rayita0
+this.m_reservampcontroltecnico=create m_reservampcontroltecnico
+this.m_reservampcontroltecnicoadicionales=create m_reservampcontroltecnicoadicionales
+this.Item[UpperBound(this.Item)+1]=this.m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes
+this.Item[UpperBound(this.Item)+1]=this.m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n
+this.Item[UpperBound(this.Item)+1]=this.m_-pol12112041805
+this.Item[UpperBound(this.Item)+1]=this.m_cambiartareasdegrupo
+this.Item[UpperBound(this.Item)+1]=this.m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a
+this.Item[UpperBound(this.Item)+1]=this.m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes
+this.Item[UpperBound(this.Item)+1]=this.m_-l2601051147
+this.Item[UpperBound(this.Item)+1]=this.m_generargantt
+this.Item[UpperBound(this.Item)+1]=this.m_-rayita0
+this.Item[UpperBound(this.Item)+1]=this.m_reservampcontroltecnico
+this.Item[UpperBound(this.Item)+1]=this.m_reservampcontroltecnicoadicionales
+end on
+
+on m_orden.destroy
+call super::destroy
+destroy(this.m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes)
+destroy(this.m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n)
+destroy(this.m_-pol12112041805)
+destroy(this.m_cambiartareasdegrupo)
+destroy(this.m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a)
+destroy(this.m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes)
+destroy(this.m_-l2601051147)
+destroy(this.m_generargantt)
+destroy(this.m_-rayita0)
+destroy(this.m_reservampcontroltecnico)
+destroy(this.m_reservampcontroltecnicoadicionales)
+end on
+
+type m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes from menu within m_orden
+end type
+
+event clicked;//*********************************
+of_OpenWindow(w_programacion_orden)
+//*********************************
+end event
+
+on m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes.create
+call super::create
+this.tag = "400301"
+this.text = "Programaci$$HEX1$$f300$$ENDHEX$$n de $$HEX1$$f300$$ENDHEX$$rdenes"
+this.microhelp = "Programaci$$HEX1$$f300$$ENDHEX$$n de $$HEX1$$f300$$ENDHEX$$rdenes"
+this.toolbaritemname = "Synchronizer!"
+this.toolbaritemtext = "Programaci$$HEX1$$f300$$ENDHEX$$n de $$HEX1$$f300$$ENDHEX$$rdenes"
+this.toolbaritemorder = 107
+end on
+
+on m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes.destroy
+call super::destroy
+end on
+
+type m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n from menu within m_orden
+end type
+
+event clicked;////*********************************
+of_OpenWindow(w_reacomodar_programacion)
+////*********************************
+end event
+
+on m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n.create
+call super::create
+this.tag = "400302"
+this.text = "Reacomodar programaci$$HEX1$$f300$$ENDHEX$$n"
+this.microhelp = "Reacomodar programaci$$HEX1$$f300$$ENDHEX$$n"
+this.toolbaritemname = "ComputeToday!"
+this.toolbaritemtext = "Reacomodar programaci$$HEX1$$f300$$ENDHEX$$n"
+this.toolbaritemorder = 108
+end on
+
+on m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n.destroy
+call super::destroy
+end on
+
+type m_-pol12112041805 from menu within m_orden
+end type
+
+on m_-pol12112041805.create
+call super::create
+this.tag = "400303"
+this.text = "-"
+end on
+
+on m_-pol12112041805.destroy
+call super::destroy
+end on
+
+type m_cambiartareasdegrupo from menu within m_orden
+end type
+
+event clicked;of_openwindow(w_cambio_grupos)
+end event
+
+on m_cambiartareasdegrupo.create
+call super::create
+this.tag = "400304"
+this.text = "Cambiar tareas de grupo"
+this.microhelp = "Cambiar tareas de grupo"
+end on
+
+on m_cambiartareasdegrupo.destroy
+call super::destroy
+end on
+
+type m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a from menu within m_orden
+end type
+
+event clicked;of_openwindow(w_cambio_maq_tin)
+end event
+
+on m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a.create
+call super::create
+this.tag = "400305"
+this.text = "Cambiar tareas de m$$HEX1$$e100$$ENDHEX$$quina de tintorer$$HEX1$$ed00$$ENDHEX$$a"
+this.microhelp = "Cambiar tareas de m$$HEX1$$e100$$ENDHEX$$quina de tintorer$$HEX1$$ed00$$ENDHEX$$a"
+end on
+
+on m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a.destroy
+call super::destroy
+end on
+
+type m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes from menu within m_orden
+end type
+
+event clicked;of_openwindow(w_cambio_prioridad)
+end event
+
+on m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes.create
+call super::create
+this.tag = "400306"
+this.text = "Cambiar prioridad de $$HEX1$$f300$$ENDHEX$$rdenes"
+this.microhelp = "Cambiar prioridad de $$HEX1$$f300$$ENDHEX$$rdenes"
+this.toolbaritemname = "AlignTop!"
+this.toolbaritemtext = "Cambiar prioridad ordenes"
+this.toolbaritemorder = 109
+end on
+
+on m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes.destroy
+call super::destroy
+end on
+
+type m_-l2601051147 from menu within m_orden
+end type
+
+on m_-l2601051147.create
+call super::create
+this.tag = "400307"
+this.text = "-"
+end on
+
+on m_-l2601051147.destroy
+call super::destroy
+end on
+
+type m_generargantt from menu within m_orden
+end type
+
+event clicked;//*******************************
+of_openwindow(w_generar_gantt)
+//*******************************
+end event
+
+on m_generargantt.create
+call super::create
+this.tag = "400308"
+this.text = "Generar Gantt"
+this.toolbaritemname = "CrossTab!"
+this.toolbaritemtext = "Generar Gantt"
+this.toolbaritemorder = 110
+end on
+
+on m_generargantt.destroy
+call super::destroy
+end on
+
+type m_-rayita0 from menu within m_orden
+end type
+
+on m_-rayita0.create
+call super::create
+this.text = "-"
+end on
+
+on m_-rayita0.destroy
+call super::destroy
+end on
+
+type m_reservampcontroltecnico from menu within m_orden
+end type
+
+event clicked;of_openwindow(w_reserva_mp_orden_ct)
+end event
+
+on m_reservampcontroltecnico.create
+call super::create
+this.text = "Reserva MP Control Tecnico"
+end on
+
+on m_reservampcontroltecnico.destroy
+call super::destroy
+end on
+
+type m_reservampcontroltecnicoadicionales from menu within m_orden
+end type
+
+event clicked;of_openwindow(w_reserva_mp_adicional_ct)
+end event
+
+on m_reservampcontroltecnicoadicionales.create
+call super::create
+this.text = "Reserva MP Control Tecnico Adicionales"
+end on
+
+on m_reservampcontroltecnicoadicionales.destroy
+call super::destroy
+end on
+
+type m_correodb from menu within m_movimientos
+end type
+
+event clicked;Of_OpenWindow(w_correodb)
+end event
+
+on m_correodb.create
+call super::create
+this.tag = "4003"
+this.text = "Correo DB"
+this.microhelp = "Correo DB"
+end on
+
+on m_correodb.destroy
+call super::destroy
+end on
+
+type m_refrescarlistas from menu within m_procesos
+end type
+
+event clicked;ParentWindow.TriggerEvent("ue_refrescarcodigos")
+end event
+
+on m_refrescarlistas.create
+call super::create
+this.tag = "5001"
+this.text = "Refrescar listas"
+end on
+
+on m_refrescarlistas.destroy
+call super::destroy
+end on
+
+type m_pasardisenored from menu within m_procesos
+end type
+
+event clicked;s_base_parametros lo_param
+
+lo_param.cadena[1] = ''
+
+OpenWithParm(w_pasar_diseno_red, lo_param)
+end event
+
+on m_pasardisenored.create
+call super::create
+this.text = "Pasar Dise$$HEX1$$f100$$ENDHEX$$o Red"
+end on
+
+on m_pasardisenored.destroy
+call super::destroy
+end on
+
+type m_actualizarmateriaprimaenficha from menu within m_procesos
+end type
+
+event clicked;open(w_actualizar_mat_prima_en_ficha)
+end event
+
+on m_actualizarmateriaprimaenficha.create
+call super::create
+this.tag = "5001"
+this.text = "Actualizar Materia Prima en Ficha"
+end on
+
+on m_actualizarmateriaprimaenficha.destroy
+call super::destroy
+end on
+
+type m_migrarmuestras from menu within m_procesos
+end type
+
+event clicked;opensheet(w_procesar_muestras, parentwindow,6,original!)
+end event
+
+on m_migrarmuestras.create
+call super::create
+this.tag = "5001"
+this.text = "Migrar Muestras"
+end on
+
+on m_migrarmuestras.destroy
+call super::destroy
+end on
+
+type m_muestras1 from menu within m_reportes
+m_solicitud m_solicitud
+m_medidasymo m_medidasymo
+m_11 m_11
+m_listamuestras m_listamuestras
+m_-0212 m_-0212
+m_cantidades m_cantidades
+m_reporteconsolidado m_reporteconsolidado
+m_saldos m_saldos
+m_-089797xxhgf m_-089797xxhgf
+m_reporteejecutivas m_reporteejecutivas
+m_muestrario-color m_muestrario-color
+end type
+
+on m_muestras1.create
+call super::create
+this.text = "Desarrollos"
+this.m_solicitud=create m_solicitud
+this.m_medidasymo=create m_medidasymo
+this.m_11=create m_11
+this.m_listamuestras=create m_listamuestras
+this.m_-0212=create m_-0212
+this.m_cantidades=create m_cantidades
+this.m_reporteconsolidado=create m_reporteconsolidado
+this.m_saldos=create m_saldos
+this.m_-089797xxhgf=create m_-089797xxhgf
+this.m_reporteejecutivas=create m_reporteejecutivas
+this.m_muestrario-color=create m_muestrario-color
+this.Item[UpperBound(this.Item)+1]=this.m_solicitud
+this.Item[UpperBound(this.Item)+1]=this.m_medidasymo
+this.Item[UpperBound(this.Item)+1]=this.m_11
+this.Item[UpperBound(this.Item)+1]=this.m_listamuestras
+this.Item[UpperBound(this.Item)+1]=this.m_-0212
+this.Item[UpperBound(this.Item)+1]=this.m_cantidades
+this.Item[UpperBound(this.Item)+1]=this.m_reporteconsolidado
+this.Item[UpperBound(this.Item)+1]=this.m_saldos
+this.Item[UpperBound(this.Item)+1]=this.m_-089797xxhgf
+this.Item[UpperBound(this.Item)+1]=this.m_reporteejecutivas
+this.Item[UpperBound(this.Item)+1]=this.m_muestrario-color
+end on
+
+on m_muestras1.destroy
+call super::destroy
+destroy(this.m_solicitud)
+destroy(this.m_medidasymo)
+destroy(this.m_11)
+destroy(this.m_listamuestras)
+destroy(this.m_-0212)
+destroy(this.m_cantidades)
+destroy(this.m_reporteconsolidado)
+destroy(this.m_saldos)
+destroy(this.m_-089797xxhgf)
+destroy(this.m_reporteejecutivas)
+destroy(this.m_muestrario-color)
+end on
+
+type m_solicitud from menu within m_muestras1
+end type
+
+event clicked;of_openWindow(w_inf_solicitud)
+end event
+
+on m_solicitud.create
+call super::create
+this.tag = "600101"
+this.text = "Solicitud"
+this.microhelp = "Solicitud"
+end on
+
+on m_solicitud.destroy
+call super::destroy
+end on
+
+type m_medidasymo from menu within m_muestras1
+end type
+
+event clicked;of_openWindow(w_inf_muestra_medidas)
+end event
+
+on m_medidasymo.create
+call super::create
+this.tag = "600102"
+this.text = "Medidas y MO/MP"
+this.microhelp = "Medidas, mano de obra  y materia prima"
+end on
+
+on m_medidasymo.destroy
+call super::destroy
+end on
+
+type m_11 from menu within m_muestras1
+end type
+
+event clicked;of_OpenWindow(w_inf_fichamp)
+end event
+
+on m_11.create
+call super::create
+this.tag = "600108"
+this.text = "Ficha de Materia Prima"
+end on
+
+on m_11.destroy
+call super::destroy
+end on
+
+type m_listamuestras from menu within m_muestras1
+end type
+
+event clicked;of_openWindow(w_inf_muestras)
+end event
+
+on m_listamuestras.create
+call super::create
+this.tag = "600103"
+this.text = "Lista de Desarrollos"
+this.microhelp = "Lista de desarrollos"
+end on
+
+on m_listamuestras.destroy
+call super::destroy
+end on
+
+type m_-0212 from menu within m_muestras1
+end type
+
+on m_-0212.create
+call super::create
+this.tag = "600104"
+this.text = "-"
+end on
+
+on m_-0212.destroy
+call super::destroy
+end on
+
+type m_cantidades from menu within m_muestras1
+end type
+
+on m_cantidades.create
+call super::create
+this.tag = "600105"
+this.text = "Cantidades por Desarrollador"
+this.microhelp = "Cantidades por desarrollador"
+end on
+
+on m_cantidades.destroy
+call super::destroy
+end on
+
+event clicked;//w_cantidad_desarrollador
+of_openWindow(w_cantidad_desarrollador)
+end event
+
+type m_reporteconsolidado from menu within m_muestras1
+end type
+
+event clicked;of_openWindow(w_reporte_mejorado)
+end event
+
+on m_reporteconsolidado.create
+call super::create
+this.tag = "600106"
+this.text = "Reporte consolidado"
+this.microhelp = "Reporte consolidado"
+end on
+
+on m_reporteconsolidado.destroy
+call super::destroy
+end on
+
+type m_saldos from menu within m_muestras1
+end type
+
+event clicked;of_openWindow(w_saldo)
+end event
+
+on m_saldos.create
+call super::create
+this.tag = "600107"
+this.text = "Saldos"
+this.microhelp = "Saldos de muestras"
+end on
+
+on m_saldos.destroy
+call super::destroy
+end on
+
+type m_-089797xxhgf from menu within m_muestras1
+end type
+
+on m_-089797xxhgf.create
+call super::create
+this.tag = "600111"
+this.text = "-"
+end on
+
+on m_-089797xxhgf.destroy
+call super::destroy
+end on
+
+type m_reporteejecutivas from menu within m_muestras1
+end type
+
+on m_reporteejecutivas.create
+call super::create
+this.tag = "600109"
+this.text = "Reporte ejecutivas"
+end on
+
+on m_reporteejecutivas.destroy
+call super::destroy
+end on
+
+event clicked;of_openWindow(w_reporte_ejecutiva)
+end event
+
+type m_muestrario-color from menu within m_muestras1
+end type
+
+event clicked;of_openWindow(w_rep_historia_muestrario_color)
+end event
+
+on m_muestrario-color.create
+call super::create
+this.tag = "600110"
+this.text = "Historia Muestrario-Color"
+end on
+
+on m_muestrario-color.destroy
+call super::destroy
+end on
+
+type m_referencias from menu within m_reportes
+m_mediadas m_mediadas
+m_fichadematprima m_fichadematprima
+m_manodeobra m_manodeobra
+m_-11weryhfdhgd m_-11weryhfdhgd
+m_nuevasmedidas0 m_nuevasmedidas0
+m_materiaprimacolor-pinta m_materiaprimacolor-pinta
+m_listadematerialesasap m_listadematerialesasap
+end type
+
+on m_referencias.create
+call super::create
+this.text = "Referencias"
+this.m_mediadas=create m_mediadas
+this.m_fichadematprima=create m_fichadematprima
+this.m_manodeobra=create m_manodeobra
+this.m_-11weryhfdhgd=create m_-11weryhfdhgd
+this.m_nuevasmedidas0=create m_nuevasmedidas0
+this.m_materiaprimacolor-pinta=create m_materiaprimacolor-pinta
+this.m_listadematerialesasap=create m_listadematerialesasap
+this.Item[UpperBound(this.Item)+1]=this.m_mediadas
+this.Item[UpperBound(this.Item)+1]=this.m_fichadematprima
+this.Item[UpperBound(this.Item)+1]=this.m_manodeobra
+this.Item[UpperBound(this.Item)+1]=this.m_-11weryhfdhgd
+this.Item[UpperBound(this.Item)+1]=this.m_nuevasmedidas0
+this.Item[UpperBound(this.Item)+1]=this.m_materiaprimacolor-pinta
+this.Item[UpperBound(this.Item)+1]=this.m_listadematerialesasap
+end on
+
+on m_referencias.destroy
+call super::destroy
+destroy(this.m_mediadas)
+destroy(this.m_fichadematprima)
+destroy(this.m_manodeobra)
+destroy(this.m_-11weryhfdhgd)
+destroy(this.m_nuevasmedidas0)
+destroy(this.m_materiaprimacolor-pinta)
+destroy(this.m_listadematerialesasap)
+end on
+
+type m_mediadas from menu within m_referencias
+end type
+
+event clicked;of_openWindow(w_inf_referencia)
+end event
+
+on m_mediadas.create
+call super::create
+this.tag = "600201"
+this.text = "Medidas"
+this.microhelp = "Medidas"
+end on
+
+on m_mediadas.destroy
+call super::destroy
+end on
+
+type m_fichadematprima from menu within m_referencias
+end type
+
+event clicked;of_openWindow(w_inf_matprima)
+end event
+
+on m_fichadematprima.create
+call super::create
+this.tag = "600202"
+this.text = "Ficha de materia prima"
+this.microhelp = "Ficha de materia prima"
+end on
+
+on m_fichadematprima.destroy
+call super::destroy
+end on
+
+type m_manodeobra from menu within m_referencias
+end type
+
+event clicked;of_openWindow(w_inf_mo_ref)
+end event
+
+on m_manodeobra.create
+call super::create
+this.tag = "600203"
+this.text = "Mano de obra"
+this.microhelp = "Mano de obra"
+end on
+
+on m_manodeobra.destroy
+call super::destroy
+end on
+
+type m_-11weryhfdhgd from menu within m_referencias
+end type
+
+on m_-11weryhfdhgd.create
+call super::create
+this.tag = "600204"
+this.text = "-"
+end on
+
+on m_-11weryhfdhgd.destroy
+call super::destroy
+end on
+
+type m_nuevasmedidas0 from menu within m_referencias
+end type
+
+event clicked;ParentWindow.TriggerEvent("ue_informe_referencia")
+end event
+
+on m_nuevasmedidas0.create
+call super::create
+this.tag = "600205"
+this.text = "Nuevas medidas"
+this.microhelp = "Nuevas medidas"
+end on
+
+on m_nuevasmedidas0.destroy
+call super::destroy
+end on
+
+type m_materiaprimacolor-pinta from menu within m_referencias
+end type
+
+event clicked;of_openWindow(w_inf_matprima_pinta)
+end event
+
+on m_materiaprimacolor-pinta.create
+call super::create
+this.tag = "600206"
+this.text = "Materia Prima Consolidado"
+end on
+
+on m_materiaprimacolor-pinta.destroy
+call super::destroy
+end on
+
+type m_listadematerialesasap from menu within m_referencias
+end type
+
+on m_listadematerialesasap.create
+call super::create
+this.tag = "600207"
+this.text = "Lista de materiales a SAP"
+end on
+
+on m_listadematerialesasap.destroy
+call super::destroy
+end on
+
+event clicked;of_openWindow(w_materiales_a_sap)
+end event
+
+type m_$$HEX1$$f300$$ENDHEX$$rdenes from menu within m_reportes
+m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso
+m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo
+m_ordenescompletas m_ordenescompletas
+m_10 m_10
+m_-rayita1 m_-rayita1
+m_reservampcontroltecnico0 m_reservampcontroltecnico0
+end type
+
+on m_$$HEX1$$f300$$ENDHEX$$rdenes.create
+call super::create
+this.text = "$$HEX1$$d300$$ENDHEX$$rdenes"
+this.m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso=create m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso
+this.m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo=create m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo
+this.m_ordenescompletas=create m_ordenescompletas
+this.m_10=create m_10
+this.m_-rayita1=create m_-rayita1
+this.m_reservampcontroltecnico0=create m_reservampcontroltecnico0
+this.Item[UpperBound(this.Item)+1]=this.m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso
+this.Item[UpperBound(this.Item)+1]=this.m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo
+this.Item[UpperBound(this.Item)+1]=this.m_ordenescompletas
+this.Item[UpperBound(this.Item)+1]=this.m_10
+this.Item[UpperBound(this.Item)+1]=this.m_-rayita1
+this.Item[UpperBound(this.Item)+1]=this.m_reservampcontroltecnico0
+end on
+
+on m_$$HEX1$$f300$$ENDHEX$$rdenes.destroy
+call super::destroy
+destroy(this.m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso)
+destroy(this.m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo)
+destroy(this.m_ordenescompletas)
+destroy(this.m_10)
+destroy(this.m_-rayita1)
+destroy(this.m_reservampcontroltecnico0)
+end on
+
+type m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso from menu within m_$$HEX1$$f300$$ENDHEX$$rdenes
+end type
+
+on m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso.create
+call super::create
+this.tag = "600301"
+this.text = "$$HEX1$$d300$$ENDHEX$$rdenes en proceso"
+end on
+
+on m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso.destroy
+call super::destroy
+end on
+
+event clicked;//***********************************
+of_openWindow(w_inf_ordenes_proceso)
+//***********************************
+end event
+
+type m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo from menu within m_$$HEX1$$f300$$ENDHEX$$rdenes
+end type
+
+on m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo.create
+call super::create
+this.tag = "600302"
+this.text = "D$$HEX1$$ed00$$ENDHEX$$as en desarrollo"
+end on
+
+on m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo.destroy
+call super::destroy
+end on
+
+event clicked;//***********************************
+of_openWindow(w_inf_dias_dllo)
+//***********************************
+end event
+
+type m_ordenescompletas from menu within m_$$HEX1$$f300$$ENDHEX$$rdenes
+end type
+
+on m_ordenescompletas.create
+call super::create
+this.tag = "600303"
+this.text = "Ordenes Completas"
+end on
+
+on m_ordenescompletas.destroy
+call super::destroy
+end on
+
+event clicked;Of_OpenWindow(w_inf_dias_orden)
+end event
+
+type m_10 from menu within m_$$HEX1$$f300$$ENDHEX$$rdenes
+end type
+
+event clicked;Of_OpenWindow(w_inf_ordenes_maq_agujas)
+end event
+
+on m_10.create
+call super::create
+this.tag = "600304"
+this.text = "Ordenes M$$HEX1$$e100$$ENDHEX$$quinas-Agujas"
+end on
+
+on m_10.destroy
+call super::destroy
+end on
+
+type m_-rayita1 from menu within m_$$HEX1$$f300$$ENDHEX$$rdenes
+end type
+
+on m_-rayita1.create
+call super::create
+this.text = "-"
+end on
+
+on m_-rayita1.destroy
+call super::destroy
+end on
+
+type m_reservampcontroltecnico0 from menu within m_$$HEX1$$f300$$ENDHEX$$rdenes
+end type
+
+event clicked;Of_OpenWindow(w_reporte_reserva_mp_ct)
+end event
+
+on m_reservampcontroltecnico0.create
+call super::create
+this.text = "Reserva MP Control Tecnico"
+end on
+
+on m_reservampcontroltecnico0.destroy
+call super::destroy
+end on
+
+type m_programaci$$HEX1$$f300$$ENDHEX$$n from menu within m_reportes
+m_grupos m_grupos
+m_ordenesdetenidas m_ordenesdetenidas
+m_usuariosprogramando m_usuariosprogramando
+m_movimientosrealizados m_movimientosrealizados
+m_ordenesenproceso m_ordenesenproceso
+m_d$$HEX1$$ed00$$ENDHEX$$asdedesarrollo m_d$$HEX1$$ed00$$ENDHEX$$asdedesarrollo
+m_muestrasconvertidas m_muestrasconvertidas
+m_ordenesenprocesofecha m_ordenesenprocesofecha
+m_ordenesenprocesolaboratorio m_ordenesenprocesolaboratorio
+end type
+
+on m_programaci$$HEX1$$f300$$ENDHEX$$n.create
+call super::create
+this.text = "Programaci$$HEX1$$f300$$ENDHEX$$n"
+this.m_grupos=create m_grupos
+this.m_ordenesdetenidas=create m_ordenesdetenidas
+this.m_usuariosprogramando=create m_usuariosprogramando
+this.m_movimientosrealizados=create m_movimientosrealizados
+this.m_ordenesenproceso=create m_ordenesenproceso
+this.m_d$$HEX1$$ed00$$ENDHEX$$asdedesarrollo=create m_d$$HEX1$$ed00$$ENDHEX$$asdedesarrollo
+this.m_muestrasconvertidas=create m_muestrasconvertidas
+this.m_ordenesenprocesofecha=create m_ordenesenprocesofecha
+this.m_ordenesenprocesolaboratorio=create m_ordenesenprocesolaboratorio
+this.Item[UpperBound(this.Item)+1]=this.m_grupos
+this.Item[UpperBound(this.Item)+1]=this.m_ordenesdetenidas
+this.Item[UpperBound(this.Item)+1]=this.m_usuariosprogramando
+this.Item[UpperBound(this.Item)+1]=this.m_movimientosrealizados
+this.Item[UpperBound(this.Item)+1]=this.m_ordenesenproceso
+this.Item[UpperBound(this.Item)+1]=this.m_d$$HEX1$$ed00$$ENDHEX$$asdedesarrollo
+this.Item[UpperBound(this.Item)+1]=this.m_muestrasconvertidas
+this.Item[UpperBound(this.Item)+1]=this.m_ordenesenprocesofecha
+this.Item[UpperBound(this.Item)+1]=this.m_ordenesenprocesolaboratorio
+end on
+
+on m_programaci$$HEX1$$f300$$ENDHEX$$n.destroy
+call super::destroy
+destroy(this.m_grupos)
+destroy(this.m_ordenesdetenidas)
+destroy(this.m_usuariosprogramando)
+destroy(this.m_movimientosrealizados)
+destroy(this.m_ordenesenproceso)
+destroy(this.m_d$$HEX1$$ed00$$ENDHEX$$asdedesarrollo)
+destroy(this.m_muestrasconvertidas)
+destroy(this.m_ordenesenprocesofecha)
+destroy(this.m_ordenesenprocesolaboratorio)
+end on
+
+type m_grupos from menu within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;Of_OpenWindow(w_informe_grupos)
+end event
+
+on m_grupos.create
+call super::create
+this.tag = "600401"
+this.text = "Grupos..."
+end on
+
+on m_grupos.destroy
+call super::destroy
+end on
+
+type m_ordenesdetenidas from menu within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;Of_OpenWindow(w_informe_detenidas)
+end event
+
+on m_ordenesdetenidas.create
+call super::create
+this.tag = "600402"
+this.text = "Ordenes detenidas..."
+end on
+
+on m_ordenesdetenidas.destroy
+call super::destroy
+end on
+
+type m_usuariosprogramando from menu within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;Of_OpenWindow(w_informe_usuarios_sistema)
+end event
+
+on m_usuariosprogramando.create
+call super::create
+this.tag = "600403"
+this.text = "Usuarios programando..."
+end on
+
+on m_usuariosprogramando.destroy
+call super::destroy
+end on
+
+type m_movimientosrealizados from menu within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;Of_OpenWindow(w_informe_movimientos)
+end event
+
+on m_movimientosrealizados.create
+call super::create
+this.tag = "600404"
+this.text = "Movimientos realizados..."
+end on
+
+on m_movimientosrealizados.destroy
+call super::destroy
+end on
+
+type m_ordenesenproceso from menu within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;Of_OpenWindow(w_informe_ordenes_proceso)
+end event
+
+on m_ordenesenproceso.create
+call super::create
+this.tag = "600405"
+this.text = "Ordenes en proceso..."
+end on
+
+on m_ordenesenproceso.destroy
+call super::destroy
+end on
+
+type m_d$$HEX1$$ed00$$ENDHEX$$asdedesarrollo from menu within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;Of_OpenWindow(w_informe_dias_desarrollo)
+end event
+
+on m_d$$HEX1$$ed00$$ENDHEX$$asdedesarrollo.create
+call super::create
+this.tag = "600406"
+this.text = "D$$HEX1$$ed00$$ENDHEX$$as de desarrollo..."
+end on
+
+on m_d$$HEX1$$ed00$$ENDHEX$$asdedesarrollo.destroy
+call super::destroy
+end on
+
+type m_muestrasconvertidas from menu within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;Of_OpenWindow(w_informe_muestra_a_ref)
+end event
+
+on m_muestrasconvertidas.create
+call super::create
+this.tag = "600407"
+this.text = "Muestras convertidas..."
+end on
+
+on m_muestrasconvertidas.destroy
+call super::destroy
+end on
+
+type m_ordenesenprocesofecha from menu within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;Of_OpenWindow(w_informe_ordenes_proceso_fecha)
+end event
+
+on m_ordenesenprocesofecha.create
+call super::create
+this.text = "Ordenes en proceso Fecha..."
+end on
+
+on m_ordenesenprocesofecha.destroy
+call super::destroy
+end on
+
+type m_ordenesenprocesolaboratorio from menu within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+event clicked;//
+Of_OpenWindow(w_informe_ordenes_proceso_laboratorio)
+end event
+
+on m_ordenesenprocesolaboratorio.create
+call super::create
+this.text = "Ordenes en proceso Laboratorio..."
+end on
+
+on m_ordenesenprocesolaboratorio.destroy
+call super::destroy
+end on
+
