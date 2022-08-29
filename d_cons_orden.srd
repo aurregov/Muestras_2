@@ -1,0 +1,70 @@
+HA$PBExportHeader$d_cons_orden.srd
+$PBExportComments$DWObj para la consulta de Ordenes
+release 9;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=64 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=nu_orden dbname="dt_mu_ord.nu_orden" )
+ column=(type=long updatewhereclause=yes name=co_fabrica dbname="dt_mu_ord.co_fabrica" )
+ column=(type=long updatewhereclause=yes name=co_linea dbname="dt_mu_ord.co_linea" )
+ column=(type=long updatewhereclause=yes name=co_muestra dbname="dt_mu_ord.co_muestra" )
+ column=(type=long updatewhereclause=yes name=dt_muestras_co_talla dbname="dt_muestras.co_talla" )
+ column=(type=char(8) updatewhereclause=yes name=co_ctecnico dbname="dt_mu_ord.co_ctecnico" )
+ column=(type=char(30) updatewhereclause=yes name=de_ctecnico dbname="de_ctecnico" )
+ column=(type=long updatewhereclause=yes name=co_ejecutiva dbname="dt_mu_ord.co_ejecutiva" )
+ column=(type=char(50) updatewhereclause=yes name=de_ejecutiva dbname="de_ejecutiva" )
+ column=(type=char(2) updatewhereclause=yes name=tipo dbname="dt_mu_ord.tipo" values="NUEVA	N/REFORMA	R/CODIFICADA	C/" )
+ column=(type=long updatewhereclause=yes name=condicion dbname="dt_mu_ord.condicion" )
+ column=(type=long updatewhereclause=yes name=prioridad dbname="dt_mu_ord.prioridad" values="EXTREMA	1/ALTA	2/MEDIA	3/BAJA	4/MUY BAJA	5/" )
+ retrieve="  SELECT dt_mu_ord.nu_orden,   
+         dt_mu_ord.co_fabrica,   
+         dt_mu_ord.co_linea,   
+         dt_mu_ord.co_muestra,
+         dt_muestras.co_talla,    
+         dt_mu_ord.co_ctecnico,   
+         sp_desc_desarrollador(dt_mu_ord.co_ctecnico) AS de_ctecnico,   
+         dt_mu_ord.co_ejecutiva,   
+         sp_desc_ejecutiva( dt_mu_ord.co_fabrica,dt_mu_ord.co_linea,dt_mu_ord.co_muestra,dt_mu_ord.co_ejecutiva) AS de_ejecutiva,   
+         dt_mu_ord.tipo,   
+         dt_mu_ord.condicion,   
+         dt_mu_ord.prioridad  
+    FROM dt_mu_ord, m_muestras, dt_muestras, m_usuario_tipoprod
+   WHERE dt_mu_ord.co_fabrica   = m_muestras.co_fabrica
+     AND dt_mu_ord.co_linea     = m_muestras.co_linea
+     AND dt_mu_ord.co_muestra   = m_muestras.co_muestra
+     AND m_muestras.co_fabrica  = dt_muestras.co_fabrica
+     AND m_muestras.co_linea    = dt_muestras.co_linea
+     AND m_muestras.co_muestra  = dt_muestras.co_muestra
+     AND m_muestras.co_tipoprod = m_usuario_tipoprod.co_tipoprod
+     AND m_usuario_tipoprod.co_usuario = :as_usuario" arguments=(("as_usuario", string))  sort="co_fabrica A co_linea A co_muestra A nu_orden A " )
+text(band=header alignment="2" text="F$$HEX1$$e100$$ENDHEX$$brica" border="6" color="33554432" x="9" y="8" height="56" width="201" html.valueishtml="0"  name=co_fabrica_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="L$$HEX1$$ed00$$ENDHEX$$nea" border="6" color="33554432" x="219" y="8" height="56" width="155" html.valueishtml="0"  name=co_linea_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Muestra" border="6" color="33554432" x="384" y="8" height="56" width="201" html.valueishtml="0"  name=co_muestra_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="No. Orden" border="6" color="33554432" x="773" y="8" height="56" width="238" html.valueishtml="0"  name=nu_orden_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="T$$HEX1$$e900$$ENDHEX$$cnico" border="6" color="33554432" x="1019" y="8" height="56" width="402" html.valueishtml="0"  name=co_ctecnico_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n T$$HEX1$$e900$$ENDHEX$$cnico" border="6" color="33554432" x="1431" y="8" height="56" width="736" html.valueishtml="0"  name=de_ctecnico_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Ejecutiva" border="6" color="33554432" x="2176" y="8" height="56" width="288" html.valueishtml="0"  name=co_ejecutiva_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n Ejecutiva" border="6" color="33554432" x="2473" y="8" height="56" width="731" html.valueishtml="0"  name=de_ejecutiva_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Tipo" border="6" color="33554432" x="3214" y="8" height="56" width="430" html.valueishtml="0"  name=tipo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Condici$$HEX1$$f300$$ENDHEX$$n" border="6" color="33554432" x="3653" y="8" height="56" width="485" html.valueishtml="0"  name=condicion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Prioridad" border="6" color="33554432" x="4146" y="8" height="56" width="453" html.valueishtml="0"  name=prioridad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Talla" border="6" color="0" x="594" y="8" height="56" width="169" html.valueishtml="0"  name=dt_muestras_co_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="5" color="33554432" x="3653" y="4" height="60" width="485" format="[General]" html.valueishtml="0"  name=condicion  tag="" visible="1" dddw.name=d_dddw_mu_cond_orden dddw.displaycolumn=de_condicion dddw.datacolumn=condicion dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=100 border="5" color="33554432" x="3214" y="4" height="60" width="430" format="[general]" html.valueishtml="0"  name=tipo  tag="" visible="1" edit.limit=1 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes edit.codetable=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=90 border="5" color="33554432" x="2473" y="4" height="60" width="731" format="[general]" html.valueishtml="0"  name=de_ejecutiva visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="1" tabsequence=80 border="5" color="33554432" x="2176" y="4" height="60" width="288" format="[general]" html.valueishtml="0"  name=co_ejecutiva visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=70 border="5" color="33554432" x="1431" y="4" height="60" width="736" format="[general]" html.valueishtml="0"  name=de_ctecnico visible="1" edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=60 border="5" color="33554432" x="1019" y="4" height="60" width="402" format="[general]" html.valueishtml="0"  name=co_ctecnico visible="1" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=50 border="5" color="33554432" x="773" y="4" height="60" width="238" format="[general]" html.valueishtml="0"  name=nu_orden visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="1" tabsequence=30 border="5" color="33554432" x="384" y="4" height="60" width="201" format="[general]" html.valueishtml="0"  name=co_muestra visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=20 border="5" color="33554432" x="219" y="4" height="60" width="155" format="[general]" html.valueishtml="0"  name=co_linea visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=10 border="5" color="33554432" x="9" y="4" height="60" width="201" format="[general]" html.valueishtml="0"  name=co_fabrica visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="5" color="33554432" x="4146" y="4" height="60" width="453" format="[General]" html.valueishtml="0"  name=prioridad visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.codetable=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=40 border="5" color="33554432" x="594" y="8" height="60" width="169" format="[general]" html.valueishtml="0"  name=dt_muestras_co_talla visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.codetable=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
