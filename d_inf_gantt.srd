@@ -1,0 +1,96 @@
+HA$PBExportHeader$d_inf_gantt.srd
+$PBExportComments$DWO para el detalle de los datos Gantt en el registro de ordenes
+release 9;
+datawindow(units=0 timer_interval=0 color=134217737 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=144 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=nu_orden dbname="mu_gantt.nu_orden" )
+ column=(type=long updatewhereclause=yes name=consec dbname="mu_gantt.consec" )
+ column=(type=long updatewhereclause=yes name=nu_sol_serv dbname="mu_gantt.nu_sol_serv" initial="0" )
+ column=(type=long updatewhereclause=yes name=cons_color dbname="mu_gantt.cons_color" initial="0" )
+ column=(type=long updatewhereclause=yes name=id_actividad dbname="mu_gantt.id_actividad" )
+ column=(type=long updatewhereclause=yes name=co_operacion dbname="mu_gantt.co_operacion" )
+ column=(type=long updatewhereclause=yes name=co_estado dbname="mu_gantt.co_estado" )
+ column=(type=long updatewhereclause=yes name=minutos dbname="mu_gantt.minutos" )
+ column=(type=decimal(2) updatewhereclause=yes name=ca_kilos dbname="mu_gantt.ca_kilos" initial="0" )
+ column=(type=datetime updatewhereclause=yes name=f_prog_ini dbname="mu_gantt.f_prog_ini" )
+ column=(type=datetime updatewhereclause=yes name=f_prog_fin dbname="mu_gantt.f_prog_fin" )
+ column=(type=datetime updatewhereclause=yes name=f_mov_ini dbname="mu_gantt.f_mov_ini" )
+ column=(type=datetime updatewhereclause=yes name=f_mov_fin dbname="mu_gantt.f_mov_fin" )
+ column=(type=long updatewhereclause=yes name=co_grupo dbname="mu_gantt.co_grupo" )
+ column=(type=long updatewhereclause=yes name=cola_grupo dbname="mu_gantt.cola_grupo" )
+ column=(type=long updatewhereclause=yes name=cola_tin dbname="mu_gantt.cola_tin" )
+ column=(type=datetime updatewhereclause=yes name=fe_ini dbname="mu_gantt.fe_ini" )
+ column=(type=datetime updatewhereclause=yes name=fe_fin dbname="mu_gantt.fe_fin" )
+ column=(type=long updatewhereclause=yes name=condicion dbname="mu_gantt.condicion" initial="1" )
+ column=(type=long updatewhereclause=yes name=posicion dbname="mu_gantt.posicion" validation="Integer(Gettext())>0" validationmsg="'N$$HEX1$$fa00$$ENDHEX$$mero de posici$$HEX1$$f300$$ENDHEX$$n de la tarea no v$$HEX1$$e100$$ENDHEX$$lido'" )
+ column=(type=char(50) updatewhereclause=yes name=de_grupo dbname="de_grupo" )
+ column=(type=char(50) updatewhereclause=yes name=de_maq_tin dbname="de_maq_tin" )
+ column=(type=char(20) updatewhereclause=yes name=de_estado dbname="de_estado" )
+ column=(type=char(50) updatewhereclause=yes name=descripcion dbname="descripcion" )
+ column=(type=long updatewhereclause=yes name=co_color dbname="co_color" )
+ column=(type=long updatewhereclause=yes name=co_maquina dbname="m_maquinas_fab.co_maquina" )
+ retrieve="  SELECT mu_gantt.nu_orden,   
+         mu_gantt.consec,   
+         mu_gantt.nu_sol_serv,   
+         mu_gantt.cons_color,   
+         mu_gantt.id_actividad,   
+         mu_gantt.co_operacion,   
+         mu_gantt.co_estado,   
+         mu_gantt.minutos,   
+         mu_gantt.ca_kilos,   
+         mu_gantt.f_prog_ini,   
+         mu_gantt.f_prog_fin,   
+         mu_gantt.f_mov_ini,   
+         mu_gantt.f_mov_fin,   
+         mu_gantt.co_grupo,   
+         mu_gantt.cola_grupo,   
+         mu_gantt.cola_tin,   
+         mu_gantt.fe_ini,   
+         mu_gantt.fe_fin,   
+         mu_gantt.condicion,   
+         mu_gantt.posicion,   
+         trim(sp_desc_m_mu_grupo(mu_gantt.co_grupo)) AS de_grupo,   
+         trim(sp_nom_m_maquina(mu_gantt.co_fabrica,mu_gantt.cs_maquina)) AS de_maq_tin,   
+         trim(sp_nom_m_est_mue(mu_gantt.co_estado)) AS de_estado,   
+         trim(sp_nom_ao_tarea(mu_gantt.co_operacion,mu_gantt.id_actividad, m_muestras.co_tipoprod)) AS descripcion,   
+         (0) AS co_color,   
+         m_maquinas_fab.co_maquina  
+    FROM mu_gantt,   
+          OUTER  m_maquinas_fab ,  dt_mu_ord, m_muestras  
+   WHERE ( mu_gantt.nu_orden    = dt_mu_ord.nu_orden )      AND          
+         ( dt_mu_ord.co_fabrica = m_muestras.co_fabrica )        AND  
+         ( dt_mu_ord.co_linea   = m_muestras.co_linea )      AND        
+         ( dt_mu_ord.co_muestra = m_muestras.co_muestra ) AND
+			( mu_gantt.co_fabrica  = m_maquinas_fab.co_fabrica) and  
+         ( mu_gantt.cs_maquina  = m_maquinas_fab.cs_maquina) and  
+         ( ( mu_gantt.nu_orden = :a_nu_orden ) AND  
+         ( mu_gantt.condicion <> 8 ) )    
+
+
+" arguments=(("a_nu_orden", number))  sort="posicion A " )
+text(band=header alignment="2" text="Pos." border="0" color="33554432" x="9" y="84" height="56" width="119" html.valueishtml="0"  name=posicion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Sol. Serv." border="0" color="33554432" x="137" y="84" height="56" width="256" html.valueishtml="0"  name=nu_sol_serv_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Actividad" border="0" color="0" x="402" y="84" height="56" width="229" html.valueishtml="0"  name=id_actividad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Operaci$$HEX1$$f300$$ENDHEX$$n" border="0" color="0" x="640" y="84" height="56" width="256" html.valueishtml="0"  name=co_operacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Estado" border="0" color="0" x="1989" y="84" height="56" width="183" html.valueishtml="0"  name=co_estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n estado" border="0" color="33554432" x="2181" y="84" height="56" width="919" html.valueishtml="0"  name=de_estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Minutos" border="0" color="0" x="3109" y="84" height="56" width="197" html.valueishtml="0"  name=minutos_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n" border="0" color="33554432" x="905" y="84" height="56" width="1074" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=20 alignment="1" tabsequence=32766 border="0" color="33554432" x="9" y="4" height="60" width="119" format="[General]" html.valueishtml="0" protect="0~t1"  name=posicion  tag="" visible="1" edit.name="#####" editmask.mask="#####" editmask.imemode=2  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=8 alignment="1" tabsequence=32766 border="0" color="33554432" x="3109" y="4" height="60" width="197" format="####,###" html.valueishtml="0" protect="0~t1"  name=minutos visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=2 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=23 alignment="0" tabsequence=32766 border="0" color="33554432" x="2181" y="4" height="60" width="919" format="[general]~ttrim(upper( de_estado ))" html.valueishtml="0" protect="0~t1"  name=de_estado visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=2 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=7 alignment="1" tabsequence=32766 border="0" color="33554432" x="1989" y="4" height="60" width="183" format="[general]" html.valueishtml="0" protect="0~t1"  name=co_estado visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.nilisnull=yes edit.imemode=2 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=5 alignment="1" tabsequence=32766 border="0" color="33554432" x="402" y="4" height="60" width="229" format="[general]" html.valueishtml="0" protect="0~t1"  name=id_actividad visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.nilisnull=yes edit.imemode=2 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=6 alignment="1" tabsequence=32766 border="0" color="33554432" x="640" y="4" height="60" width="256" format="[general]" html.valueishtml="0" protect="0~t1"  name=co_operacion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.nilisnull=yes edit.imemode=2 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=3 alignment="1" tabsequence=32766 border="0" color="33554432" x="137" y="4" height="60" width="256" format="[general]" html.valueishtml="0" protect="0~t1"  name=nu_sol_serv  tag="NO VISIBLE" visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=2 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=24 alignment="0" tabsequence=32766 border="0" color="33554432" x="905" y="4" height="60" width="1074" format="[general]~tupper(trim( descripcion ))" html.valueishtml="0"  name=descripcion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+rectangle(band=foreground x="0" y="0" height="84" width="9573"  name=r_1 visible="1" brush.hatch="6" brush.color="16777215" pen.style="0" pen.width="5" pen.color="1073741824"  background.mode="2" background.color="16777215" )
+text(band=foreground alignment="0" text="TAREAS" border="0" color="33554432" x="0" y="12" height="56" width="297" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
