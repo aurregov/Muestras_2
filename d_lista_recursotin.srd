@@ -1,0 +1,23 @@
+HA$PBExportHeader$d_lista_recursotin.srd
+$PBExportComments$DWO para listar los recursos de tintorer$$HEX1$$ed00$$ENDHEX$$a en el registro de las actividades.
+release 8;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=long updatewhereclause=yes key=yes name=co_fabrica dbname="mu_maq_tin.co_fabrica" )
+ column=(type=long updatewhereclause=yes key=yes name=cs_maquina dbname="mu_maq_tin.cs_maquina" )
+ column=(type=char(50) updatewhereclause=yes name=de_maquina dbname="de_maquina" )
+ column=(type=char(1) updatewhereclause=yes name=disponible dbname="mu_maq_tin.disponible" values="	S/	N" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"mu_maq_tin~" ) COLUMN(NAME=~"mu_maq_tin.co_fabrica~") COLUMN(NAME=~"mu_maq_tin.cs_maquina~") COMPUTE(NAME=~"trim(sp_nom_m_maquina(mu_maq_tin.co_fabrica,mu_maq_tin.cs_maquina)) AS de_maquina~") COLUMN(NAME=~"mu_maq_tin.disponible~")) " update="mu_maq_tin" updatewhere=0 updatekeyinplace=no  sort="de_maquina A " )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n" border="0" color="0" x="494" y="8" height="56" width="1513" html.valueishtml="0"  name=de_maquina_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Disponible" border="0" color="0" x="2016" y="8" height="56" width="283" html.valueishtml="0"  name=disponible_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="F$$HEX1$$e100$$ENDHEX$$brica" border="0" color="0" x="9" y="8" height="56" width="183" html.valueishtml="0"  name=co_fabrica_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Cons. M$$HEX1$$e100$$ENDHEX$$q." border="0" color="0" x="201" y="8" height="56" width="283" html.valueishtml="0"  name=cs_maquina_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=3 alignment="0" tabsequence=30 border="5" color="33554432" x="494" y="8" height="56" width="1513" format="[general]" html.valueishtml="0"  name=de_maquina visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="2" tabsequence=32766 border="5" color="33554432" x="2016" y="8" height="56" width="283" format="[general]" html.valueishtml="0"  name=disponible visible="1" checkbox.text="" checkbox.on="S" checkbox.off="N" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=10 border="5" color="33554432" x="9" y="8" height="56" width="183" format="[general]" html.valueishtml="0"  name=co_fabrica visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=20 border="5" color="33554432" x="201" y="8" height="56" width="283" format="[general]" html.valueishtml="0"  name=cs_maquina visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
