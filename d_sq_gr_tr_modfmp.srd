@@ -1,0 +1,102 @@
+HA$PBExportHeader$d_sq_gr_tr_modfmp.srd
+$PBExportComments$/***********************************************************~r~nSA55169 - Ceiba/jjmonsal - 03-10-2016~r~nComentario: REPORTE POR MODIFICACI$$HEX1$$d300$$ENDHEX$$N EN FICHAS DE MATERIA PRIM~r~n***********************************************************/
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_referencia dbname="tr_modfmp.co_referencia" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_talla dbname="tr_modfmp.co_talla" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_color dbname="tr_modfmp.co_color" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_oden dbname="tr_modfmp.co_oden" )
+ column=(type=char(10) update=yes updatewhereclause=yes key=yes name=orden_prev_fab dbname="tr_modfmp.orden_prev_fab" )
+ column=(type=char(10) update=yes updatewhereclause=yes key=yes name=sol_pedido dbname="tr_modfmp.sol_pedido" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_reccotcierra dbname="tr_modfmp.co_reccotcierra" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_reccotnocierra dbname="tr_modfmp.co_reccotnocierra" )
+ column=(type=char(10) update=yes updatewhereclause=yes key=yes name=co_mpinicial dbname="tr_modfmp.co_mpinicial" )
+ column=(type=char(10) update=yes updatewhereclause=yes key=yes name=co_mpmod dbname="tr_modfmp.co_mpmod" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=de_mpinicial dbname="tr_modfmp.de_mpinicial" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=de_mpmod dbname="tr_modfmp.de_mpmod" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=color_mpinicial dbname="tr_modfmp.color_mpinicial" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=color_mpmod dbname="tr_modfmp.color_mpmod" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=peso_inicial dbname="tr_modfmp.peso_inicial" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=peso_mod dbname="tr_modfmp.peso_mod" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="tr_modfmp.usuario" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_creacion dbname="tr_modfmp.fe_creacion" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="tr_modfmp.instancia" )
+ retrieve="SELECT co_referencia, 
+			co_talla, 
+			co_color, 
+			co_oden,
+			orden_prev_fab, 
+			sol_pedido, 
+			co_reccotcierra, 
+			co_reccotnocierra,
+			co_mpinicial, 
+			co_mpmod, 
+			de_mpinicial, 
+			de_mpmod, 
+			color_mpinicial, 
+			color_mpmod, 
+			peso_inicial, 
+			peso_mod,
+			usuario, 
+			fe_creacion, 
+			instancia 
+FROM tr_modFMP
+ WHERE ( co_referencia 		= :an_Ref			Or :an_Ref = 0 )
+	AND ( co_talla 			= :an_Talla			Or :an_Talla = 0 )
+	AND ( co_color 			= :an_Color			Or :an_Color = 0 )
+	AND ( co_oden 				= :an_Orden			Or :an_Orden = 0 )
+	AND ( orden_prev_fab 	= :as_OrdenPrFa	Or :as_OrdenPrFa = '' )
+	AND ( sol_pedido 			= :as_SolPedido	Or :as_SolPedido = '' )
+	AND ( co_reccotcierra	= :an_RecCierra	Or :an_RecCierra = 0 )
+	AND ( co_reccotnocierra	= :an_RecNoCierra	Or :an_RecNoCierra = 0 )
+	AND ( co_mpinicial		= :as_mpIni			Or :as_mpIni = '' )
+	AND ( co_mpmod 			= :as_mpMod			Or :as_mpMod = '' )
+	AND ( color_mpinicial 	= :an_colorMpIni	Or :an_colorMpIni = 0 )
+	AND ( color_mpmod 		= :an_colorMpMod	Or :an_colorMpMod = 0 )" update="tr_modFMP" updatewhere=1 updatekeyinplace=yes arguments=(("an_Ref", number),("an_Talla", number),("an_Color", number),("an_Orden", number),("as_OrdenPrFa", string),("as_SolPedido", string),("an_RecCierra", number),("an_RecNoCierra", number),("as_mpIni", string),("as_mpMod", string),("an_colorMpIni", number),("an_colorMpMod", number)) )
+text(band=header alignment="2" text="Co Referencia" border="0" color="33554432" x="9" y="8" height="56" width="315" html.valueishtml="0"  name=co_referencia_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Talla" border="0" color="33554432" x="334" y="8" height="56" width="274" html.valueishtml="0"  name=co_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Orden Prev Fab" border="0" color="33554432" x="969" y="8" height="56" width="347" html.valueishtml="0"  name=orden_prev_fab_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Sol Pedido" border="0" color="33554432" x="1326" y="8" height="56" width="251" html.valueishtml="0"  name=sol_pedido_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Reccotcierra" border="0" color="33554432" x="1586" y="8" height="56" width="357" html.valueishtml="0"  name=co_reccotcierra_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Reccotnocierra" border="0" color="33554432" x="1952" y="8" height="56" width="411" html.valueishtml="0"  name=co_reccotnocierra_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Mpinicial" border="0" color="33554432" x="2373" y="8" height="56" width="256" html.valueishtml="0"  name=co_mpinicial_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Mpmod" border="0" color="33554432" x="2638" y="8" height="56" width="251" html.valueishtml="0"  name=co_mpmod_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="De Mpinicial" border="0" color="33554432" x="2898" y="8" height="56" width="937" html.valueishtml="0"  name=de_mpinicial_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="De Mpmod" border="0" color="33554432" x="3845" y="8" height="56" width="937" html.valueishtml="0"  name=de_mpmod_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Color Mpinicial" border="0" color="33554432" x="4791" y="8" height="56" width="311" html.valueishtml="0"  name=color_mpinicial_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Color Mpmod" border="0" color="33554432" x="5111" y="8" height="56" width="283" html.valueishtml="0"  name=color_mpmod_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Peso Inicial" border="0" color="33554432" x="5403" y="8" height="56" width="251" html.valueishtml="0"  name=peso_inicial_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Peso Mod" border="0" color="33554432" x="5664" y="8" height="56" width="251" html.valueishtml="0"  name=peso_mod_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Usuario" border="0" color="33554432" x="5925" y="8" height="56" width="206" html.valueishtml="0"  name=usuario_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Fe Creacion" border="0" color="33554432" x="6139" y="8" height="56" width="503" html.valueishtml="0"  name=fe_creacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Instancia" border="0" color="33554432" x="6651" y="8" height="56" width="480" html.valueishtml="0"  name=instancia_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Color" border="0" color="33554432" x="617" y="8" height="56" width="274" html.valueishtml="0"  name=co_color_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Co Oden" border="0" color="0" x="901" y="8" height="56" width="59" html.valueishtml="0"  name=co_oden_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="1" tabsequence=10 border="0" color="33554432" x="9" y="8" height="68" width="315" format="[general]" html.valueishtml="0"  name=co_referencia visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=20 border="0" color="33554432" x="334" y="8" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_talla visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=50 border="0" color="33554432" x="969" y="8" height="68" width="347" format="[general]" html.valueishtml="0"  name=orden_prev_fab visible="1" edit.limit=10 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=60 border="0" color="33554432" x="1326" y="8" height="68" width="251" format="[general]" html.valueishtml="0"  name=sol_pedido visible="1" edit.limit=10 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="1" tabsequence=70 border="0" color="33554432" x="1586" y="8" height="68" width="357" format="[general]" html.valueishtml="0"  name=co_reccotcierra visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="1" tabsequence=80 border="0" color="33554432" x="1952" y="8" height="68" width="411" format="[general]" html.valueishtml="0"  name=co_reccotnocierra visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=90 border="0" color="33554432" x="2373" y="8" height="68" width="256" format="[general]" html.valueishtml="0"  name=co_mpinicial visible="1" edit.limit=10 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=100 border="0" color="33554432" x="2638" y="8" height="68" width="251" format="[general]" html.valueishtml="0"  name=co_mpmod visible="1" edit.limit=10 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=110 border="0" color="33554432" x="2898" y="8" height="68" width="937" format="[general]" html.valueishtml="0"  name=de_mpinicial visible="1" edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=120 border="0" color="33554432" x="3845" y="8" height="68" width="937" format="[general]" html.valueishtml="0"  name=de_mpmod visible="1" edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="1" tabsequence=130 border="0" color="33554432" x="4791" y="8" height="68" width="311" format="[general]" html.valueishtml="0"  name=color_mpinicial visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="1" tabsequence=140 border="0" color="33554432" x="5111" y="8" height="68" width="283" format="[general]" html.valueishtml="0"  name=color_mpmod visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="0" tabsequence=150 border="0" color="33554432" x="5403" y="8" height="68" width="251" format="[general]" html.valueishtml="0"  name=peso_inicial visible="1" edit.limit=10 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="0" tabsequence=160 border="0" color="33554432" x="5664" y="8" height="68" width="251" format="[general]" html.valueishtml="0"  name=peso_mod visible="1" edit.limit=10 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=17 alignment="0" tabsequence=170 border="0" color="33554432" x="5925" y="8" height="68" width="206" format="[general]" html.valueishtml="0"  name=usuario visible="1" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=18 alignment="0" tabsequence=180 border="0" color="33554432" x="6139" y="8" height="68" width="503" format="[shortdate] [time]" html.valueishtml="0"  name=fe_creacion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=19 alignment="0" tabsequence=190 border="0" color="33554432" x="6651" y="8" height="68" width="480" format="[general]" html.valueishtml="0"  name=instancia visible="1" edit.limit=20 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=30 border="0" color="33554432" x="617" y="8" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_color visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=40 border="0" color="33554432" x="901" y="8" height="68" width="59" format="[general]" html.valueishtml="0"  name=co_oden visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
