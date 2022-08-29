@@ -1,0 +1,19 @@
+HA$PBExportHeader$d_ext_datos_ref_vta.srd
+$PBExportComments$Para datos adicionales de la referencia de venta
+release 7;
+datawindow(units=0 timer_interval=0 color=77442227 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=80 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=number updatewhereclause=yes name=co_muestrario dbname="co_muestrario" )
+ column=(type=char(60) updatewhereclause=yes name=de_muestrario dbname="de_muestrario" )
+ column=(type=decimal(3) updatewhereclause=yes name=ca_distrbcion dbname="ca_distrbcion" initial="100" )
+ column=(type=number updatewhereclause=yes name=sw_costo dbname="sw_costo" initial="0" )
+ )
+text(band=header alignment="2" text="Muestrario" border="0" color="0" x="9" y="8" height="56" width="279"  name=co_muestrario_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="De Muestrario" border="0" color="0" x="297" y="8" height="56" width="649"  name=de_muestrario_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=10 border="5" color="0" x="9" y="4" height="60" width="279" format="[general]"  name=co_muestrario  tag="&NN=Muestrario" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="5" color="0" x="297" y="4" height="60" width="649" format="[general]"  name=de_muestrario edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
