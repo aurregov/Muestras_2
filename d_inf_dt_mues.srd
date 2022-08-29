@@ -1,0 +1,51 @@
+HA$PBExportHeader$d_inf_dt_mues.srd
+$PBExportComments$Muestra el detalle de las partes de una muestra
+release 7;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=1 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=16 color="536870912" )
+detail(height=336 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=dt_medidas_est_co_partebas dbname="dt_medidas_est.co_partebas" )
+ column=(type=char(30) updatewhereclause=yes name=m_partebas_de_partebas dbname="m_partebas.de_partebas" )
+ column=(type=decimal(2) updatewhereclause=yes name=dt_medidas_est_ca_largo dbname="dt_medidas_est.ca_largo" )
+ column=(type=decimal(2) updatewhereclause=yes name=dt_medidas_est_ca_ancho dbname="dt_medidas_est.ca_ancho" )
+ column=(type=decimal(2) updatewhereclause=yes name=dt_medidas_est_ca_largo_sine dbname="dt_medidas_est.ca_largo_sine" )
+ column=(type=decimal(2) updatewhereclause=yes name=dt_medidas_est_ca_ancho_sine dbname="dt_medidas_est.ca_ancho_sine" )
+ column=(type=char(20) updatewhereclause=yes name=dt_medidas_est_cadena dbname="dt_medidas_est.cadena" )
+ column=(type=char(20) updatewhereclause=yes name=dt_medidas_est_pasadas dbname="dt_medidas_est.pasadas" )
+ retrieve="  SELECT dt_medidas_est.co_partebas,   
+         m_partebas.de_partebas,   
+         dt_medidas_est.ca_largo,   
+         dt_medidas_est.ca_ancho,   
+         dt_medidas_est.ca_largo_sine,   
+         dt_medidas_est.ca_ancho_sine,   
+         dt_medidas_est.cadena,   
+         dt_medidas_est.pasadas  
+    FROM dt_medidas_est,   
+         m_partebas  
+   WHERE ( m_partebas.co_tipoprod = dt_medidas_est.co_tipoprod ) and  
+         ( m_partebas.co_partebas = dt_medidas_est.co_partebas ) and  
+         ( ( dt_medidas_est.co_fabrica = :a_fabrica ) AND  
+         ( dt_medidas_est.co_linea = :a_linea ) AND  
+         ( dt_medidas_est.co_muestra = :a_muestra ) AND  
+         ( dt_medidas_est.co_talla = :a_talla ) )    
+" arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number),("a_talla", number)) )
+text(band=header alignment="2" text=" Largo" border="0" color="0" x="1531" y="8" height="56" width="201"  name=dt_medidas_est_ca_largo_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Ancho" border="0" color="0" x="1742" y="8" height="56" width="183"  name=dt_medidas_est_ca_ancho_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="L. sin estirar" border="0" color="0" x="1934" y="8" height="56" width="279"  name=dt_medidas_est_ca_largo_sine_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="A. Sin estirar" border="0" color="0" x="2222" y="8" height="56" width="283"  name=dt_medidas_est_ca_ancho_sine_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Cadena" border="0" color="0" x="2514" y="8" height="56" width="288"  name=dt_medidas_est_cadena_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Pasadas" border="0" color="0" x="2811" y="8" height="56" width="219"  name=dt_medidas_est_pasadas_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Parte" border="0" color="0" x="297" y="8" height="56" width="1225"  name=m_partebas_de_partebas_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Cod" border="0" color="0" x="9" y="8" height="56" width="279"  name=dt_medidas_est_co_partebas_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="2" tabsequence=32766 border="0" color="0" x="9" y="4" height="76" width="279" format="[general]"  name=dt_medidas_est_co_partebas edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="297" y="4" height="76" width="1225" format="[general]"  name=m_partebas_de_partebas edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=32766 border="0" color="0" x="1531" y="4" height="76" width="201" format="#,###.00"  name=dt_medidas_est_ca_largo editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="1" tabsequence=32766 border="0" color="0" x="1934" y="4" height="76" width="279" format="[general]"  name=dt_medidas_est_ca_largo_sine editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="1" tabsequence=32766 border="0" color="0" x="2222" y="4" height="76" width="283" format="[general]"  name=dt_medidas_est_ca_ancho_sine editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="1" tabsequence=32766 border="0" color="0" x="2514" y="4" height="76" width="288" format="[general]"  name=dt_medidas_est_cadena edit.limit=20 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="1" tabsequence=32766 border="0" color="0" x="1742" y="4" height="76" width="183" format="[general]"  name=dt_medidas_est_ca_ancho editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="1" tabsequence=32766 border="0" color="0" x="2811" y="4" height="76" width="219" format="[general]"  name=dt_medidas_est_pasadas edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
