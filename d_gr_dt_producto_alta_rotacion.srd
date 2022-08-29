@@ -1,0 +1,39 @@
+HA$PBExportHeader$d_gr_dt_producto_alta_rotacion.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_producto_mp dbname="dt_producto_alta_rotacion.co_producto_mp" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_color_mp dbname="dt_producto_alta_rotacion.co_color_mp" )
+ column=(type=long update=yes updatewhereclause=yes name=sw_alta_rotacion dbname="dt_producto_alta_rotacion.sw_alta_rotacion" initial="1" values="	1/	0" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_creacion dbname="dt_producto_alta_rotacion.fe_creacion" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="dt_producto_alta_rotacion.fe_actualizacion" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="dt_producto_alta_rotacion.instancia" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="dt_producto_alta_rotacion.usuario" )
+ column=(type=char(40) updatewhereclause=yes name=de_producto dbname="de_producto" )
+ column=(type=char(25) updatewhereclause=yes name=de_color_mp dbname="de_color_mp" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"dt_producto_alta_rotacion~" ) COLUMN(NAME=~"dt_producto_alta_rotacion.co_producto_mp~") COLUMN(NAME=~"dt_producto_alta_rotacion.co_color_mp~") COLUMN(NAME=~"dt_producto_alta_rotacion.sw_alta_rotacion~") COLUMN(NAME=~"dt_producto_alta_rotacion.fe_creacion~") COLUMN(NAME=~"dt_producto_alta_rotacion.fe_actualizacion~") COLUMN(NAME=~"dt_producto_alta_rotacion.instancia~") COLUMN(NAME=~"dt_producto_alta_rotacion.usuario~") COMPUTE(NAME=~"		( Select m_matprimas.de_producto  
+			 From m_matprimas  
+			Where m_matprimas.co_producto = dt_producto_alta_rotacion.co_producto_mp
+		) de_producto~") COMPUTE(NAME=~"		(SELECT MAX( m_colores_mp.de_color )
+			FROM m_colores_mp
+			WHERE m_colores_mp.co_color = dt_producto_alta_rotacion.co_color_mp
+		) de_color_mp
+~")) " update="dt_producto_alta_rotacion" updatewhere=1 updatekeyinplace=yes  sort="co_producto_mp A co_color_mp A " )
+text(band=header alignment="2" text="Alta Rotacion" border="6" color="8388608" x="2130" y="8" height="56" width="379" html.valueishtml="0"  name=sw_alta_rotacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Co Color Mp" border="6" color="8388608" x="1317" y="8" height="56" width="274" html.valueishtml="0"  name=co_color_mp_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="0" text="Co Producto Mp" border="6" color="8388608" x="9" y="8" height="56" width="379" html.valueishtml="0"  name=co_producto_mp_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="0" text="De Producto" border="6" color="8388608" x="398" y="8" height="56" width="910" html.valueishtml="0"  name=de_producto_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="0" text="De Color Mp" border="6" color="8388608" x="1600" y="8" height="56" width="521" html.valueishtml="0"  name=de_color_mp_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=3 alignment="2" tabsequence=30 border="0" color="33554432" x="2130" y="8" height="68" width="379" format="[general]" html.valueishtml="0"  name=sw_alta_rotacion visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="33554432" x="398" y="8" height="68" width="910" format="[general]" html.valueishtml="0"  name=de_producto visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="33554432" x="1600" y="8" height="68" width="521" format="[general]" html.valueishtml="0"  name=de_color_mp visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="2" tabsequence=10 border="0" color="33554432" x="9" y="8" height="68" width="379" format="[general]" html.valueishtml="0" protect="0~tIf( isRowNew(), 0, 1 )"  name=co_producto_mp visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="2" tabsequence=20 border="0" color="33554432" x="1317" y="8" height="68" width="274" format="[general]" html.valueishtml="0" protect="0~tIf( isRowNew(), 0, 1 )"  name=co_color_mp visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
