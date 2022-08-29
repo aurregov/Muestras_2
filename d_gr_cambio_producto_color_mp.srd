@@ -1,0 +1,63 @@
+HA$PBExportHeader$d_gr_cambio_producto_color_mp.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=132 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes identity=yes name=secuencia dbname="cambio_producto_color_mp.secuencia" )
+ column=(type=long update=yes updatewhereclause=yes name=co_fabrica dbname="cambio_producto_color_mp.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes name=co_producto_mp_origen dbname="cambio_producto_color_mp.co_producto_mp_origen" )
+ column=(type=long update=yes updatewhereclause=yes name=calidad_mp_origen dbname="cambio_producto_color_mp.calidad_mp_origen" )
+ column=(type=long update=yes updatewhereclause=yes name=co_matiz_mp_origen dbname="cambio_producto_color_mp.co_matiz_mp_origen" )
+ column=(type=long update=yes updatewhereclause=yes name=co_caracteristi_mp_origen dbname="cambio_producto_color_mp.co_caracteristi_mp_origen" )
+ column=(type=char(200) update=yes updatewhereclause=yes name=de_producto dbname="cambio_producto_color_mp.de_producto" )
+ column=(type=long update=yes updatewhereclause=yes name=co_color_mp_origen dbname="cambio_producto_color_mp.co_color_mp_origen" )
+ column=(type=long update=yes updatewhereclause=yes name=co_producto_mp_destino dbname="cambio_producto_color_mp.co_producto_mp_destino" )
+ column=(type=long update=yes updatewhereclause=yes name=co_color_mp_destino dbname="cambio_producto_color_mp.co_color_mp_destino" )
+ column=(type=long update=yes updatewhereclause=yes name=calidad_mp_destino dbname="cambio_producto_color_mp.calidad_mp_destino" )
+ column=(type=long update=yes updatewhereclause=yes name=co_matiz_mp_destino dbname="cambio_producto_color_mp.co_matiz_mp_destino" )
+ column=(type=long update=yes updatewhereclause=yes name=co_caracteristi_mp_destino dbname="cambio_producto_color_mp.co_caracteristi_mp_destino" )
+ column=(type=long update=yes updatewhereclause=yes name=estado dbname="cambio_producto_color_mp.estado" )
+ column=(type=long update=yes updatewhereclause=yes name=co_linea dbname="cambio_producto_color_mp.co_linea" )
+ retrieve="  SELECT cambio_producto_color_mp.secuencia,   
+         cambio_producto_color_mp.co_fabrica,   
+         cambio_producto_color_mp.co_producto_mp_origen,   
+         cambio_producto_color_mp.calidad_mp_origen,   
+         cambio_producto_color_mp.co_matiz_mp_origen,   
+         cambio_producto_color_mp.co_caracteristi_mp_origen,   
+         cambio_producto_color_mp.de_producto,   
+         cambio_producto_color_mp.co_color_mp_origen,   
+         cambio_producto_color_mp.co_producto_mp_destino,   
+         cambio_producto_color_mp.co_color_mp_destino,   
+         cambio_producto_color_mp.calidad_mp_destino,   
+         cambio_producto_color_mp.co_matiz_mp_destino,   
+         cambio_producto_color_mp.co_caracteristi_mp_destino,   
+         cambio_producto_color_mp.estado, 
+			cambio_producto_color_mp.co_linea 
+    FROM cambio_producto_color_mp  
+   WHERE cambio_producto_color_mp.estado = 0
+" update="cambio_producto_color_mp" updatewhere=1 updatekeyinplace=yes )
+text(band=header alignment="2" text="Color Origen" border="6" color="33554432" x="1065" y="8" height="116" width="325" html.valueishtml="0"  name=co_color_mp_origen_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Calidad Origen" border="6" color="33554432" x="1399" y="8" height="116" width="238" html.valueishtml="0"  name=calidad_mp_origen_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Matiz Origen" border="6" color="33554432" x="1646" y="8" height="116" width="229" html.valueishtml="0"  name=co_matiz_mp_origen_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="CaracteristIca Origen" border="6" color="33554432" x="1883" y="8" height="116" width="325" html.valueishtml="0"  name=co_caracteristi_mp_origen_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Producto Destino" border="6" color="33554432" x="2217" y="8" height="116" width="489" html.valueishtml="0"  name=co_producto_mp_destino_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Color Destino" border="6" color="33554432" x="2715" y="8" height="116" width="352" html.valueishtml="0"  name=co_color_mp_destino_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Producto Origen" border="6" color="33554432" x="640" y="8" height="116" width="416" html.valueishtml="0"  name=co_producto_mp_origen_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Fabrica" border="6" color="33554432" x="9" y="8" height="116" width="238" html.valueishtml="0"  name=co_fabrica_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="L$$HEX1$$ed00$$ENDHEX$$nea" border="6" color="33554432" x="256" y="8" height="116" width="375" html.valueishtml="0"  name=co_linea_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=9 alignment="1" tabsequence=80 border="0" color="33554432" x="2217" y="8" height="68" width="489" format="[general]" html.valueishtml="0"  name=co_producto_mp_destino visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+column(band=detail id=10 alignment="1" tabsequence=90 border="0" color="33554432" x="2715" y="8" height="68" width="352" format="[general]" html.valueishtml="0"  name=co_color_mp_destino visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+column(band=detail id=6 alignment="1" tabsequence=70 border="0" color="33554432" x="1883" y="8" height="68" width="325" format="[general]" html.valueishtml="0"  name=co_caracteristi_mp_origen visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=5 alignment="1" tabsequence=60 border="0" color="33554432" x="1646" y="8" height="68" width="229" format="[general]" html.valueishtml="0"  name=co_matiz_mp_origen visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=4 alignment="1" tabsequence=50 border="0" color="33554432" x="1399" y="8" height="68" width="238" format="[general]" html.valueishtml="0"  name=calidad_mp_origen visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=8 alignment="1" tabsequence=40 border="0" color="33554432" x="1065" y="8" height="68" width="325" format="[general]" html.valueishtml="0"  name=co_color_mp_origen visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=3 alignment="1" tabsequence=30 border="0" color="33554432" x="640" y="8" height="68" width="416" format="[general]" html.valueishtml="0"  name=co_producto_mp_origen visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=2 alignment="1" tabsequence=10 border="0" color="33554432" x="9" y="8" height="68" width="238" format="[general]" html.valueishtml="0"  name=co_fabrica visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=15 alignment="1" tabsequence=20 border="0" color="33554432" x="256" y="8" height="68" width="375" format="[general]" html.valueishtml="0"  name=co_linea visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
