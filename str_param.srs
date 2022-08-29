@@ -1,0 +1,13 @@
+HA$PBExportHeader$str_param.srs
+global type str_param from structure
+	string		a_string1[]
+	string		a_string2[]
+	string		a_string3[]
+	long		a_long1[]
+	long		a_long2[]
+	long		a_long3[]
+	long		a_long4[]
+	boolean		a_boolean1[]
+	datawindow		a_dw1[]
+end type
+
