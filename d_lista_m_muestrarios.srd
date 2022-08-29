@@ -1,0 +1,16 @@
+HA$PBExportHeader$d_lista_m_muestrarios.srd
+release 7;
+datawindow(units=0 timer_interval=0 color=77442227 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=80 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_muestrario dbname="m_muestrarios.co_muestrario" )
+ column=(type=char(30) updatewhereclause=yes name=de_muestrario dbname="m_muestrarios.de_muestrario" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"m_muestrarios~" ) COLUMN(NAME=~"m_muestrarios.co_muestrario~") COLUMN(NAME=~"m_muestrarios.de_muestrario~")WHERE(    EXP1 =~"m_muestrarios.co_fabrica~"   OP =~"=~"    EXP2 =~":a_fabrica~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"m_muestrarios.co_linea~"   OP =~"=~"    EXP2 =~":a_linea~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"m_muestrarios.co_muestrario~"   OP =~">=~"    EXP2 =~":a_mues_ini~" ) ) ARG(NAME = ~"a_fabrica~" TYPE = number)  ARG(NAME = ~"a_linea~" TYPE = number)  ARG(NAME = ~"a_mues_ini~" TYPE = number) " arguments=(("a_fabrica", number),("a_linea", number),("a_mues_ini", number)) )
+text(band=header alignment="2" text="C$$HEX1$$f300$$ENDHEX$$digo" border="0" color="0" x="9" y="8" height="56" width="197"  name=co_muestrario_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Muestrario" border="0" color="0" x="215" y="8" height="56" width="823"  name=de_muestrario_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="5" color="0" x="215" y="4" height="60" width="823" format="[general]"  name=de_muestrario edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=10 border="5" color="0" x="9" y="4" height="60" width="197" format="[general]"  name=co_muestrario edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
