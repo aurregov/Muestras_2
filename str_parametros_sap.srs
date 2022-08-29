@@ -1,0 +1,19 @@
+HA$PBExportHeader$str_parametros_sap.srs
+global type str_parametros_sap from structure
+	string		matnr[]
+	string		werks[]
+	string		alternative[]
+	string		base_quantity[]
+	string		base_unit[]
+	string		bom_text[]
+	string		alt_text[]
+	string		item_category[]
+	string		component[]
+	string		comp_unit[]
+	string		hdr_grid_value[]
+	string		comp_grid_value[]
+	string		category[]
+	string		comp_quantity[]
+	string		aplicativo[]
+end type
+
