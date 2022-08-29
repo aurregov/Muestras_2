@@ -1,0 +1,66 @@
+HA$PBExportHeader$d_movimientos_realizados.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=nu_orden dbname="mu_gantt.nu_orden" )
+ column=(type=char(50) updatewhereclause=yes name=tarea dbname="tarea" )
+ column=(type=datetime updatewhereclause=yes name=fe_ini dbname="mu_gantt.fe_ini" )
+ column=(type=datetime updatewhereclause=yes name=fe_fin dbname="mu_gantt.fe_fin" )
+ column=(type=long updatewhereclause=yes name=min_paro dbname="mu_gantt.min_paro" )
+ column=(type=char(8) updatewhereclause=yes name=co_ctecnicoi dbname="mu_gantt.co_ctecnicoi" )
+ column=(type=char(8) updatewhereclause=yes name=co_ctecnicof dbname="mu_gantt.co_ctecnicof" )
+ column=(type=char(30) updatewhereclause=yes name=finaliza dbname="finaliza" )
+ column=(type=long updatewhereclause=yes name=agujas dbname="agujas" )
+ column=(type=decimal(2) updatewhereclause=yes name=diametro dbname="diametro" )
+ column=(type=char(29) updatewhereclause=yes name=tiempo dbname="tiempo" )
+ retrieve="  SELECT mu_gantt.nu_orden,
+         sp_nom_ao_tarea(mu_gantt.co_operacion, mu_gantt.id_actividad, m_muestras.co_tipoprod) as tarea,
+         mu_gantt.fe_ini,   
+         mu_gantt.fe_fin,   
+         mu_gantt.min_paro,   
+         mu_gantt.co_ctecnicoi,
+         mu_gantt.co_ctecnicof,   
+         sp_desc_desarrollador(mu_gantt.co_ctecnicof) as finaliza,
+         sp_mu_agujas(dt_mu_ord.co_fabrica,dt_mu_ord.co_linea,dt_mu_ord.co_muestra) as agujas,
+         sp_mu_diametro(dt_mu_ord.co_fabrica,dt_mu_ord.co_linea,dt_mu_ord.co_muestra) as diametro,
+         mu_gantt.fe_fin - mu_gantt.fe_ini as tiempo  
+           
+    FROM mu_gantt,  dt_mu_ord, m_muestras  
+   WHERE ( mu_gantt.nu_orden    = dt_mu_ord.nu_orden )      AND          
+         ( dt_mu_ord.co_fabrica = m_muestras.co_fabrica )        AND  
+         ( dt_mu_ord.co_linea   = m_muestras.co_linea )      AND        
+         ( dt_mu_ord.co_muestra = m_muestras.co_muestra ) AND
+	      ( mu_gantt.condicion = 7 ) and 
+         ( mu_gantt.fe_fin >  :a_desde ) AND     
+         ( mu_gantt.fe_fin <= :a_hasta )
+   order by 9 ;" arguments=(("a_desde", datetime),("a_hasta", datetime))  sort="tiempo A " )
+text(band=header alignment="2" text="Nu Orden" border="0" color="33554432" x="9" y="8" height="56" width="274" html.valueishtml="0"  name=nu_orden_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Tarea" border="0" color="33554432" x="293" y="8" height="56" width="809" html.valueishtml="0"  name=tarea_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Fe Ini" border="0" color="33554432" x="1111" y="8" height="56" width="503" html.valueishtml="0"  name=fe_ini_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Fe Fin" border="0" color="33554432" x="1623" y="8" height="56" width="503" html.valueishtml="0"  name=fe_fin_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Min Paro" border="0" color="33554432" x="2135" y="8" height="56" width="274" html.valueishtml="0"  name=min_paro_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Ctecnicoi" border="0" color="33554432" x="2418" y="8" height="56" width="274" html.valueishtml="0"  name=co_ctecnicoi_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Ctecnicof" border="0" color="33554432" x="2702" y="8" height="56" width="283" html.valueishtml="0"  name=co_ctecnicof_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Finaliza" border="0" color="33554432" x="2994" y="8" height="56" width="709" html.valueishtml="0"  name=finaliza_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Tiempo" border="0" color="33554432" x="3712" y="8" height="56" width="686" html.valueishtml="0"  name=tiempo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Agujas" border="0" color="0" x="4407" y="4" height="56" width="434" html.valueishtml="0"  name=agujas_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Diametro" border="0" color="0" x="4850" y="4" height="56" width="978" html.valueishtml="0"  name=diametro_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="0" color="33554432" x="9" y="8" height="68" width="274" format="[general]" html.valueishtml="0"  name=nu_orden visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="33554432" x="293" y="8" height="68" width="809" format="[general]" html.valueishtml="0"  name=tarea visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="33554432" x="1111" y="8" height="68" width="503" format="[shortdate] [time]" html.valueishtml="0"  name=fe_ini visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="33554432" x="1623" y="8" height="68" width="503" format="[shortdate] [time]" html.valueishtml="0"  name=fe_fin visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="1" tabsequence=32766 border="0" color="33554432" x="2135" y="8" height="68" width="274" format="[general]" html.valueishtml="0"  name=min_paro visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="33554432" x="2418" y="8" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_ctecnicoi visible="1" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="33554432" x="2702" y="8" height="68" width="283" format="[general]" html.valueishtml="0"  name=co_ctecnicof visible="1" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="33554432" x="2994" y="8" height="68" width="709" format="[general]" html.valueishtml="0"  name=finaliza visible="1" edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="33554432" x="3712" y="8" height="68" width="686" format="[general]" html.valueishtml="0"  name=tiempo visible="1" edit.limit=29 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="33554432" x="4407" y="8" height="68" width="434" format="[general]" html.valueishtml="0"  name=agujas visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="33554432" x="4850" y="8" height="68" width="978" format="[general]" html.valueishtml="0"  name=diametro visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
