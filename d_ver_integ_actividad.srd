@@ -1,0 +1,13 @@
+HA$PBExportHeader$d_ver_integ_actividad.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=decimal(0) updatewhereclause=yes name=nro_actividad dbname="nro_actividad" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"dt_mu_ord~" )  TABLE(NAME=~"mu_gantt~" ) COMPUTE(NAME=~"count(*) AS nro_actividad~")    JOIN (LEFT=~"mu_gantt.nu_orden~"    OP =~"=~"RIGHT=~"dt_mu_ord.nu_orden~" )WHERE(    EXP1 =~"dt_mu_ord.co_fabrica~"   OP =~"=~"    EXP2 =~":an_fabrica~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"dt_mu_ord.co_linea~"   OP =~"=~"    EXP2 =~":an_linea~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"dt_mu_ord.co_muestra~"   OP =~"=~"    EXP2 =~":an_muestra~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"mu_gantt.id_actividad~"   OP =~"=~"    EXP2 =~":an_actividad~" ) ) ARG(NAME = ~"an_fabrica~" TYPE = number)  ARG(NAME = ~"an_linea~" TYPE = number)  ARG(NAME = ~"an_muestra~" TYPE = number)  ARG(NAME = ~"an_actividad~" TYPE = number) " arguments=(("an_fabrica", number),("an_linea", number),("an_muestra", number),("an_actividad", number)) )
+text(band=header alignment="0" text="Nro Actividad" border="0" color="0" x="9" y="4" height="60" width="329" html.valueishtml="0"  name=nro_actividad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="4" height="60" width="329" format="[general]" html.valueishtml="0"  name=nro_actividad visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
