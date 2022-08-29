@@ -1,0 +1,51 @@
+HA$PBExportHeader$d_consulta_sol.srd
+$PBExportComments$Para la consulta de las solicitudes
+release 7;
+datawindow(units=0 timer_interval=0 color=77442227 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=80 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=92 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes name=co_fabrica dbname="h_solicitudes.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes name=nu_solicitud dbname="h_solicitudes.nu_solicitud" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=tipo_solicitud dbname="h_solicitudes.tipo_solicitud" )
+ column=(type=date update=yes updatewhereclause=yes name=fe_solicitud dbname="h_solicitudes.fe_solicitud" )
+ column=(type=long update=yes updatewhereclause=yes name=co_cliente dbname="h_solicitudes.co_cliente" )
+ column=(type=long update=yes updatewhereclause=yes name=co_sucursal dbname="h_solicitudes.co_sucursal" )
+ column=(type=date update=yes updatewhereclause=yes name=fe_entrega dbname="h_solicitudes.fe_entrega" )
+ column=(type=long update=yes updatewhereclause=yes name=co_tipo_solicitud dbname="h_solicitudes.co_tipo_solicitud" )
+ column=(type=long update=yes updatewhereclause=yes name=co_ejecutiva dbname="h_solicitudes.co_ejecutiva" )
+ column=(type=char(20) updatewhereclause=yes name=nu_orden dbname="dt_solicitudes.nu_orden" )
+ retrieve="  SELECT distinct h_solicitudes.co_fabrica,   
+         h_solicitudes.nu_solicitud,   
+         h_solicitudes.tipo_solicitud,   
+         h_solicitudes.fe_solicitud,   
+         h_solicitudes.co_cliente,   
+         h_solicitudes.co_sucursal,   
+         h_solicitudes.fe_entrega,   
+         h_solicitudes.co_tipo_solicitud,   
+         h_solicitudes.co_ejecutiva,   
+         dt_solicitudes.nu_orden  
+    FROM h_solicitudes, dt_solicitudes 
+   WHERE ( dt_solicitudes.co_fabrica = h_solicitudes.co_fabrica ) and  
+         ( dt_solicitudes.nu_solicitud = h_solicitudes.nu_solicitud ) and  
+         ( dt_solicitudes.tipo_solicitud = h_solicitudes.tipo_solicitud )    
+" )
+text(band=header alignment="2" text="F" border="6" color="0" x="9" y="8" height="56" width="119"  name=co_fabrica_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Solicitud" border="6" color="0" x="137" y="8" height="56" width="329"  name=nu_solicitud_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Solicitud" border="6" color="0" x="475" y="8" height="56" width="329"  name=tipo_solicitud_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Fecha" border="6" color="0" x="814" y="8" height="56" width="274"  name=fe_solicitud_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Cliente" border="6" color="0" x="1097" y="8" height="56" width="283"  name=co_cliente_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Sucursal" border="6" color="0" x="1390" y="8" height="56" width="229"  name=co_sucursal_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Tipo Solicitud" border="6" color="0" x="1627" y="8" height="56" width="329"  name=co_tipo_solicitud_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Orden/Colecci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="1966" y="8" height="56" width="398"  name=t_1  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=1 alignment="1" tabsequence=10 border="5" color="0" x="9" y="4" height="72" width="119" format="[general]"  name=co_fabrica edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=20 border="5" color="0" x="137" y="4" height="72" width="329" format="[general]"  name=nu_solicitud edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=30 border="5" color="0" x="475" y="4" height="72" width="329" format="[general]"  name=tipo_solicitud edit.limit=2 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="5" color="0" x="814" y="4" height="72" width="274" format="[general]"  name=fe_solicitud edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="1" tabsequence=32766 border="5" color="0" x="1097" y="4" height="72" width="283" format="[general]"  name=co_cliente edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="1" tabsequence=32766 border="5" color="0" x="1390" y="4" height="72" width="229" format="[general]"  name=co_sucursal edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="1" tabsequence=32766 border="5" color="0" x="1627" y="4" height="72" width="329" format="[general]"  name=co_tipo_solicitud edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="5" color="0" x="1966" y="4" height="72" width="398" format="[general]"  name=nu_orden edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
