@@ -1,0 +1,98 @@
+HA$PBExportHeader$d_inf_ejecutiva.srd
+release 9;
+datawindow(units=3 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 635 print.margin.right = 635 print.margin.top = 635 print.margin.bottom = 635 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=1666 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=502 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_cliente dbname="m_muestras.co_cliente" )
+ column=(type=long updatewhereclause=yes name=co_sucursal dbname="m_muestras.co_sucursal" )
+ column=(type=char(15) updatewhereclause=yes name=co_ref_exp dbname="m_muestras.co_ref_exp" )
+ column=(type=char(50) updatewhereclause=yes name=de_muestra dbname="m_muestras.de_muestra" )
+ column=(type=long updatewhereclause=yes name=co_fabrica dbname="m_muestras.co_fabrica" )
+ column=(type=long updatewhereclause=yes name=co_linea dbname="m_muestras.co_linea" )
+ column=(type=long updatewhereclause=yes name=co_muestra dbname="m_muestras.co_muestra" )
+ column=(type=long updatewhereclause=yes name=co_color dbname="dt_muestras_col.co_color" )
+ column=(type=long updatewhereclause=yes name=co_estado dbname="dt_muestras_col.co_estado" )
+ column=(type=char(15) updatewhereclause=yes name=co_talla_exp dbname="dt_muestras.co_talla_exp" )
+ column=(type=long updatewhereclause=yes name=despacho_1 dbname="despacho_1" )
+ column=(type=long updatewhereclause=yes name=despacho_2 dbname="despacho_2" )
+ column=(type=long updatewhereclause=yes name=despacho_3 dbname="despacho_3" )
+ column=(type=long updatewhereclause=yes name=despacho_4 dbname="despacho_4" )
+ column=(type=long updatewhereclause=yes name=total_dias dbname="total_dias" )
+ column=(type=long updatewhereclause=yes name=co_ejecutiva dbname="m_muestras.co_ejecutiva" )
+ column=(type=char(50) updatewhereclause=yes name=de_cliente dbname="de_cliente" )
+ column=(type=char(30) updatewhereclause=yes name=de_ejecutivo dbname="de_ejecutivo" )
+ column=(type=long updatewhereclause=yes name=co_talla dbname="dt_muestras.co_talla" )
+ retrieve="  SELECT m_muestras.co_cliente,   
+         m_muestras.co_sucursal,   
+         m_muestras.co_ref_exp,   
+         m_muestras.de_muestra,   
+         m_muestras.co_fabrica,   
+         m_muestras.co_linea,   
+         m_muestras.co_muestra,   
+         dt_muestras_col.co_color,   
+         dt_muestras_col.co_estado,   
+         dt_muestras.co_talla_exp,   
+         0 as despacho_1,   
+         0 as despacho_2,   
+         0 as despacho_3,   
+         0 as despacho_4,   
+         0 as total_dias,   
+         m_muestras.co_ejecutiva,   
+         sp_nom_cliente(m_muestras.tipo_muestra,m_muestras.co_cliente,m_muestras.co_sucursal) as de_cliente,   
+         sp_nom_ejecutivo(m_muestras.tipo_muestra,m_muestras.co_ejecutiva) as de_ejecutivo,   
+         dt_muestras.co_talla  
+    FROM m_muestras,   
+         dt_muestras,   
+         dt_muestras_col  
+   WHERE ( dt_muestras.co_fabrica = m_muestras.co_fabrica ) and  
+         ( dt_muestras.co_linea = m_muestras.co_linea ) and  
+         ( dt_muestras.co_muestra = m_muestras.co_muestra ) and  
+         ( dt_muestras_col.co_fabrica = dt_muestras.co_fabrica ) and  
+         ( dt_muestras_col.co_linea = dt_muestras.co_linea ) and  
+         ( dt_muestras_col.co_muestra = dt_muestras.co_muestra ) and  
+         ( dt_muestras_col.co_talla = dt_muestras.co_talla ) and
+         ( dt_muestras_col.co_estado not in (15,20,21,22,99) )   
+" )
+group(level=1 header.height=846 trailer.height=0 by=("co_cliente" , "co_sucursal" ) header.color="536870912" trailer.color="536870912" )
+group(level=2 header.height=1640 trailer.height=0 by=("co_ejecutiva" ) header.color="536870912" trailer.color="536870912" )
+line(band=header x1="105" y1="1428" x2="19976" y2="1428"  name=l_2 visible="1" pen.style="0" pen.width="26" pen.color="0"  background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="" border="0" color="0" x="264" y="105" height="370" width="19632" html.valueishtml="0"  name=nombre_fabrica visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="INFORME DESARROLLOS PARA EJECUTIVAS" border="0" color="0" x="264" y="767" height="370" width="19632" html.valueishtml="0"  name=t_18 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.1 alignment="2" text="Cliente:" border="0" color="0" x="211" y="159" height="370" width="1190" html.valueishtml="0"  name=t_12 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=header.1 alignment="0" expression=" String(co_cliente) +~"-~" +String(co_sucursal) +~": ~"+ de_cliente "border="0" color="33554432" x="1666" y="185" height="370" width="6932" format="[GENERAL]" html.valueishtml="0"  name=compute_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.2 alignment="0" text="Estilo" border="0" color="0" x="105" y="1138" height="370" width="793" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.2 alignment="0" text="Ejecutiva: " border="0" color="0" x="396" y="291" height="370" width="1428" html.valueishtml="0"  name=t_13 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=header.2 alignment="0" expression="String( co_ejecutiva )+~" - ~"+ de_ejecutivo "border="0" color="33554432" x="2275" y="317" height="370" width="5450" format="[GENERAL]" html.valueishtml="0"  name=compute_3 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.2 alignment="2" text="Despacho
+ 1" border="0" color="0" x="12144" y="794" height="740" width="1455" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.2 alignment="2" text="Despacho
+2" border="0" color="0" x="13731" y="767" height="740" width="1455" html.valueishtml="0"  name=t_8 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.2 alignment="2" text="Despacho
+3" border="0" color="0" x="15292" y="767" height="740" width="1455" html.valueishtml="0"  name=t_9 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.2 alignment="2" text="Despacho
+4" border="0" color="0" x="16880" y="767" height="740" width="1455" html.valueishtml="0"  name=t_10 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.2 alignment="2" text="Total dias
+Desarrollo" border="0" color="0" x="18494" y="767" height="740" width="1455" html.valueishtml="0"  name=t_11 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.2 alignment="0" text="Descripci$$HEX1$$f300$$ENDHEX$$n" border="0" color="0" x="2540" y="1138" height="370" width="1799" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="33554432" x="105" y="27" height="423" width="2328" format="[general]" html.valueishtml="0"  name=co_ref_exp visible="1" edit.limit=15 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="2" tabsequence=32766 border="0" color="33554432" x="13731" y="27" height="423" width="1455" format="[general]" html.valueishtml="0"  name=despacho_2 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="2" tabsequence=32766 border="0" color="33554432" x="15292" y="27" height="423" width="1455" format="[general]" html.valueishtml="0"  name=despacho_3 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="2" tabsequence=32766 border="0" color="33554432" x="16880" y="27" height="423" width="1455" format="[general]" html.valueishtml="0"  name=despacho_4 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="2" tabsequence=32766 border="0" color="33554432" x="18494" y="27" height="423" width="1455" format="[general]" html.valueishtml="0"  name=total_dias visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="33554432" x="2540" y="27" height="423" width="3651" format="[general]" html.valueishtml="0"  name=de_muestra visible="1" edit.limit=50 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.2 alignment="0" text="Muestra" border="0" color="0" x="6323" y="1138" height="370" width="1190" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.2 alignment="0" text="Talla" border="0" color="0" x="7593" y="1138" height="370" width="1031" html.valueishtml="0"  name=t_7 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.2 alignment="0" text="Estado" border="0" color="0" x="10265" y="1138" height="370" width="1799" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.2 alignment="0" text="Color" border="0" color="0" x="8651" y="1138" height="370" width="1561" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="0" expression=" co_fabrica +~"/~"+ co_linea +~"/~"+   co_muestra "border="0" color="33554432" x="6323" y="27" height="423" width="1190" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="33554432" x="7593" y="27" height="423" width="1031" format="[general]" html.valueishtml="0"  name=co_talla_exp visible="1" edit.limit=15 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="1" tabsequence=32766 border="0" color="33554432" x="8651" y="27" height="423" width="1561" format="[general]" html.valueishtml="0"  name=co_color visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="33554432" x="10265" y="27" height="423" width="1799" format="[general]" html.valueishtml="0"  name=co_estado visible="1" dddw.name=d_dddw_m_estado_muestra dddw.displaycolumn=de_estado dddw.datacolumn=co_estado dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="2" tabsequence=32766 border="0" color="33554432" x="12144" y="27" height="423" width="1455" format="[general]" html.valueishtml="0"  name=despacho_1 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
