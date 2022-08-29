@@ -1,0 +1,32 @@
+HA$PBExportHeader$d_dt_opc_x_apl.srd
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_aplicacion dbname="dt_opcxaplj.co_aplicacion" )
+ column=(type=char(40) update=yes updatewhereclause=yes key=yes name=co_ventana dbname="dt_opcxaplj.co_ventana" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_opcion dbname="dt_opcxaplj.co_opcion" )
+ column=(type=char(70) update=yes updatewhereclause=yes name=de_opcion dbname="dt_opcxaplj.de_opcion" )
+ column=(type=char(200) update=yes updatewhereclause=yes name=obs_opcion dbname="dt_opcxaplj.obs_opcion" )
+ retrieve="  select dt_opcxaplj.co_aplicacion,   
+         dt_opcxaplj.co_ventana,   
+         dt_opcxaplj.co_opcion,   
+         dt_opcxaplj.de_opcion,
+         dt_opcxaplj.obs_opcion  
+    from dt_opcxaplj  
+   where ( dt_opcxaplj.co_aplicacion = :a_aplicacion ) and  
+         ( dt_opcxaplj.co_ventana = :a_ventana )
+" update="dt_opcxaplj" updatewhere=1 updatekeyinplace=yes arguments=(("a_aplicacion", number),("a_ventana", string)) )
+text(band=header alignment="2" text="Aplicaci$$HEX1$$f300$$ENDHEX$$n"border="0" color="0" x="9" y="8" height="56" width="343"  name=co_aplicacion_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Ventana"border="0" color="0" x="361" y="8" height="56" width="485"  name=co_ventana_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Opci$$HEX1$$f300$$ENDHEX$$n"border="0" color="0" x="855" y="8" height="56" width="329"  name=co_opcion_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n"border="0" color="0" x="1193" y="8" height="56" width="759"  name=de_opcion_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Observaci$$HEX1$$f300$$ENDHEX$$n"border="0" color="0" x="1961" y="8" height="56" width="1225"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16250871" )
+column(band=detail id=1 alignment="1" tabsequence=10 border="0" color="0" x="9" y="4" height="60" width="343" format="[general]"  name=co_aplicacion edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=20 border="0" color="0" x="361" y="4" height="60" width="485" format="[general]"  name=co_ventana edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=30 border="0" color="0" x="855" y="4" height="60" width="329" format="[general]"  name=co_opcion edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=40 border="0" color="0" x="1193" y="4" height="60" width="759" format="[general]"  name=de_opcion edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="1961" y="4" height="60" width="1225" format="[general]"  name=obs_opcion edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")
