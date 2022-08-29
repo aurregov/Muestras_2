@@ -1,0 +1,75 @@
+HA$PBExportHeader$d_colores_todos_estado.srd
+$PBExportComments$Muestra los colores para hacer un cambio de estado global
+release 9;
+datawindow(units=0 timer_interval=0 color=79017397 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=8 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="dt_muestras_col.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_linea dbname="dt_muestras_col.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_muestra dbname="dt_muestras_col.co_muestra" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_talla dbname="dt_muestras_col.co_talla" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_color dbname="dt_muestras_col.co_color" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=co_color_exp dbname="dt_muestras_col.co_color_exp" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="dt_muestras_col.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="dt_muestras_col.usuario" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="dt_muestras_col.instancia" )
+ column=(type=long update=yes updatewhereclause=yes name=co_estado dbname="dt_muestras_col.co_estado" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_estado dbname="dt_muestras_col.fe_estado" )
+ column=(type=char(8) updatewhereclause=yes name=co_ctecnico dbname="dt_muestras_col.co_ctecnico" )
+ column=(type=char(60) updatewhereclause=yes name=de_observacion dbname="de_observacion" )
+ retrieve="  select dt_muestras_col.co_fabrica,   
+         dt_muestras_col.co_linea,   
+         dt_muestras_col.co_muestra,   
+         dt_muestras_col.co_talla,   
+         dt_muestras_col.co_color,   
+         dt_muestras_col.co_color_exp,   
+         dt_muestras_col.fe_actualizacion,   
+         dt_muestras_col.usuario,   
+         dt_muestras_col.instancia,   
+         dt_muestras_col.co_estado,   
+         dt_muestras_col.fe_estado, 
+         dt_muestras_col.co_ctecnico,  
+         to_char60() as de_observacion
+    from dt_muestras_col,   
+         dt_muestras,   
+         m_muestras  
+   where ( (dt_muestras_col.co_fabrica = :a_fabirca)   or (:a_fabirca  =-1)) and  
+         ( (dt_muestras_col.co_linea = :a_linea)       or (:a_linea    =-1) ) and  
+         ( (dt_muestras_col.co_muestra = :a_muestra)   or (:a_muestra  =-1)) and  
+         ( (dt_muestras_col.co_talla = :a_talla)       or (:a_talla    =-1)) and  
+         ( (dt_muestras_col.co_color = :a_color)       or (:a_color    =-1))  and
+         ( (m_muestras.co_cliente = :a_cliente)        or (:a_cliente  =-1)) and
+         ( (m_muestras.co_sucursal= :a_sucursal)       or (:a_sucursal =-1)) and
+         ( (m_muestras.nu_solicitud=:a_solicitud)      or (:a_solicitud = -1)) and 
+         ( dt_muestras.co_fabrica = dt_muestras_col.co_fabrica ) and  
+         ( dt_muestras.co_linea = dt_muestras_col.co_linea ) and  
+         ( dt_muestras.co_muestra = dt_muestras_col.co_muestra ) and  
+         ( dt_muestras.co_talla = dt_muestras_col.co_talla ) and  
+         ( m_muestras.co_fabrica = dt_muestras.co_fabrica ) and  
+         ( m_muestras.co_linea = dt_muestras.co_linea ) and  
+         ( m_muestras.co_muestra = dt_muestras.co_muestra ) 
+           
+" update="dt_muestras_col" updatewhere=0 updatekeyinplace=no arguments=(("a_fabirca", number),("a_linea", number),("a_muestra", number),("a_talla", number),("a_color", number),("a_cliente", number),("a_sucursal", number),("a_solicitud", number))  sort="co_fabrica A co_linea A co_muestra A co_talla A co_color A " )
+text(band=header alignment="2" text="Talla" border="6" color="0" x="375" y="8" height="56" width="160" html.valueishtml="0"  name=co_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Color" border="6" color="0" x="544" y="8" height="56" width="402" html.valueishtml="0"  name=co_color_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Estado" border="6" color="0" x="955" y="8" height="56" width="329" html.valueishtml="0"  name=co_estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="De Observacion" border="6" color="0" x="1733" y="8" height="56" width="1061" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Fecha" border="6" color="0" x="2802" y="8" height="56" width="453" html.valueishtml="0"  name=fe_estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="T$$HEX1$$e900$$ENDHEX$$cnico" border="6" color="0" x="1294" y="8" height="56" width="430" html.valueishtml="0"  name=dt_muestras_col_co_ctecnico_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="F/L/M" border="6" color="0" x="128" y="8" height="56" width="238" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="" border="6" color="0" x="9" y="8" height="56" width="110" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=5 alignment="1" tabsequence=32766 border="5" color="0" x="544" y="4" height="56" width="402" format="[general]" html.valueishtml="0"  name=co_color visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=10 border="5" color="0" x="955" y="4" height="56" width="329" format="[general]" html.valueishtml="0"  name=co_estado visible="1" dddw.name=d_dddw_m_estado_muestra dddw.displaycolumn=de_estado dddw.datacolumn=co_estado dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="1089992695" )
+column(band=detail id=13 alignment="0" tabsequence=30 border="5" color="0" x="1733" y="4" height="56" width="1061" format="[general]" html.valueishtml="0"  name=de_observacion visible="1" edit.limit=0 edit.case=upper edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="1089992695" )
+column(band=detail id=4 alignment="1" tabsequence=32766 border="5" color="0" x="375" y="4" height="56" width="160" format="[general]" html.valueishtml="0"  name=co_talla visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="5" color="0" x="2802" y="4" height="56" width="453" format="[shortdate] [time]" html.valueishtml="0"  name=fe_estado  tag="" visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=20 border="5" color="0" x="1294" y="4" height="56" width="430" format="[general]" html.valueishtml="0"  name=co_ctecnico visible="1" dddw.name=d_dddw_mctecnico dddw.displaycolumn=de_ctecnico dddw.datacolumn=co_ctecnico dddw.percentwidth=160 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="1073741824" )
+compute(band=detail alignment="0" expression=" co_fabrica +~"/~"+ co_linea +~"/~" +co_muestra "border="5" color="0" x="128" y="4" height="56" width="238" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+compute(band=detail alignment="2" expression="GetRow()"border="5" color="16711680" x="9" y="4" height="56" width="110" format="[GENERAL]" html.valueishtml="0"  name=compute_2 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
