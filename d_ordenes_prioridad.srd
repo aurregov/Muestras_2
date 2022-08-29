@@ -1,0 +1,50 @@
+HA$PBExportHeader$d_ordenes_prioridad.srd
+$PBExportComments$Lista de las ordenes en condicion:~r~n2. PROGRAMADA.~r~n3. PROCESO PRODUCTIVO.~r~n--------------------------------------~r~nwhere condicion in (2.3)
+release 9;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=nu_orden dbname="dt_mu_ord.nu_orden" )
+ column=(type=long updatewhereclause=yes name=prioridad dbname="dt_mu_ord.prioridad" values="EXTREMA	5/ALTA	4/MEDIA	3/BAJA	2/MUY BAJA	1/" )
+ column=(type=datetime updatewhereclause=yes name=fecha dbname="fecha" )
+ column=(type=long updatewhereclause=yes name=co_recurso dbname="dt_mu_ord.co_recurso" )
+ column=(type=long updatewhereclause=yes name=condicion dbname="dt_mu_ord.condicion" )
+ retrieve="  SELECT dt_mu_ord.nu_orden,   
+         dt_mu_ord.prioridad,   
+         sp_mu_fmovfin_max(dt_mu_ord.nu_orden) AS fecha,   
+         dt_mu_ord.co_recurso,
+         dt_mu_ord.condicion  
+    FROM dt_mu_ord,   
+         dt_muestras, 
+ 			m_muestras  
+   WHERE ( dt_mu_ord.co_fabrica = dt_muestras.co_fabrica ) and  
+         ( dt_mu_ord.co_linea = dt_muestras.co_linea ) and  
+         ( dt_mu_ord.co_muestra = dt_muestras.co_muestra ) and  
+         ( ( dt_mu_ord.condicion in (2,3) ) AND  
+         ( dt_mu_ord.nu_orden in (  SELECT mu_gantt.nu_orden  
+                                      FROM mu_gantt  
+                                     WHERE mu_gantt.nu_orden=dt_mu_ord.nu_orden and
+                                           mu_gantt.condicion in (9,14,15,16)  )) )    AND
+			( m_muestras.co_fabrica  = dt_muestras.co_fabrica ) and  
+         ( m_muestras.co_linea    = dt_muestras.co_linea ) and  
+         ( m_muestras.co_muestra  = dt_muestras.co_muestra ) and
+			( m_muestras.co_tipoprod = :an_tipoprod )
+         
+" arguments=(("an_tipoprod", number))  sort="prioridad D condicion D nu_orden A " )
+text(band=header alignment="2" text="*" border="0" color="33554432" x="9" y="8" height="56" width="119" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Prioridad" border="0" color="33554432" x="137" y="8" height="56" width="448" html.valueishtml="0"  name=prioridad_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Orden" border="0" color="33554432" x="594" y="8" height="56" width="357" html.valueishtml="0"  name=nu_orden_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Fecha" border="0" color="33554432" x="960" y="8" height="56" width="750" html.valueishtml="0"  name=fecha_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Condicion" border="0" color="33554432" x="1719" y="8" height="56" width="283" html.valueishtml="0"  name=condicion_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=30 border="5" color="33554432" x="960" y="0" height="60" width="750" format="yyyy/mm/dd hh:mm:ss" html.valueishtml="0"  name=fecha visible="1" edit.limit=22 edit.case=any edit.format="yyyy/mm/dd hh:mm:ss" edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=2 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="5" color="33554432" x="1719" y="0" height="60" width="283" format="[general]" html.valueishtml="0"  name=condicion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="2" expression="getrow()"border="5" color="16711680" x="9" y="0" height="60" width="119" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=20 border="5" color="33554432" x="594" y="0" height="60" width="357" format="[general]" html.valueishtml="0"  name=nu_orden visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=2 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=10 border="5" color="33554432" x="137" y="0" height="60" width="448" format="[General]" html.valueishtml="0"  name=prioridad  tag="" visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes edit.codetable=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
