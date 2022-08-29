@@ -1,0 +1,35 @@
+HA$PBExportHeader$d_ob_m_proref1_sin.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=76788149 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=188 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_fabrica dbname="ob_m_proref_sin.co_fabrica" )
+ column=(type=long updatewhereclause=yes name=co_linea dbname="ob_m_proref_sin.co_linea" )
+ column=(type=long updatewhereclause=yes name=co_referencia dbname="ob_m_proref_sin.co_referencia" )
+ column=(type=long updatewhereclause=yes name=co_talla dbname="ob_m_proref_sin.co_talla" )
+ column=(type=long updatewhereclause=yes name=co_calidad dbname="ob_m_proref_sin.co_calidad" )
+ column=(type=char(720) updatewhereclause=yes name=observacion dbname="ob_m_proref_sin.observacion" )
+ column=(type=datetime updatewhereclause=yes name=fe_actualizacion dbname="ob_m_proref_sin.fe_actualizacion" )
+ column=(type=char(8) updatewhereclause=yes name=usuario dbname="ob_m_proref_sin.usuario" )
+ column=(type=char(20) updatewhereclause=yes name=instancia dbname="ob_m_proref_sin.instancia" )
+ retrieve="  SELECT ob_m_proref_sin.co_fabrica,   
+         ob_m_proref_sin.co_linea,   
+         ob_m_proref_sin.co_referencia,   
+         ob_m_proref_sin.co_talla,   
+         ob_m_proref_sin.co_calidad,   
+         ob_m_proref_sin.observacion,   
+         ob_m_proref_sin.fe_actualizacion,   
+         ob_m_proref_sin.usuario,   
+         ob_m_proref_sin.instancia  
+    FROM ob_m_proref_sin  
+   WHERE ( ob_m_proref_sin.co_fabrica = :a_fabrica ) AND  
+         ( ob_m_proref_sin.co_linea = :a_linea ) AND  
+         ( ob_m_proref_sin.co_referencia = :a_referencia ) AND  
+         ( ob_m_proref_sin.co_talla = :a_talla ) AND  
+         ( ob_m_proref_sin.co_calidad = :a_calidad )    
+" arguments=(("a_fabrica", number),("a_linea", number),("a_referencia", number),("a_talla", number),("a_calidad", number)) )
+column(band=detail id=6 alignment="0" tabsequence=0 border="0" color="0" x="23" y="0" height="160" width="882" html.valueishtml="0"  name=observacion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Observacion" border="0" color="0" x="18" y="4" height="76" width="887" html.valueishtml="0"  name=observacion_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
