@@ -1,0 +1,49 @@
+HA$PBExportHeader$d_cuadros_ficha_tecnica_medidas.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=432 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_linea dbname="m_muestras.co_linea" )
+ column=(type=long updatewhereclause=yes name=co_tipoprod dbname="m_muestras.co_tipoprod" )
+ column=(type=long updatewhereclause=yes name=co_cliente dbname="m_muestras.co_cliente" )
+ column=(type=long updatewhereclause=yes name=co_sucursal dbname="m_muestras.co_sucursal" )
+ column=(type=char(50) updatewhereclause=yes name=de_muestra dbname="m_muestras.de_muestra" )
+ retrieve="  SELECT m_muestras.co_linea,   
+         m_muestras.co_tipoprod,   
+         m_muestras.co_cliente,   
+         m_muestras.co_sucursal,   
+         m_muestras.de_muestra  
+    FROM m_muestras  
+   WHERE ( m_muestras.co_fabrica = :a_fabrica ) AND  
+         ( m_muestras.co_linea = :a_linea ) AND  
+         ( m_muestras.co_muestra = :a_muestra )    
+" arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number)) )
+text(band=detail alignment="2" text="PUNTOS DE ENHEBRADO" border="2" color="0" x="882" y="12" height="56" width="626" html.valueishtml="0"  name=t_29 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="Enhebrado" border="2" color="0" x="882" y="72" height="56" width="626" html.valueishtml="0"  name=t_30 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215"  height.autosize=yes)
+text(band=detail alignment="2" text="1" border="2" color="0" x="1303" y="132" height="56" width="206" html.valueishtml="0"  name=t_35 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="2" border="2" color="0" x="1303" y="192" height="56" width="206" html.valueishtml="0"  name=t_36 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="3" border="2" color="0" x="1303" y="252" height="56" width="206" html.valueishtml="0"  name=t_37 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="4" border="2" color="0" x="1303" y="312" height="56" width="206" html.valueishtml="0"  name=t_38 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="IRO" border="2" color="0" x="882" y="132" height="56" width="416" html.valueishtml="0"  name=t_31 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="TRICOT" border="2" color="0" x="882" y="192" height="56" width="416" html.valueishtml="0"  name=t_32 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="KTF" border="2" color="0" x="882" y="252" height="56" width="416" html.valueishtml="0"  name=t_33 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="SENSOR" border="2" color="0" x="882" y="312" height="56" width="416" html.valueishtml="0"  name=t_34 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="POSICION GUIAHILOS" border="2" color="0" x="9" y="12" height="56" width="754" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="Portahilo TOP2" border="2" color="0" x="402" y="72" height="56" width="361" html.valueishtml="0"  name=t_15 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="C" border="2" color="0" x="402" y="192" height="56" width="361" html.valueishtml="0"  name=t_25 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="D" border="2" color="0" x="402" y="252" height="56" width="361" html.valueishtml="0"  name=t_26 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="E" border="2" color="0" x="402" y="312" height="56" width="361" html.valueishtml="0"  name=t_27 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="F" border="2" color="0" x="402" y="372" height="56" width="361" html.valueishtml="0"  name=t_28 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="Posiciones" border="2" color="0" x="402" y="132" height="56" width="361" html.valueishtml="0"  name=t_20 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="Portahilo TOP1" border="2" color="0" x="9" y="72" height="56" width="389" html.valueishtml="0"  name=t_8 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="1=arriba" border="2" color="0" x="9" y="132" height="56" width="389" html.valueishtml="0"  name=t_16 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="2=abajo" border="2" color="0" x="9" y="192" height="56" width="389" html.valueishtml="0"  name=t_21 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="A=adelante" border="2" color="0" x="9" y="252" height="56" width="389" html.valueishtml="0"  name=t_22 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="B=atr$$HEX1$$e100$$ENDHEX$$s" border="2" color="0" x="9" y="312" height="56" width="389" html.valueishtml="0"  name=t_23 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="C=n$$HEX1$$ed00$$ENDHEX$$tido" border="2" color="0" x="9" y="372" height="56" width="389" html.valueishtml="0"  name=t_24 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
