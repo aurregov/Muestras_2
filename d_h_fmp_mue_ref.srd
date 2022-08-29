@@ -1,0 +1,84 @@
+HA$PBExportHeader$d_h_fmp_mue_ref.srd
+$PBExportComments$Encabezado de ficha de materia prima
+release 9;
+datawindow(units=0 timer_interval=0 color=77442227 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+summary(height=0 color="536870912" )
+footer(height=4 color="536870912" )
+detail(height=160 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_referencia dbname="dt_muestras_ref.co_referencia_ref" )
+ column=(type=char(50) updatewhereclause=yes name=de_muestra dbname="m_muestras.de_muestra" )
+ column=(type=long updatewhereclause=yes name=co_recurso dbname="m_producc_teo_bas.co_recurso" )
+ column=(type=decimal(2) updatewhereclause=yes name=produccion_teo dbname="m_producc_teo_bas.produccion_teo" )
+ column=(type=datetime updatewhereclause=yes name=fe_actualizacion dbname="m_producc_teo_bas.fe_actualizacion" )
+ column=(type=char(30) updatewhereclause=yes name=de_recurso dbname="de_recurso" )
+ column=(type=long updatewhereclause=yes name=minutos dbname="minutos" )
+ column=(type=long updatewhereclause=yes name=segundos dbname="segundos" )
+ column=(type=long updatewhereclause=yes name=solo_seg dbname="solo_seg" )
+ retrieve="SELECT 	dt_muestras_ref.co_referencia_ref, 
+			m_muestras.de_muestra,
+			m_producc_teo_bas.co_recurso,
+			m_producc_teo_bas.produccion_teo,
+			m_producc_teo_bas.fe_actualizacion,
+			sp_nom_m_recursos_tj(m_producc_teo_bas.co_recurso) as de_recurso,
+			( case when m_muestras.co_tipoprod = 10
+          	then
+            	entero((1200/m_producc_teo_bas.produccion_teo)/60)
+          	else
+            	entero((28800/m_producc_teo_bas.produccion_teo)/60)
+          	end ) minutos,
+         ( case when m_muestras.co_tipoprod = 10
+          	then
+             	entero ( (1200 / m_producc_teo_bas.produccion_teo) -
+               	( (entero((1200/m_producc_teo_bas.produccion_teo)/60)) * 60 ) )
+          	else
+            	entero ( (28800 / m_producc_teo_bas.produccion_teo) -
+               	( (entero((28800/m_producc_teo_bas.produccion_teo)/60)) * 60 ) )
+          	end ) segundos,
+         ( case when m_muestras.co_tipoprod = 10
+          	then
+            	entero((1200/m_producc_teo_bas.produccion_teo ))
+          	else
+            	entero((28800/m_producc_teo_bas.produccion_teo ))
+          	end ) solo_seg
+  From 	dt_muestras,
+			dt_muestras_ref, 
+			m_muestras,
+			m_producc_teo_bas
+WHERE		( m_producc_teo_bas.co_fabrica 		= :a_fabrica ) AND 
+       	( m_producc_teo_bas.co_linea 			= :a_linea ) AND 
+       	( m_producc_teo_bas.co_muestra 		= :a_muestra ) AND 
+			( m_producc_teo_bas.co_fabrica		= dt_muestras_ref.co_fabrica ) AND 
+       	( m_producc_teo_bas.co_linea			= dt_muestras_ref.co_linea ) AND 
+       	( m_producc_teo_bas.co_muestra		= dt_muestras_ref.co_muestra ) AND
+	   	( m_producc_teo_bas.co_fabrica 		= m_muestras.co_fabrica ) AND 
+       	( m_producc_teo_bas.co_linea 			= m_muestras.co_linea ) AND 
+       	( m_producc_teo_bas.co_muestra 		= m_muestras.co_muestra ) AND
+			( dt_muestras.co_fabrica  				= dt_muestras_ref.co_fabrica ) AND 
+       	( dt_muestras.co_linea  				= dt_muestras_ref.co_linea ) AND 
+       	( dt_muestras.co_muestra  				= dt_muestras_ref.co_muestra  ) AND
+			( m_producc_teo_bas.co_recurso		= dt_muestras.co_recurso )
+
+      
+ 
+" arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number)) )
+text(band=detail alignment="0" text="Referencia" border="0" color="0" x="27" y="4" height="56" width="978" html.valueishtml="0"  name=co_referencia_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="2" text="Recurso Muestra" border="0" color="0" x="1015" y="4" height="56" width="1015" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="5" color="0" x="27" y="60" height="76" width="206" format="[general]" html.valueishtml="0"  name=co_referencia visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="5" color="0" x="261" y="60" height="76" width="727" format="[general]" html.valueishtml="0"  name=de_muestra visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="5" color="0" x="1015" y="60" height="76" width="242" format="[general]" html.valueishtml="0"  name=co_recurso visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="5" color="0" x="1285" y="60" height="76" width="736" format="[general]" html.valueishtml="0"  name=de_recurso visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="5" color="0" x="3086" y="60" height="76" width="585" format="[shortdate] [time]" html.valueishtml="0"  name=fe_actualizacion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=detail alignment="0" text="Fe Actualizaci$$HEX1$$f300$$ENDHEX$$n" border="0" color="0" x="3086" y="4" height="56" width="585" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="1" tabsequence=32766 border="5" color="0" x="2834" y="60" height="76" width="224" format="[general]" html.valueishtml="0"  name=solo_seg visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=detail alignment="0" text="Solo Seg" border="0" color="0" x="2834" y="4" height="56" width="224" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="1" tabsequence=32766 border="5" color="0" x="2560" y="60" height="76" width="247" format="[general]" html.valueishtml="0"  name=segundos visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=detail alignment="0" text="Segundos" border="0" color="0" x="2560" y="4" height="56" width="247" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="1" tabsequence=32766 border="5" color="0" x="2345" y="60" height="76" width="183" format="[general]" html.valueishtml="0"  name=minutos visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=detail alignment="0" text="Minutos" border="0" color="0" x="2345" y="4" height="56" width="183" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="1" tabsequence=32766 border="5" color="0" x="2048" y="60" height="76" width="265" format="[general]" html.valueishtml="0"  name=produccion_teo visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=detail alignment="0" text="P. Te$$HEX1$$f300$$ENDHEX$$rica" border="0" color="0" x="2048" y="4" height="56" width="265" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
