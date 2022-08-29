@@ -1,0 +1,61 @@
+HA$PBExportHeader$d_m_mu_grupo.srd
+$PBExportComments$DWO para el manejo de los datos maestro del registro de las grupos
+release 9;
+datawindow(units=0 timer_interval=0 color=67108864 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=288 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=id_grupo dbname="m_mu_grupo.id_grupo" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=de_grupo dbname="de_grupo" )
+ column=(type=long update=yes updatewhereclause=yes name=id_turno dbname="m_mu_grupo.id_turno" )
+ column=(type=char(80) updatewhereclause=yes name=de_turno dbname="de_turno" )
+ column=(type=long update=yes updatewhereclause=yes name=cantidad_colas dbname="m_mu_grupo.cantidad_colas" initial="1" validation="Integer(gettext())>0" validationmsg="'N$$HEX1$$fa00$$ENDHEX$$mero de cantidad de colas no v$$HEX1$$e100$$ENDHEX$$lido'" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="m_mu_grupo.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="m_mu_grupo.usuario" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="m_mu_grupo.instancia" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=es_procesador dbname="m_mu_grupo.es_procesador" values="Si	S/No	N/" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=disponible dbname="m_mu_grupo.disponible" values="SI	S/NO	N/" )
+ column=(type=long update=yes updatewhereclause=yes name=co_tipoprod dbname="m_mu_grupo.co_tipoprod" initial="10" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=tipo_muestra dbname="m_mu_grupo.tipo_muestra" values="Exportaci$$HEX1$$f300$$ENDHEX$$n	EX/Nacional	NA/Ambos	EN/" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=sn_dllo_color dbname="m_mu_grupo.sn_dllo_color" values="Si Aplica	S/No Aplica	N/" )
+ retrieve="  SELECT m_mu_grupo.id_grupo,   
+         trim(m_mu_grupo.de_grupo) AS de_grupo,   
+         m_mu_grupo.id_turno,   
+         trim(sp_nom_turno(m_mu_grupo.id_turno)) AS de_turno,   
+         m_mu_grupo.cantidad_colas,   
+         m_mu_grupo.fe_actualizacion,   
+         m_mu_grupo.usuario,   
+         m_mu_grupo.instancia,   
+         m_mu_grupo.es_procesador,   
+         m_mu_grupo.disponible,   
+         m_mu_grupo.co_tipoprod,
+         m_mu_grupo.tipo_muestra,
+			m_mu_grupo.SN_Dllo_Color
+    FROM m_mu_grupo  
+   WHERE m_mu_grupo.id_grupo = :al_grupo    
+" update="m_mu_grupo" updatewhere=0 updatekeyinplace=yes arguments=(("al_grupo", number)) )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="5" color="33554432" x="14" y="68" height="60" width="297" format="[general]" html.valueishtml="0"  name=id_grupo  tag="&NN=Id. grupo" visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=2 alignment="0" tabsequence=10 border="5" color="33554432" x="334" y="68" height="60" width="690" format="[general]" html.valueishtml="0"  name=de_grupo  tag="&NN=Descripci$$HEX1$$f300$$ENDHEX$$n del grupo" visible="1" edit.limit=50 edit.case=upper edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=4 alignment="0" tabsequence=30 border="5" color="33554432" x="1344" y="68" height="56" width="837" format="[general]" html.valueishtml="0"  name=de_turno visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=5 alignment="1" tabsequence=40 border="5" color="33554432" x="2203" y="68" height="60" width="329" format="[General]" html.valueishtml="0"  name=cantidad_colas  tag="&NN=Cantidad colas" visible="1" edit.name="#####" editmask.mask="#####" editmask.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=9 alignment="0" tabsequence=50 border="5" color="33554432" x="2560" y="68" height="60" width="270" format="[general]" html.valueishtml="0"  name=es_procesador visible="1" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="134217732" )
+column(band=detail id=10 alignment="0" tabsequence=60 border="5" color="33554432" x="2857" y="68" height="60" width="251" format="[general]" html.valueishtml="0"  name=disponible visible="1" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=12 alignment="0" tabsequence=80 border="5" color="33554432" x="3127" y="68" height="60" width="270" format="[general]" html.valueishtml="0"  name=tipo_muestra visible="1" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.autohscroll=yes ddlb.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Grupo" border="0" color="33554432" x="14" y="4" height="56" width="302" html.valueishtml="0"  name=id_grupo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Descripci$$HEX1$$f300$$ENDHEX$$n del Grupo" border="0" color="33554432" x="334" y="4" height="56" width="489" html.valueishtml="0"  name=de_grupo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Descripci$$HEX1$$f300$$ENDHEX$$n del Turno" border="0" color="0" x="1339" y="4" height="56" width="407" html.valueishtml="0"  name=de_turno_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="Cantidad colas" border="0" color="33554432" x="2199" y="4" height="56" width="343" html.valueishtml="0"  name=cantidad_colas_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Procesador" border="0" color="33554432" x="2560" y="4" height="56" width="270" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Disponible" border="0" color="33554432" x="2857" y="4" height="56" width="251" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Tpo.Mtra" border="0" color="33554432" x="3127" y="4" height="56" width="270" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=70 border="5" color="33554432" x="14" y="224" height="60" width="585" format="[general]" html.valueishtml="0"  name=co_tipoprod visible="1" dddw.name=d_dddw_m_tipoprod dddw.displaycolumn=de_tipoprod dddw.datacolumn=co_tipoprod dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0 dddw.hscrollbar=yes dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="1" tabsequence=20 border="5" color="33554432" x="1051" y="68" height="60" width="265" format="[general]" html.valueishtml="0"  name=id_turno visible="1" dddw.name=d_dddw_turno dddw.displaycolumn=id_turno dddw.datacolumn=id_turno dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.nilisnull=yes dddw.imemode=0 dddw.hscrollbar=yes dddw.vscrollbar=yes dddw.autoretrieve=no dddw.showlist=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=13 alignment="0" tabsequence=90 border="5" color="33554432" x="1051" y="224" height="56" width="265" format="[general]" html.valueishtml="0"  name=sn_dllo_color visible="1" ddlb.limit=1 ddlb.allowedit=no ddlb.case=any ddlb.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=detail alignment="0" text="Turno" border="0" color="0" x="1051" y="4" height="56" width="155" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="Tipo Producto" border="0" color="33554432" x="14" y="156" height="56" width="585" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Aplica Dllo Color y/o  Tintoreria" border="0" color="0" x="1051" y="156" height="56" width="672" html.valueishtml="0"  name=sn_dllo_color_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
