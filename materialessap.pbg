@@ -1,0 +1,31 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "materialessap.pbl" "";
+@end;
+@begin Objects
+ "d_lista_materiales_sap.srd" "materialessap.pbl";
+ "n_cst_c_materiales_sap.sru" "materialessap.pbl";
+ "n_cst_llamado_sap.sru" "materialessap.pbl";
+ "d_com_lista_materiales.srd" "materialessap.pbl";
+ "d_variables_config.srd" "materialessap.pbl";
+ "w_materiales_a_sap.srw" "materialessap.pbl";
+ "ddw_muestrario_matsap.srd" "materialessap.pbl";
+ "ddw_talla_ref.srd" "materialessap.pbl";
+ "d_log_envio_sap.srd" "materialessap.pbl";
+ "d_crost_materiales.srd" "materialessap.pbl";
+ "m_materiales_sap.srm" "materialessap.pbl";
+ "ddw_color_ref.srd" "materialessap.pbl";
+ "d_crost_prueba.srd" "materialessap.pbl";
+ "d_cons_muestrario.srd" "materialessap.pbl";
+ "d_enc_mat_sap.srd" "materialessap.pbl";
+ "d_m_muestrarios.srd" "materialessap.pbl";
+ "d_error_sap.srd" "materialessap.pbl";
+ "ddw_cabase.srd" "materialessap.pbl";
+ "w_error_enviosap.srw" "materialessap.pbl";
+ "w_migrar_muestra.srw" "materialessap.pbl";
+ "d_com_lista_materialesbk.srd" "materialessap.pbl";
+ "d_log_sap.srd" "materialessap.pbl";
+ "n_cst_parametros_config.sru" "materialessap.pbl";
+ "u_ds_base.sru" "materialessap.pbl";
+ "w_muestra.srw" "materialessap.pbl";
+@end;
