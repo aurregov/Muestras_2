@@ -1,0 +1,6 @@
+HA$PBExportHeader$s_file_datetime.srs
+global type s_file_datetime from structure
+	unsignedlong		ul_lowdatetime
+	unsignedlong		ul_highdatetime
+end type
+
