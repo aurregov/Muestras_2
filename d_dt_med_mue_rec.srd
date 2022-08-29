@@ -1,0 +1,59 @@
+HA$PBExportHeader$d_dt_med_mue_rec.srd
+$PBExportComments$medias de la muestra con le nuevo esquema
+release 9;
+datawindow(units=0 timer_interval=0 color=79017397 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes name=co_fabrica dbname="dt_med_mue.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes name=co_linea dbname="dt_med_mue.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes name=co_muestra dbname="dt_med_mue.co_muestra" )
+ column=(type=long update=yes updatewhereclause=yes name=co_talla dbname="dt_med_mue.co_talla" )
+ column=(type=long update=yes updatewhereclause=yes name=co_diseno dbname="dt_med_mue.co_diseno" )
+ column=(type=long update=yes updatewhereclause=yes name=co_tipoprod dbname="dt_med_mue.co_tipoprod" )
+ column=(type=long update=yes updatewhereclause=yes name=co_partebas dbname="dt_med_mue.co_partebas" )
+ column=(type=char(12) update=yes updatewhereclause=yes name=ca_cm dbname="dt_med_mue.ca_cm" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=cadena dbname="dt_med_mue.cadena" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=pasadas dbname="dt_med_mue.pasadas" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="dt_med_mue.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="dt_med_mue.usuario" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=instancia dbname="dt_med_mue.instancia" )
+ column=(type=long updatewhereclause=yes name=orden_partebas dbname="m_partebas1.orden_partebas" )
+ retrieve="  SELECT dt_med_mue.co_fabrica,   
+         dt_med_mue.co_linea,   
+         dt_med_mue.co_muestra,   
+         dt_med_mue.co_talla,   
+         dt_med_mue.co_diseno,   
+         dt_med_mue.co_tipoprod,   
+         dt_med_mue.co_partebas,   
+         dt_med_mue.ca_cm,   
+         dt_med_mue.cadena,   
+         dt_med_mue.pasadas,   
+         dt_med_mue.fe_actualizacion,   
+         dt_med_mue.usuario,   
+         dt_med_mue.instancia,   
+         m_partebas1.orden_partebas
+    FROM dt_med_mue,   
+         m_partebas1 
+   WHERE ( dt_med_mue.co_fabrica = :a_fabrica ) AND  
+         ( dt_med_mue.co_linea = :a_linea ) AND  
+         ( dt_med_mue.co_muestra = :a_muestra ) AND
+         ( dt_med_mue.co_talla = :a_talla ) and   
+         ( dt_med_mue.co_diseno = :a_diseno )  AND  
+         ( dt_med_mue.co_tipoprod = m_partebas1.co_tipoprod ) AND
+         ( dt_med_mue.co_partebas = m_partebas1.co_partebas ) AND 
+	 		( dt_med_mue.co_recurso  = :an_recurso )" arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number),("a_talla", number),("a_diseno", number),("an_recurso", number))  sort="orden_partebas A " )
+text(band=header alignment="2" text="Parte" border="0" color="0" x="9" y="8" height="56" width="402" html.valueishtml="0"  name=dt_med_mue_co_partebas_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Cm" border="0" color="0" x="421" y="8" height="56" width="265" html.valueishtml="0"  name=dt_med_mue_ca_cm_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Cadena" border="0" color="0" x="695" y="8" height="56" width="379" html.valueishtml="0"  name=dt_med_mue_cadena_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Pasadas" border="0" color="0" x="1083" y="8" height="56" width="430" html.valueishtml="0"  name=dt_med_mue_pasadas_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=40 border="5" color="0" x="1083" y="4" height="56" width="430" format="[general]" html.valueishtml="0"  name=pasadas visible="1" edit.limit=20 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1089992695" )
+column(band=detail id=7 alignment="0" tabsequence=10 border="5" color="0" x="9" y="4" height="56" width="402" format="[general]" html.valueishtml="0"  name=co_partebas visible="1" dddw.name=d_dddw_m_partebas1 dddw.displaycolumn=de_partebas dddw.datacolumn=co_partebas dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1089992695" )
+column(band=detail id=8 alignment="1" tabsequence=20 border="5" color="0" x="421" y="4" height="56" width="265" format="[general]" html.valueishtml="0"  name=ca_cm visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1089992695" )
+column(band=detail id=9 alignment="0" tabsequence=30 border="5" color="0" x="695" y="4" height="56" width="379" format="[general]" html.valueishtml="0"  name=cadena visible="1" edit.limit=20 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1089992695" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
