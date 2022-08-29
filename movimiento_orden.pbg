@@ -1,0 +1,41 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "movimiento_orden.pbl" "";
+@end;
+@begin Objects
+ "d_juan.srd" "movimiento_orden.pbl";
+ "d_muestra_a_ref.srd" "movimiento_orden.pbl";
+ "d_tareas_paradas.srd" "movimiento_orden.pbl";
+ "d_datos_orden_mov.srd" "movimiento_orden.pbl";
+ "d_sp_mu_est_orden.srd" "movimiento_orden.pbl";
+ "d_sp_mu_cambio_col.srd" "movimiento_orden.pbl";
+ "d_verif_cambio_col.srd" "movimiento_orden.pbl";
+ "w_cambio_codigo_color.srw" "movimiento_orden.pbl";
+ "d_sp_mu_table_lock.srd" "movimiento_orden.pbl";
+ "d_ext_mov_orden.srd" "movimiento_orden.pbl";
+ "d_ext_rango_datetime.srd" "movimiento_orden.pbl";
+ "w_informe_detenidas.srw" "movimiento_orden.pbl";
+ "d_29042006.srd" "movimiento_orden.pbl";
+ "d_ext_grupo_inf.srd" "movimiento_orden.pbl";
+ "d_juan1.srd" "movimiento_orden.pbl";
+ "d_detalle_mov_orden.srd" "movimiento_orden.pbl";
+ "d_grupos_informe.srd" "movimiento_orden.pbl";
+ "d_ext_cambio_color.srd" "movimiento_orden.pbl";
+ "d_dddw_con_ord_mov.srd" "movimiento_orden.pbl";
+ "w_informe_movimientos.srw" "movimiento_orden.pbl";
+ "w_informe_muestra_a_ref.srw" "movimiento_orden.pbl";
+ "w_informe_ordenes_proceso_laboratorio.srw" "movimiento_orden.pbl";
+ "d_ext_criterio_orden_paro.srd" "movimiento_orden.pbl";
+ "d_sq_gr_muestra_sin_conver_a_ref.srd" "movimiento_orden.pbl";
+ "w_informe_ordenes_proceso_fecha.srw" "movimiento_orden.pbl";
+ "w_cambio_condicion_orden.srw" "movimiento_orden.pbl";
+ "d_ext_criterios_ordenes_proceso_lab.srd" "movimiento_orden.pbl";
+ "w_informe_dias_desarrollo.srw" "movimiento_orden.pbl";
+ "w_informe_grupos.srw" "movimiento_orden.pbl";
+ "d_movimientos_realizados.srd" "movimiento_orden.pbl";
+ "d_ext_criterios_ordenes_proceso.srd" "movimiento_orden.pbl";
+ "d_ext_criterios_ordenes_proceso_fecha.srd" "movimiento_orden.pbl";
+ "w_informe_ordenes_proceso.srw" "movimiento_orden.pbl";
+ "w_informe_dias_desarrollo_ordenes.srw" "movimiento_orden.pbl";
+ "w_informe_usuarios_sistema.srw" "movimiento_orden.pbl";
+@end;
