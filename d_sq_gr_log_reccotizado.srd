@@ -1,0 +1,76 @@
+HA$PBExportHeader$d_sq_gr_log_reccotizado.srd
+$PBExportComments$/***********************************************************~r~nSA52045 - Ceiba/jjmonsal - 30-11-2015~r~nComentario:Modificacion Correo automatico desde Muestras~r~n***********************************************************/
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="log_reccotizado.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_linea dbname="log_reccotizado.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_muestra dbname="log_reccotizado.co_muestra" )
+ column=(type=long update=yes updatewhereclause=yes name=co_talla dbname="log_reccotizado.co_talla" )
+ column=(type=long update=yes updatewhereclause=yes name=co_referencia_ref dbname="log_reccotizado.co_referencia_ref" )
+ column=(type=long update=yes updatewhereclause=yes name=co_reccotcierraold dbname="log_reccotizado.co_reccotcierraold" )
+ column=(type=long update=yes updatewhereclause=yes name=co_reccotnocierraold dbname="log_reccotizado.co_reccotnocierraold" )
+ column=(type=long update=yes updatewhereclause=yes name=co_reccotcierranew dbname="log_reccotizado.co_reccotcierranew" )
+ column=(type=long update=yes updatewhereclause=yes name=co_reccotnocierranew dbname="log_reccotizado.co_reccotnocierranew" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_muestrario dbname="log_reccotizado.co_muestrario" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_creacion dbname="log_reccotizado.fe_creacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="log_reccotizado.usuario" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=entrada_modificada dbname="log_reccotizado.entrada_modificada" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="log_reccotizado.instancia" )
+ retrieve="Select co_fabrica,
+	co_linea,
+	co_muestra,
+	co_talla, 
+	co_referencia_ref, 
+	co_reccotcierraOld, 
+	co_reccotnocierraOld,
+	co_reccotcierraNew,
+	co_reccotnocierraNew,
+	co_muestrario,
+	fe_creacion,
+	usuario,
+	Entrada_modificada,
+	instancia
+FROM log_RecCotizado 
+ WHERE ( co_fabrica = :an_fabrica				Or :an_fabrica = 0 )
+	AND ( co_linea = :an_linea					Or :an_linea = 0 )
+	AND ( co_muestra = :an_muestra			Or :an_muestra = 0 )
+	AND ( co_muestrario = :an_muestrario	)
+
+	" update="log_RecCotizado" updatewhere=1 updatekeyinplace=yes arguments=(("an_fabrica", number),("an_linea", number),("an_muestra", number),("an_muestrario", number)) )
+text(band=header alignment="2" text="Co Fabrica" border="0" color="33554432" x="9" y="8" height="56" width="274" html.valueishtml="0"  name=co_fabrica_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Linea" border="0" color="33554432" x="293" y="8" height="56" width="274" html.valueishtml="0"  name=co_linea_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Muestra" border="0" color="33554432" x="576" y="8" height="56" width="274" html.valueishtml="0"  name=co_muestra_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Talla" border="0" color="33554432" x="859" y="8" height="56" width="274" html.valueishtml="0"  name=co_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Referencia Ref" border="0" color="33554432" x="1143" y="8" height="56" width="407" html.valueishtml="0"  name=co_referencia_ref_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Reccotcierraold" border="0" color="33554432" x="1559" y="8" height="56" width="421" html.valueishtml="0"  name=co_reccotcierraold_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Reccotnocierraold" border="0" color="33554432" x="1989" y="8" height="56" width="475" html.valueishtml="0"  name=co_reccotnocierraold_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Reccotcierranew" border="0" color="33554432" x="2473" y="8" height="56" width="457" html.valueishtml="0"  name=co_reccotcierranew_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Reccotnocierranew" border="0" color="33554432" x="2939" y="8" height="56" width="512" html.valueishtml="0"  name=co_reccotnocierranew_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Muestrario" border="0" color="33554432" x="3461" y="8" height="56" width="306" html.valueishtml="0"  name=co_muestrario_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Fe Creacion" border="0" color="33554432" x="3776" y="8" height="56" width="503" html.valueishtml="0"  name=fe_creacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Usuario" border="0" color="33554432" x="4288" y="8" height="56" width="206" html.valueishtml="0"  name=usuario_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Entrada Modificada" border="0" color="33554432" x="4503" y="8" height="56" width="480" html.valueishtml="0"  name=entrada_modificada_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Instancia" border="0" color="33554432" x="4992" y="8" height="56" width="480" html.valueishtml="0"  name=instancia_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="0" color="33554432" x="9" y="8" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_fabrica visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=32766 border="0" color="33554432" x="293" y="8" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_linea visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=32766 border="0" color="33554432" x="576" y="8" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_muestra visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="1" tabsequence=32766 border="0" color="33554432" x="859" y="8" height="68" width="274" format="[general]" html.valueishtml="0"  name=co_talla visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="1" tabsequence=32766 border="0" color="33554432" x="1143" y="8" height="68" width="407" format="[general]" html.valueishtml="0"  name=co_referencia_ref visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="1" tabsequence=32766 border="0" color="33554432" x="1559" y="8" height="68" width="421" format="[general]" html.valueishtml="0"  name=co_reccotcierraold visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="1" tabsequence=32766 border="0" color="33554432" x="1989" y="8" height="68" width="475" format="[general]" html.valueishtml="0"  name=co_reccotnocierraold visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="1" tabsequence=32766 border="0" color="33554432" x="2473" y="8" height="68" width="457" format="[general]" html.valueishtml="0"  name=co_reccotcierranew visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="1" tabsequence=32766 border="0" color="33554432" x="2939" y="8" height="68" width="512" format="[general]" html.valueishtml="0"  name=co_reccotnocierranew visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="1" tabsequence=32766 border="0" color="33554432" x="3461" y="8" height="68" width="306" format="[general]" html.valueishtml="0"  name=co_muestrario visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="33554432" x="3776" y="8" height="68" width="503" format="[shortdate] [time]" html.valueishtml="0"  name=fe_creacion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="33554432" x="4288" y="8" height="68" width="206" format="[general]" html.valueishtml="0"  name=usuario visible="1" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="0" tabsequence=32766 border="0" color="33554432" x="4503" y="8" height="68" width="480" format="[general]" html.valueishtml="0"  name=entrada_modificada visible="1" edit.limit=20 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="0" color="33554432" x="4992" y="8" height="68" width="480" format="[general]" html.valueishtml="0"  name=instancia visible="1" edit.limit=20 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
