@@ -1,0 +1,25 @@
+HA$PBExportHeader$d_detalle_turno.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=128 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=cantidad_colas dbname="m_mu_grupo.cantidad_colas" )
+ column=(type=long updatewhereclause=yes name=dia dbname="mu_dt_turno.dia" )
+ column=(type=time updatewhereclause=yes name=hora_inicio dbname="mu_dt_turno.hora_inicio" )
+ column=(type=long updatewhereclause=yes name=horas dbname="mu_dt_turno.horas" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"m_mu_grupo~" )  TABLE(NAME=~"mu_dt_turno~" ) COLUMN(NAME=~"m_mu_grupo.cantidad_colas~") COLUMN(NAME=~"mu_dt_turno.dia~") COLUMN(NAME=~"mu_dt_turno.hora_inicio~") COLUMN(NAME=~"mu_dt_turno.horas~")    JOIN (LEFT=~"m_mu_grupo.id_turno~"    OP =~"=~"RIGHT=~"mu_dt_turno.id_turno~" )WHERE(    EXP1 =~"m_mu_grupo.id_grupo~"   OP =~"=~"    EXP2 =~":an_grupo~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"mu_dt_turno.dia~"   OP =~"=~"    EXP2 =~":an_dia~" ) ) ARG(NAME = ~"an_grupo~" TYPE = number)  ARG(NAME = ~"an_dia~" TYPE = number) " arguments=(("an_grupo", number),("an_dia", number)) )
+text(band=header alignment="2" text="Mu Dt Turno
+Dia" border="0" color="33554432" x="9" y="8" height="112" width="274" html.valueishtml="0"  name=mu_dt_turno_dia_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Mu Dt Turno
+Hora Inicio" border="0" color="33554432" x="293" y="8" height="112" width="265" html.valueishtml="0"  name=mu_dt_turno_hora_inicio_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Mu Dt Turno
+Horas" border="0" color="33554432" x="567" y="8" height="112" width="274" html.valueishtml="0"  name=mu_dt_turno_horas_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=32766 border="0" color="33554432" x="9" y="8" height="68" width="274" format="[general]" html.valueishtml="0"  name=dia visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="33554432" x="293" y="8" height="68" width="265" format="[time]" html.valueishtml="0"  name=hora_inicio visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="M Mu Grupo Cantidad Colas" border="0" color="0" x="850" y="4" height="112" width="453" html.valueishtml="0"  name=m_mu_grupo_cantidad_colas_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="1" tabsequence=32766 border="0" color="33554432" x="567" y="8" height="68" width="274" format="[general]" html.valueishtml="0"  name=horas visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=0 border="0" color="33554432" x="855" y="8" height="68" width="448" format="[General]" html.valueishtml="0"  name=cantidad_colas visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
