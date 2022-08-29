@@ -1,0 +1,14 @@
+HA$PBExportHeader$d_ext_tipo_grafico.srd
+$PBExportComments$Para seleccionar el tipo de grafico
+release 7;
+datawindow(units=0 timer_interval=0 color=79017397 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=8 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=1040 color="536870912" )
+table(column=(type=number updatewhereclause=yes name=tipo_grafico dbname="tipo_grafico" values="1.  Tobillera	1/2. Larga	2/3. Pu$$HEX1$$f100$$ENDHEX$$o doblado	3/4. Tubular	4/" )
+ )
+column(band=detail id=1 alignment="0" tabsequence=10 border="5" color="0" x="334" y="28" height="76" width="466" format="[general]"  name=tipo_grafico ddlb.limit=0 ddlb.allowedit=no ddlb.case=any  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+bitmap(band=detail filename="tipo_2.bmp" x="846" y="20" height="984" width="841" border="5"  name=p_1 )
+text(band=detail alignment="0" text="Tipo gr$$HEX1$$e100$$ENDHEX$$fico:" border="0" color="0" x="41" y="36" height="56" width="274"  name=t_1  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
