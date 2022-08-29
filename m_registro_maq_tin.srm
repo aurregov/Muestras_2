@@ -1,0 +1,1533 @@
+HA$PBExportHeader$m_registro_maq_tin.srm
+$PBExportComments$Objeto Menu para la ventana de registro de m$$HEX1$$e100$$ENDHEX$$quinas de tintorer$$HEX1$$ed00$$ENDHEX$$a
+forward
+global type m_registro_maq_tin from m_sheet
+end type
+type m_-l1012041151 from menu within m_edicion
+end type
+type m_iram$$HEX1$$e100$$ENDHEX$$quinatintorer$$HEX1$$ed00$$ENDHEX$$a from menu within m_edicion
+end type
+type m_iraactividades from menu within m_edicion
+end type
+type m_iraoperaciones from menu within m_edicion
+end type
+type m_iragrupos from menu within m_edicion
+end type
+type m_edicion from m_sheet`m_edicion within m_registro_maq_tin
+m_-l1012041151 m_-l1012041151
+m_iram$$HEX1$$e100$$ENDHEX$$quinatintorer$$HEX1$$ed00$$ENDHEX$$a m_iram$$HEX1$$e100$$ENDHEX$$quinatintorer$$HEX1$$ed00$$ENDHEX$$a
+m_iraactividades m_iraactividades
+m_iraoperaciones m_iraoperaciones
+m_iragrupos m_iragrupos
+end type
+type m_-l1611041700 from menu within m_procesos
+end type
+type m_eliminarm$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a from menu within m_procesos
+end type
+type m_procesos from m_sheet`m_procesos within m_registro_maq_tin
+m_-l1611041700 m_-l1611041700
+m_eliminarm$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a m_eliminarm$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a
+end type
+end forward
+
+global type m_registro_maq_tin from m_sheet
+end type
+global m_registro_maq_tin m_registro_maq_tin
+
+on m_registro_maq_tin.create
+m_registro_maq_tin=this
+call super::create
+this.text = "m_registro_maq_tin"
+end on
+
+on m_registro_maq_tin.destroy
+call super::destroy
+end on
+
+type m_archivo from m_sheet`m_archivo within m_registro_maq_tin
+end type
+
+on m_archivo.create
+call super::create
+end on
+
+on m_archivo.destroy
+call super::destroy
+end on
+
+type m_buscar from m_sheet`m_buscar within m_archivo
+end type
+
+on m_buscar.create
+call super::create
+end on
+
+on m_buscar.destroy
+call super::destroy
+end on
+
+type m_-9 from m_sheet`m_-9 within m_archivo
+end type
+
+on m_-9.create
+call super::create
+end on
+
+on m_-9.destroy
+call super::destroy
+end on
+
+type m_nuevo from m_sheet`m_nuevo within m_archivo
+end type
+
+on m_nuevo.create
+call super::create
+end on
+
+on m_nuevo.destroy
+call super::destroy
+end on
+
+type m_abrir from m_sheet`m_abrir within m_archivo
+end type
+
+on m_abrir.create
+call super::create
+end on
+
+on m_abrir.destroy
+call super::destroy
+end on
+
+type m_cerrar from m_sheet`m_cerrar within m_archivo
+end type
+
+on m_cerrar.create
+call super::create
+end on
+
+on m_cerrar.destroy
+call super::destroy
+end on
+
+type m_-1 from m_sheet`m_-1 within m_archivo
+end type
+
+on m_-1.create
+call super::create
+end on
+
+on m_-1.destroy
+call super::destroy
+end on
+
+type m_guardar from m_sheet`m_guardar within m_archivo
+end type
+
+on m_guardar.create
+call super::create
+end on
+
+on m_guardar.destroy
+call super::destroy
+end on
+
+type m_guardarcomo from m_sheet`m_guardarcomo within m_archivo
+end type
+
+on m_guardarcomo.create
+call super::create
+end on
+
+on m_guardarcomo.destroy
+call super::destroy
+end on
+
+type m_-10 from m_sheet`m_-10 within m_archivo
+end type
+
+on m_-10.create
+call super::create
+end on
+
+on m_-10.destroy
+call super::destroy
+end on
+
+type m_presentaci$$HEX1$$f300$$ENDHEX$$npreliminar from m_sheet`m_presentaci$$HEX1$$f300$$ENDHEX$$npreliminar within m_archivo
+end type
+
+on m_presentaci$$HEX1$$f300$$ENDHEX$$npreliminar.create
+call super::create
+end on
+
+on m_presentaci$$HEX1$$f300$$ENDHEX$$npreliminar.destroy
+call super::destroy
+end on
+
+type m_imprimir from m_sheet`m_imprimir within m_archivo
+end type
+
+on m_imprimir.create
+call super::create
+this.enabled = false
+end on
+
+on m_imprimir.destroy
+call super::destroy
+end on
+
+type m_configurar_impresora from m_sheet`m_configurar_impresora within m_archivo
+end type
+
+on m_configurar_impresora.create
+call super::create
+end on
+
+on m_configurar_impresora.destroy
+call super::destroy
+end on
+
+type m_-40 from m_sheet`m_-40 within m_archivo
+end type
+
+on m_-40.create
+call super::create
+end on
+
+on m_-40.destroy
+call super::destroy
+end on
+
+type m_salir from m_sheet`m_salir within m_archivo
+end type
+
+on m_salir.create
+call super::create
+end on
+
+on m_salir.destroy
+call super::destroy
+end on
+
+type m_edicion from m_sheet`m_edicion within m_registro_maq_tin
+m_-l1012041151 m_-l1012041151
+m_iram$$HEX1$$e100$$ENDHEX$$quinatintorer$$HEX1$$ed00$$ENDHEX$$a m_iram$$HEX1$$e100$$ENDHEX$$quinatintorer$$HEX1$$ed00$$ENDHEX$$a
+m_iraactividades m_iraactividades
+m_iraoperaciones m_iraoperaciones
+m_iragrupos m_iragrupos
+end type
+
+on m_edicion.create
+call super::create
+this.m_-l1012041151=create m_-l1012041151
+this.m_iram$$HEX1$$e100$$ENDHEX$$quinatintorer$$HEX1$$ed00$$ENDHEX$$a=create m_iram$$HEX1$$e100$$ENDHEX$$quinatintorer$$HEX1$$ed00$$ENDHEX$$a
+this.m_iraactividades=create m_iraactividades
+this.m_iraoperaciones=create m_iraoperaciones
+this.m_iragrupos=create m_iragrupos
+this.Item[UpperBound(this.Item)+1]=this.m_-l1012041151
+this.Item[UpperBound(this.Item)+1]=this.m_iram$$HEX1$$e100$$ENDHEX$$quinatintorer$$HEX1$$ed00$$ENDHEX$$a
+this.Item[UpperBound(this.Item)+1]=this.m_iraactividades
+this.Item[UpperBound(this.Item)+1]=this.m_iraoperaciones
+this.Item[UpperBound(this.Item)+1]=this.m_iragrupos
+end on
+
+on m_edicion.destroy
+call super::destroy
+destroy(this.m_-l1012041151)
+destroy(this.m_iram$$HEX1$$e100$$ENDHEX$$quinatintorer$$HEX1$$ed00$$ENDHEX$$a)
+destroy(this.m_iraactividades)
+destroy(this.m_iraoperaciones)
+destroy(this.m_iragrupos)
+end on
+
+type m_deshacer from m_sheet`m_deshacer within m_edicion
+end type
+
+on m_deshacer.create
+call super::create
+end on
+
+on m_deshacer.destroy
+call super::destroy
+end on
+
+type m_- from m_sheet`m_- within m_edicion
+end type
+
+on m_-.create
+call super::create
+end on
+
+on m_-.destroy
+call super::destroy
+end on
+
+type m_cortar from m_sheet`m_cortar within m_edicion
+end type
+
+on m_cortar.create
+call super::create
+end on
+
+on m_cortar.destroy
+call super::destroy
+end on
+
+type m_copiar from m_sheet`m_copiar within m_edicion
+end type
+
+on m_copiar.create
+call super::create
+end on
+
+on m_copiar.destroy
+call super::destroy
+end on
+
+type m_pegar from m_sheet`m_pegar within m_edicion
+end type
+
+on m_pegar.create
+call super::create
+end on
+
+on m_pegar.destroy
+call super::destroy
+end on
+
+type m_-6 from m_sheet`m_-6 within m_edicion
+end type
+
+on m_-6.create
+call super::create
+end on
+
+on m_-6.destroy
+call super::destroy
+end on
+
+type m_insertar from m_sheet`m_insertar within m_edicion
+end type
+
+on m_insertar.create
+call super::create
+end on
+
+on m_insertar.destroy
+call super::destroy
+end on
+
+type m_clear from m_sheet`m_clear within m_edicion
+end type
+
+on m_clear.create
+call super::create
+end on
+
+on m_clear.destroy
+call super::destroy
+end on
+
+type m_-4 from m_sheet`m_-4 within m_edicion
+end type
+
+on m_-4.create
+call super::create
+end on
+
+on m_-4.destroy
+call super::destroy
+end on
+
+type m_ordenar from m_sheet`m_ordenar within m_edicion
+end type
+
+on m_ordenar.create
+call super::create
+end on
+
+on m_ordenar.destroy
+call super::destroy
+end on
+
+type m_filtrar from m_sheet`m_filtrar within m_edicion
+end type
+
+on m_filtrar.create
+call super::create
+end on
+
+on m_filtrar.destroy
+call super::destroy
+end on
+
+type m_configuracion from m_sheet`m_configuracion within m_registro_maq_tin
+end type
+
+on m_configuracion.create
+call super::create
+end on
+
+on m_configuracion.destroy
+call super::destroy
+end on
+
+type m_0 from m_sheet`m_0 within m_configuracion
+end type
+
+on m_0.create
+call super::create
+end on
+
+on m_0.destroy
+call super::destroy
+end on
+
+type m_1 from m_sheet`m_1 within m_configuracion
+end type
+
+on m_1.create
+call super::create
+end on
+
+on m_1.destroy
+call super::destroy
+end on
+
+type m_3 from m_sheet`m_3 within m_configuracion
+end type
+
+on m_3.create
+call super::create
+end on
+
+on m_3.destroy
+call super::destroy
+end on
+
+type m_4 from m_sheet`m_4 within m_configuracion
+end type
+
+on m_4.create
+call super::create
+end on
+
+on m_4.destroy
+call super::destroy
+end on
+
+type m_estadosporcolordemuestra from m_sheet`m_estadosporcolordemuestra within m_configuracion
+end type
+
+on m_estadosporcolordemuestra.create
+call super::create
+end on
+
+on m_estadosporcolordemuestra.destroy
+call super::destroy
+end on
+
+type m_5 from m_sheet`m_5 within m_configuracion
+end type
+
+on m_5.create
+call super::create
+end on
+
+on m_5.destroy
+call super::destroy
+end on
+
+type m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva from m_sheet`m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva within m_configuracion
+end type
+
+on m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva.create
+call super::create
+end on
+
+on m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva.destroy
+call super::destroy
+end on
+
+type m_6 from m_sheet`m_6 within m_configuracion
+end type
+
+on m_6.create
+call super::create
+end on
+
+on m_6.destroy
+call super::destroy
+end on
+
+type m_clientesct$$HEX1$$e900$$ENDHEX$$cnico from m_sheet`m_clientesct$$HEX1$$e900$$ENDHEX$$cnico within m_configuracion
+end type
+
+on m_clientesct$$HEX1$$e900$$ENDHEX$$cnico.create
+call super::create
+end on
+
+on m_clientesct$$HEX1$$e900$$ENDHEX$$cnico.destroy
+call super::destroy
+end on
+
+type m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas from m_sheet`m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas within m_configuracion
+end type
+
+on m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas.create
+call super::create
+end on
+
+on m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas.destroy
+call super::destroy
+end on
+
+type m_cargosct$$HEX1$$e900$$ENDHEX$$cnico from m_sheet`m_cargosct$$HEX1$$e900$$ENDHEX$$cnico within m_configuracion
+end type
+
+on m_cargosct$$HEX1$$e900$$ENDHEX$$cnico.create
+call super::create
+end on
+
+on m_cargosct$$HEX1$$e900$$ENDHEX$$cnico.destroy
+call super::destroy
+end on
+
+type m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico from m_sheet`m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico within m_configuracion
+end type
+
+on m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico.create
+call super::create
+end on
+
+on m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico.destroy
+call super::destroy
+end on
+
+type m_-00211041216 from m_sheet`m_-00211041216 within m_configuracion
+end type
+
+on m_-00211041216.create
+call super::create
+end on
+
+on m_-00211041216.destroy
+call super::destroy
+end on
+
+type m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n from m_sheet`m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n within m_configuracion
+end type
+
+on m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n.create
+call super::create
+end on
+
+on m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n.destroy
+call super::destroy
+end on
+
+type m_mantenimientodeturnoshorarios from m_sheet`m_mantenimientodeturnoshorarios within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_mantenimientodeturnoshorarios.create
+call super::create
+end on
+
+on m_mantenimientodeturnoshorarios.destroy
+call super::destroy
+end on
+
+type m_registrodeactividades from m_sheet`m_registrodeactividades within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_registrodeactividades.create
+call super::create
+end on
+
+on m_registrodeactividades.destroy
+call super::destroy
+end on
+
+type m_registrodeoperaciones from m_sheet`m_registrodeoperaciones within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_registrodeoperaciones.create
+call super::create
+end on
+
+on m_registrodeoperaciones.destroy
+call super::destroy
+end on
+
+type m_registrodeestados from m_sheet`m_registrodeestados within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_registrodeestados.create
+call super::create
+end on
+
+on m_registrodeestados.destroy
+call super::destroy
+end on
+
+type m_registrodegruposdetrabajo from m_sheet`m_registrodegruposdetrabajo within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_registrodegruposdetrabajo.create
+call super::create
+end on
+
+on m_registrodegruposdetrabajo.destroy
+call super::destroy
+end on
+
+type m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan from m_sheet`m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan.create
+call super::create
+end on
+
+on m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan.destroy
+call super::destroy
+end on
+
+type m_registrodebordados from m_sheet`m_registrodebordados within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_registrodebordados.create
+call super::create
+end on
+
+on m_registrodebordados.destroy
+call super::destroy
+end on
+
+type m_registrodetintasantideslizantes from m_sheet`m_registrodetintasantideslizantes within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_registrodetintasantideslizantes.create
+call super::create
+end on
+
+on m_registrodetintasantideslizantes.destroy
+call super::destroy
+end on
+
+type m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a from m_sheet`m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a.create
+call super::create
+this.enabled = false
+end on
+
+on m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a.destroy
+call super::destroy
+end on
+
+type m_movimientos from m_sheet`m_movimientos within m_registro_maq_tin
+end type
+
+on m_movimientos.create
+call super::create
+end on
+
+on m_movimientos.destroy
+call super::destroy
+end on
+
+type m_muestras from m_sheet`m_muestras within m_movimientos
+end type
+
+on m_muestras.create
+call super::create
+end on
+
+on m_muestras.destroy
+call super::destroy
+end on
+
+type m_7 from m_sheet`m_7 within m_muestras
+end type
+
+on m_7.create
+call super::create
+end on
+
+on m_7.destroy
+call super::destroy
+end on
+
+type m_8 from m_sheet`m_8 within m_muestras
+end type
+
+on m_8.create
+call super::create
+end on
+
+on m_8.destroy
+call super::destroy
+end on
+
+type m_medidas from m_sheet`m_medidas within m_muestras
+end type
+
+on m_medidas.create
+call super::create
+end on
+
+on m_medidas.destroy
+call super::destroy
+end on
+
+type m_manoobramuestra from m_sheet`m_manoobramuestra within m_muestras
+end type
+
+on m_manoobramuestra.create
+call super::create
+end on
+
+on m_manoobramuestra.destroy
+call super::destroy
+end on
+
+type m_materiaprimamuestra from m_sheet`m_materiaprimamuestra within m_muestras
+end type
+
+on m_materiaprimamuestra.create
+call super::create
+end on
+
+on m_materiaprimamuestra.destroy
+call super::destroy
+end on
+
+type m_copiarmuestraareferencia from m_sheet`m_copiarmuestraareferencia within m_muestras
+end type
+
+on m_copiarmuestraareferencia.create
+call super::create
+end on
+
+on m_copiarmuestraareferencia.destroy
+call super::destroy
+end on
+
+type m_-0aaa from m_sheet`m_-0aaa within m_muestras
+end type
+
+on m_-0aaa.create
+call super::create
+end on
+
+on m_-0aaa.destroy
+call super::destroy
+end on
+
+type m_estadosporcolor from m_sheet`m_estadosporcolor within m_muestras
+end type
+
+on m_estadosporcolor.create
+call super::create
+end on
+
+on m_estadosporcolor.destroy
+call super::destroy
+end on
+
+type m_muestrab$$HEX1$$e100$$ENDHEX$$sica from m_sheet`m_muestrab$$HEX1$$e100$$ENDHEX$$sica within m_muestras
+end type
+
+on m_muestrab$$HEX1$$e100$$ENDHEX$$sica.create
+call super::create
+end on
+
+on m_muestrab$$HEX1$$e100$$ENDHEX$$sica.destroy
+call super::destroy
+end on
+
+type m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n from m_sheet`m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n within m_muestras
+end type
+
+on m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n.create
+call super::create
+end on
+
+on m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n.destroy
+call super::destroy
+end on
+
+type m_referencia from m_sheet`m_referencia within m_movimientos
+end type
+
+on m_referencia.create
+call super::create
+end on
+
+on m_referencia.destroy
+call super::destroy
+end on
+
+type m_medidasreferencia from m_sheet`m_medidasreferencia within m_referencia
+end type
+
+on m_medidasreferencia.create
+call super::create
+end on
+
+on m_medidasreferencia.destroy
+call super::destroy
+end on
+
+type m_manoobraref from m_sheet`m_manoobraref within m_referencia
+end type
+
+on m_manoobraref.create
+call super::create
+end on
+
+on m_manoobraref.destroy
+call super::destroy
+end on
+
+type m_materiaprima from m_sheet`m_materiaprima within m_referencia
+end type
+
+on m_materiaprima.create
+call super::create
+end on
+
+on m_materiaprima.destroy
+call super::destroy
+end on
+
+type m_-5aax from m_sheet`m_-5aax within m_referencia
+end type
+
+on m_-5aax.create
+call super::create
+end on
+
+on m_-5aax.destroy
+call super::destroy
+end on
+
+type m_nuevasmedidas from m_sheet`m_nuevasmedidas within m_referencia
+end type
+
+on m_nuevasmedidas.create
+call super::create
+end on
+
+on m_nuevasmedidas.destroy
+call super::destroy
+end on
+
+type m_orden from m_sheet`m_orden within m_movimientos
+end type
+
+on m_orden.create
+call super::create
+end on
+
+on m_orden.destroy
+call super::destroy
+end on
+
+type m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes from m_sheet`m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes within m_orden
+end type
+
+on m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes.create
+call super::create
+end on
+
+on m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes.destroy
+call super::destroy
+end on
+
+type m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n from m_sheet`m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n within m_orden
+end type
+
+on m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n.create
+call super::create
+end on
+
+on m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n.destroy
+call super::destroy
+end on
+
+type m_-pol12112041805 from m_sheet`m_-pol12112041805 within m_orden
+end type
+
+on m_-pol12112041805.create
+call super::create
+end on
+
+on m_-pol12112041805.destroy
+call super::destroy
+end on
+
+type m_cambiartareasdegrupo from m_sheet`m_cambiartareasdegrupo within m_orden
+end type
+
+on m_cambiartareasdegrupo.create
+call super::create
+end on
+
+on m_cambiartareasdegrupo.destroy
+call super::destroy
+end on
+
+type m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a from m_sheet`m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a within m_orden
+end type
+
+on m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a.create
+call super::create
+end on
+
+on m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a.destroy
+call super::destroy
+end on
+
+type m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes from m_sheet`m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes within m_orden
+end type
+
+on m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes.create
+call super::create
+end on
+
+on m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes.destroy
+call super::destroy
+end on
+
+type m_-l2601051147 from m_sheet`m_-l2601051147 within m_orden
+end type
+
+on m_-l2601051147.create
+call super::create
+end on
+
+on m_-l2601051147.destroy
+call super::destroy
+end on
+
+type m_generargantt from m_sheet`m_generargantt within m_orden
+end type
+
+on m_generargantt.create
+call super::create
+end on
+
+on m_generargantt.destroy
+call super::destroy
+end on
+
+type m_correodb from m_sheet`m_correodb within m_movimientos
+end type
+
+on m_correodb.create
+call super::create
+this.enabled = false
+end on
+
+on m_correodb.destroy
+call super::destroy
+end on
+
+type m_procesos from m_sheet`m_procesos within m_registro_maq_tin
+m_-l1611041700 m_-l1611041700
+m_eliminarm$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a m_eliminarm$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a
+end type
+
+on m_procesos.create
+call super::create
+this.m_-l1611041700=create m_-l1611041700
+this.m_eliminarm$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a=create m_eliminarm$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a
+this.Item[UpperBound(this.Item)+1]=this.m_-l1611041700
+this.Item[UpperBound(this.Item)+1]=this.m_eliminarm$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a
+end on
+
+on m_procesos.destroy
+call super::destroy
+destroy(this.m_-l1611041700)
+destroy(this.m_eliminarm$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a)
+end on
+
+type m_refrescarlistas from m_sheet`m_refrescarlistas within m_procesos
+end type
+
+on m_refrescarlistas.create
+call super::create
+end on
+
+on m_refrescarlistas.destroy
+call super::destroy
+end on
+
+type m_reportes from m_sheet`m_reportes within m_registro_maq_tin
+end type
+
+on m_reportes.create
+call super::create
+end on
+
+on m_reportes.destroy
+call super::destroy
+end on
+
+type m_muestras1 from m_sheet`m_muestras1 within m_reportes
+end type
+
+on m_muestras1.create
+call super::create
+end on
+
+on m_muestras1.destroy
+call super::destroy
+end on
+
+type m_solicitud from m_sheet`m_solicitud within m_muestras1
+end type
+
+on m_solicitud.create
+call super::create
+end on
+
+on m_solicitud.destroy
+call super::destroy
+end on
+
+type m_medidasymo from m_sheet`m_medidasymo within m_muestras1
+end type
+
+on m_medidasymo.create
+call super::create
+end on
+
+on m_medidasymo.destroy
+call super::destroy
+end on
+
+type m_listamuestras from m_sheet`m_listamuestras within m_muestras1
+end type
+
+on m_listamuestras.create
+call super::create
+end on
+
+on m_listamuestras.destroy
+call super::destroy
+end on
+
+type m_-0212 from m_sheet`m_-0212 within m_muestras1
+end type
+
+on m_-0212.create
+call super::create
+end on
+
+on m_-0212.destroy
+call super::destroy
+end on
+
+type m_cantidades from m_sheet`m_cantidades within m_muestras1
+end type
+
+on m_cantidades.create
+call super::create
+end on
+
+on m_cantidades.destroy
+call super::destroy
+end on
+
+type m_reporteconsolidado from m_sheet`m_reporteconsolidado within m_muestras1
+end type
+
+on m_reporteconsolidado.create
+call super::create
+end on
+
+on m_reporteconsolidado.destroy
+call super::destroy
+end on
+
+type m_saldos from m_sheet`m_saldos within m_muestras1
+end type
+
+on m_saldos.create
+call super::create
+end on
+
+on m_saldos.destroy
+call super::destroy
+end on
+
+type m_-089797xxhgf from m_sheet`m_-089797xxhgf within m_muestras1
+end type
+
+on m_-089797xxhgf.create
+call super::create
+end on
+
+on m_-089797xxhgf.destroy
+call super::destroy
+end on
+
+type m_reporteejecutivas from m_sheet`m_reporteejecutivas within m_muestras1
+end type
+
+on m_reporteejecutivas.create
+call super::create
+end on
+
+on m_reporteejecutivas.destroy
+call super::destroy
+end on
+
+type m_referencias from m_sheet`m_referencias within m_reportes
+end type
+
+on m_referencias.create
+call super::create
+end on
+
+on m_referencias.destroy
+call super::destroy
+end on
+
+type m_mediadas from m_sheet`m_mediadas within m_referencias
+end type
+
+on m_mediadas.create
+call super::create
+end on
+
+on m_mediadas.destroy
+call super::destroy
+end on
+
+type m_fichadematprima from m_sheet`m_fichadematprima within m_referencias
+end type
+
+on m_fichadematprima.create
+call super::create
+end on
+
+on m_fichadematprima.destroy
+call super::destroy
+end on
+
+type m_manodeobra from m_sheet`m_manodeobra within m_referencias
+end type
+
+on m_manodeobra.create
+call super::create
+end on
+
+on m_manodeobra.destroy
+call super::destroy
+end on
+
+type m_-11weryhfdhgd from m_sheet`m_-11weryhfdhgd within m_referencias
+end type
+
+on m_-11weryhfdhgd.create
+call super::create
+end on
+
+on m_-11weryhfdhgd.destroy
+call super::destroy
+end on
+
+type m_nuevasmedidas0 from m_sheet`m_nuevasmedidas0 within m_referencias
+end type
+
+on m_nuevasmedidas0.create
+call super::create
+end on
+
+on m_nuevasmedidas0.destroy
+call super::destroy
+end on
+
+type m_$$HEX1$$f300$$ENDHEX$$rdenes from m_sheet`m_$$HEX1$$f300$$ENDHEX$$rdenes within m_reportes
+end type
+
+on m_$$HEX1$$f300$$ENDHEX$$rdenes.create
+call super::create
+end on
+
+on m_$$HEX1$$f300$$ENDHEX$$rdenes.destroy
+call super::destroy
+end on
+
+type m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso from m_sheet`m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso within m_$$HEX1$$f300$$ENDHEX$$rdenes
+end type
+
+on m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso.create
+call super::create
+end on
+
+on m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso.destroy
+call super::destroy
+end on
+
+type m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo from m_sheet`m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo within m_$$HEX1$$f300$$ENDHEX$$rdenes
+end type
+
+on m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo.create
+call super::create
+end on
+
+on m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo.destroy
+call super::destroy
+end on
+
+type m_ventana from m_sheet`m_ventana within m_registro_maq_tin
+end type
+
+on m_ventana.create
+call super::create
+end on
+
+on m_ventana.destroy
+call super::destroy
+end on
+
+type m_vertical from m_sheet`m_vertical within m_ventana
+end type
+
+on m_vertical.create
+call super::create
+end on
+
+on m_vertical.destroy
+call super::destroy
+end on
+
+type m_horizontal from m_sheet`m_horizontal within m_ventana
+end type
+
+on m_horizontal.create
+call super::create
+end on
+
+on m_horizontal.destroy
+call super::destroy
+end on
+
+type m_completa from m_sheet`m_completa within m_ventana
+end type
+
+on m_completa.create
+call super::create
+end on
+
+on m_completa.destroy
+call super::destroy
+end on
+
+type m_cascada from m_sheet`m_cascada within m_ventana
+end type
+
+on m_cascada.create
+call super::create
+end on
+
+on m_cascada.destroy
+call super::destroy
+end on
+
+type m_-2 from m_sheet`m_-2 within m_ventana
+end type
+
+on m_-2.create
+call super::create
+end on
+
+on m_-2.destroy
+call super::destroy
+end on
+
+type m_arreglar_iconos from m_sheet`m_arreglar_iconos within m_ventana
+end type
+
+on m_arreglar_iconos.create
+call super::create
+end on
+
+on m_arreglar_iconos.destroy
+call super::destroy
+end on
+
+type m_-3 from m_sheet`m_-3 within m_ventana
+end type
+
+on m_-3.create
+call super::create
+end on
+
+on m_-3.destroy
+call super::destroy
+end on
+
+type m_barra from m_sheet`m_barra within m_ventana
+end type
+
+on m_barra.create
+call super::create
+end on
+
+on m_barra.destroy
+call super::destroy
+end on
+
+type m_arriba from m_sheet`m_arriba within m_barra
+end type
+
+on m_arriba.create
+call super::create
+end on
+
+on m_arriba.destroy
+call super::destroy
+end on
+
+type m_abajo from m_sheet`m_abajo within m_barra
+end type
+
+on m_abajo.create
+call super::create
+end on
+
+on m_abajo.destroy
+call super::destroy
+end on
+
+type m_izquierda from m_sheet`m_izquierda within m_barra
+end type
+
+on m_izquierda.create
+call super::create
+end on
+
+on m_izquierda.destroy
+call super::destroy
+end on
+
+type m_derecha from m_sheet`m_derecha within m_barra
+end type
+
+on m_derecha.create
+call super::create
+end on
+
+on m_derecha.destroy
+call super::destroy
+end on
+
+type m_-7 from m_sheet`m_-7 within m_barra
+end type
+
+on m_-7.create
+call super::create
+end on
+
+on m_-7.destroy
+call super::destroy
+end on
+
+type m_ocultar_barra from m_sheet`m_ocultar_barra within m_barra
+end type
+
+on m_ocultar_barra.create
+call super::create
+end on
+
+on m_ocultar_barra.destroy
+call super::destroy
+end on
+
+type m_-8 from m_sheet`m_-8 within m_barra
+end type
+
+on m_-8.create
+call super::create
+end on
+
+on m_-8.destroy
+call super::destroy
+end on
+
+type m_mostrar_textos from m_sheet`m_mostrar_textos within m_barra
+end type
+
+on m_mostrar_textos.create
+call super::create
+end on
+
+on m_mostrar_textos.destroy
+call super::destroy
+end on
+
+type m_ayuda from m_sheet`m_ayuda within m_registro_maq_tin
+end type
+
+on m_ayuda.create
+call super::create
+end on
+
+on m_ayuda.destroy
+call super::destroy
+end on
+
+type m_contenido from m_sheet`m_contenido within m_ayuda
+end type
+
+on m_contenido.create
+call super::create
+this.enabled = false
+end on
+
+on m_contenido.destroy
+call super::destroy
+end on
+
+type m_2 from m_sheet`m_2 within m_ayuda
+end type
+
+on m_2.create
+call super::create
+end on
+
+on m_2.destroy
+call super::destroy
+end on
+
+type m_acerca from m_sheet`m_acerca within m_ayuda
+end type
+
+on m_acerca.create
+call super::create
+end on
+
+on m_acerca.destroy
+call super::destroy
+end on
+
+type m_-l1012041151 from menu within m_edicion
+end type
+
+on m_-l1012041151.create
+call super::create
+this.text = "-"
+end on
+
+on m_-l1012041151.destroy
+call super::destroy
+end on
+
+type m_iram$$HEX1$$e100$$ENDHEX$$quinatintorer$$HEX1$$ed00$$ENDHEX$$a from menu within m_edicion
+end type
+
+event clicked;w_base lw_win
+
+lw_win = ParentWindow
+lw_win. Event key(Key1!,2)
+end event
+
+on m_iram$$HEX1$$e100$$ENDHEX$$quinatintorer$$HEX1$$ed00$$ENDHEX$$a.create
+call super::create
+this.text = "Ir a m$$HEX1$$e100$$ENDHEX$$quina tintorer$$HEX1$$ed00$$ENDHEX$$a~tCtrl+1"
+this.shortcut = 305
+end on
+
+on m_iram$$HEX1$$e100$$ENDHEX$$quinatintorer$$HEX1$$ed00$$ENDHEX$$a.destroy
+call super::destroy
+end on
+
+type m_iraactividades from menu within m_edicion
+end type
+
+event clicked;w_base lw_win
+
+lw_win = ParentWindow
+lw_win. Event key(Key2!,2)
+end event
+
+on m_iraactividades.create
+call super::create
+this.text = "Ir a actividades~tCtrl+2"
+this.shortcut = 306
+end on
+
+on m_iraactividades.destroy
+call super::destroy
+end on
+
+type m_iraoperaciones from menu within m_edicion
+end type
+
+event clicked;w_base lw_win
+
+lw_win = ParentWindow
+lw_win. Event key(Key3!,2)
+end event
+
+on m_iraoperaciones.create
+call super::create
+this.text = "Ir a operaciones~tCtrl+3"
+this.shortcut = 307
+end on
+
+on m_iraoperaciones.destroy
+call super::destroy
+end on
+
+type m_iragrupos from menu within m_edicion
+end type
+
+event clicked;w_base lw_win
+
+lw_win = ParentWindow
+lw_win. Event key(Key4!,2)
+end event
+
+on m_iragrupos.create
+call super::create
+this.text = "Ir a grupos~tCtrl+4"
+this.shortcut = 308
+end on
+
+on m_iragrupos.destroy
+call super::destroy
+end on
+
+type m_-l1611041700 from menu within m_procesos
+end type
+
+on m_-l1611041700.create
+call super::create
+this.text = "-"
+end on
+
+on m_-l1611041700.destroy
+call super::destroy
+end on
+
+type m_eliminarm$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a from menu within m_procesos
+end type
+
+on m_eliminarm$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a.create
+call super::create
+this.text = "Eliminar M$$HEX1$$e100$$ENDHEX$$quina de Tintorer$$HEX1$$ed00$$ENDHEX$$a"
+this.enabled = false
+end on
+
+on m_eliminarm$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a.destroy
+call super::destroy
+end on
+
