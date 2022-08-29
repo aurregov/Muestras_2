@@ -1,0 +1,91 @@
+HA$PBExportHeader$d_cons_muestrario.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=64 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=112 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes name=co_fabrica dbname="h_fmp_muestras.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes name=co_linea dbname="h_fmp_muestras.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes name=co_muestra dbname="h_fmp_muestras.co_muestra" )
+ column=(type=long update=yes updatewhereclause=yes name=co_talla dbname="h_fmp_muestras.co_talla" )
+ column=(type=long update=yes updatewhereclause=yes name=co_color dbname="h_fmp_muestras.co_color" )
+ column=(type=long update=yes updatewhereclause=yes name=cnt_opcion dbname="h_fmp_muestras.cnt_opcion" )
+ column=(type=long update=yes updatewhereclause=yes name=co_recurso dbname="h_fmp_muestras.co_recurso" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=id_peso dbname="h_fmp_muestras.id_peso" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_creacion dbname="h_fmp_muestras.fe_creacion" )
+ column=(type=long update=yes updatewhereclause=yes name=sw_excepcion dbname="h_fmp_muestras.sw_excepcion" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=de_cnt_opcion dbname="h_fmp_muestras.de_cnt_opcion" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="h_fmp_muestras.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="h_fmp_muestras.usuario" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="h_fmp_muestras.instancia" )
+ column=(type=long update=yes updatewhereclause=yes name=co_muestrario dbname="h_fmp_muestras.co_muestrario" )
+ column=(type=long update=yes updatewhereclause=yes name=co_diseno dbname="h_fmp_muestras.co_diseno" )
+ column=(type=long updatewhereclause=yes name=dt_muestras_ref_co_fabrica dbname="dt_muestras_ref.co_fabrica" )
+ column=(type=long updatewhereclause=yes name=dt_muestras_ref_co_linea dbname="dt_muestras_ref.co_linea" )
+ column=(type=long updatewhereclause=yes name=dt_muestras_ref_co_muestra dbname="dt_muestras_ref.co_muestra" )
+ column=(type=long updatewhereclause=yes name=dt_muestras_ref_co_talla dbname="dt_muestras_ref.co_talla" )
+ column=(type=long updatewhereclause=yes name=dt_muestras_ref_co_fabrica_ref dbname="dt_muestras_ref.co_fabrica_ref" )
+ column=(type=long updatewhereclause=yes name=dt_muestras_ref_co_linea_ref dbname="dt_muestras_ref.co_linea_ref" )
+ column=(type=long updatewhereclause=yes name=dt_muestras_ref_co_referencia_ref dbname="dt_muestras_ref.co_referencia_ref" )
+ column=(type=long updatewhereclause=yes name=dt_muestras_ref_co_talla_ref dbname="dt_muestras_ref.co_talla_ref" )
+ column=(type=long updatewhereclause=yes name=dt_muestras_ref_sw_copia_mo dbname="dt_muestras_ref.sw_copia_mo" )
+ column=(type=long updatewhereclause=yes name=dt_muestras_ref_sw_copia_ft dbname="dt_muestras_ref.sw_copia_ft" )
+ column=(type=long updatewhereclause=yes name=dt_muestras_ref_co_recurso dbname="dt_muestras_ref.co_recurso" )
+ column=(type=char(255) updatewhereclause=yes name=dt_muestras_ref_de_observacion dbname="dt_muestras_ref.de_observacion" )
+ column=(type=long updatewhereclause=yes name=dt_muestras_ref_co_tipo_asocia dbname="dt_muestras_ref.co_tipo_asocia" )
+ column=(type=datetime updatewhereclause=yes name=dt_muestras_ref_fe_creacion dbname="dt_muestras_ref.fe_creacion" )
+ column=(type=datetime updatewhereclause=yes name=dt_muestras_ref_fe_actualizacion dbname="dt_muestras_ref.fe_actualizacion" )
+ column=(type=char(8) updatewhereclause=yes name=dt_muestras_ref_usuario dbname="dt_muestras_ref.usuario" )
+ column=(type=char(20) updatewhereclause=yes name=dt_muestras_ref_instancia dbname="dt_muestras_ref.instancia" )
+ column=(type=long updatewhereclause=yes name=dt_muestras_ref_co_composicion dbname="dt_muestras_ref.co_composicion" )
+ retrieve="SELECT h_fmp_muestras.co_fabrica,   
+		h_fmp_muestras.co_linea,   
+		h_fmp_muestras.co_muestra,   
+		h_fmp_muestras.co_talla,   
+		h_fmp_muestras.co_color,   
+		h_fmp_muestras.cnt_opcion,   
+		h_fmp_muestras.co_recurso,   
+		h_fmp_muestras.id_peso,   
+		h_fmp_muestras.fe_creacion,   
+		h_fmp_muestras.sw_excepcion,   
+		h_fmp_muestras.de_cnt_opcion,   
+		h_fmp_muestras.fe_actualizacion,   
+		h_fmp_muestras.usuario,   
+		h_fmp_muestras.instancia,   
+		h_fmp_muestras.co_muestrario,   
+		h_fmp_muestras.co_diseno,   
+		dt_muestras_ref.co_fabrica,   
+		dt_muestras_ref.co_linea,   
+		dt_muestras_ref.co_muestra,   
+		dt_muestras_ref.co_talla,   
+		dt_muestras_ref.co_fabrica_ref,   
+		dt_muestras_ref.co_linea_ref,   
+		dt_muestras_ref.co_referencia_ref,   
+		dt_muestras_ref.co_talla_ref,   
+		dt_muestras_ref.sw_copia_mo,   
+		dt_muestras_ref.sw_copia_ft,   
+		dt_muestras_ref.co_recurso,   
+		dt_muestras_ref.de_observacion,   
+		dt_muestras_ref.co_tipo_asocia,   
+		dt_muestras_ref.fe_creacion,   
+		dt_muestras_ref.fe_actualizacion,   
+		dt_muestras_ref.usuario,   
+		dt_muestras_ref.instancia,   
+		dt_muestras_ref.co_composicion  
+ FROM h_fmp_muestras,   
+		dt_muestras_ref  
+WHERE h_fmp_muestras.co_fabrica = dt_muestras_ref.co_fabrica 
+AND 	dt_muestras_ref.co_linea = h_fmp_muestras.co_linea 
+AND 	dt_muestras_ref.co_muestra = h_fmp_muestras.co_muestra
+AND 	dt_muestras_ref.co_talla = h_fmp_muestras.co_talla
+AND 	h_fmp_muestras.co_fabrica = h_fmp_muestras.co_fabrica
+AND 	h_fmp_muestras.co_diseno = 1
+" )
+text(band=header alignment="2" text="Co Muestrario" border="0" color="33554432" x="9" y="8" height="56" width="306" html.valueishtml="0"  name=co_muestrario_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="1" tabsequence=150 border="0" color="33554432" x="9" y="8" height="68" width="439" format="[general]" html.valueishtml="0"  name=co_muestrario visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
