@@ -1,0 +1,121 @@
+HA$PBExportHeader$d_m_muestras_cp.srd
+$PBExportComments$Maestro de muestras
+release 7;
+datawindow(units=0 timer_interval=0 color=76788149 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=444 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="m_muestras.co_fabrica" validationmsg="'Dato no v$$HEX1$$e100$$ENDHEX$$lido'" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_linea dbname="m_muestras.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_muestra dbname="m_muestras.co_muestra" initial="0" validation="long(gettext())>=0" validationmsg="'Dato no v$$HEX1$$e100$$ENDHEX$$lido'" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=tipo_muestra dbname="m_muestras.tipo_muestra" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=de_muestra dbname="m_muestras.de_muestra" )
+ column=(type=long update=yes updatewhereclause=yes name=nu_solicitud dbname="m_muestras.nu_solicitud" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=co_cliente dbname="m_muestras.co_cliente" )
+ column=(type=long update=yes updatewhereclause=yes name=co_sucursal dbname="m_muestras.co_sucursal" )
+ column=(type=char(15) update=yes updatewhereclause=yes name=co_ref_exp dbname="m_muestras.co_ref_exp" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=de_coleccion dbname="m_muestras.de_coleccion" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=co_diseno_muestra dbname="m_muestras.co_diseno_muestra" )
+ column=(type=long update=yes updatewhereclause=yes name=co_grupo_vta dbname="m_muestras.co_grupo_vta" )
+ column=(type=long update=yes updatewhereclause=yes name=co_sgrupo_vta dbname="m_muestras.co_sgrupo_vta" )
+ column=(type=long update=yes updatewhereclause=yes name=co_tipoprod dbname="m_muestras.co_tipoprod" initial="10" )
+ column=(type=long update=yes updatewhereclause=yes name=co_tipo_tejido dbname="m_muestras.co_tipo_tejido" )
+ column=(type=long update=yes updatewhereclause=yes name=co_grupo_tlla dbname="m_muestras.co_grupo_tlla" initial="17" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="m_muestras.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="m_muestras.usuario" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="m_muestras.instancia" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=bpl_co_tipoprod dbname="m_muestras.bpl_co_tipoprod" initial="M" )
+ column=(type=char(1000) update=yes updatewhereclause=yes name=de_observacion dbname="m_muestras.de_observacion" )
+ column=(type=char(60) updatewhereclause=yes name=de_cliente dbname="de_cliente" )
+ column=(type=long update=yes updatewhereclause=yes name=id_tipo_med dbname="m_muestras.id_tipo_med" )
+ column=(type=char(60) updatewhereclause=yes name=de_tipo_med dbname="de_tipo_med" )
+ column=(type=long update=yes updatewhereclause=yes name=id_tipo_graf dbname="m_muestras.id_tipo_graf" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=desarrollador dbname="m_muestras.desarrollador" )
+ column=(type=long update=yes updatewhereclause=yes name=co_ejecutiva dbname="m_muestras.co_ejecutiva" )
+ column=(type=char(60) updatewhereclause=yes name=de_ejecutiva dbname="de_ejecutiva" )
+ column=(type=date update=yes updatewhereclause=yes name=fe_desarrollo dbname="m_muestras.fe_desarrollo" )
+ column=(type=date update=yes updatewhereclause=yes name=fe_entrega dbname="m_muestras.fe_entrega" )
+ retrieve="SELECT  m_muestras.co_fabrica ,
+           m_muestras.co_linea ,
+           m_muestras.co_muestra ,
+           m_muestras.tipo_muestra ,
+           m_muestras.de_muestra ,
+           m_muestras.nu_solicitud ,
+           m_muestras.co_cliente ,
+           m_muestras.co_sucursal ,
+           m_muestras.co_ref_exp ,
+           m_muestras.de_coleccion ,
+           m_muestras.co_diseno_muestra ,
+           m_muestras.co_grupo_vta ,
+           m_muestras.co_sgrupo_vta ,
+           m_muestras.co_tipoprod ,
+           m_muestras.co_tipo_tejido ,
+           m_muestras.co_grupo_tlla ,
+           m_muestras.fe_actualizacion ,
+           m_muestras.usuario ,
+           m_muestras.instancia,
+           m_muestras.bpl_co_tipoprod,
+           m_muestras.de_observacion,
+           to_char60() as de_cliente, 
+           m_muestras.id_tipo_med,
+           to_char60() as de_tipo_med,
+           m_muestras.id_tipo_graf,
+           m_muestras.desarrollador,   
+           m_muestras.co_ejecutiva,
+           to_char60() as de_ejecutiva,
+           m_muestras.fe_desarrollo,  
+           m_muestras.fe_entrega
+        FROM        m_muestras      
+        WHERE ( m_muestras.co_fabrica = :a_fabrica ) and          ( m_muestras.co_linea = :a_linea ) and          ( m_muestras.co_muestra = :a_muestra )   " update="m_muestras" updatewhere=0 updatekeyinplace=yes arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number)) )
+text(band=detail alignment="0" text="Cliente" border="0" color="0" x="2962" y="4" height="56" width="155"  name=co_cliente_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Sucursal" border="0" color="0" x="3159" y="4" height="56" width="219"  name=co_sucursal_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=80 border="5" color="0" x="3150" y="72" height="60" width="219" format="[general]"  name=co_sucursal  tag="&NN=Sucursal" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=7 alignment="0" tabsequence=70 border="5" color="0" x="2967" y="72" height="60" width="155" format="[general]"  name=co_cliente  tag="&NN=C$$HEX1$$f300$$ENDHEX$$digo cliente" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+text(band=detail alignment="0" text="Tipo Tejido" border="0" color="0" x="14" y="296" height="56" width="379"  name=co_tipo_tejido_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="0" tabsequence=150 border="5" color="0" x="14" y="364" height="60" width="379" format="[general]"  name=co_tipo_tejido  tag="&NN=Tipo tejido" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+text(band=detail alignment="0" text="Grupo Talla" border="0" color="0" x="416" y="296" height="56" width="439"  name=co_grupo_tlla_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="0" tabsequence=160 border="5" color="0" x="416" y="364" height="60" width="439" format="[general]"  name=co_grupo_tlla  tag="&NN=Grupo talla" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+text(band=detail alignment="0" text="Forma de tejer" border="0" color="0" x="873" y="296" height="56" width="334"  name=t_1  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=20 alignment="0" tabsequence=170 border="5" color="0" x="873" y="364" height="60" width="334" format="[general]"  name=bpl_co_tipoprod edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+text(band=detail alignment="0" text="Tipo medida" border="0" color="0" x="1234" y="296" height="56" width="261"  name=t_3  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=23 alignment="0" tabsequence=180 border="5" color="0" x="1230" y="364" height="60" width="114" format="[general]"  name=id_tipo_med edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=24 alignment="0" tabsequence=32766 border="5" color="0" x="1367" y="364" height="60" width="430" format="[general]"  name=de_tipo_med edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="Tipo grafico" border="0" color="0" x="1824" y="292" height="52" width="379"  name=t_4  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=25 alignment="0" tabsequence=190 border="5" color="0" x="1824" y="364" height="60" width="379" format="[general]"  name=id_tipo_graf edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+text(band=detail alignment="0" text="Desarrollador" border="0" color="0" x="2226" y="296" height="56" width="375"  name=t_5  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=26 alignment="0" tabsequence=200 border="5" color="0" x="2226" y="364" height="60" width="375" format="[general]"  name=desarrollador edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1089992695" )
+column(band=detail id=27 alignment="0" tabsequence=210 border="5" color="0" x="2624" y="364" height="60" width="119" format="[general]"  name=co_ejecutiva edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=28 alignment="0" tabsequence=32766 border="5" color="0" x="2761" y="364" height="60" width="603" format="[general]"  name=de_ejecutiva edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="Ejecutivo(a)" border="0" color="0" x="2624" y="296" height="56" width="375"  name=t_6  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=50 border="5" color="0" x="1701" y="72" height="60" width="416" format="[general]"  name=co_ref_exp  tag="&NN=Estilo cliente" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+text(band=detail alignment="0" text="Estilo cliente" border="0" color="0" x="1701" y="4" height="56" width="416"  name=co_ref_exp_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Descripci$$HEX1$$f300$$ENDHEX$$n del desarrollo" border="0" color="0" x="2139" y="4" height="56" width="805"  name=de_muestra_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=60 border="5" color="0" x="2139" y="72" height="60" width="805" format="[general]"  name=de_muestra  tag="&NN=Descripci$$HEX1$$f300$$ENDHEX$$n Desarrollo" edit.limit=50 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=4 alignment="0" tabsequence=40 border="5" color="0" x="1157" y="72" height="60" width="521" format="[general]"  name=tipo_muestra  tag="&NN=Tipo" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+text(band=detail alignment="0" text="Tipo" border="0" color="0" x="1157" y="4" height="56" width="521"  name=tipo_muestra_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Muestra" border="0" color="0" x="667" y="4" height="56" width="187"  name=co_muestra_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=32766 border="5" color="0" x="667" y="72" height="60" width="187" format="[general]"  name=co_muestra  tag="&A" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+column(band=detail id=6 alignment="0" tabsequence=30 border="5" color="0" x="873" y="72" height="60" width="261" format="[general]"  name=nu_solicitud  tag="&A&NN=Solicitud" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+text(band=detail alignment="0" text="Solicitud" border="0" color="0" x="873" y="4" height="56" width="261"  name=nu_solicitud_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="L$$HEX1$$ed00$$ENDHEX$$nea" border="0" color="0" x="457" y="4" height="56" width="187"  name=co_linea_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=20 border="5" color="0" x="457" y="72" height="60" width="187" format="[general]"  name=co_linea  tag="&A&NN=L$$HEX1$$ed00$$ENDHEX$$nea" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+text(band=detail alignment="0" text="F$$HEX1$$e100$$ENDHEX$$brica" border="0" color="0" x="14" y="4" height="56" width="421"  name=co_fabrica_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=10 border="5" color="0" x="14" y="72" height="60" width="421" format="[general]"  name=co_fabrica  tag="&A&NN=F$$HEX1$$e100$$ENDHEX$$brica" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=22 alignment="0" tabsequence=32766 border="5" color="0" x="14" y="216" height="60" width="576" format="[general]"  name=de_cliente edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="79017397" )
+column(band=detail id=10 alignment="0" tabsequence=90 border="5" color="0" x="613" y="216" height="60" width="338" format="[general]"  name=de_coleccion  tag="&NN=Orden/Colecci$$HEX1$$f300$$ENDHEX$$n" edit.limit=0 edit.case=upper edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=11 alignment="0" tabsequence=100 border="5" color="0" x="974" y="216" height="60" width="329" format="[general]"  name=co_diseno_muestra  tag="&NN=Cod Dise$$HEX1$$f100$$ENDHEX$$o" edit.limit=10 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=12 alignment="0" tabsequence=110 border="5" color="0" x="1326" y="216" height="60" width="453" format="[general]"  name=co_grupo_vta  tag="&NN=Grupo Venta" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=13 alignment="0" tabsequence=120 border="5" color="0" x="1801" y="216" height="60" width="361" format="[general]"  name=co_sgrupo_vta  tag="&NN=Subgrupo venta" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=14 alignment="0" tabsequence=130 border="5" color="0" x="2185" y="216" height="60" width="398" format="[general]"  name=co_tipoprod  tag="&NN=Tipo producto" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+text(band=detail alignment="0" text="Nombre cliente" border="0" color="0" x="14" y="148" height="56" width="325"  name=t_2  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Orden/Colec" border="0" color="0" x="613" y="148" height="56" width="338"  name=co_coleccion_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Cod. Dise$$HEX1$$f100$$ENDHEX$$o" border="0" color="0" x="974" y="148" height="56" width="329"  name=co_diseno_muestra_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Grupo venta" border="0" color="0" x="1326" y="148" height="56" width="453"  name=co_grupo_vta_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Subgrupo venta" border="0" color="0" x="1801" y="148" height="56" width="361"  name=co_sgrupo_vta_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Tipo producto" border="0" color="0" x="2185" y="148" height="56" width="398"  name=co_tipoprod_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=29 alignment="0" tabsequence=32766 border="5" color="0" x="2606" y="216" height="60" width="329" format="[general]"  name=fe_desarrollo edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="Fe. Desarrollo" border="0" color="0" x="2606" y="148" height="56" width="329"  name=t_7  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=30 alignment="0" tabsequence=140 border="5" color="0" x="2962" y="216" height="60" width="411" format="[general]"  name=fe_entrega edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+text(band=detail alignment="0" text="Fe. Entrega" border="0" color="0" x="2962" y="148" height="56" width="251"  name=t_8  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
