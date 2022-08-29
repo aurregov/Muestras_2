@@ -1,0 +1,19 @@
+HA$PBExportHeader$d_ext_chab_chab.srd
+$PBExportComments$DWO external. Utilizado en el registro de chablones para la busqueda de chablones en chablones
+release 8;
+datawindow(units=0 timer_interval=0 color=67108864 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=140 color="536870912" )
+table(column=(type=char(40) updatewhereclause=no name=de_chablon dbname="de_chablon" )
+ column=(type=long updatewhereclause=no name=cantidad dbname="cantidad" validation="Integer(gettext())>0" validationmsg="'N$$HEX1$$fa00$$ENDHEX$$mero de cantidad no v$$HEX1$$e100$$ENDHEX$$lido'" )
+ column=(type=long updatewhereclause=no name=calibre dbname="calibre" validation="Integer(gettext())>0" validationmsg="'N$$HEX1$$fa00$$ENDHEX$$mero de calibre no v$$HEX1$$e100$$ENDHEX$$lido'" )
+ )
+text(band=detail alignment="0" text="Descripci$$HEX1$$f300$$ENDHEX$$n de Chablon:" border="0" color="33554432" x="9" y="4" height="60" width="535" html.valueishtml="0"  name=de_chablon_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=10 border="5" color="33554432" x="9" y="72" height="60" width="869" format="[general]" html.valueishtml="0"  name=de_chablon visible="1" edit.limit=40 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=detail alignment="0" text="Cantidad:" border="0" color="33554432" x="901" y="4" height="60" width="215" html.valueishtml="0"  name=cantidad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=20 border="5" color="33554432" x="901" y="72" height="60" width="389" format="[general]" html.valueishtml="0"  name=cantidad visible="1" edit.name="#####" editmask.mask="#####" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=detail alignment="0" text="Calibre:" border="0" color="33554432" x="1312" y="4" height="60" width="229" html.valueishtml="0"  name=calibre_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=30 border="5" color="33554432" x="1317" y="72" height="60" width="393" format="[general]" html.valueishtml="0"  name=calibre visible="1" dddw.name=d_dddw_mu_m_calibre_chab dddw.displaycolumn=de_calibre dddw.datacolumn=id_calibre dddw.percentwidth=200 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
