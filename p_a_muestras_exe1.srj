@@ -1,0 +1,44 @@
+HA$PBExportHeader$p_a_muestras_exe1.srj
+$PBExportComments$Generated Application Executable Project
+EXE:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\a_muestras.exe,,0,1,0
+CMP:0,0,0,2,0,0
+COM:Sybase, Inc.
+DES:Sybase, Inc. Product File
+CPY:
+PRD:PowerBuilder Enterprise Series
+PVN:1,0,0,1
+PVS:1,0,0,1
+FVN:1,0,0,1
+FVS:1,0,0,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\muestras.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\ancestor.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\busquedas.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\general.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\modifiable.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\calendario.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\dddw.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\dw_xls.pbd,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\gantt.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\mano_obra.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\mantenimiento_programacion.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\mat_prima.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\medidas_ref.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\movimiento_orden.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\mue_a_ref.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\muestras_mtto.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\muestrasdw.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\muestrasfx.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\muestrasltd.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\muestrasmn.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\muestrasw.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\orden_pdn.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\programacion_ord.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\reporte_muestras.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\reportes_orden.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\wilfor.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\complementomuestras.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\materialessap.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\rfc_sap.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\mantenimiento_muestras.pbl,,1
+PBD:D:\Fabrica Software\Desarrollo\Muestras\Fuentes\servicios_comunes.pbl,,1
+
