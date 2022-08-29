@@ -1,0 +1,14 @@
+HA$PBExportHeader$str_parametros_conexion.srs
+$PBExportComments$Parametros de conexion al ambiente de sap
+global type str_parametros_conexion from structure
+	string		applicationserver[]
+	boolean		autologon[]
+	string		client[]
+	string		destination[]
+	string		language[]
+	string		password[]
+	string		systemcode[]
+	string		systemnumber[]
+	string		user[]
+end type
+
