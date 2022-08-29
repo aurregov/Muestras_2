@@ -1,0 +1,41 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "muestrasmn.pbl" "";
+@end;
+@begin Objects
+ "m_turno.srm" "muestrasmn.pbl";
+ "m_mat_prima_referencia.srm" "muestrasmn.pbl";
+ "m_report.srm" "muestrasmn.pbl";
+ "m_main.srm" "muestrasmn.pbl";
+ "m_report_medidas_ref.srm" "muestrasmn.pbl";
+ "m_registro_chablon.srm" "muestrasmn.pbl";
+ "m_registro_bordado.srm" "muestrasmn.pbl";
+ "m_muestra1.srm" "muestrasmn.pbl";
+ "m_principal_bk.srm" "muestrasmn.pbl";
+ "m_programacion_orden.srm" "muestrasmn.pbl";
+ "m_sheet_solicitud.srm" "muestrasmn.pbl";
+ "m_mantenimiento_simple.srm" "muestrasmn.pbl";
+ "m_inf_ordenes_proceso.srm" "muestrasmn.pbl";
+ "m_registro_maq_tin.srm" "muestrasmn.pbl";
+ "m_tinta_antideslizante.srm" "muestrasmn.pbl";
+ "m_mat_prima_muestra.srm" "muestrasmn.pbl";
+ "m_medidas_ref.srm" "muestrasmn.pbl";
+ "m_reporte_simple.srm" "muestrasmn.pbl";
+ "m_estado_muestras.srm" "muestrasmn.pbl";
+ "m_grupo_muestras.srm" "muestrasmn.pbl";
+ "m_medidas_mue.srm" "muestrasmn.pbl";
+ "m_orden_pdn.srm" "muestrasmn.pbl";
+ "m_estado_muestra.srm" "muestrasmn.pbl";
+ "m_actividad_muestras.srm" "muestrasmn.pbl";
+ "m_principal.srm" "muestrasmn.pbl";
+ "m_ref_muestra.srm" "muestrasmn.pbl";
+ "m_proceso_muestras.srm" "muestrasmn.pbl";
+ "m_mat_prima.srm" "muestrasmn.pbl";
+ "m_ref_firme.srm" "muestrasmn.pbl";
+ "m_reacomodar_programacion.srm" "muestrasmn.pbl";
+ "m_prueba.srm" "muestrasmn.pbl";
+ "m_muestra.srm" "muestrasmn.pbl";
+ "m_frame.srm" "muestrasmn.pbl";
+ "m_sheet.srm" "muestrasmn.pbl";
+ "m_imprimir_solicitud_servicio.srm" "muestrasmn.pbl";
+@end;
