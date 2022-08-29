@@ -1,0 +1,43 @@
+HA$PBExportHeader$d_dias_orden_excel.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=128 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=dt_mu_ord_nro_orden dbname="dt_mu_ord.nro_orden" )
+ column=(type=char(30) updatewhereclause=yes name=desarrollador dbname="desarrollador" )
+ column=(type=datetime updatewhereclause=yes name=dt_mu_ord_fe_creacion dbname="dt_mu_ord.fe_creacion" )
+ column=(type=datetime updatewhereclause=yes name=dt_mu_ord_fe_aprox dbname="dt_mu_ord.fe_aprox" )
+ column=(type=long updatewhereclause=yes name=dias dbname="dias" )
+ retrieve="
+ SELECT dt_mu_ord.nu_orden as nro_orden,                                              
+        sp_desc_desarrollador(m_muestras.desarrollador) as desarrollador,
+        dt_mu_ord.fe_creacion as fe_creacion,                                           
+        dt_mu_ord.fe_pr_apro as fe_aprox,                                            
+        sp_dias(dt_mu_ord.fe_creacion,dt_mu_ord.fe_pr_apro) as dias      
+   FROM dt_mu_ord,                                                       
+        m_muestras                                                       
+  WHERE ( m_muestras.co_fabrica = dt_mu_ord.co_fabrica )                 
+    AND ( m_muestras.co_linea = dt_mu_ord.co_linea )                     
+    AND ( m_muestras.co_muestra = dt_mu_ord.co_muestra )                 
+    AND ( dt_mu_ord.condicion = 7 )                                      
+    AND ( dt_mu_ord.fe_pr_apro >= :adt_fecha_inicial  )                                     
+    AND ( dt_mu_ord.fe_pr_apro <= :adt_fecha_final );
+" arguments=(("adt_fecha_inicial", datetime),("adt_fecha_final", datetime)) )
+text(band=header alignment="2" text="Desarrollador" border="0" color="33554432" x="9" y="8" height="56" width="709" html.valueishtml="0"  name=desarrollador_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dt Mu Ord
+Fe Creacion" border="0" color="33554432" x="727" y="8" height="112" width="503" html.valueishtml="0"  name=dt_mu_ord_fe_creacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dias" border="0" color="33554432" x="1239" y="8" height="56" width="274" html.valueishtml="0"  name=dias_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Dt Mu Ord Nro Orden" border="0" color="0" x="1522" y="4" height="76" width="448" html.valueishtml="0"  name=dt_mu_ord_nro_orden_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Dt Mu Ord Fe Aprox" border="0" color="0" x="1979" y="4" height="76" width="658" html.valueishtml="0"  name=dt_mu_ord_fe_aprox_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="33554432" x="9" y="8" height="68" width="709" format="[general]" html.valueishtml="0"  name=desarrollador visible="1" edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="33554432" x="727" y="8" height="68" width="503" format="[shortdate] [time]" html.valueishtml="0"  name=dt_mu_ord_fe_creacion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="1" tabsequence=32766 border="0" color="33554432" x="1239" y="8" height="68" width="274" format="[general]" html.valueishtml="0"  name=dias visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="33554432" x="1522" y="0" height="56" width="448" format="[general]" html.valueishtml="0"  name=dt_mu_ord_nro_orden visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="33554432" x="1979" y="0" height="56" width="658" format="[shortdate] [time]" html.valueishtml="0"  name=dt_mu_ord_fe_aprox visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
