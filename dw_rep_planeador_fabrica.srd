@@ -1,0 +1,84 @@
+HA$PBExportHeader$dw_rep_planeador_fabrica.srd
+release 7;
+datawindow(units=3 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 0 print.margin.right = 0 print.margin.top = 0 print.margin.bottom = 0 print.paper.source = 0 print.paper.size = 1 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=2143 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=529 color="536870912" )
+detail(height=0 color="536870912"  height.autosize=yes)
+table(column=(type=long update=yes updatewhereclause=yes name=co_fabricae dbname="co_fabricae" )
+ column=(type=decimal(0) updatewhereclause=yes name=f_activas dbname="f_activas" )
+ column=(type=decimal(0) updatewhereclause=yes name=f_programados dbname="f_programados" )
+ column=(type=decimal(0) updatewhereclause=yes name=f_lotes dbname="f_lotes" )
+ column=(type=decimal(0) updatewhereclause=yes name=f_bolsa dbname="f_bolsa" )
+ column=(type=decimal(0) updatewhereclause=yes name=f_existencia dbname="f_existencia" )
+ column=(type=decimal(0) updatewhereclause=yes name=f_pendiente dbname="f_pendiente" )
+ column=(type=decimal(0) updatewhereclause=yes name=f_programado dbname="f_programado" )
+ column=(type=decimal(0) updatewhereclause=yes name=f_ped_mes dbname="f_ped_mes" )
+ column=(type=decimal(0) updatewhereclause=yes name=f_ped_ano dbname="f_ped_ano" )
+ column=(type=decimal(0) updatewhereclause=yes name=f_inv_real dbname="f_inv_real" )
+ column=(type=decimal(0) updatewhereclause=yes name=f_pos dbname="f_pos" )
+ column=(type=decimal(0) updatewhereclause=yes name=f_1p dbname="f_1p" )
+ column=(type=decimal(0) updatewhereclause=yes name=f_2p dbname="f_2p" )
+ column=(type=decimal(0) updatewhereclause=yes name=f_sem_pos dbname="f_sem_pos" )
+ column=(type=decimal(0) updatewhereclause=yes name=f_sem_1p dbname="f_sem_1p" )
+ column=(type=decimal(0) updatewhereclause=yes name=f_sem_2p dbname="f_sem_2p" )
+ column=(type=long updatewhereclause=yes name=semana dbname="semana" )
+ column=(type=date updatewhereclause=yes name=fe_proceso dbname="fe_proceso" )
+ column=(type=char(8) updatewhereclause=yes name=usuario dbname="usuario" )
+ column=(type=char(80) updatewhereclause=yes name=cr_muestrario dbname="cr_muestrario" )
+ retrieve="  SELECT t_plndor.co_fabricae,  
+         sum(t_plndor.nu_maq_act) f_activas, 
+         sum(t_plndor.ca_progr) f_programados,   
+         sum(t_plndor.ca_lotes) f_lotes,   
+         sum(t_plndor.ca_bolsa) f_bolsa,   
+         sum(t_plndor.exstncia) f_existencia,   
+         sum(t_plndor.pndnte) f_pendiente,   
+         sum(t_plndor.prgrmdo) f_programado,   
+         sum(t_plndor.pedmes) f_ped_mes,   
+         sum(t_plndor.pedano) f_ped_ano,   
+         sum(t_plndor.invreal) f_inv_real,   
+         sum(t_plndor.pos) f_pos,   
+         sum(t_plndor.ca_1p) f_1p,   
+         sum(t_plndor.ca_2p) f_2p,
+         sum(t_plndor_info.sem_pos) f_sem_pos,
+         sum(t_plndor_info.sem_1p) f_sem_1p,
+         sum(t_plndor_info.sem_2p) f_sem_2p,
+         t_plndor_info.semana,
+         t_plndor_info.fe_proceso,
+         t_plndor_info.usuario,
+         t_plndor_info.cr_muestrario
+    FROM t_plndor,
+         t_plndor_info
+where t_plndor.co_fabricae 	= :fabrica 
+group by t_plndor.co_fabricae,
+         t_plndor_info.semana,
+         t_plndor_info.fe_proceso,
+         t_plndor_info.usuario,
+         t_plndor_info.cr_muestrario
+ORDER BY t_plndor.co_fabricae ASC" arguments=(("fabrica", number),("usuario_i", string),("ano", number))  sort="co_fabricae A " )
+group(level=1 header.height=0 trailer.height=502 by=("co_fabricae" ) header.color="536870912" trailer.color="536870912" )
+compute(band=header alignment="0" expression="bitmap ('C:\graficos\FABRICA'+String(2)+'.BMP' ) "border="0" color="0" x="105" y="52" height="2037" width="3598" format="[General]"  name=compute_12  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=header alignment="0" expression="String(today(),'yyyy/mm/dd')"border="0" color="0" x="14763" y="502" height="423" width="1905" format="[general]"  name=compute_2  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="INFORME PLANEADOR" border="0" color="0" x="7196" y="52" height="423" width="4921"  name=t_5  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=header alignment="0" expression="'P$$HEX1$$e100$$ENDHEX$$gina ' + page() + ' de ' + pageCount()"border="0" color="0" x="14710" y="52" height="423" width="4683" format="[general]"  name=compute_3  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=header alignment="0" expression="now()"border="0" color="0" x="16642" y="502" height="423" width="2725" format="[time]"  name=compute_4  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=header alignment="0" expression="now()"border="0" color="0" x="16668" y="502" height="423" width="2725" format="[time]"  name=compute_8  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=header alignment="0" expression="'P$$HEX1$$e100$$ENDHEX$$gina ' + page() + ' de ' + pageCount()"border="0" color="0" x="14710" y="52" height="423" width="4683" format="[general]"  name=compute_5  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=header alignment="0" expression="String(today(),'yyyy/mm/dd')"border="0" color="0" x="14710" y="502" height="423" width="1905" format="[general]"  name=compute_6  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=header alignment="0" expression=" usuario_i "border="0" color="0" x="14710" y="926" height="423" width="4683" format="[GENERAL]"  name=compute_9  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=trailer.1 alignment="1" expression="sum(f_lotes+f_bolsa for group 1) "border="0" color="0" x="7328" y="53" height="370" width="899" format="[General]"  name=f_proceso  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=trailer.1 alignment="1" expression="sum(f_programados for group 1) "border="0" color="0" x="8281" y="53" height="370" width="899" format="[General]"  name=f_programados  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=trailer.1 alignment="1" expression="sum( f_activas for group 1)"border="0" color="0" x="9260" y="53" height="370" width="926" format="######"  name=f_activas  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=trailer.1 alignment="1" expression="sum(f_existencia for group 1)"border="0" color="0" x="10239" y="53" height="370" width="926" format="######"  name=f_existencia  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=trailer.1 alignment="1" expression="sum(f_programados for group 1)"border="0" color="0" x="11218" y="53" height="370" width="926" format="######"  name=f_ped_programados  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=trailer.1 alignment="1" expression="sum(f_pendiente for group 1) "border="0" color="0" x="12197" y="53" height="370" width="926" format="######"  name=f_ped_pendientes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=trailer.1 alignment="1" expression="sum(f_ped_mes for group 1) "border="0" color="0" x="13149" y="53" height="370" width="926" format="######"  name=f_ped_mes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=trailer.1 alignment="1" expression="sum(f_ped_ano for group 1) "border="0" color="0" x="14128" y="53" height="370" width="926" format="######"  name=f_ped_ano  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=trailer.1 alignment="1" expression="sum(f_inv_real for group 1) "border="0" color="0" x="15107" y="53" height="370" width="926" format="######"  name=f_inv_real  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=trailer.1 alignment="1" expression="sum(f_pos for group 1) "border="0" color="0" x="16086" y="53" height="370" width="926" format="######"  name=f_pos  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=trailer.1 alignment="1" expression="sum(f_1p for group 1)"border="0" color="0" x="17039" y="53" height="370" width="926" format="######"  name=f_1p  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=trailer.1 alignment="1" text="TOTAL FABRICA" border="0" color="0" x="4656" y="53" height="370" width="2381"  name=t_17  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=trailer.1 alignment="1" expression="sum(f_2p for group 1) "border="0" color="0" x="18044" y="53" height="370" width="926" format="######"  name=f_2p  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=footer alignment="1" expression="~"Datos procesados por ~"+usuario+ ~" el ~"+ fe_proceso +~"  para ~"+ cr_muestrario "border="0" color="0" x="26" y="26" height="396" width="13282" format="[GENERAL]"  name=compute_23  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
