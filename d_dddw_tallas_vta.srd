@@ -1,0 +1,34 @@
+HA$PBExportHeader$d_dddw_tallas_vta.srd
+$PBExportComments$Muestra las tallas de una referencia en particular
+release 9;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_talla dbname="h_preref.co_talla" )
+ column=(type=char(15) updatewhereclause=yes name=de_talla dbname="m_tallas_x_grupo.de_talla" )
+ retrieve="  SELECT UNIQUE dt_ref_x_col.co_talla,   
+         m_tallas_x_grupo.de_talla  
+    FROM h_preref,   
+         m_tallas_x_grupo,   
+         dt_ref_x_col  
+   WHERE ( h_preref.co_grupo_tlla     = m_tallas_x_grupo.co_grupo_tlla ) and  
+         ( h_preref.co_fabrica        = dt_ref_x_col.co_fabrica ) and  
+         ( h_preref.co_linea          = dt_ref_x_col.co_linea ) and  
+         ( h_preref.co_referencia     = dt_ref_x_col.co_referencia ) and  
+         ( dt_ref_x_col.co_talla      = m_tallas_x_grupo.co_talla ) and  
+         ( dt_ref_x_col.co_fabrica    = :a_fabrica ) AND  
+         ( dt_ref_x_col.co_linea      = :a_linea ) AND  
+         ( dt_ref_x_col.co_referencia = :a_referencia ) AND  
+         ( dt_ref_x_col.co_calidad    = :a_calidad   )    
+" arguments=(("a_fabrica", number),("a_linea", number),("a_referencia", number),("a_calidad", number))  sort="de_talla A " )
+text(band=header alignment="2" text="C$$HEX1$$f300$$ENDHEX$$digo" border="6" color="0" x="9" y="4" height="56" width="229" html.valueishtml="0"  name=co_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="77442227" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="247" y="4" height="56" width="530" html.valueishtml="0"  name=m_tallas_x_grupo_de_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="77442227" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="5" color="0" x="247" y="4" height="60" width="530" format="[general]" html.valueishtml="0"  name=de_talla visible="1" edit.limit=15 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="5" color="0" x="9" y="4" height="56" width="229" format="[general]" html.valueishtml="0"  name=co_talla visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
