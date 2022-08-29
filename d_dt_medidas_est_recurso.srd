@@ -1,0 +1,129 @@
+HA$PBExportHeader$d_dt_medidas_est_recurso.srd
+release 7;
+datawindow(units=0 timer_interval=0 color=76788149 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=76 color="536870912" )
+summary(height=8 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="dt_medidas_est.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_linea dbname="dt_medidas_est.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_muestra dbname="dt_medidas_est.co_muestra" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_talla dbname="dt_medidas_est.co_talla" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_tipoprod dbname="dt_medidas_est.co_tipoprod" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_partebas dbname="dt_medidas_est.co_partebas" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=ca_largo dbname="dt_medidas_est.ca_largo" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=ca_ancho dbname="dt_medidas_est.ca_ancho" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=ca_largo_sine dbname="dt_medidas_est.ca_largo_sine" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=ca_ancho_sine dbname="dt_medidas_est.ca_ancho_sine" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=ca_largo_repos dbname="dt_medidas_est.ca_largo_repos" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=ca_ancho_repos dbname="dt_medidas_est.ca_ancho_repos" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=ca_desperdicio dbname="dt_medidas_est.ca_desperdicio" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=cadena dbname="dt_medidas_est.cadena" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="dt_medidas_est.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="dt_medidas_est.usuario" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=instancia dbname="dt_medidas_est.instancia" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=pasadas dbname="dt_medidas_est.pasadas" )
+ column=(type=char(10) updatewhereclause=yes name=ca_largo_pul dbname="ca_largo_pul" )
+ column=(type=char(10) updatewhereclause=yes name=ca_ancho_pul dbname="ca_ancho_pul" )
+ column=(type=char(10) updatewhereclause=yes name=ca_largo_sine_pul dbname="ca_largo_sine_pul" )
+ column=(type=char(10) updatewhereclause=yes name=ca_ancho_sine_pul dbname="ca_ancho_sine_pul" )
+ column=(type=char(10) updatewhereclause=yes name=ca_largo_repos_pul dbname="ca_largo_repos_pul" )
+ column=(type=char(10) updatewhereclause=yes name=ca_ancho_repos_pul dbname="ca_ancho_repos_pul" )
+ column=(type=char(10) updatewhereclause=yes name=ca_desperdicio_pul dbname="ca_desperdicio_pul" )
+ column=(type=char(10) updatewhereclause=yes name=ca_ancho_maq_pul dbname="ca_ancho_maq_pul" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=ca_ancho_maq dbname="dt_medidas_est.ca_ancho_maq" )
+ column=(type=char(250) update=yes updatewhereclause=yes name=de_observacion dbname="dt_medidas_est.de_observacion" )
+ column=(type=long update=yes updatewhereclause=yes name=co_diseno dbname="dt_medidas_est.co_diseno" )
+ column=(type=long updatewhereclause=yes name=m_partebas_orden_partebas dbname="m_partebas.orden_partebas" )
+ column=(type=long update=yes updatewhereclause=yes name=co_recurso dbname="dt_medidas_est.co_recurso" )
+ column=(type=char(60) updatewhereclause=yes name=de_recurso dbname="de_recurso" )
+ column=(type=long updatewhereclause=yes name=orden_partebas dbname="m_partebas.orden_partebas" )
+ retrieve="  SELECT dt_medidas_est.co_fabrica,   
+         dt_medidas_est.co_linea,   
+         dt_medidas_est.co_muestra,   
+         dt_medidas_est.co_talla,   
+         dt_medidas_est.co_tipoprod,   
+         dt_medidas_est.co_partebas,   
+         dt_medidas_est.ca_largo,   
+         dt_medidas_est.ca_ancho,   
+         dt_medidas_est.ca_largo_sine,   
+         dt_medidas_est.ca_ancho_sine,   
+         dt_medidas_est.ca_largo_repos,   
+         dt_medidas_est.ca_ancho_repos,   
+         dt_medidas_est.ca_desperdicio,   
+         dt_medidas_est.cadena,   
+         dt_medidas_est.fe_actualizacion,   
+         dt_medidas_est.usuario,   
+         dt_medidas_est.instancia,   
+			dt_medidas_est.pasadas,  
+         '          ' as ca_largo_pul,   
+         '          ' as ca_ancho_pul, 
+         '          ' as ca_largo_sine_pul,   
+         '          ' as ca_ancho_sine_pul, 
+         '          ' as ca_largo_repos_pul, 
+ 			'          ' as ca_ancho_repos_pul, 
+			'          ' as ca_desperdicio_pul,
+         '          ' as ca_ancho_maq_pul,
+         dt_medidas_est.ca_ancho_maq,
+         dt_medidas_est.de_observacion,
+         dt_medidas_est.co_diseno,
+         m_partebas.orden_partebas,
+         dt_medidas_est.co_recurso,
+         to_char60() as de_recurso,
+         m_partebas.orden_partebas
+    FROM dt_medidas_est,m_partebas   
+   WHERE ( dt_medidas_est.co_fabrica = :a_fabrica ) AND  
+         ( dt_medidas_est.co_linea = :a_linea ) AND  
+         ( dt_medidas_est.co_muestra = :a_muestra ) and
+         ( dt_medidas_est.co_diseno = :a_diseno ) and
+         ( dt_medidas_est.co_partebas = m_partebas.co_partebas )
+
+
+" update="dt_medidas_est" updatewhere=0 updatekeyinplace=yes arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number),("a_diseno", number))  sort="co_talla A co_recurso A orden_partebas A " )
+text(band=header alignment="2" text="Ancho" border="6" color="0" x="1582" y="8" height="56" width="183"  name=ca_ancho_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="L. sine" border="6" color="0" x="1774" y="8" height="56" width="206"  name=ca_largo_sine_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="A. sine" border="6" color="0" x="1989" y="8" height="56" width="187"  name=ca_ancho_sine_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="L. repos" border="6" color="0" x="2185" y="8" height="56" width="201"  name=ca_largo_repos_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="A. repos" border="6" color="0" x="2395" y="8" height="56" width="201"  name=ca_ancho_repos_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Desperdicio" border="6" color="0" x="6738" y="8" height="56" width="288"  name=ca_desperdicio_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Largo" border="6" color="0" x="1367" y="8" height="56" width="206"  name=ca_largo_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Cadena" border="6" color="0" x="2825" y="8" height="56" width="384"  name=cadena_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+text(band=header alignment="2" text="Largo Pul" border="6" color="0" x="4823" y="8" height="56" width="274"  name=t_3  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+text(band=header alignment="2" text=" Ancho Pul" border="6" color="0" x="5106" y="8" height="56" width="379"  name=t_4  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+text(band=header alignment="2" text="L. Sine Pul" border="6" color="0" x="5495" y="8" height="56" width="256"  name=t_5  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+text(band=header alignment="2" text="A. Sine Pul" border="6" color="0" x="5760" y="8" height="56" width="311"  name=t_6  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+text(band=header alignment="2" text="L. Repos Pul" border="6" color="0" x="6080" y="8" height="56" width="347"  name=t_7  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+text(band=header alignment="2" text="A. Repos Pul" border="6" color="0" x="6437" y="8" height="56" width="293"  name=t_8  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+text(band=header alignment="2" text="Desperdicio Pul" border="6" color="0" x="7035" y="8" height="56" width="389"  name=t_9  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+text(band=header alignment="2" text="Pasadas" border="6" color="0" x="3218" y="8" height="56" width="229"  name=t_2  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="A. Maq Pul" border="6" color="0" x="7433" y="8" height="56" width="325"  name=t_1  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="0" text="Observacion" border="6" color="0" x="3456" y="8" height="56" width="1358"  name=t_11  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="A. Maq" border="6" color="0" x="2606" y="8" height="56" width="210"  name=t_10  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Parte" border="6" color="8388736" x="841" y="8" height="56" width="517"  name=co_partebas_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Recurso" border="6" color="0" x="233" y="8" height="56" width="599"  name=t_12  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Rec" border="6" color="8388736" x="87" y="8" height="56" width="137"  name=t_recurso  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=6 alignment="0" tabsequence=20 border="5" color="0" x="841" y="4" height="56" width="517" format="[currency]"  name=co_partebas dddw.name=d_dddw_m_partebas dddw.displaycolumn=de_partebas dddw.datacolumn=co_partebas dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=yes dddw.useasborder=no dddw.case=upper dddw.showlist=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=13 alignment="1" tabsequence=190 border="5" color="0" x="6738" y="4" height="56" width="288" format="[general]"  name=ca_desperdicio editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=14 alignment="0" tabsequence=100 border="5" color="0" x="2825" y="4" height="56" width="384" format="[general]"  name=cadena edit.limit=20 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=19 alignment="2" tabsequence=130 border="5" color="16711680" x="4823" y="4" height="56" width="274" format="[general]"  name=ca_largo_pul edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=20 alignment="2" tabsequence=140 border="5" color="16711680" x="5106" y="4" height="56" width="379" format="[general]"  name=ca_ancho_pul edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=21 alignment="2" tabsequence=150 border="5" color="16711680" x="5495" y="4" height="56" width="256" format="[general]"  name=ca_largo_sine_pul edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=22 alignment="2" tabsequence=160 border="5" color="16711680" x="5760" y="4" height="56" width="311" format="[general]"  name=ca_ancho_sine_pul edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=23 alignment="2" tabsequence=170 border="5" color="16711680" x="6080" y="4" height="56" width="347" format="[general]"  name=ca_largo_repos_pul edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=24 alignment="2" tabsequence=180 border="5" color="16711680" x="6437" y="4" height="56" width="293" format="[general]"  name=ca_ancho_repos_pul edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=25 alignment="2" tabsequence=200 border="5" color="16711680" x="7035" y="4" height="56" width="389" format="[general]"  name=ca_desperdicio_pul edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=18 alignment="0" tabsequence=110 border="5" color="0" x="3218" y="4" height="56" width="229" format="[general]"  name=pasadas edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=26 alignment="2" tabsequence=210 border="5" color="16711680" x="7433" y="4" height="56" width="325" format="[general]"  name=ca_ancho_maq_pul edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=28 alignment="0" tabsequence=120 border="5" color="0" x="3456" y="4" height="56" width="1358" format="[general]"  name=de_observacion edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=7 alignment="1" tabsequence=30 border="5" color="0" x="1367" y="4" height="56" width="206" format="[general]"  name=ca_largo editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=8 alignment="1" tabsequence=40 border="5" color="0" x="1582" y="4" height="56" width="183" format="[general]"  name=ca_ancho editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=9 alignment="1" tabsequence=50 border="5" color="0" x="1774" y="4" height="56" width="206" format="[general]"  name=ca_largo_sine editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=10 alignment="1" tabsequence=60 border="5" color="0" x="1989" y="4" height="56" width="187" format="[general]"  name=ca_ancho_sine editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=11 alignment="1" tabsequence=70 border="5" color="0" x="2185" y="4" height="56" width="201" format="[general]"  name=ca_largo_repos editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=12 alignment="1" tabsequence=80 border="5" color="0" x="2395" y="4" height="56" width="201" format="[general]"  name=ca_ancho_repos editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=27 alignment="1" tabsequence=90 border="5" color="0" x="2606" y="4" height="56" width="210" format="[general]"  name=ca_ancho_maq editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+compute(band=detail alignment="2" expression="getrow()"border="5" color="16711680" x="9" y="4" height="56" width="69" format="[GENERAL]"  name=compute_1  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=32 alignment="0" tabsequence=32766 border="5" color="0" x="233" y="4" height="56" width="599" format="[general]"  name=de_recurso edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=31 alignment="0" tabsequence=10 border="5" color="0" x="87" y="4" height="56" width="137" format="[general]"  name=co_recurso edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
