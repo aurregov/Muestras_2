@@ -1,0 +1,13 @@
+HA$PBExportHeader$d_sp_momento_predecesor.srd
+$PBExportComments$DWO para el procedimiento almacenado que retorna el momento predecesor o la finalizaci$$HEX1$$f300$$ENDHEX$$n de la tarea precedente del estado que se esta examinando.
+release 8;
+datawindow(units=0 timer_interval=0 color=67108864 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=datetime updatewhereclause=no name=fe_predecesor dbname="fe_predecesor" )
+ procedure="1 execute admpd                           .sp_mu_fe_max_pr;0 anu_orden = :anu_orden, aco_estado = :aco_estado" arguments=(("anu_orden", number),("aco_estado", number)) )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="5" color="33554432" x="494" y="4" height="60" width="503" format="[shortdate] [time]" html.valueishtml="0"  name=fe_predecesor visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Momento predecesor:" border="0" color="33554432" x="0" y="4" height="60" width="480" html.valueishtml="0"  name=fe_predecesor_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
