@@ -1,0 +1,33 @@
+HA$PBExportHeader$d_sq_gr_h_fmp_muestras_color.srd
+$PBExportComments$/***********************************************************~r~nSA55583 - Ceiba/jjmonsal - 21-09-2016~r~nComentario: E00572 - Muestra b$$HEX1$$e100$$ENDHEX$$sica~r~n***********************************************************/
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=long updatewhereclause=yes key=yes name=co_fabrica dbname="h_fmp_muestras.co_fabrica" )
+ column=(type=long updatewhereclause=yes key=yes name=co_linea dbname="h_fmp_muestras.co_linea" )
+ column=(type=long updatewhereclause=yes key=yes name=co_muestra dbname="h_fmp_muestras.co_muestra" )
+ column=(type=long updatewhereclause=yes key=yes name=co_talla dbname="h_fmp_muestras.co_talla" )
+ column=(type=long updatewhereclause=yes key=yes name=co_color dbname="h_fmp_muestras.co_color" )
+ column=(type=long update=yes updatewhereclause=yes name=sw_enpdn dbname="h_fmp_muestras.sw_enpdn" )
+ retrieve=" SELECT h_fmp_muestras.co_fabrica,
+			h_fmp_muestras.co_linea,
+			h_fmp_muestras.co_muestra,
+			h_fmp_muestras.co_talla,
+			h_fmp_muestras.co_color,
+			h_fmp_muestras.sw_enPdn
+    FROM h_fmp_muestras
+   WHERE ( h_fmp_muestras.co_fabrica	= :an_Fabrica ) AND  
+         ( h_fmp_muestras.co_linea		= :an_Linea ) AND  
+         ( h_fmp_muestras.co_muestra	= :an_Muestra ) AND  
+         ( h_fmp_muestras.co_talla		= :an_Talla ) AND
+         ( h_fmp_muestras.co_color		= :an_color ) " update="h_fmp_muestras" updatewhere=0 updatekeyinplace=yes arguments=(("an_Fabrica", number),("an_Linea", number),("an_Muestra", number),("an_Talla", number),("an_color", number)) )
+text(band=header alignment="2" text="Sw Enpdn" border="0" color="33554432" x="9" y="8" height="56" width="274" html.valueishtml="0"  name=sw_enpdn_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="1" tabsequence=32766 border="0" color="33554432" x="9" y="8" height="68" width="274" format="[general]" html.valueishtml="0"  name=sw_enpdn visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
