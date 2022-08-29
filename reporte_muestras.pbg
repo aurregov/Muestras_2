@@ -1,0 +1,44 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "reporte_muestras.pbl" "";
+@end;
+@begin Objects
+ "w_saldo.srw" "reporte_muestras.pbl";
+ "dgr_consulta_dt_muestras_ref.srd" "reporte_muestras.pbl";
+ "d_ext_data_1.srd" "reporte_muestras.pbl";
+ "d_ext_data_2.srd" "reporte_muestras.pbl";
+ "d_ext_data_3.srd" "reporte_muestras.pbl";
+ "d_ext_data_4.srd" "reporte_muestras.pbl";
+ "d_inf_ejecutiva1.srd" "reporte_muestras.pbl";
+ "d_estados_seleccion.srd" "reporte_muestras.pbl";
+ "w_inf_matprima_pinta.srw" "reporte_muestras.pbl";
+ "d_entradas_salidas.srd" "reporte_muestras.pbl";
+ "w_reporte_mejorado.srw" "reporte_muestras.pbl";
+ "d_ext_fechas_rango.srd" "reporte_muestras.pbl";
+ "d_muestras_ejecutiva.srd" "reporte_muestras.pbl";
+ "w_reporte_ejecutiva.srw" "reporte_muestras.pbl";
+ "d_inf_ejecutiva.srd" "reporte_muestras.pbl";
+ "w_inf_matprima_pinta_bk.srw" "reporte_muestras.pbl";
+ "dgr_dt_muestras.srd" "reporte_muestras.pbl";
+ "d_ext_criterios.srd" "reporte_muestras.pbl";
+ "d_crost_materia_prima_col_pinta_mod.srd" "reporte_muestras.pbl";
+ "d_crost_materia_prima_col_pinta.srd" "reporte_muestras.pbl";
+ "w_inf_ejecutiva.srw" "reporte_muestras.pbl";
+ "d_crost_materia_prima_col_pinta_mod_bk.srd" "reporte_muestras.pbl";
+ "d_ext_saldos.srd" "reporte_muestras.pbl";
+ "d_crost_mat_prima_col_pinta_mod_fert.srd" "reporte_muestras.pbl";
+ "d_ext_mp_rep_color_pinta_mod.srd" "reporte_muestras.pbl";
+ "q_ejecutiva.srq" "reporte_muestras.pbl";
+ "w_opc_historia_muestrario_color.srw" "reporte_muestras.pbl";
+ "w_rep_historia_muestrario_color.srw" "reporte_muestras.pbl";
+ "d_ext_cols.srd" "reporte_muestras.pbl";
+ "d_cantidad_desarrollador_solo.srd" "reporte_muestras.pbl";
+ "d_cantidad_desarrollador.srd" "reporte_muestras.pbl";
+ "w_cantidad_desarrollador.srw" "reporte_muestras.pbl";
+ "d_ext_param_historia_muestrario_col.srd" "reporte_muestras.pbl";
+ "dgr_historia_muestrario_color.srd" "reporte_muestras.pbl";
+ "d_ext_mp_rep_color_pinta.srd" "reporte_muestras.pbl";
+ "dgr_consulta_dt_muestras_fert.srd" "reporte_muestras.pbl";
+ "d_ext_rep_historia_muestrario_col.srd" "reporte_muestras.pbl";
+ "d_saldos.srd" "reporte_muestras.pbl";
+@end;
