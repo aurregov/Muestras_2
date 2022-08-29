@@ -1,0 +1,153 @@
+HA$PBExportHeader$d_inf_muestras_outer.srd
+$PBExportComments$Informe de muestras registradas
+release 9;
+datawindow(units=3 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 1 print.margin.left = 635 print.margin.right = 635 print.margin.top = 635 print.margin.bottom = 635 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=1693 color="536870912" )
+summary(height=926 color="536870912" )
+footer(height=555 color="536870912" )
+detail(height=423 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_cliente dbname="m_muestras.co_cliente" )
+ column=(type=long updatewhereclause=yes name=co_sucursal dbname="m_muestras.co_sucursal" )
+ column=(type=char(60) updatewhereclause=yes name=de_cliente dbname="de_cliente" )
+ column=(type=char(2) updatewhereclause=yes name=tipo_muestra dbname="m_muestras.tipo_muestra" )
+ column=(type=long updatewhereclause=yes name=nu_solicitud dbname="h_solicitudes.nu_solicitud" )
+ column=(type=long updatewhereclause=yes name=co_fabrica dbname="m_muestras.co_fabrica" )
+ column=(type=long updatewhereclause=yes name=co_linea dbname="m_muestras.co_linea" )
+ column=(type=long updatewhereclause=yes name=co_muestra dbname="m_muestras.co_muestra" )
+ column=(type=char(50) updatewhereclause=yes name=de_dllo dbname="m_muestras.de_dllo" )
+ column=(type=char(15) updatewhereclause=yes name=cod_dllo dbname="m_muestras.cod_dllo" )
+ column=(type=char(15) updatewhereclause=yes name=talla_cliente dbname="dt_muestras.talla_cliente" )
+ column=(type=char(10) updatewhereclause=yes name=co_diseno_muestra dbname="m_muestras.co_diseno_muestra" )
+ column=(type=long updatewhereclause=yes name=co_talla dbname="dt_muestras.co_talla" )
+ column=(type=long updatewhereclause=yes name=co_color dbname="dt_muestras_col.co_color" )
+ column=(type=number updatewhereclause=yes name=ca_solicitada dbname="dt_solicitudes.ca_solicitada" )
+ column=(type=long updatewhereclause=yes name=co_ejecutiva dbname="m_muestras.co_ejecutiva" )
+ column=(type=char(60) updatewhereclause=yes name=de_ejecutiva dbname="de_ejecutiva" )
+ column=(type=char(8) updatewhereclause=yes name=desarrollador dbname="m_muestras.desarrollador" )
+ column=(type=char(60) updatewhereclause=yes name=de_desarrollador dbname="de_desarrollador" )
+ column=(type=long updatewhereclause=yes name=co_estado dbname="dt_muestras_col.co_estado" )
+ column=(type=char(60) updatewhereclause=yes name=de_estado dbname="de_estado" )
+ column=(type=date updatewhereclause=yes name=fecha_inicial dbname="m_muestras.fecha_inicial" )
+ column=(type=datetime updatewhereclause=yes name=fecha_cierre dbname="dt_muestras_col.fecha_cierre" )
+ column=(type=date updatewhereclause=yes name=fe_entrega dbname="h_solicitudes.fe_entrega" )
+ column=(type=long updatewhereclause=yes name=co_tipo_tejido dbname="m_muestras.co_tipo_tejido" )
+ column=(type=char(60) updatewhereclause=yes name=de_tipo_tejido dbname="de_tipo_tejido" )
+ column=(type=char(5) updatewhereclause=yes name=dias_desarrollo dbname="m_muestras.dias_desarrollo" )
+ column=(type=char(5) updatewhereclause=yes name=dias_total dbname="m_muestras.dias_total" )
+ retrieve="  SELECT distinct m_muestras.co_cliente,   
+         m_muestras.co_sucursal,   
+         to_char60() as de_cliente,
+
+         m_muestras.tipo_muestra,
+         h_solicitudes.nu_solicitud,   
+         m_muestras.co_fabrica,   
+         m_muestras.co_linea,   
+         m_muestras.co_muestra,  
+         m_muestras.de_muestra as de_dllo,   
+
+         m_muestras.co_ref_exp as cod_dllo,    
+         dt_muestras.co_talla_exp as talla_cliente,
+         m_muestras.co_diseno_muestra,   
+         dt_muestras.co_talla,   
+         dt_muestras_col.co_color,   
+         dt_solicitudes.ca_solicitada,   
+
+         m_muestras.co_ejecutiva,   
+         to_char60() as de_ejecutiva,
+
+         m_muestras.desarrollador,
+         to_char60() as de_desarrollador,   
+
+         dt_muestras_col.co_estado,   
+         to_char60() as de_estado,
+
+         m_muestras.fe_desarrollo as fecha_inicial,
+         dt_muestras_col.fe_estado as fecha_cierre,
+         h_solicitudes.fe_entrega,   
+
+
+         m_muestras.co_tipo_tejido,  
+         to_char60() as de_tipo_tejido,
+
+
+         ~"     ~" as dias_desarrollo,
+         ~"     ~" as dias_total
+  
+    FROM m_muestras,   
+         dt_muestras,   
+         dt_muestras_col, 
+         outer(h_solicitudes,   
+         dt_solicitudes)
+   WHERE ( dt_muestras.co_fabrica = m_muestras.co_fabrica ) and  
+         ( dt_muestras.co_linea = m_muestras.co_linea ) and  
+         ( dt_muestras.co_muestra = m_muestras.co_muestra ) and  
+         ( dt_muestras_col.co_fabrica = dt_muestras.co_fabrica ) and  
+         ( dt_muestras_col.co_linea = dt_muestras.co_linea ) and  
+         ( dt_muestras_col.co_muestra = dt_muestras.co_muestra ) and  
+         ( dt_muestras_col.co_talla = dt_muestras.co_talla ) and  
+         ( h_solicitudes.co_fabrica = m_muestras.co_fabrica ) and  
+         ( h_solicitudes.nu_solicitud = m_muestras.nu_solicitud ) and  
+         ( dt_solicitudes.co_fabrica = h_solicitudes.co_fabrica ) and  
+         ( dt_solicitudes.nu_solicitud = h_solicitudes.nu_solicitud ) and  
+         ( dt_solicitudes.tipo_solicitud = h_solicitudes.tipo_solicitud ) and  
+         ( m_muestras.co_ref_exp = dt_solicitudes.co_ref_exp )    
+"  sort="tipo_muestra A co_cliente A co_sucursal A nu_solicitud A co_muestra A co_talla A co_color A " )
+group(level=1 header.height=1852 trailer.height=661 by=("tipo_muestra" , "co_cliente" , "co_sucursal" , "fecha_inicial" , "nu_solicitud" ) header.color="536870912" trailer.color="536870912" )
+line(band=header x1="105" y1="1428" x2="25876" y2="1428"  name=l_2 visible="1" pen.style="0" pen.width="26" pen.color="0"  background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="" border="0" color="0" x="264" y="105" height="529" width="24897" html.valueishtml="0"  name=nombre_fabrica visible="1"  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="INFORME DE DESARROLLOS EN PROCESO" border="0" color="0" x="264" y="767" height="529" width="24897" html.valueishtml="0"  name=t_18 visible="1"  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=header alignment="0" expression="'P$$HEX1$$e100$$ENDHEX$$g ' + page() + ' de ' + pageCount()"border="0" color="0" x="22648" y="132" height="423" width="3254" format="[general]" html.valueishtml="0"  name=page_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.1 alignment="0" text="Ejecutiva:" border="0" color="0" x="3280" y="79" height="370" width="1349" html.valueishtml="0"  name=t_10 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.1 alignment="0" text="Tipo:" border="0" color="0" x="105" y="79" height="370" width="714" html.valueishtml="0"  name=t_25 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=header.1 id=4 alignment="0" tabsequence=32766 border="0" color="0" x="1561" y="79" height="370" width="1296" format="[general]" html.valueishtml="0"  name=tipo_muestra visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="F/L/Dllo" border="0" color="0" x="105" y="1323" height="370" width="1349" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Dise$$HEX1$$f100$$ENDHEX$$o" border="0" color="0" x="8810" y="1323" height="370" width="1111" html.valueishtml="0"  name=t_12 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.1 alignment="0" text="Solicitud:" border="0" color="0" x="105" y="635" height="370" width="1322" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=header.1 id=5 alignment="0" tabsequence=32766 border="0" color="0" x="1561" y="635" height="370" width="1296" format="[general]" html.valueishtml="0"  name=nu_solicitud visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="1" text="Dias Total" border="0" color="0" x="21060" y="1323" height="370" width="1402" html.valueishtml="0"  name=t_17 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.1 alignment="1" text="Dias en Dllo" border="0" color="0" x="19208" y="1323" height="370" width="1666" html.valueishtml="0"  name=t_16 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.1 alignment="0" text="Cliente:" border="0" color="0" x="12488" y="79" height="370" width="1111" html.valueishtml="0"  name=t_8 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Fecha Entrega:" border="0" color="0" x="12488" y="635" height="370" width="2116" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=header.1 alignment="0" expression="~"(~"+ co_cliente +~"-~"+ co_sucursal +~") ~"+ de_cliente "border="0" color="0" x="14737" y="79" height="370" width="8069" format="[GENERAL]" html.valueishtml="0"  name=compute_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=header.1 id=24 alignment="0" tabsequence=32766 border="0" color="0" x="14737" y="635" height="370" width="1825" format="[general]" html.valueishtml="0"  name=fe_entrega visible="1" editmask.mask="YYYY/MM/DD" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Desarrollo" border="0" color="0" x="1799" y="1323" height="370" width="3307" html.valueishtml="0"  name=t_19 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Cod. Dllo" border="0" color="0" x="5291" y="1323" height="370" width="1852" html.valueishtml="0"  name=t_20 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Talla CLI" border="0" color="0" x="7355" y="1323" height="370" width="1322" html.valueishtml="0"  name=t_21 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=header.1 alignment="0" expression=" ~"(~"+ co_ejecutiva +~") ~"+ de_ejecutiva  "border="0" color="0" x="6932" y="79" height="370" width="5503" format="[GENERAL]" html.valueishtml="0"  name=compute_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Fe. Solicitud/Desarrollo:" border="0" color="0" x="3280" y="635" height="370" width="3413" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=header.1 id=22 alignment="0" tabsequence=32766 border="0" color="0" x="6932" y="635" height="370" width="3942" format="[general]" html.valueishtml="0"  name=fecha_inicial visible="1" editmask.mask="YYYY/MM/DD" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="C. T$$HEX1$$e900$$ENDHEX$$cnico:" border="0" color="0" x="16933" y="635" height="370" width="1587" html.valueishtml="0"  name=t_9 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=header.1 alignment="0" expression="~"(~"+  desarrollador +~") ~"+ de_desarrollador "border="0" color="0" x="18679" y="635" height="370" width="6905" format="[GENERAL]" html.valueishtml="0"  name=compute_6 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Fecha cierre" border="0" color="0" x="22780" y="1323" height="370" width="1799" html.valueishtml="0"  name=t_14 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.1 alignment="1" text="Cant/Pares" border="0" color="0" x="12541" y="1323" height="370" width="1587" html.valueishtml="0"  name=t_22 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Estado" border="0" color="0" x="14472" y="1323" height="370" width="1693" html.valueishtml="0"  name=t_7 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Tipo tejido" border="0" color="0" x="16351" y="1323" height="370" width="2698" html.valueishtml="0"  name=t_11 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.1 alignment="1" text="Talla" border="0" color="0" x="10212" y="1323" height="370" width="714" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="1" text="Color" border="0" color="0" x="11033" y="1323" height="370" width="1455" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression=" co_fabrica +~"/~"+ co_linea +~"/~" +co_muestra "border="0" color="0" x="105" y="26" height="343" width="1349" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=27 alignment="1" tabsequence=32766 border="0" color="0" x="19526" y="26" height="343" width="1349" format="[general]" html.valueishtml="0"  name=dias_desarrollo visible="1~tif ( long(dias_desarrollo) >0,1,0)" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=28 alignment="1" tabsequence=32766 border="0" color="0" x="21219" y="26" height="343" width="1243" format="[general]" html.valueishtml="0"  name=dias_total visible="1~tif(long(dias_total)>0,1,0)" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="1799" y="26" height="343" width="3307" format="[general]" html.valueishtml="0"  name=de_dllo visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="5291" y="26" height="343" width="1852" format="[general]" html.valueishtml="0"  name=cod_dllo visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="0" x="7355" y="26" height="343" width="1322" format="[general]" html.valueishtml="0"  name=talla_cliente visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=23 alignment="0" tabsequence=32766 border="0" color="0" x="22780" y="26" height="343" width="2645" format="YYYY/MM/DD" html.valueishtml="0"  name=fecha_cierre visible="1~tif(long(dias_total)>0,1,0)" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression="~"(~"+ co_tipo_tejido +~") ~"+ de_tipo_tejido "border="0" color="0" x="16351" y="26" height="343" width="2698" format="[GENERAL]" html.valueishtml="0"  name=compute_5 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="8810" y="26" height="343" width="1111" format="[general]" html.valueishtml="0"  name=co_diseno_muestra visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="1" tabsequence=32766 border="0" color="0" x="10212" y="26" height="343" width="714" format="[general]" html.valueishtml="0"  name=co_talla visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="1" tabsequence=32766 border="0" color="0" x="11033" y="26" height="343" width="1402" format="[general]" html.valueishtml="0"  name=co_color visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="1" tabsequence=32766 border="0" color="0" x="12541" y="26" height="343" width="1587" format="[general]" html.valueishtml="0"  name=ca_solicitada visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression="~"(~"+ co_estado +~") ~"+ de_estado"border="0" color="0" x="14472" y="26" height="343" width="1693" format="[GENERAL]" html.valueishtml="0"  name=compute_7 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+line(band=trailer.1 x1="132" y1="582" x2="25902" y2="582"  name=l_1 visible="1" pen.style="0" pen.width="26" pen.color="0"  background.mode="2" background.color="16777215" )
+text(band=trailer.1 alignment="0" text="Total de colores:" border="0" color="0" x="11271" y="106" height="370" width="2434" html.valueishtml="0"  name=t_13 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=trailer.1 alignment="1" expression="count(co_talla for group 1)"border="0" color="0" x="13943" y="106" height="370" width="1455" format="[general]" html.valueishtml="0"  name=compute_2 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=summary alignment="1" expression="count(co_talla for all)"border="0" color="0" x="13943" y="318" height="370" width="1455" format="[general]" html.valueishtml="0"  name=compute_8 visible="1"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=summary alignment="1" text="TOTAL DE COLORES" border="0" color="0" x="8890" y="318" height="370" width="4868" html.valueishtml="0"  name=t_15 visible="1"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=footer alignment="0" text="Usuario:" border="0" color="0" x="185" y="106" height="370" width="1058" html.valueishtml="0"  name=t_23 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=footer alignment="0" text="" border="0" color="0" x="1349" y="106" height="370" width="2143" html.valueishtml="0"  name=usuario visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=footer alignment="0" text="Fecha:" border="0" color="0" x="3624" y="106" height="370" width="1005" html.valueishtml="0"  name=t_24 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=footer alignment="0" text="" border="0" color="0" x="4762" y="106" height="370" width="3836" html.valueishtml="0"  name=fecha_hora visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
