@@ -1,0 +1,23 @@
+HA$PBExportHeader$d_dddw_grupoprod_x_tipoprod.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=60 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=12 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_grupoprod dbname="m_grupoprod.co_grupoprod" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=de_grupoprod dbname="m_grupoprod.de_grupoprod" )
+ retrieve="SELECT m_grupoprod.co_grupoprod,   
+       m_grupoprod.de_grupoprod 
+  FROM m_grupoprod 
+ WHERE ( m_grupoprod.co_tipoprod = :al_tipoprod or -1 = :al_tipoprod )
+" update="m_grupoprod" updatewhere=1 updatekeyinplace=no arguments=(("al_tipoprod", number))  sort="co_grupoprod A " )
+text(band=header alignment="0" text="Codigo" border="0" color="0" x="9" y="4" height="56" width="242" html.valueishtml="0"  name=co_grupoprod_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217738" )
+text(band=header alignment="0" text="Descripci$$HEX1$$f300$$ENDHEX$$n" border="0" color="0" x="261" y="4" height="56" width="1029" html.valueishtml="0"  name=de_grupoprod_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217738" )
+column(band=detail id=2 alignment="0" tabsequence=20 border="0" color="0" x="261" y="0" height="68" width="1029" format="[general]" html.valueishtml="0"  name=de_grupoprod visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="0" tabsequence=10 border="0" color="0" x="9" y="0" height="68" width="242" format="[general]" html.valueishtml="0"  name=co_grupoprod visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=1 distill.custompostscript="0" xslfop.print="0" )
