@@ -1,0 +1,52 @@
+HA$PBExportHeader$d_estado_tarea_mtin.srd
+$PBExportComments$DWObject para la consulta de las actividades y operaciones de las m$$HEX1$$e100$$ENDHEX$$quina de tintorer$$HEX1$$ed00$$ENDHEX$$a + estado
+release 8;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_estado dbname="mu_m_actividad.co_estado" )
+ column=(type=long updatewhereclause=yes name=id_actividad dbname="mu_maqtin_activ.id_actividad" )
+ column=(type=long updatewhereclause=yes name=co_operacion dbname="co_operacion" )
+ column=(type=long updatewhereclause=yes name=co_fabrica dbname="mu_maqtin_activ.co_fabrica" )
+ column=(type=long updatewhereclause=yes name=cs_maquina dbname="mu_maqtin_activ.cs_maquina" )
+ retrieve="	  SELECT mu_m_actividad.co_estado,   
+				mu_maqtin_activ.id_actividad,   
+				(0) AS co_operacion,   
+				mu_maqtin_activ.co_fabrica,  
+				mu_maqtin_activ.cs_maquina
+		 FROM mu_maqtin_activ,   
+				mu_m_actividad,
+            mu_maq_tin  
+		WHERE ( mu_m_actividad.id_actividad = mu_maqtin_activ.id_actividad ) and
+            ( mu_maqtin_activ.co_fabrica = mu_maq_tin.co_fabrica ) and
+            ( mu_maqtin_activ.cs_maquina = mu_maq_tin.cs_maquina ) and
+            ( mu_maq_tin.disponible = ~"S~")
+
+UNION
+
+	  SELECT m_operac_muestra.co_estado,   
+				(0) AS id_actividad,   
+				mu_maqtin_oper.co_operacion,   
+				mu_maqtin_oper.co_fabrica,
+				mu_maqtin_oper.cs_maquina
+		 FROM mu_maqtin_oper,   
+				m_operac_muestra,
+            mu_maq_tin  
+		WHERE ( m_operac_muestra.co_operacion = mu_maqtin_oper.co_operacion )  and
+            ( mu_maqtin_oper.co_fabrica = mu_maq_tin.co_fabrica ) and
+            ( mu_maqtin_oper.cs_maquina = mu_maq_tin.cs_maquina ) and
+            ( mu_maq_tin.disponible = ~"S~")" )
+text(band=header alignment="2" text="Co Estado" border="0" color="33554432" x="9" y="8" height="56" width="274" html.valueishtml="0"  name=co_estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Id Actividad" border="0" color="33554432" x="293" y="8" height="56" width="347" html.valueishtml="0"  name=id_actividad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Operacion" border="0" color="33554432" x="649" y="8" height="56" width="325" html.valueishtml="0"  name=co_operacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Fabrica" border="0" color="33554432" x="983" y="8" height="56" width="242" html.valueishtml="0"  name=mu_maqtin_activ_co_fabrica_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Cs Maquina" border="0" color="33554432" x="1234" y="8" height="56" width="270" html.valueishtml="0"  name=mu_maqtin_activ_cs_maquina_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="5" color="33554432" x="9" y="8" height="60" width="274" format="[general]" html.valueishtml="0"  name=co_estado visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=32766 border="5" color="33554432" x="293" y="8" height="60" width="347" format="[general]" html.valueishtml="0"  name=id_actividad visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=32766 border="5" color="33554432" x="649" y="8" height="60" width="325" format="[general]" html.valueishtml="0"  name=co_operacion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="5" color="33554432" x="983" y="8" height="60" width="242" format="[general]" html.valueishtml="0"  name=co_fabrica visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="5" color="33554432" x="1234" y="8" height="60" width="270" format="[general]" html.valueishtml="0"  name=cs_maquina visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
