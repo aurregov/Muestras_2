@@ -64,7 +64,7 @@ end forward
 
 global type w_procesar_muestras from window
 integer width = 2560
-integer height = 948
+integer height = 976
 boolean titlebar = true
 string title = "Migrar Muestra "
 boolean controlmenu = true
@@ -988,13 +988,13 @@ destroy(this.muestrafin)
 end on
 
 type cb_6 from commandbutton within w_procesar_muestras
-integer x = 978
-integer y = 712
-integer width = 343
-integer height = 100
+integer x = 965
+integer y = 660
+integer width = 603
+integer height = 160
 integer taborder = 60
-integer textsize = -8
-integer weight = 400
+integer textsize = -16
+integer weight = 700
 fontcharset fontcharset = ansi!
 fontpitch fontpitch = variable!
 fontfamily fontfamily = swiss!
