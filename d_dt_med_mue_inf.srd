@@ -1,0 +1,57 @@
+HA$PBExportHeader$d_dt_med_mue_inf.srd
+$PBExportComments$medias de la muestra con le nuevo esquema
+release 9;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=60 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes name=co_partebas dbname="dt_med_mue.co_partebas" )
+ column=(type=char(12) update=yes updatewhereclause=yes name=ca_cm dbname="dt_med_mue.ca_cm" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=cadena dbname="dt_med_mue.cadena" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=pasadas dbname="dt_med_mue.pasadas" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="dt_med_mue.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="dt_med_mue.usuario" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=instancia dbname="dt_med_mue.instancia" )
+ column=(type=long updatewhereclause=yes name=orden_partebas dbname="m_partebas1.orden_partebas" )
+ column=(type=char(50) updatewhereclause=yes name=de_partebas dbname="m_partebas1.de_partebas" )
+ column=(type=char(250) updatewhereclause=yes name=observacion dbname="observacion" )
+ retrieve="  SELECT dt_med_mue.co_partebas,   
+         dt_med_mue.ca_cm,   
+         dt_med_mue.cadena,   
+         dt_med_mue.pasadas,   
+         dt_med_mue.fe_actualizacion,   
+         dt_med_mue.usuario,   
+         dt_med_mue.instancia,   
+         m_partebas1.orden_partebas,
+         m_partebas1.de_partebas ,
+			Trim(dt_med_mue.de_observacion) observacion
+    FROM dt_med_mue,   
+         m_partebas1  , dt_muestras
+   WHERE ( dt_med_mue.co_fabrica = :a_fabrica ) AND  
+         ( dt_med_mue.co_linea = :a_linea ) AND  
+         ( dt_med_mue.co_muestra = :a_muestra ) AND
+         ( dt_med_mue.co_talla = :a_talla ) AND   
+         ( dt_med_mue.co_diseno = :a_diseno )  AND  
+         ( dt_med_mue.co_tipoprod = m_partebas1.co_tipoprod ) AND
+         ( dt_med_mue.co_partebas = m_partebas1.co_partebas ) AND
+         ( dt_med_mue.co_recurso = dt_muestras.co_recurso ) AND 
+	 		( dt_med_mue.co_fabrica = dt_muestras.co_fabrica ) AND  
+         ( dt_med_mue.co_linea = dt_muestras.co_linea ) AND  
+         ( dt_med_mue.co_muestra = dt_muestras.co_muestra ) AND
+         ( dt_med_mue.co_talla = dt_muestras.co_talla ) " arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number),("a_talla", number),("a_diseno", number))  sort="orden_partebas A " )
+text(band=header alignment="2" text="Cm" border="0" color="0" x="882" y="8" height="56" width="242" html.valueishtml="0"  name=dt_med_mue_ca_cm_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="79017397" )
+text(band=header alignment="2" text="Cadena" border="0" color="0" x="1134" y="8" height="56" width="352" html.valueishtml="0"  name=dt_med_mue_cadena_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="79017397" )
+text(band=header alignment="0" text="Observacion" border="0" color="0" x="1833" y="8" height="56" width="1609" html.valueishtml="0"  name=observacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="79017397" )
+column(band=detail id=3 alignment="0" tabsequence=20 border="0" color="0" x="1134" y="4" height="52" width="352" format="[general]" html.valueishtml="0"  name=cadena visible="1" edit.limit=20 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="1" tabsequence=10 border="0" color="0" x="882" y="4" height="52" width="242" format="[general]" html.valueishtml="0"  name=ca_cm visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="0" tabsequence=40 border="0" color="0" x="1833" y="4" height="52" width="1609" format="[general]" html.valueishtml="0"  name=observacion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="Parte" border="0" color="0" x="9" y="8" height="56" width="864" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="79017397" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="4" height="52" width="864" format="[general]" html.valueishtml="0"  name=de_partebas visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="Pas" border="0" color="0" x="1495" y="8" height="56" width="329" html.valueishtml="0"  name=dt_med_mue_pasadas_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="79017397" )
+column(band=detail id=4 alignment="0" tabsequence=30 border="0" color="0" x="1495" y="4" height="52" width="329" format="[general]" html.valueishtml="0"  name=pasadas visible="1" edit.limit=20 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=1 distill.custompostscript="0" xslfop.print="0" )
