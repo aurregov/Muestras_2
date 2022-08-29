@@ -1,0 +1,71 @@
+HA$PBExportHeader$d_dt_fmp_c_sin.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=79017397 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=80 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_fabrica dbname="dt_fmp_sin.co_fabrica" )
+ column=(type=long updatewhereclause=yes name=co_linea dbname="dt_fmp_sin.co_linea" )
+ column=(type=long updatewhereclause=yes name=co_referencia dbname="dt_fmp_sin.co_referencia" )
+ column=(type=long updatewhereclause=yes name=co_talla dbname="dt_fmp_sin.co_talla" )
+ column=(type=long updatewhereclause=yes name=co_calidad dbname="dt_fmp_sin.co_calidad" )
+ column=(type=long updatewhereclause=yes name=co_diseno dbname="dt_fmp_sin.co_diseno" )
+ column=(type=long updatewhereclause=yes name=co_muestrario dbname="dt_fmp_sin.co_muestrario" )
+ column=(type=long updatewhereclause=yes name=co_centro dbname="dt_fmp_sin.co_centro" )
+ column=(type=long updatewhereclause=yes name=nu_partemp dbname="dt_fmp_sin.nu_partemp" )
+ column=(type=long updatewhereclause=yes name=co_tipoprod dbname="dt_fmp_sin.co_tipoprod" )
+ column=(type=long updatewhereclause=yes name=co_partemp dbname="dt_fmp_sin.co_partemp" )
+ column=(type=long updatewhereclause=yes name=co_combinacion dbname="dt_fmp_sin.co_combinacion" )
+ column=(type=char(60) updatewhereclause=yes name=de_parte_combinacion dbname="de_parte_combinacion" )
+ retrieve="  select distinct dt_fmp_sin.co_fabrica,   
+         dt_fmp_sin.co_linea,   
+         dt_fmp_sin.co_referencia,   
+         dt_fmp_sin.co_talla,   
+         dt_fmp_sin.co_calidad,   
+         dt_fmp_sin.co_diseno,   
+         dt_fmp_sin.co_muestrario,   
+         dt_fmp_sin.co_centro,   
+         dt_fmp_sin.nu_partemp,   
+         dt_fmp_sin.co_tipoprod,   
+         dt_fmp_sin.co_partemp,   
+         dt_fmp_sin.co_combinacion,   
+         to_char60() as de_parte_combinacion  
+    from dt_fmp_sin  
+   where ( dt_fmp_sin.co_fabrica = :a_fabrica ) and  
+         ( dt_fmp_sin.co_linea = :a_linea ) and  
+         ( dt_fmp_sin.co_referencia = :a_referencia ) and  
+         ( dt_fmp_sin.co_talla = :a_talla ) and  
+         ( dt_fmp_sin.co_calidad = :a_calidad ) and  
+         ( dt_fmp_sin.co_diseno = :a_diseno ) and  
+         ( dt_fmp_sin.co_muestrario = :a_muestrario )
+" arguments=(("a_fabrica", number),("a_linea", number),("a_referencia", number),("a_talla", number),("a_calidad", number),("a_diseno", number),("a_muestrario", number)) )
+text(band=header alignment="2" text="descripci$$HEX1$$f300$$ENDHEX$$n" border="0" color="0" x="123" y="8" height="56" width="869" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=13 alignment="0" tabsequence=30 border="5" color="0" x="123" y="4" height="60" width="869" format="[general]" html.valueishtml="0"  name=de_parte_combinacion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="2" expression="GetRow()"border="5" color="16711680" x="9" y="8" height="56" width="101" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=1 alignment="0" tabsequence=0 border="0" color="0" x="1006" y="0" height="56" width="14" html.valueishtml="0"  name=co_fabrica visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Co Fabrica" border="0" color="0" x="1001" y="4" height="76" width="18" html.valueishtml="0"  name=co_fabrica_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=0 border="0" color="0" x="1033" y="0" height="56" width="14" html.valueishtml="0"  name=co_linea visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Co Linea" border="0" color="0" x="1029" y="4" height="76" width="18" html.valueishtml="0"  name=co_linea_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=0 border="0" color="0" x="1061" y="0" height="56" width="59" html.valueishtml="0"  name=co_referencia visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Co Referencia" border="0" color="0" x="1056" y="4" height="76" width="64" html.valueishtml="0"  name=co_referencia_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=0 border="0" color="0" x="1134" y="0" height="56" width="14" html.valueishtml="0"  name=co_talla visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Co Talla" border="0" color="0" x="1129" y="4" height="76" width="18" html.valueishtml="0"  name=co_talla_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="0" tabsequence=0 border="0" color="0" x="1161" y="0" height="56" width="14" html.valueishtml="0"  name=co_calidad visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Co Calidad" border="0" color="0" x="1157" y="4" height="76" width="18" html.valueishtml="0"  name=co_calidad_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="0" tabsequence=0 border="0" color="0" x="1189" y="0" height="56" width="14" html.valueishtml="0"  name=co_diseno visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Co Diseno" border="0" color="0" x="1184" y="4" height="76" width="18" html.valueishtml="0"  name=co_diseno_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=7 alignment="0" tabsequence=0 border="0" color="0" x="1216" y="0" height="56" width="14" html.valueishtml="0"  name=co_muestrario visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Co Muestrario" border="0" color="0" x="1211" y="4" height="76" width="18" html.valueishtml="0"  name=co_muestrario_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="0" tabsequence=0 border="0" color="0" x="1243" y="0" height="56" width="59" html.valueishtml="0"  name=co_centro visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Co Centro" border="0" color="0" x="1239" y="4" height="76" width="64" html.valueishtml="0"  name=co_centro_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=9 alignment="0" tabsequence=0 border="0" color="0" x="1317" y="0" height="56" width="14" html.valueishtml="0"  name=nu_partemp visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Nu Partemp" border="0" color="0" x="1312" y="4" height="76" width="18" html.valueishtml="0"  name=nu_partemp_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="0" tabsequence=0 border="0" color="0" x="1344" y="0" height="56" width="14" html.valueishtml="0"  name=co_tipoprod visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Co Tipoprod" border="0" color="0" x="1339" y="4" height="76" width="18" html.valueishtml="0"  name=co_tipoprod_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=11 alignment="0" tabsequence=0 border="0" color="0" x="1371" y="0" height="56" width="14" html.valueishtml="0"  name=co_partemp visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Co Partemp" border="0" color="0" x="1367" y="4" height="76" width="18" html.valueishtml="0"  name=co_partemp_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=12 alignment="0" tabsequence=0 border="0" color="0" x="1399" y="0" height="56" width="14" html.valueishtml="0"  name=co_combinacion visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Co Combinacion" border="0" color="0" x="1394" y="4" height="76" width="18" html.valueishtml="0"  name=co_combinacion_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
