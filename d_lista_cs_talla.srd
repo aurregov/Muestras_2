@@ -1,0 +1,16 @@
+HA$PBExportHeader$d_lista_cs_talla.srd
+release 7;
+datawindow(units=0 timer_interval=0 color=77442227 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=cs_talla dbname="m_tallas.cs_talla" )
+ column=(type=char(15) updatewhereclause=yes name=de_talla dbname="m_tallas.de_talla" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"m_tallas~" ) COLUMN(NAME=~"m_tallas.cs_talla~") COLUMN(NAME=~"m_tallas.de_talla~")WHERE(    EXP1 =~"m_tallas.co_fabrica~"   OP =~"=~"    EXP2 =~":a_fabrica~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"m_tallas.co_linea~"   OP =~"=~"    EXP2 =~":a_linea~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"m_tallas.co_talla~"   OP =~"=~"    EXP2 =~":a_talla~" ) ) ARG(NAME = ~"a_fabrica~" TYPE = number)  ARG(NAME = ~"a_linea~" TYPE = number)  ARG(NAME = ~"a_talla~" TYPE = number) " arguments=(("a_fabrica", number),("a_linea", number),("a_talla", number)) )
+column(band=detail id=1 alignment="1" tabsequence=10 border="5" color="0" x="9" y="4" height="68" width="233" format="[general]"  name=cs_talla edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="5" color="0" x="251" y="4" height="68" width="654" format="[general]"  name=de_talla edit.limit=15 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Cs Talla" border="0" color="0" x="9" y="8" height="56" width="233"  name=cs_talla_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Talla" border="0" color="0" x="251" y="8" height="56" width="654"  name=de_talla_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
