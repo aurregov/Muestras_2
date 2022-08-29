@@ -1,0 +1,20 @@
+HA$PBExportHeader$q2.srq
+SELECT m_partebas1.de_partebas ,
+       m_partebas1.orden_partebas ,
+       dt_med_ref.ca_cm ,
+       dt_med_ref.cadena ,
+       dt_med_ref.pasadas ,
+       dt_med_ref.de_observacion     
+  FROM m_partebas1 ,
+       dt_med_ref     
+ WHERE ( dt_med_ref.co_tipoprod = m_partebas1.co_tipoprod )
+   and ( dt_med_ref.co_partebas = m_partebas1.co_partebas )
+   and ( ( dt_med_ref.co_centro = :a_centro )
+   And ( dt_med_ref.co_subcentro = :a_subcentro )
+   And ( dt_med_ref.co_recurso = :a_recurso )
+   And ( dt_med_ref.co_fabrica = :a_fabrica ) 
+   And ( dt_med_ref.co_linea = :a_linea )
+   And ( dt_med_ref.co_referencia = :a_referencia ) 
+   and ( dt_med_ref.co_talla = :a_talla ) 
+   and ( dt_med_ref.co_calidad = :a_calidad )
+   and ( dt_med_ref.co_diseno = :a_diseno ) )   ARG(NAME = "a_centro" TYPE = number)  ARG(NAME = "a_subcentro" TYPE = number)  ARG(NAME = "a_recurso" TYPE = number)  ARG(NAME = "a_fabrica" TYPE = number)  ARG(NAME = "a_linea" TYPE = number)  ARG(NAME = "a_referencia" TYPE = number)  ARG(NAME = "a_talla" TYPE = number)  ARG(NAME = "a_calidad" TYPE = number)  ARG(NAME = "a_diseno" TYPE = number)
