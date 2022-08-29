@@ -1,0 +1,76 @@
+HA$PBExportHeader$d_dt_muestras.srd
+$PBExportComments$Detalle de las muestras
+release 9;
+datawindow(units=0 timer_interval=0 color=76788149 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=304 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="dt_muestras.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_linea dbname="dt_muestras.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_muestra dbname="dt_muestras.co_muestra" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_talla dbname="dt_muestras.co_talla" )
+ column=(type=char(15) update=yes updatewhereclause=yes name=co_talla_exp dbname="dt_muestras.co_talla_exp" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="dt_muestras.fe_actualizacion" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=usuario dbname="dt_muestras.usuario" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=instancia dbname="dt_muestras.instancia" )
+ column=(type=long update=yes updatewhereclause=yes name=id_rec_rest dbname="dt_muestras.id_rec_rest" )
+ column=(type=long update=yes updatewhereclause=yes name=co_recurso dbname="dt_muestras.co_recurso" )
+ column=(type=char(30) updatewhereclause=yes name=de_recurso dbname="de_recurso" )
+ column=(type=char(30) updatewhereclause=yes name=de_rec_rest dbname="de_rec_rest" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=tiene_cadena dbname="dt_muestras.tiene_cadena" initial="S" values="	S/	N" )
+ column=(type=char(44) updatewhereclause=yes name=de_recursocierra dbname="de_recursocierra" )
+ column=(type=char(44) updatewhereclause=yes name=de_recursonocierra dbname="de_recursonocierra" )
+ column=(type=long update=yes updatewhereclause=yes name=co_reccotnocierra dbname="dt_muestras.co_reccotnocierra" )
+ column=(type=long update=yes updatewhereclause=yes name=co_reccotcierra dbname="dt_muestras.co_reccotcierra" )
+ column=(type=char(1) updatewhereclause=yes name=campo dbname="campo" )
+ column=(type=long update=yes updatewhereclause=yes name=co_estreccierra dbname="dt_muestras.co_estreccierra" )
+ column=(type=long update=yes updatewhereclause=yes name=co_estrecnocierra dbname="dt_muestras.co_estrecnocierra" )
+ retrieve="  SELECT dt_muestras.co_fabrica,   
+         dt_muestras.co_linea,   
+         dt_muestras.co_muestra,   
+         dt_muestras.co_talla,   
+         dt_muestras.co_talla_exp,   
+         dt_muestras.fe_actualizacion,   
+         dt_muestras.usuario,   
+         dt_muestras.instancia,   
+         dt_muestras.id_rec_rest,   
+         dt_muestras.co_recurso,   
+         sp_nom_m_recursos_tj(co_recurso) as de_recurso,   
+         sp_nom_m_recursos_tj(id_rec_rest) as de_rec_rest,   
+         dt_muestras.tiene_cadena,   
+         '                                            ' as de_recursocierra,   
+         '                                            '  as de_recursonocierra,   
+         dt_muestras.co_reccotnocierra,   
+         dt_muestras.co_reccotcierra,
+			'' campo,
+			dt_muestras.co_estreccierra,
+			dt_muestras.co_estrecnocierra
+    FROM dt_muestras
+   WHERE ( dt_muestras.co_fabrica = :a_fabrica ) AND  
+         ( dt_muestras.co_linea = :a_linea ) AND  
+         ( dt_muestras.co_muestra = :a_muestra )    
+" update="dt_muestras" updatewhere=0 updatekeyinplace=yes arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number))  sort="co_fabrica A co_linea A co_muestra A co_talla A " )
+column(band=detail id=18 alignment="0" tabsequence=80 border="0" color="0" x="1458" y="228" height="56" width="23" format="[general]" html.valueishtml="0"  name=campo visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+text(band=detail alignment="2" text="Tiene Cadena?" border="6" color="0" x="2578" y="12" height="56" width="338" html.valueishtml="0"  name=tiene_cadena_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="2" text="Talla" border="6" color="0" x="283" y="12" height="56" width="238" html.valueishtml="0"  name=co_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="2" text="Recurso M$$HEX1$$ed00$$ENDHEX$$nimo" border="6" color="0" x="535" y="12" height="56" width="823" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="2" text="Recurso Muestra" border="6" color="0" x="1371" y="12" height="56" width="1193" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="2" text="Talla Cli." border="6" color="0" x="9" y="12" height="56" width="265" html.valueishtml="0"  name=co_talla_exp_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+column(band=detail id=4 alignment="0" tabsequence=20 border="5" color="0" x="283" y="80" height="56" width="238" format="[general]" html.valueishtml="0"  name=co_talla visible="1" dddw.name=d_dddw_m_tallas_x_grupo dddw.displaycolumn=de_talla dddw.datacolumn=co_talla dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=yes dddw.useasborder=no dddw.case=upper dddw.imemode=0 dddw.showlist=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=13 alignment="2" tabsequence=50 border="5" color="0" x="2578" y="80" height="56" width="338" format="[general]" html.valueishtml="0"  name=tiene_cadena visible="1" checkbox.text="" checkbox.on="S" checkbox.off="N" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=9 alignment="1" tabsequence=30 border="5" color="0" x="530" y="80" height="56" width="174" format="[general]" html.valueishtml="0"  name=id_rec_rest visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.nilisnull=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=5 alignment="0" tabsequence=10 border="5" color="0" x="9" y="80" height="56" width="265" format="[general]" html.valueishtml="0"  name=co_talla_exp visible="1" dddw.name=d_dddw_talla_x_sol dddw.displaycolumn=co_talla_exp dddw.datacolumn=co_talla_exp dddw.percentwidth=0 dddw.lines=0 dddw.limit=15 dddw.allowedit=yes dddw.useasborder=no dddw.case=upper dddw.imemode=0 dddw.showlist=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=10 alignment="1" tabsequence=40 border="5" color="0" x="1371" y="80" height="56" width="302" format="[general]" html.valueishtml="0"  name=co_recurso  tag="&NN=Recurso" visible="1" editmask.mask="###,###" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="5" color="0" x="1682" y="80" height="56" width="887" format="[general]" html.valueishtml="0"  name=de_recurso visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="5" color="0" x="713" y="80" height="56" width="649" format="[general]" html.valueishtml="0"  name=de_rec_rest visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="Recurso Cotizado (Si Cierra)" border="6" color="0" x="1458" y="160" height="56" width="1458" html.valueishtml="0"  name=co_reccotnocierra_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+text(band=detail alignment="0" text="Recurso Cotizado (No Cierra)" border="6" color="0" x="9" y="160" height="56" width="1435" html.valueishtml="0"  name=de_recursonocierra_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="76788149" )
+column(band=detail id=16 alignment="0" tabsequence=60 border="5" color="0" x="9" y="228" height="56" width="302" format="[general]" html.valueishtml="0"  name=co_reccotnocierra visible="1" editmask.mask="#######" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=17 alignment="0" tabsequence=70 border="5" color="0" x="1458" y="228" height="56" width="302" format="[general]" html.valueishtml="0"  name=co_reccotcierra visible="1" editmask.mask="#######" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088545249" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="5" color="0" x="329" y="228" height="56" width="1115" format="[general]" html.valueishtml="0"  name=de_recursonocierra visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="5" color="0" x="1783" y="228" height="56" width="1138" format="[general]" html.valueishtml="0"  name=de_recursocierra visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
