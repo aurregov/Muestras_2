@@ -1,0 +1,157 @@
+HA$PBExportHeader$d_m_ref_pdn.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=77442227 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=788 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="m_ref_pdn.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_linea dbname="m_ref_pdn.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_referencia dbname="m_ref_pdn.co_referencia" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_talla dbname="m_ref_pdn.co_talla" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_calidad dbname="m_ref_pdn.co_calidad" )
+ column=(type=long update=yes updatewhereclause=yes name=cs_talla dbname="m_ref_pdn.cs_talla" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=de_referencia dbname="m_ref_pdn.de_referencia" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=co_unidad dbname="m_ref_pdn.co_unidad" )
+ column=(type=long update=yes updatewhereclause=yes name=co_tipoprod dbname="m_ref_pdn.co_tipoprod" )
+ column=(type=long update=yes updatewhereclause=yes name=co_ttejido dbname="m_ref_pdn.co_ttejido" initial="99" )
+ column=(type=long update=yes updatewhereclause=yes name=co_grupo_pdn dbname="m_ref_pdn.co_grupo_pdn" )
+ column=(type=long update=yes updatewhereclause=yes name=co_sgrupo_pdn dbname="m_ref_pdn.co_sgrupo_pdn" initial="99" )
+ column=(type=long update=yes updatewhereclause=yes name=co_tamano dbname="m_ref_pdn.co_tamano" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=bpl_co_tipoprod dbname="m_ref_pdn.bpl_co_tipoprod" initial="M" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=bpl_co_planctl dbname="m_ref_pdn.bpl_co_planctl" initial="M" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=bpl_co_pabcode dbname="m_ref_pdn.bpl_co_pabcode" initial="G" )
+ column=(type=long update=yes updatewhereclause=yes name=prc_primeras dbname="m_ref_pdn.prc_primeras" initial="100" )
+ column=(type=char(4) update=yes updatewhereclause=yes name=cls_abc dbname="m_ref_pdn.cls_abc" initial="B" values="A	X/B	 X/C	  X/D	   X/" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=estado dbname="m_ref_pdn.estado" initial="A" )
+ column=(type=long update=yes updatewhereclause=yes name=nu_ruta dbname="m_ref_pdn.nu_ruta" )
+ column=(type=long update=yes updatewhereclause=yes name=co_grupo_tlla dbname="m_ref_pdn.co_grupo_tlla" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=dias_entrega dbname="m_ref_pdn.dias_entrega" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_creacion dbname="m_ref_pdn.fe_creacion" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="m_ref_pdn.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="m_ref_pdn.usuario" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="m_ref_pdn.instancia" )
+ column=(type=char(60) updatewhereclause=yes name=de_talla dbname="de_talla" )
+ column=(type=char(60) updatewhereclause=yes name=de_calidad dbname="de_calidad" )
+ column=(type=char(60) updatewhereclause=yes name=de_unidad dbname="de_unidad" )
+ column=(type=char(60) updatewhereclause=yes name=de_tipoprod dbname="de_tipoprod" )
+ column=(type=char(60) updatewhereclause=yes name=de_ttejido dbname="de_ttejido" )
+ column=(type=char(60) updatewhereclause=yes name=de_grupo_pdn dbname="de_grupo_pdn" )
+ column=(type=char(60) updatewhereclause=yes name=de_sgrupo_pdn dbname="de_sgrupo_pdn" )
+ column=(type=char(60) updatewhereclause=yes name=de_tamano dbname="de_tamano" )
+ column=(type=char(60) updatewhereclause=yes name=de_bpl_co_tipoprod dbname="de_bpl_co_tipoprod" )
+ column=(type=char(60) updatewhereclause=yes name=de_bpl_co_planctl dbname="de_bpl_co_planctl" )
+ column=(type=char(60) updatewhereclause=yes name=de_bpl_co_pabcode dbname="de_bpl_co_pabcode" )
+ column=(type=char(60) updatewhereclause=yes name=de_nu_ruta dbname="de_nu_ruta" )
+ column=(type=char(60) updatewhereclause=yes name=de_grupo_tlla dbname="de_grupo_tlla" )
+ retrieve="  SELECT m_ref_pdn.co_fabrica,   
+         m_ref_pdn.co_linea,   
+         m_ref_pdn.co_referencia,   
+         m_ref_pdn.co_talla,   
+         m_ref_pdn.co_calidad,   
+         m_ref_pdn.cs_talla,   
+         m_ref_pdn.de_referencia,   
+         m_ref_pdn.co_unidad,   
+         m_ref_pdn.co_tipoprod,   
+         m_ref_pdn.co_ttejido,   
+         m_ref_pdn.co_grupo_pdn,   
+         m_ref_pdn.co_sgrupo_pdn,   
+         m_ref_pdn.co_tamano,   
+         m_ref_pdn.bpl_co_tipoprod,   
+         m_ref_pdn.bpl_co_planctl,   
+         m_ref_pdn.bpl_co_pabcode,   
+         m_ref_pdn.prc_primeras,   
+         m_ref_pdn.cls_abc,   
+         m_ref_pdn.estado,   
+         m_ref_pdn.nu_ruta,   
+         m_ref_pdn.co_grupo_tlla,   
+         m_ref_pdn.dias_entrega,   
+         m_ref_pdn.fe_creacion,   
+         m_ref_pdn.fe_actualizacion,   
+         m_ref_pdn.usuario,   
+         m_ref_pdn.instancia,   
+         to_char60() as de_talla,   
+         to_char60() as de_calidad,   
+         to_char60() as de_unidad,   
+         to_char60() as de_tipoprod,   
+         to_char60() as de_ttejido,   
+         to_char60() as de_grupo_pdn,   
+         to_char60() as de_sgrupo_pdn,   
+         to_char60() as de_tamano,   
+         to_char60() as de_bpl_co_tipoprod,   
+         to_char60() as de_bpl_co_planctl,   
+         to_char60() as de_bpl_co_pabcode,   
+         to_char60() as de_nu_ruta,   
+         to_char60() as de_grupo_tlla  
+    FROM m_ref_pdn  
+   WHERE ( m_ref_pdn.co_fabrica = :a_fabrica ) AND  
+         ( m_ref_pdn.co_linea = :a_linea ) AND  
+         ( m_ref_pdn.co_referencia = :a_referencia ) AND  
+         ( m_ref_pdn.co_talla = :a_talla ) AND  
+         ( m_ref_pdn.co_calidad = :a_calidad )    
+" update="m_ref_pdn" updatewhere=0 updatekeyinplace=no arguments=(("a_fabrica", number),("a_linea", number),("a_referencia", number),("a_talla", number),("a_calidad", number)) )
+text(band=detail alignment="0" text="Fab" border="0" color="0" x="14" y="8" height="56" width="206" html.valueishtml="0"  name=co_fabrica_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Tama$$HEX1$$f100$$ENDHEX$$o Lote" border="0" color="0" x="690" y="308" height="56" width="457" html.valueishtml="0"  name=co_tamano_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="L$$HEX1$$ed00$$ENDHEX$$nea" border="0" color="0" x="247" y="8" height="56" width="155" html.valueishtml="0"  name=co_linea_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Referencia" border="0" color="0" x="425" y="8" height="56" width="261" html.valueishtml="0"  name=co_referencia_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Calidad" border="0" color="0" x="1403" y="8" height="56" width="654" html.valueishtml="0"  name=co_calidad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="De Referencia:" border="0" color="0" x="2098" y="8" height="60" width="530" html.valueishtml="0"  name=de_referencia_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Co Unidad" border="0" color="0" x="14" y="160" height="56" width="261" html.valueishtml="0"  name=co_unidad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Tipo producto" border="0" color="0" x="549" y="160" height="56" width="622" html.valueishtml="0"  name=co_tipoprod_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Tipo ttejido" border="0" color="0" x="1216" y="160" height="56" width="462" html.valueishtml="0"  name=co_ttejido_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Grupo Pdn" border="0" color="0" x="1998" y="160" height="56" width="462" html.valueishtml="0"  name=co_grupo_pdn_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Subgrupo PDN" border="0" color="0" x="14" y="308" height="56" width="462" html.valueishtml="0"  name=co_sgrupo_pdn_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Co Grupo Tlla:" border="0" color="0" x="14" y="616" height="60" width="462" html.valueishtml="0"  name=co_grupo_tlla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Usuario:" border="0" color="0" x="2117" y="616" height="60" width="462" html.valueishtml="0"  name=usuario_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Fe Creacion:" border="0" color="0" x="827" y="616" height="60" width="485" html.valueishtml="0"  name=fe_creacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Fe Actualizacion:" border="0" color="0" x="1467" y="616" height="60" width="475" html.valueishtml="0"  name=fe_actualizacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Forma tejer" border="0" color="0" x="1358" y="308" height="56" width="462" html.valueishtml="0"  name=bpl_co_tipoprod_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Bpl Co Planctl:" border="0" color="0" x="2089" y="308" height="60" width="462" html.valueishtml="0"  name=bpl_co_planctl_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="1" tabsequence=80 border="5" color="0" x="549" y="232" height="60" width="151" format="[general]" html.valueishtml="0"  name=co_tipoprod  tag="&NN=Tipo producto" visible="1" editmask.mask="###" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=29 alignment="0" tabsequence=32766 border="5" color="0" x="119" y="232" height="56" width="402" format="[general]" html.valueishtml="0"  name=de_unidad visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=30 alignment="0" tabsequence=32766 border="5" color="0" x="722" y="232" height="56" width="466" format="[general]" html.valueishtml="0"  name=de_tipoprod visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=10 alignment="1" tabsequence=90 border="5" color="0" x="1216" y="232" height="60" width="133" format="[general]" html.valueishtml="0"  name=co_ttejido  tag="&NN=Tipo tejido" visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=31 alignment="0" tabsequence=32766 border="5" color="0" x="1371" y="232" height="56" width="603" format="[general]" html.valueishtml="0"  name=de_ttejido visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=11 alignment="1" tabsequence=100 border="5" color="0" x="2002" y="232" height="60" width="219" format="[general]" html.valueishtml="0"  name=co_grupo_pdn  tag="&NN=Grupo producci$$HEX1$$f300$$ENDHEX$$n" visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=32 alignment="0" tabsequence=32766 border="5" color="0" x="2240" y="232" height="56" width="777" format="[general]" html.valueishtml="0"  name=de_grupo_pdn visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=8 alignment="0" tabsequence=70 border="5" color="0" x="14" y="232" height="60" width="82" format="[general]" html.valueishtml="0"  name=co_unidad  tag="&NN=Unidad" visible="1" edit.limit=2 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+text(band=detail alignment="0" text="Bpl Co Pabcode:" border="0" color="0" x="14" y="460" height="60" width="462" html.valueishtml="0"  name=bpl_co_pabcode_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Ruta" border="0" color="0" x="1678" y="460" height="56" width="352" html.valueishtml="0"  name=nu_ruta_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Estado:" border="0" color="0" x="1426" y="460" height="60" width="210" html.valueishtml="0"  name=estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Cls Abc:" border="0" color="0" x="1083" y="460" height="60" width="315" html.valueishtml="0"  name=cls_abc_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Prc Primeras:" border="0" color="0" x="718" y="460" height="60" width="325" html.valueishtml="0"  name=prc_primeras_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Cs Talla" border="0" color="0" x="901" y="8" height="56" width="201" html.valueishtml="0"  name=cs_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Talla" border="0" color="0" x="709" y="8" height="56" width="169" html.valueishtml="0"  name=co_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=10 border="5" color="0" x="14" y="80" height="60" width="206" format="[general]" html.valueishtml="0"  name=co_fabrica  tag="&NN=F$$HEX1$$e100$$ENDHEX$$brica" visible="1" editmask.mask="##" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=2 alignment="1" tabsequence=20 border="5" color="0" x="247" y="80" height="60" width="155" format="[general]" html.valueishtml="0"  name=co_linea  tag="&NN=L$$HEX1$$ed00$$ENDHEX$$nea" visible="1" editmask.mask="###" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=27 alignment="0" tabsequence=32766 border="5" color="0" x="1125" y="80" height="60" width="251" format="[general]" html.valueishtml="0"  name=de_talla visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=30 border="5" color="0" x="425" y="80" height="60" width="261" format="[general]" html.valueishtml="0"  name=co_referencia  tag="&NN=Referencia" visible="1" editmask.mask="##########" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=5 alignment="1" tabsequence=32766 border="5" color="0" x="1403" y="80" height="60" width="133" format="[general]" html.valueishtml="0"  name=co_calidad visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=28 alignment="0" tabsequence=32766 border="5" color="0" x="1559" y="80" height="60" width="512" format="[general]" html.valueishtml="0"  name=de_calidad visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=60 border="5" color="0" x="2098" y="80" height="60" width="923" format="[general]" html.valueishtml="0"  name=de_referencia  tag="&NN=Desc. Referencia" visible="1" edit.limit=20 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=6 alignment="1" tabsequence=50 border="5" color="0" x="901" y="80" height="60" width="201" format="[general]" html.valueishtml="0"  name=cs_talla  tag="&NN=Cs Talla" visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=4 alignment="1" tabsequence=40 border="5" color="0" x="709" y="80" height="60" width="169" format="[general]" html.valueishtml="0"  name=co_talla  tag="&NN=Talla" visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=21 alignment="1" tabsequence=190 border="5" color="0" x="14" y="692" height="60" width="201" format="[general]" html.valueishtml="0"  name=co_grupo_tlla  tag="&NN=Grupo Talla" visible="1" editmask.mask="###" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=39 alignment="0" tabsequence=32766 border="5" color="0" x="238" y="692" height="60" width="571" format="[general]" html.valueishtml="0"  name=de_grupo_tlla visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=16 alignment="0" tabsequence=150 border="5" color="0" x="14" y="536" height="60" width="123" format="[general]" html.valueishtml="0"  name=bpl_co_pabcode  tag="&NN=BPL co pabcode" visible="1" edit.limit=1 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=37 alignment="0" tabsequence=32766 border="5" color="0" x="165" y="536" height="60" width="530" format="[general]" html.valueishtml="0"  name=de_bpl_co_pabcode visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=20 alignment="1" tabsequence=180 border="5" color="0" x="1664" y="536" height="60" width="329" format="[general]" html.valueishtml="0"  name=nu_ruta  tag="&NN=Ruta" visible="1" editmask.mask="######" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=38 alignment="0" tabsequence=32766 border="5" color="0" x="2021" y="536" height="60" width="1006" format="[general]" html.valueishtml="0"  name=de_nu_ruta visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=19 alignment="0" tabsequence=32766 border="5" color="0" x="1426" y="536" height="60" width="210" format="[general]" html.valueishtml="0"  name=estado visible="1" edit.limit=1 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=18 alignment="0" tabsequence=170 border="5" color="0" x="1083" y="536" height="60" width="315" format="[general]" html.valueishtml="0"  name=cls_abc  tag="&NN=Clasificaci$$HEX1$$f300$$ENDHEX$$n" visible="1" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=17 alignment="1" tabsequence=160 border="5" color="0" x="722" y="536" height="60" width="338" format="[general]" html.valueishtml="0"  name=prc_primeras  tag="&NN=Prc primeras" visible="1" editmask.mask="##0" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=12 alignment="0" tabsequence=110 border="5" color="0" x="14" y="380" height="60" width="133" format="[general]" html.valueishtml="0"  name=co_sgrupo_pdn  tag="&NN=Subgrupo producci$$HEX1$$f300$$ENDHEX$$n" visible="1" editmask.mask="###" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=33 alignment="0" tabsequence=32766 border="5" color="0" x="169" y="380" height="60" width="498" format="[general]" html.valueishtml="0"  name=de_sgrupo_pdn visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=13 alignment="0" tabsequence=120 border="5" color="0" x="695" y="380" height="60" width="169" format="[general]" html.valueishtml="0"  name=co_tamano  tag="&NN=Tama$$HEX1$$f100$$ENDHEX$$o" visible="1" editmask.mask="###" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=34 alignment="0" tabsequence=32766 border="5" color="0" x="882" y="380" height="60" width="443" format="[general]" html.valueishtml="0"  name=de_tamano visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=35 alignment="0" tabsequence=32766 border="5" color="0" x="1559" y="380" height="60" width="498" format="[general]" html.valueishtml="0"  name=de_bpl_co_tipoprod visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=36 alignment="0" tabsequence=32766 border="5" color="0" x="2254" y="380" height="60" width="768" format="[general]" html.valueishtml="0"  name=de_bpl_co_planctl visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=14 alignment="0" tabsequence=130 border="5" color="0" x="1358" y="380" height="60" width="178" format="[general]" html.valueishtml="0"  name=bpl_co_tipoprod  tag="&NN=BPL co_tipoprod" visible="1" edit.limit=1 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=15 alignment="0" tabsequence=140 border="5" color="0" x="2080" y="380" height="60" width="151" format="[general]" html.valueishtml="0"  name=bpl_co_planctl  tag="&NN=BPL co planctl" visible="1" edit.limit=1 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1088874214" )
+column(band=detail id=23 alignment="0" tabsequence=32766 border="5" color="0" x="837" y="692" height="60" width="626" format="[shortdate] [time]" html.valueishtml="0"  name=fe_creacion visible="1" editmask.mask="YYYY/MM/DD hh:mm" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=24 alignment="0" tabsequence=32766 border="5" color="0" x="1490" y="692" height="60" width="613" format="[shortdate] [time]" html.valueishtml="0"  name=fe_actualizacion visible="1" editmask.mask="YYYY/MM/DD hh:mm" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=25 alignment="0" tabsequence=32766 border="5" color="0" x="2130" y="692" height="60" width="901" format="[general]" html.valueishtml="0"  name=usuario visible="1" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
