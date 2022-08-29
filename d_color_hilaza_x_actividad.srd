@@ -1,0 +1,26 @@
+HA$PBExportHeader$d_color_hilaza_x_actividad.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=128 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=char(68) updatewhereclause=yes name=de_color dbname="de_color" )
+ retrieve="SELECT ( CASE WHEN  mu_m_actividad.co_clase in (2,3) THEN
+	         ~"(~"||Nvl(mu_soli_hilaza.co_color,'')||~") ~"||Trim(mu_soli_hilaza.de_color)
+           ELSE
+              ~"0~"
+            END )de_color 
+ FROM mu_gantt,   OUTER mu_soli_hilaza, OUTER mu_m_actividad  
+WHERE ( mu_gantt.nu_orden    = :a_nu_orden )
+  AND ( mu_gantt.id_actividad = :a_id_actividad)
+  AND ( mu_soli_hilaza.nu_orden = mu_gantt.nu_orden )
+  AND ( mu_soli_hilaza.consec   = mu_gantt.consec )
+  AND ( mu_m_actividad.id_actividad = mu_gantt.id_actividad )" arguments=(("a_nu_orden", number),("a_id_actividad", number)) )
+text(band=header alignment="2" text="De Color" border="0" color="33554432" x="9" y="8" height="56" width="1577" html.valueishtml="0"  name=de_color_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="33554432" x="9" y="8" height="68" width="1577" format="[general]" html.valueishtml="0"  name=de_color visible="1" edit.limit=68 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
