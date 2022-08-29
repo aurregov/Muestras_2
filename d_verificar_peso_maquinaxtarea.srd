@@ -1,0 +1,17 @@
+HA$PBExportHeader$d_verificar_peso_maquinaxtarea.srd
+$PBExportComments$DWObject que consulta que una maquina soporte el peso de una tarea
+release 8;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=64 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_fabrica dbname="mu_maq_tin.co_fabrica" )
+ column=(type=long updatewhereclause=yes name=cs_maquina dbname="mu_maq_tin.cs_maquina" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"m_maq_tin~" )  TABLE(NAME=~"mu_maq_tin~" )  TABLE(NAME=~"m_maquinas_fab~" ) COLUMN(NAME=~"mu_maq_tin.co_fabrica~") COLUMN(NAME=~"mu_maq_tin.cs_maquina~")    JOIN (LEFT=~"mu_maq_tin.co_fabrica~"    OP =~"=~"RIGHT=~"m_maquinas_fab.co_fabrica~" )    JOIN (LEFT=~"m_maquinas_fab.cs_maquina~"    OP =~"=~"RIGHT=~"mu_maq_tin.cs_maquina~" )    JOIN (LEFT=~"m_maquinas_fab.co_maquina~"    OP =~"=~"RIGHT=~"m_maq_tin.co_maquina~" )WHERE(    EXP1 =~"mu_maq_tin.co_fabrica~"   OP =~"=~"    EXP2 =~":an_fabrica~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"mu_maq_tin.cs_maquina~"   OP =~"=~"    EXP2 =~":an_maquina~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"m_maq_tin.peso_max~"   OP =~">=~"    EXP2 =~":an_peso_tarea~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"m_maq_tin.peso_min~"   OP =~"<=~"    EXP2 =~":an_peso_tarea~" ) ) ARG(NAME = ~"an_fabrica~" TYPE = number)  ARG(NAME = ~"an_maquina~" TYPE = number)  ARG(NAME = ~"an_peso_tarea~" TYPE = number) " arguments=(("an_fabrica", number),("an_maquina", number),("an_peso_tarea", number)) )
+text(band=header alignment="2" text="Co Fabrica" border="0" color="0" x="9" y="4" height="56" width="265" html.valueishtml="0"  name=mu_maq_tin_co_fabrica_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Cs Maquina" border="0" color="0" x="283" y="4" height="56" width="256" html.valueishtml="0"  name=mu_maq_tin_cs_maquina_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="5" color="0" x="9" y="4" height="60" width="265" format="[general]" html.valueishtml="0"  name=co_fabrica visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="5" color="0" x="283" y="4" height="60" width="256" format="[general]" html.valueishtml="0"  name=cs_maquina visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
