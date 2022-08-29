@@ -1,0 +1,38 @@
+HA$PBExportHeader$d_valida_med_mue.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_recurso dbname="dt_med_mue.co_recurso" )
+ column=(type=long updatewhereclause=yes name=co_partebas dbname="dt_med_mue.co_partebas" )
+ column=(type=char(12) updatewhereclause=yes name=ca_cm dbname="dt_med_mue.ca_cm" )
+ column=(type=char(8) updatewhereclause=yes name=usuario dbname="dt_med_mue.usuario" )
+ retrieve="  SELECT x.co_recurso,   
+         x.co_partebas,   
+         x.ca_cm,   
+         x.usuario  
+    FROM dt_med_mue x  
+   WHERE ( x.co_recurso <> :aco_recurso ) AND  
+         ( x.co_fabrica = :aco_fabrica ) AND  
+         ( x.co_linea = :aco_linea ) AND  
+         ( x.co_muestra = :aco_muestra ) AND  
+         ( x.co_diseno = :aco_diseno ) AND  
+         ( x.co_partebas = :aco_parte_bas ) AND  
+         ( x.ca_cm <> :amed_parte ) AND  
+         x.co_talla = :aco_talla    
+" arguments=(("aco_recurso", number),("aco_fabrica", number),("aco_linea", number),("aco_muestra", number),("aco_diseno", number),("aco_parte_bas", number),("amed_parte", string),("aco_talla", number)) )
+text(band=header alignment="2" text="Recurso" border="0" color="33554432" x="9" y="8" height="56" width="210" html.valueishtml="0"  name=co_recurso_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Parte" border="0" color="33554432" x="229" y="8" height="56" width="352" html.valueishtml="0"  name=co_partebas_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Cm" border="0" color="33554432" x="590" y="8" height="56" width="123" html.valueishtml="0"  name=ca_cm_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Usuario" border="0" color="33554432" x="722" y="8" height="56" width="206" html.valueishtml="0"  name=usuario_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="0" color="33554432" x="9" y="8" height="68" width="210" format="[general]" html.valueishtml="0"  name=co_recurso visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=32766 border="0" color="33554432" x="229" y="8" height="68" width="352" format="[general]" html.valueishtml="0"  name=co_partebas visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="33554432" x="590" y="8" height="68" width="123" format="[general]" html.valueishtml="0"  name=ca_cm visible="1" edit.limit=12 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="33554432" x="722" y="8" height="68" width="206" format="[general]" html.valueishtml="0"  name=usuario visible="1" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
