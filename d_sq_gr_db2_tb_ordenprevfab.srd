@@ -1,0 +1,65 @@
+HA$PBExportHeader$d_sq_gr_db2_tb_ordenprevfab.srd
+$PBExportComments$/***********************************************************~r~nSA55583 - Ceiba/jjmonsal - 21-09-2016~r~nComentario: Conexion a Ordenes DB2~r~n***********************************************************/
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=128 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=tb_ordenprevfab_cs_orden dbname="TB_ORDENPREVFAB.CS_ORDEN" )
+ column=(type=char(10) updatewhereclause=yes name=tb_ordenprevfab_co_ordenprevisional dbname="TB_ORDENPREVFAB.CO_ORDENPREVISIONAL" )
+ column=(type=char(12) updatewhereclause=yes name=tb_ordenprevfab_co_ordenfabricacion dbname="TB_ORDENPREVFAB.CO_ORDENFABRICACION" )
+ column=(type=char(18) updatewhereclause=yes name=tb_ordenprevfab_co_material dbname="TB_ORDENPREVFAB.CO_MATERIAL" )
+ column=(type=char(2) updatewhereclause=yes name=tb_ordenprevfab_co_talla dbname="TB_ORDENPREVFAB.CO_TALLA" )
+ column=(type=char(6) updatewhereclause=yes name=tb_ordenprevfab_co_color dbname="TB_ORDENPREVFAB.CO_COLOR" )
+ column=(type=long updatewhereclause=yes name=tb_ordenprevfab_co_tipoestado dbname="TB_ORDENPREVFAB.CO_TIPOESTADO" )
+ column=(type=long updatewhereclause=yes name=tb_ordenprevfab_co_estado dbname="TB_ORDENPREVFAB.CO_ESTADO" )
+ column=(type=char(6) updatewhereclause=yes name=tb_color_co_colorsap dbname="TB_COLOR.CO_COLORSAP" )
+ retrieve="SELECT EFICIENC.TB_ORDENPREVFAB.CS_ORDEN,
+         EFICIENC.TB_ORDENPREVFAB.CO_ORDENPREVISIONAL,
+         EFICIENC.TB_ORDENPREVFAB.CO_ORDENFABRICACION,
+         EFICIENC.TB_ORDENPREVFAB.CO_MATERIAL,
+         EFICIENC.TB_ORDENPREVFAB.CO_TALLA,
+         EFICIENC.TB_ORDENPREVFAB.CO_COLOR,
+         EFICIENC.TB_ORDENPREVFAB.CO_TIPOESTADO,
+         EFICIENC.TB_ORDENPREVFAB.CO_ESTADO,
+			EFICIENC.TB_COLOR.CO_COLORSAP
+    FROM EFICIENC.TB_ORDENPREVFAB , EFICIENC.TB_COLOR
+		WHERE ( EFICIENC.TB_ORDENPREVFAB.CO_COLOR =  EFICIENC.TB_COLOR.CO_COLOR )
+		AND ( EFICIENC.TB_ORDENPREVFAB.CO_MATERIAL=:as_refer)
+		AND ( EFICIENC.TB_ORDENPREVFAB.CO_TALLA	=:as_talla)
+		AND ( EFICIENC.TB_COLOR.CO_COLORSAP			=:as_color)
+		AND ( EFICIENC.TB_ORDENPREVFAB.CO_ESTADO <> 6 ) " arguments=(("as_refer", string),("as_talla", string),("as_color", string)) )
+text(band=header alignment="2" text="Tb Ordenprevfab
+Cs Orden" border="0" color="33554432" x="9" y="8" height="112" width="379" html.valueishtml="0"  name=tb_ordenprevfab_cs_orden_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Tb Ordenprevfab
+Co Ordenprevisional" border="0" color="33554432" x="398" y="8" height="112" width="448" html.valueishtml="0"  name=tb_ordenprevfab_co_ordenprevisional_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Tb Ordenprevfab
+Co Ordenfabricacion" border="0" color="33554432" x="855" y="8" height="112" width="457" html.valueishtml="0"  name=tb_ordenprevfab_co_ordenfabricacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Tb Ordenprevfab
+Co Material" border="0" color="33554432" x="1321" y="8" height="112" width="434" html.valueishtml="0"  name=tb_ordenprevfab_co_material_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Tb Ordenprevfab
+Co Talla" border="0" color="33554432" x="1765" y="8" height="112" width="379" html.valueishtml="0"  name=tb_ordenprevfab_co_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Tb Ordenprevfab
+Co Color" border="0" color="33554432" x="2153" y="8" height="112" width="379" html.valueishtml="0"  name=tb_ordenprevfab_co_color_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Tb Ordenprevfab
+Co Tipoestado" border="0" color="33554432" x="2542" y="8" height="112" width="379" html.valueishtml="0"  name=tb_ordenprevfab_co_tipoestado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Tb Ordenprevfab
+Co Estado" border="0" color="33554432" x="2930" y="8" height="112" width="379" html.valueishtml="0"  name=tb_ordenprevfab_co_estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Tb Color
+Co Colorsap" border="0" color="33554432" x="3319" y="8" height="112" width="270" html.valueishtml="0"  name=tb_color_co_colorsap_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="0" color="33554432" x="9" y="8" height="68" width="379" format="[general]" html.valueishtml="0"  name=tb_ordenprevfab_cs_orden visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="33554432" x="398" y="8" height="68" width="448" format="[general]" html.valueishtml="0"  name=tb_ordenprevfab_co_ordenprevisional visible="1" edit.limit=10 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="33554432" x="855" y="8" height="68" width="457" format="[general]" html.valueishtml="0"  name=tb_ordenprevfab_co_ordenfabricacion visible="1" edit.limit=12 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="33554432" x="1321" y="8" height="68" width="434" format="[general]" html.valueishtml="0"  name=tb_ordenprevfab_co_material visible="1" edit.limit=18 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="33554432" x="1765" y="8" height="68" width="379" format="[general]" html.valueishtml="0"  name=tb_ordenprevfab_co_talla visible="1" edit.limit=2 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="33554432" x="2153" y="8" height="68" width="379" format="[general]" html.valueishtml="0"  name=tb_ordenprevfab_co_color visible="1" edit.limit=6 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="1" tabsequence=32766 border="0" color="33554432" x="2542" y="8" height="68" width="379" format="[general]" html.valueishtml="0"  name=tb_ordenprevfab_co_tipoestado visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="1" tabsequence=32766 border="0" color="33554432" x="2930" y="8" height="68" width="379" format="[general]" html.valueishtml="0"  name=tb_ordenprevfab_co_estado visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="33554432" x="3319" y="8" height="68" width="270" format="[general]" html.valueishtml="0"  name=tb_color_co_colorsap visible="1" edit.limit=6 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
+ 
