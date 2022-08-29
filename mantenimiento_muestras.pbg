@@ -1,0 +1,30 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "mantenimiento_muestras.pbl" "";
+@end;
+@begin Objects
+ "w_opc_seleccionar_users.srw" "mantenimiento_muestras.pbl";
+ "d_ex_fr_param_copiarusuarioref.srd" "mantenimiento_muestras.pbl";
+ "w_depuracion_recurso_agrupado.srw" "mantenimiento_muestras.pbl";
+ "d_sq_gr_rec_perespxapli_user.srd" "mantenimiento_muestras.pbl";
+ "d_gr_sq_seleccion_prog.srd" "mantenimiento_muestras.pbl";
+ "w_opc_copiarusuarioref.srw" "mantenimiento_muestras.pbl";
+ "w_opc_seleccionar_fabrica.srw" "mantenimiento_muestras.pbl";
+ "d_sq_gr_seleccion_fabrica.srd" "mantenimiento_muestras.pbl";
+ "d_sq_gr_seleccion_linea.srd" "mantenimiento_muestras.pbl";
+ "w_opc_seleccionar_linea.srw" "mantenimiento_muestras.pbl";
+ "d_gr_depuracion_agrupado_log.srd" "mantenimiento_muestras.pbl";
+ "d_ff_depuracion_agrupado.srd" "mantenimiento_muestras.pbl";
+ "d_gr_depuracion_agrupado.srd" "mantenimiento_muestras.pbl";
+ "d_gr_depuracion_agrupado_recurso.srd" "mantenimiento_muestras.pbl";
+ "w_opc_seleccionar_programa.srw" "mantenimiento_muestras.pbl";
+ "d_gr_consulta_ordenes_sis.srd" "mantenimiento_muestras.pbl";
+ "d_gr_depuracion_agrupa_recurso.srd" "mantenimiento_muestras.pbl";
+ "w_depuracion_adm_recurso.srw" "mantenimiento_muestras.pbl";
+ "n_cst_c_cfg_param_perespxapli.sru" "mantenimiento_muestras.pbl";
+ "d_ex_gr_param_m_perespxapli.srd" "mantenimiento_muestras.pbl";
+ "d_sq_gr_m_param_perespxapli.srd" "mantenimiento_muestras.pbl";
+ "d_gr_sq_seleccion_users.srd" "mantenimiento_muestras.pbl";
+ "d_sq_gr_validaruser_perespxapli.srd" "mantenimiento_muestras.pbl";
+ "w_cfg_param_perespxapli.srw" "mantenimiento_muestras.pbl";
+@end;
