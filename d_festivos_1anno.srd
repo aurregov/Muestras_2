@@ -1,0 +1,20 @@
+HA$PBExportHeader$d_festivos_1anno.srd
+$PBExportComments$DWO utilizado para cargar los d$$HEX1$$ed00$$ENDHEX$$as festivos en el per$$HEX1$$ed00$$ENDHEX$$odo de un a$$HEX1$$f100$$ENDHEX$$o que se deben tener en cuenta en el momento de la programaci$$HEX1$$f300$$ENDHEX$$n.
+release 8;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=56 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=char(20) updatewhereclause=yes name=nom_fer dbname="feriados.nom_fer" )
+ column=(type=date updatewhereclause=yes name=fec_fer dbname="feriados.fec_fer" )
+ column=(type=decimal(0) updatewhereclause=yes name=cod_gru dbname="feriados.cod_gru" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"feriados~" ) COLUMN(NAME=~"feriados.nom_fer~") COLUMN(NAME=~"feriados.fec_fer~") COLUMN(NAME=~"feriados.cod_gru~")WHERE(    EXP1 =~"feriados.fec_fer~"   OP =~">=~"    EXP2 =~"CURRENT~" ) ) " )
+text(band=header alignment="2" text="Nom Fer" border="0" color="0" x="9" y="4" height="56" width="347" html.valueishtml="0"  name=nom_fer_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Fec Fer" border="0" color="0" x="366" y="4" height="56" width="343" html.valueishtml="0"  name=fec_fer_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Cod Gru" border="0" color="0" x="718" y="4" height="56" width="325" html.valueishtml="0"  name=cod_gru_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="5" color="0" x="9" y="8" height="60" width="347" format="[general]" html.valueishtml="0"  name=nom_fer visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="5" color="0" x="366" y="8" height="60" width="343" format="[general]" html.valueishtml="0"  name=fec_fer visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="5" color="0" x="718" y="8" height="60" width="325" format="[General]" html.valueishtml="0"  name=cod_gru visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
