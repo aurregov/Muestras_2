@@ -1,0 +1,17 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "complementomuestras.pbl" "";
+@end;
+@begin Objects
+ "d_diseno_original.srd" "complementomuestras.pbl";
+ "d_m_muestras_migracion.srd" "complementomuestras.pbl";
+ "d_disenos_utilizados.srd" "complementomuestras.pbl";
+ "d_actualizar_dt_med_mue.srd" "complementomuestras.pbl";
+ "d_disenospormuestra.srd" "complementomuestras.pbl";
+ "w_procesar_muestras.srw" "complementomuestras.pbl";
+ "d_disenos_muestras.srd" "complementomuestras.pbl";
+ "d_ob_dt_med_mue_actualizar.srd" "complementomuestras.pbl";
+ "d_dt_med_mue_rep_actualizar.srd" "complementomuestras.pbl";
+ "d_dt_fmp_muestras_actualizar.srd" "complementomuestras.pbl";
+ "d_h_fmp_muestras_actualizar.srd" "complementomuestras.pbl";
+@end;
