@@ -1,0 +1,36 @@
+HA$PBExportHeader$d_verif_combina_ref_sin.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=144 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=92 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_combinacion dbname="m_combinaciones_sin.co_combinacion" )
+ column=(type=char(30) updatewhereclause=yes name=de_combinacion dbname="m_combinaciones_sin.de_combinacion" )
+ column=(type=char(30) updatewhereclause=yes name=de_combinacion_1 dbname="m_combinaciones.de_combinacion_1" )
+ retrieve="  SELECT m_combinaciones_a.co_combinacion,   
+         m_combinaciones_a.de_combinacion as de_combinacion,   
+         m_combinaciones_b.de_combinacion as de_combinacion_1	  
+    FROM m_combinaciones_sin m_combinaciones_a,   
+         m_combinaciones m_combinaciones_b  
+   WHERE ( m_combinaciones_a.co_combinacion = m_combinaciones_b.co_combinacion ) and  
+         ( m_combinaciones_a.de_combinacion <> m_combinaciones_b.de_combinacion ) and  
+         ( ( m_combinaciones_a.co_fabrica = :a_fabrica ) AND  
+         ( m_combinaciones_a.co_linea = :a_linea ) AND  
+         ( m_combinaciones_a.co_referencia = :a_referencia ) AND  
+         ( m_combinaciones_a.co_calidad = :a_calidad ) AND  
+         ( m_combinaciones_a.co_talla = :a_talla ) AND  
+         ( m_combinaciones_b.co_fabrica = :a_fabrica1 ) AND  
+         ( m_combinaciones_b.co_linea = :a_linea1 ) AND  
+         ( m_combinaciones_b.co_referencia = :a_referencia1 ) AND  
+         ( m_combinaciones_b.co_calidad = :a_calidad1 ) AND  
+         ( m_combinaciones_b.co_talla = :a_talla1 ) )    
+" arguments=(("a_fabrica", number),("a_linea", number),("a_referencia", number),("a_calidad", number),("a_talla", number),("a_fabrica1", number),("a_linea1", number),("a_referencia1", number),("a_calidad1", number),("a_talla1", number)) )
+column(band=detail id=1 alignment="0" tabsequence=0 border="0" color="0" x="9" y="0" height="76" width="453" html.valueishtml="0"  name=co_combinacion visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="M Combinaciones Sin Co Combinacion" border="0" color="0" x="5" y="4" height="76" width="457" html.valueishtml="0"  name=m_combinaciones_sin_co_combinacion_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=0 border="0" color="0" x="475" y="0" height="76" width="951" html.valueishtml="0"  name=de_combinacion visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="M Combinaciones Sin De Combinacion" border="0" color="0" x="471" y="4" height="76" width="955" html.valueishtml="0"  name=m_combinaciones_sin_de_combinacion_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=0 border="0" color="0" x="1440" y="0" height="76" width="951" html.valueishtml="0"  name=de_combinacion_1 visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="M Combinaciones De Combinacion 1" border="0" color="0" x="1435" y="4" height="76" width="955" html.valueishtml="0"  name=m_combinaciones_de_combinacion_1_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
