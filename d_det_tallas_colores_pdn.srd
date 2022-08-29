@@ -1,0 +1,103 @@
+HA$PBExportHeader$d_det_tallas_colores_pdn.srd
+release 9;
+datawindow(units=3 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 635 print.margin.right = 635 print.margin.top = 635 print.margin.bottom = 635 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=476 color="536870912" )
+summary(height=476 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=582 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabricas dbname="dt_surt_pdn.co_fabricas" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_lineas dbname="dt_surt_pdn.co_lineas" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_referencias dbname="dt_surt_pdn.co_referencias" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_tallas dbname="dt_surt_pdn.co_tallas" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_calidads dbname="dt_surt_pdn.co_calidads" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_colors dbname="dt_surt_pdn.co_colors" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_fabrica dbname="dt_surt_pdn.co_fabrica" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_linea dbname="dt_surt_pdn.co_linea" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_referencia dbname="dt_surt_pdn.co_referencia" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_talla dbname="dt_surt_pdn.co_talla" )
+ column=(type=char(15) updatewhereclause=yes name=de_talla dbname="de_talla" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_calidad dbname="dt_surt_pdn.co_calidad" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_color dbname="dt_surt_pdn.co_color" )
+ column=(type=char(30) updatewhereclause=yes name=de_color dbname="de_color" )
+ column=(type=long update=yes updatewhereclause=yes name=sw_surtido dbname="dt_surt_pdn.sw_surtido" )
+ column=(type=decimal(3) update=yes updatewhereclause=yes name=prc_composicion dbname="dt_surt_pdn.prc_composicion" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=estado_surtido dbname="dt_surt_pdn.estado_surtido" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fe_actualizacion dbname="dt_surt_pdn.fe_actualizacion" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=usuario dbname="dt_surt_pdn.usuario" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=instancia dbname="dt_surt_pdn.instancia" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=co_muestrario dbname="dt_surt_pdn.co_muestrario" )
+ retrieve="SELECT dt_surt_pdn.co_fabricas,   
+		 dt_surt_pdn.co_lineas,   
+		 dt_surt_pdn.co_referencias,   
+		 dt_surt_pdn.co_tallas,  
+       dt_surt_pdn.co_calidads,   
+		 dt_surt_pdn.co_colors,   
+		 dt_surt_pdn.co_fabrica,   
+		 dt_surt_pdn.co_linea,   
+		 dt_surt_pdn.co_referencia,   
+		 dt_surt_pdn.co_talla,   
+		 Trim(m_tallas.de_talla) de_talla,
+		 dt_surt_pdn.co_calidad,   
+		 dt_surt_pdn.co_color,   
+       Trim(m_colores.de_color) de_color, 
+		 dt_surt_pdn.sw_surtido,   
+		 dt_surt_pdn.prc_composicion,   
+		 dt_surt_pdn.estado_surtido,   
+		 dt_surt_pdn.fe_actualizacion,   
+		 dt_surt_pdn.usuario,   
+		 dt_surt_pdn.instancia,   
+		 dt_surt_pdn.co_muestrario  
+  FROM dt_surt_pdn, m_ref_pdn, m_tallas , m_colores    
+ WHERE ( dt_surt_pdn.co_fabricas    = :an_fabrica    )
+   AND ( dt_surt_pdn.co_lineas      = :an_linea      )
+   AND ( dt_surt_pdn.co_referencias = :an_referencia )
+   AND ( dt_surt_pdn.co_calidads    = :an_calidad    )
+   AND ( dt_surt_pdn.co_muestrario  = :an_muestrario )
+   AND ( m_ref_pdn.co_fabrica       = dt_surt_pdn.co_fabrica )
+   AND ( m_ref_pdn.co_linea         = dt_surt_pdn.co_linea   )
+   AND ( m_ref_pdn.co_referencia    = dt_surt_pdn.co_referencia)
+   AND ( m_ref_pdn.co_talla         = dt_surt_pdn.co_talla )
+   AND ( m_ref_pdn.co_calidad       = dt_surt_pdn.co_calidad )
+   AND ( m_tallas.co_fabrica        = m_ref_pdn.co_fabrica ) 
+   AND ( m_tallas.co_linea          = m_ref_pdn.co_linea ) 
+   AND ( m_tallas.co_talla          = m_ref_pdn.co_talla ) 
+   AND ( m_tallas.cs_talla          = m_ref_pdn.cs_talla )
+   AND ( m_colores.co_fabrica       = dt_surt_pdn.co_fabrica ) 
+   AND ( m_colores.co_linea         = dt_surt_pdn.co_linea ) 
+   AND ( m_colores.co_color         = dt_surt_pdn.co_color ) " update="dt_surt_pdn" updatewhere=0 updatekeyinplace=yes arguments=(("an_fabrica", number),("an_linea", number),("an_referencia", number),("an_calidad", number),("an_muestrario", number)) )
+text(band=header alignment="2" text="F$$HEX1$$e100$$ENDHEX$$brica" border="6" color="33554432" x="52" y="52" height="370" width="1058" html.valueishtml="0"  name=co_fabrica_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="L$$HEX1$$ed00$$ENDHEX$$nea" border="6" color="33554432" x="1164" y="52" height="370" width="846" html.valueishtml="0"  name=co_linea_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Referencia" border="6" color="33554432" x="2063" y="52" height="370" width="1693" html.valueishtml="0"  name=co_referencia_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Talla" border="6" color="33554432" x="3810" y="52" height="370" width="767" html.valueishtml="0"  name=co_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="De talla" border="6" color="33554432" x="4630" y="52" height="370" width="1931" html.valueishtml="0"  name=de_talla_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Calidad" border="6" color="33554432" x="6614" y="52" height="370" width="1058" html.valueishtml="0"  name=co_calidad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Color" border="6" color="33554432" x="7725" y="52" height="370" width="2196" html.valueishtml="0"  name=co_color_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="De Color" border="6" color="33554432" x="9974" y="52" height="370" width="2169" html.valueishtml="0"  name=de_color_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="% Compo" border="6" color="33554432" x="12197" y="52" height="370" width="1217" html.valueishtml="0"  name=prc_composicion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Sw Surtido" border="6" color="33554432" x="15266" y="52" height="370" width="1587" html.valueishtml="0"  name=sw_surtido_t visible="0"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Fe Actualizacion" border="6" color="33554432" x="18732" y="52" height="370" width="2910" html.valueishtml="0"  name=fe_actualizacion_t visible="0"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Usuario" border="6" color="33554432" x="21695" y="52" height="370" width="1190" html.valueishtml="0"  name=usuario_t visible="0"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Instancia" border="6" color="33554432" x="22939" y="52" height="370" width="2778" html.valueishtml="0"  name=instancia_t visible="0"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Co Muestrario" border="6" color="33554432" x="16906" y="52" height="370" width="1772" html.valueishtml="0"  name=co_muestrario_t visible="0"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Estado" border="6" color="33554432" x="13467" y="52" height="370" width="1746" html.valueishtml="0"  name=estado_surtido_t visible="0"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="1" tabsequence=70 border="5" color="33554432" x="12197" y="53" height="449" width="1217" format="[General]" html.valueishtml="0"  name=prc_composicion visible="1" editmask.mask="##0.00" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="1" tabsequence=32766 border="0" color="33554432" x="15266" y="53" height="449" width="1587" format="[general]" html.valueishtml="0"  name=sw_surtido visible="0" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=18 alignment="0" tabsequence=32766 border="0" color="33554432" x="18732" y="53" height="449" width="2910" format="[shortdate] [time]" html.valueishtml="0"  name=fe_actualizacion visible="0" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=19 alignment="0" tabsequence=32766 border="0" color="33554432" x="21695" y="53" height="449" width="1190" format="[general]" html.valueishtml="0"  name=usuario visible="0" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=20 alignment="0" tabsequence=32766 border="0" color="33554432" x="22939" y="53" height="449" width="2778" format="[general]" html.valueishtml="0"  name=instancia visible="0" edit.limit=20 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=21 alignment="1" tabsequence=32766 border="0" color="33554432" x="16906" y="53" height="449" width="1772" format="[general]" html.valueishtml="0"  name=co_muestrario visible="0" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=17 alignment="0" tabsequence=32766 border="5" color="33554432" x="13467" y="53" height="449" width="1746" format="[general]" html.valueishtml="0"  name=estado_surtido visible="1" edit.limit=1 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="1" tabsequence=10 border="5" color="33554432" x="52" y="53" height="449" width="1058" format="[general]" html.valueishtml="0"  name=co_fabrica visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="1" tabsequence=20 border="5" color="33554432" x="1164" y="53" height="449" width="846" format="[general]" html.valueishtml="0"  name=co_linea visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="1" tabsequence=30 border="5" color="33554432" x="2063" y="53" height="449" width="1693" format="[general]" html.valueishtml="0"  name=co_referencia visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="1" tabsequence=40 border="5" color="33554432" x="3810" y="53" height="449" width="767" format="[general]" html.valueishtml="0"  name=co_talla visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="5" color="33554432" x="4630" y="53" height="449" width="1931" format="[general]" html.valueishtml="0"  name=de_talla visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="5" color="33554432" x="9974" y="53" height="449" width="2169" format="[general]" html.valueishtml="0"  name=de_color visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="1" tabsequence=50 border="5" color="33554432" x="6614" y="53" height="449" width="1058" format="[general]" html.valueishtml="0"  name=co_calidad visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="1" tabsequence=60 border="5" color="33554432" x="7725" y="53" height="449" width="2196" format="[general]" html.valueishtml="0"  name=co_color visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=summary alignment="0" expression="Sum( prc_composicion )"border="1" color="0~tif  (  Sum(prc_composicion) <> 100,  RGB(255,0,0), RGB(0,0,0) )" x="12197" y="26" height="423" width="1217" format="0" html.valueishtml="0"  name=tot_prc visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
