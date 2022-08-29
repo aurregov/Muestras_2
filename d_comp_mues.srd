@@ -1,0 +1,33 @@
+HA$PBExportHeader$d_comp_mues.srd
+$PBExportComments$Composicion de la muesta
+release 7;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=72 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=char(3) updatewhereclause=yes name=m_grupos_abrv_grupo dbname="m_grupos.abrv_grupo" )
+ column=(type=decimal(2) updatewhereclause=yes name=sum_peso dbname="sum_peso" )
+ retrieve="  SELECT m_grupos.abrv_grupo,
+         sum(r_fmp_muestras.peso_mp) sum_peso
+    FROM r_fmp_muestras, outer(m_grupos,   
+         m_matprimas)
+   WHERE ( m_grupos.co_grupo = m_matprimas.co_grupo ) and  
+         ( m_matprimas.co_producto = r_fmp_muestras.co_producto_mp ) and  
+         ( r_fmp_muestras.co_fabrica = :a_fabrica ) AND  
+         ( r_fmp_muestras.co_linea = :a_linea ) AND  
+         ( r_fmp_muestras.co_muestra = :a_muestra ) AND  
+         ( r_fmp_muestras.co_talla = :a_talla )  and
+         ( r_fmp_muestras.co_color = :a_color ) and
+         ( r_fmp_muestras.cnt_opcion = :a_opcion )
+GROUP BY m_grupos.abrv_grupo" arguments=(("a_fabrica", number),("a_linea", number),("a_muestra", number),("a_talla", number),("a_color", number),("a_opcion", number)) )
+text(band=header alignment="2" text="Grupo" border="0" color="0" x="9" y="8" height="56" width="293"  name=m_grupos_abrv_grupo_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Peso" border="0" color="0" x="311" y="8" height="56" width="329"  name=sum_peso_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="1" expression=" sum_peso /total*100"border="0" color="0" x="649" y="4" height="56" width="279" format="#,###.00"  name=compute_1  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="4" height="56" width="293" format="[general]"  name=m_grupos_abrv_grupo edit.limit=3 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=32766 border="0" color="0" x="311" y="4" height="56" width="329" format="#,###.00"  name=sum_peso edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Porcentaje" border="0" color="0" x="649" y="8" height="56" width="279"  name=t_1  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=summary alignment="1" expression="sum( sum_peso /total*100 for all)"border="0" color="0" x="649" y="4" height="56" width="279" format="#,###.00"  name=compute_2  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=summary alignment="1" expression="sum(sum_peso for all)"border="0" color="0" x="311" y="4" height="56" width="329" format="#,###.00"  name=total  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
