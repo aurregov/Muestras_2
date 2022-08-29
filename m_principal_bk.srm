@@ -1,0 +1,1925 @@
+HA$PBExportHeader$m_principal_bk.srm
+forward
+global type m_principal_bk from m_main
+end type
+type m_pasardise$$HEX1$$f100$$ENDHEX$$ored from menu within m_procesos
+end type
+type m_procesos from m_main`m_procesos within m_principal_bk
+m_pasardise$$HEX1$$f100$$ENDHEX$$ored m_pasardise$$HEX1$$f100$$ENDHEX$$ored
+end type
+type m_manuales from menu within m_ayuda
+end type
+type m_c$$HEX1$$e100$$ENDHEX$$lculodeeficiencias from menu within m_manuales
+end type
+type m_cambiapintas1 from menu within m_manuales
+end type
+type m_manuales from menu within m_ayuda
+m_c$$HEX1$$e100$$ENDHEX$$lculodeeficiencias m_c$$HEX1$$e100$$ENDHEX$$lculodeeficiencias
+m_cambiapintas1 m_cambiapintas1
+end type
+type m_prueba from menu within m_ayuda
+end type
+type m_ayuda from m_main`m_ayuda within m_principal_bk
+m_manuales m_manuales
+m_prueba m_prueba
+end type
+end forward
+
+global type m_principal_bk from m_main
+end type
+global m_principal_bk m_principal_bk
+
+on m_principal_bk.create
+m_principal_bk=this
+call super::create
+end on
+
+on m_principal_bk.destroy
+call super::destroy
+end on
+
+type m_archivo from m_main`m_archivo within m_principal_bk
+end type
+
+on m_archivo.create
+call super::create
+end on
+
+on m_archivo.destroy
+call super::destroy
+end on
+
+type m_buscar from m_main`m_buscar within m_archivo
+end type
+
+on m_buscar.create
+call super::create
+this.toolbaritemvisible = false
+end on
+
+on m_buscar.destroy
+call super::destroy
+end on
+
+type m_-9 from m_main`m_-9 within m_archivo
+end type
+
+on m_-9.create
+call super::create
+end on
+
+on m_-9.destroy
+call super::destroy
+end on
+
+type m_nuevo from m_main`m_nuevo within m_archivo
+end type
+
+on m_nuevo.create
+call super::create
+this.toolbaritemvisible = false
+end on
+
+on m_nuevo.destroy
+call super::destroy
+end on
+
+type m_abrir from m_main`m_abrir within m_archivo
+end type
+
+on m_abrir.create
+call super::create
+this.toolbaritemvisible = false
+end on
+
+on m_abrir.destroy
+call super::destroy
+end on
+
+type m_cerrar from m_main`m_cerrar within m_archivo
+end type
+
+on m_cerrar.create
+call super::create
+this.toolbaritemvisible = false
+this.toolbaritemname = "Close!"
+end on
+
+on m_cerrar.destroy
+call super::destroy
+end on
+
+type m_-1 from m_main`m_-1 within m_archivo
+end type
+
+on m_-1.create
+call super::create
+end on
+
+on m_-1.destroy
+call super::destroy
+end on
+
+type m_guardar from m_main`m_guardar within m_archivo
+end type
+
+on m_guardar.create
+call super::create
+this.toolbaritemvisible = false
+end on
+
+on m_guardar.destroy
+call super::destroy
+end on
+
+type m_guardarcomo from m_main`m_guardarcomo within m_archivo
+end type
+
+on m_guardarcomo.create
+call super::create
+end on
+
+on m_guardarcomo.destroy
+call super::destroy
+end on
+
+type m_-10 from m_main`m_-10 within m_archivo
+end type
+
+on m_-10.create
+call super::create
+end on
+
+on m_-10.destroy
+call super::destroy
+end on
+
+type m_presentaci$$HEX1$$f300$$ENDHEX$$npreliminar from m_main`m_presentaci$$HEX1$$f300$$ENDHEX$$npreliminar within m_archivo
+end type
+
+on m_presentaci$$HEX1$$f300$$ENDHEX$$npreliminar.create
+call super::create
+this.toolbaritemvisible = false
+end on
+
+on m_presentaci$$HEX1$$f300$$ENDHEX$$npreliminar.destroy
+call super::destroy
+end on
+
+type m_imprimir from m_main`m_imprimir within m_archivo
+end type
+
+on m_imprimir.create
+call super::create
+this.toolbaritemvisible = false
+end on
+
+on m_imprimir.destroy
+call super::destroy
+end on
+
+type m_configurar_impresora from m_main`m_configurar_impresora within m_archivo
+end type
+
+on m_configurar_impresora.create
+call super::create
+this.toolbaritemvisible = false
+end on
+
+on m_configurar_impresora.destroy
+call super::destroy
+end on
+
+type m_-40 from m_main`m_-40 within m_archivo
+end type
+
+on m_-40.create
+call super::create
+end on
+
+on m_-40.destroy
+call super::destroy
+end on
+
+type m_salir from m_main`m_salir within m_archivo
+end type
+
+on m_salir.create
+call super::create
+end on
+
+on m_salir.destroy
+call super::destroy
+end on
+
+type m_edicion from m_main`m_edicion within m_principal_bk
+end type
+
+on m_edicion.create
+call super::create
+end on
+
+on m_edicion.destroy
+call super::destroy
+end on
+
+type m_deshacer from m_main`m_deshacer within m_edicion
+end type
+
+on m_deshacer.create
+call super::create
+end on
+
+on m_deshacer.destroy
+call super::destroy
+end on
+
+type m_- from m_main`m_- within m_edicion
+end type
+
+on m_-.create
+call super::create
+end on
+
+on m_-.destroy
+call super::destroy
+end on
+
+type m_cortar from m_main`m_cortar within m_edicion
+end type
+
+on m_cortar.create
+call super::create
+end on
+
+on m_cortar.destroy
+call super::destroy
+end on
+
+type m_copiar from m_main`m_copiar within m_edicion
+end type
+
+on m_copiar.create
+call super::create
+end on
+
+on m_copiar.destroy
+call super::destroy
+end on
+
+type m_pegar from m_main`m_pegar within m_edicion
+end type
+
+on m_pegar.create
+call super::create
+end on
+
+on m_pegar.destroy
+call super::destroy
+end on
+
+type m_-6 from m_main`m_-6 within m_edicion
+end type
+
+on m_-6.create
+call super::create
+end on
+
+on m_-6.destroy
+call super::destroy
+end on
+
+type m_insertar from m_main`m_insertar within m_edicion
+end type
+
+on m_insertar.create
+call super::create
+this.toolbaritemvisible = false
+end on
+
+on m_insertar.destroy
+call super::destroy
+end on
+
+type m_clear from m_main`m_clear within m_edicion
+end type
+
+on m_clear.create
+call super::create
+this.toolbaritemvisible = false
+end on
+
+on m_clear.destroy
+call super::destroy
+end on
+
+type m_-4 from m_main`m_-4 within m_edicion
+end type
+
+on m_-4.create
+call super::create
+end on
+
+on m_-4.destroy
+call super::destroy
+end on
+
+type m_ordenar from m_main`m_ordenar within m_edicion
+end type
+
+on m_ordenar.create
+call super::create
+this.toolbaritemvisible = false
+end on
+
+on m_ordenar.destroy
+call super::destroy
+end on
+
+type m_filtrar from m_main`m_filtrar within m_edicion
+end type
+
+on m_filtrar.create
+call super::create
+end on
+
+on m_filtrar.destroy
+call super::destroy
+end on
+
+type m_configuracion from m_main`m_configuracion within m_principal_bk
+end type
+
+on m_configuracion.create
+call super::create
+end on
+
+on m_configuracion.destroy
+call super::destroy
+end on
+
+type m_0 from m_main`m_0 within m_configuracion
+end type
+
+on m_0.create
+call super::create
+end on
+
+on m_0.destroy
+call super::destroy
+end on
+
+type m_1 from m_main`m_1 within m_configuracion
+end type
+
+on m_1.create
+call super::create
+end on
+
+on m_1.destroy
+call super::destroy
+end on
+
+type m_3 from m_main`m_3 within m_configuracion
+end type
+
+on m_3.create
+call super::create
+end on
+
+on m_3.destroy
+call super::destroy
+end on
+
+type m_4 from m_main`m_4 within m_configuracion
+end type
+
+on m_4.create
+call super::create
+end on
+
+on m_4.destroy
+call super::destroy
+end on
+
+type m_estadosporcolordemuestra from m_main`m_estadosporcolordemuestra within m_configuracion
+end type
+
+on m_estadosporcolordemuestra.create
+call super::create
+end on
+
+on m_estadosporcolordemuestra.destroy
+call super::destroy
+end on
+
+type m_5 from m_main`m_5 within m_configuracion
+end type
+
+on m_5.create
+call super::create
+end on
+
+on m_5.destroy
+call super::destroy
+end on
+
+type m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva from m_main`m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva within m_configuracion
+end type
+
+on m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva.create
+call super::create
+end on
+
+on m_parteb$$HEX1$$e100$$ENDHEX$$sicanueva.destroy
+call super::destroy
+end on
+
+type m_6 from m_main`m_6 within m_configuracion
+end type
+
+on m_6.create
+call super::create
+end on
+
+on m_6.destroy
+call super::destroy
+end on
+
+type m_clientesct$$HEX1$$e900$$ENDHEX$$cnico from m_main`m_clientesct$$HEX1$$e900$$ENDHEX$$cnico within m_configuracion
+end type
+
+on m_clientesct$$HEX1$$e900$$ENDHEX$$cnico.create
+call super::create
+end on
+
+on m_clientesct$$HEX1$$e900$$ENDHEX$$cnico.destroy
+call super::destroy
+end on
+
+type m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas from m_main`m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas within m_configuracion
+end type
+
+on m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas.create
+call super::create
+end on
+
+on m_operacionesb$$HEX1$$e100$$ENDHEX$$sicas.destroy
+call super::destroy
+end on
+
+type m_cargosct$$HEX1$$e900$$ENDHEX$$cnico from m_main`m_cargosct$$HEX1$$e900$$ENDHEX$$cnico within m_configuracion
+end type
+
+on m_cargosct$$HEX1$$e900$$ENDHEX$$cnico.create
+call super::create
+end on
+
+on m_cargosct$$HEX1$$e900$$ENDHEX$$cnico.destroy
+call super::destroy
+end on
+
+type m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico from m_main`m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico within m_configuracion
+end type
+
+on m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico.create
+call super::create
+end on
+
+on m_funcionariosct$$HEX1$$e900$$ENDHEX$$cnico.destroy
+call super::destroy
+end on
+
+type m_actividadesdemuestras from m_main`m_actividadesdemuestras within m_configuracion
+end type
+
+on m_actividadesdemuestras.create
+call super::create
+end on
+
+on m_actividadesdemuestras.destroy
+call super::destroy
+end on
+
+type m_recursosodetejidoparamuestras from m_main`m_recursosodetejidoparamuestras within m_configuracion
+end type
+
+on m_recursosodetejidoparamuestras.create
+call super::create
+end on
+
+on m_recursosodetejidoparamuestras.destroy
+call super::destroy
+end on
+
+type m_gruposdetipodeproducto from m_main`m_gruposdetipodeproducto within m_configuracion
+end type
+
+on m_gruposdetipodeproducto.create
+call super::create
+end on
+
+on m_gruposdetipodeproducto.destroy
+call super::destroy
+end on
+
+type m_autorizacionesportipodeproducto from m_main`m_autorizacionesportipodeproducto within m_configuracion
+end type
+
+on m_autorizacionesportipodeproducto.create
+call super::create
+end on
+
+on m_autorizacionesportipodeproducto.destroy
+call super::destroy
+end on
+
+type m_codigosdedisenos from m_main`m_codigosdedisenos within m_configuracion
+end type
+
+on m_codigosdedisenos.create
+call super::create
+end on
+
+on m_codigosdedisenos.destroy
+call super::destroy
+end on
+
+type m_-00211041216 from m_main`m_-00211041216 within m_configuracion
+end type
+
+on m_-00211041216.create
+call super::create
+end on
+
+on m_-00211041216.destroy
+call super::destroy
+end on
+
+type m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n from m_main`m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n within m_configuracion
+end type
+
+on m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n.create
+call super::create
+end on
+
+on m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n.destroy
+call super::destroy
+end on
+
+type m_mantenimientodeturnoshorarios from m_main`m_mantenimientodeturnoshorarios within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_mantenimientodeturnoshorarios.create
+call super::create
+end on
+
+on m_mantenimientodeturnoshorarios.destroy
+call super::destroy
+end on
+
+type m_registrodeactividades from m_main`m_registrodeactividades within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_registrodeactividades.create
+call super::create
+end on
+
+on m_registrodeactividades.destroy
+call super::destroy
+end on
+
+type m_registrodeoperaciones from m_main`m_registrodeoperaciones within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_registrodeoperaciones.create
+call super::create
+end on
+
+on m_registrodeoperaciones.destroy
+call super::destroy
+end on
+
+type m_registrodeestados from m_main`m_registrodeestados within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_registrodeestados.create
+call super::create
+end on
+
+on m_registrodeestados.destroy
+call super::destroy
+end on
+
+type m_registrodegruposdetrabajo from m_main`m_registrodegruposdetrabajo within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_registrodegruposdetrabajo.create
+call super::create
+end on
+
+on m_registrodegruposdetrabajo.destroy
+call super::destroy
+end on
+
+type m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan from m_main`m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan.create
+call super::create
+end on
+
+on m_registrodechablonesgr$$HEX1$$e100$$ENDHEX$$ficosantideslizan.destroy
+call super::destroy
+end on
+
+type m_registrodebordados from m_main`m_registrodebordados within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_registrodebordados.create
+call super::create
+end on
+
+on m_registrodebordados.destroy
+call super::destroy
+end on
+
+type m_registrodetintasantideslizantes from m_main`m_registrodetintasantideslizantes within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_registrodetintasantideslizantes.create
+call super::create
+end on
+
+on m_registrodetintasantideslizantes.destroy
+call super::destroy
+end on
+
+type m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a from m_main`m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a.create
+call super::create
+end on
+
+on m_registrodemaquinasdetintorer$$HEX1$$ed00$$ENDHEX$$a.destroy
+call super::destroy
+end on
+
+type m_basesparaantideslizante from m_main`m_basesparaantideslizante within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_basesparaantideslizante.create
+call super::create
+end on
+
+on m_basesparaantideslizante.destroy
+call super::destroy
+end on
+
+type m_calibresdechablones from m_main`m_calibresdechablones within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_calibresdechablones.create
+call super::create
+end on
+
+on m_calibresdechablones.destroy
+call super::destroy
+end on
+
+type m_clasificaci$$HEX1$$f300$$ENDHEX$$ndesolserv from m_main`m_clasificaci$$HEX1$$f300$$ENDHEX$$ndesolserv within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_clasificaci$$HEX1$$f300$$ENDHEX$$ndesolserv.create
+call super::create
+end on
+
+on m_clasificaci$$HEX1$$f300$$ENDHEX$$ndesolserv.destroy
+call super::destroy
+end on
+
+type m_9 from m_main`m_9 within m_mantenimientodeprogramaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_9.create
+call super::create
+end on
+
+on m_9.destroy
+call super::destroy
+end on
+
+type m_dise$$HEX1$$f100$$ENDHEX$$osmuestra from m_main`m_dise$$HEX1$$f100$$ENDHEX$$osmuestra within m_configuracion
+end type
+
+on m_dise$$HEX1$$f100$$ENDHEX$$osmuestra.create
+call super::create
+end on
+
+on m_dise$$HEX1$$f100$$ENDHEX$$osmuestra.destroy
+call super::destroy
+end on
+
+type m_pu$$HEX1$$f100$$ENDHEX$$osmuestras from m_main`m_pu$$HEX1$$f100$$ENDHEX$$osmuestras within m_configuracion
+end type
+
+on m_pu$$HEX1$$f100$$ENDHEX$$osmuestras.create
+call super::create
+end on
+
+on m_pu$$HEX1$$f100$$ENDHEX$$osmuestras.destroy
+call super::destroy
+end on
+
+type m_largosmuestra from m_main`m_largosmuestra within m_configuracion
+end type
+
+on m_largosmuestra.create
+call super::create
+end on
+
+on m_largosmuestra.destroy
+call super::destroy
+end on
+
+type m_operaciones from m_main`m_operaciones within m_configuracion
+end type
+
+on m_operaciones.create
+call super::create
+end on
+
+on m_operaciones.destroy
+call super::destroy
+end on
+
+type m_recursosrestringidos from m_main`m_recursosrestringidos within m_configuracion
+end type
+
+on m_recursosrestringidos.create
+call super::create
+end on
+
+on m_recursosrestringidos.destroy
+call super::destroy
+end on
+
+type m_medidasreposadas from m_main`m_medidasreposadas within m_configuracion
+end type
+
+on m_medidasreposadas.create
+call super::create
+end on
+
+on m_medidasreposadas.destroy
+call super::destroy
+end on
+
+type m_actualizacionmaterialsap from m_main`m_actualizacionmaterialsap within m_configuracion
+end type
+
+on m_actualizacionmaterialsap.create
+call super::create
+end on
+
+on m_actualizacionmaterialsap.destroy
+call super::destroy
+end on
+
+type m_familias from m_main`m_familias within m_configuracion
+end type
+
+on m_familias.create
+call super::create
+end on
+
+on m_familias.destroy
+call super::destroy
+end on
+
+type m_gruposdecomposicion from m_main`m_gruposdecomposicion within m_configuracion
+end type
+
+on m_gruposdecomposicion.create
+call super::create
+end on
+
+on m_gruposdecomposicion.destroy
+call super::destroy
+end on
+
+type m_00 from m_main`m_00 within m_configuracion
+end type
+
+on m_00.create
+call super::create
+end on
+
+on m_00.destroy
+call super::destroy
+end on
+
+type m_temporadassap from m_main`m_temporadassap within m_configuracion
+end type
+
+on m_temporadassap.create
+call super::create
+end on
+
+on m_temporadassap.destroy
+call super::destroy
+end on
+
+type m_tallassap from m_main`m_tallassap within m_configuracion
+end type
+
+on m_tallassap.create
+call super::create
+end on
+
+on m_tallassap.destroy
+call super::destroy
+end on
+
+type m_coloressap from m_main`m_coloressap within m_configuracion
+end type
+
+on m_coloressap.create
+call super::create
+end on
+
+on m_coloressap.destroy
+call super::destroy
+end on
+
+type m_direccionesipporusuario from m_main`m_direccionesipporusuario within m_configuracion
+end type
+
+on m_direccionesipporusuario.create
+call super::create
+end on
+
+on m_direccionesipporusuario.destroy
+call super::destroy
+end on
+
+type m_movimientos from m_main`m_movimientos within m_principal_bk
+end type
+
+on m_movimientos.create
+call super::create
+end on
+
+on m_movimientos.destroy
+call super::destroy
+end on
+
+type m_muestras from m_main`m_muestras within m_movimientos
+end type
+
+on m_muestras.create
+call super::create
+end on
+
+on m_muestras.destroy
+call super::destroy
+end on
+
+type m_7 from m_main`m_7 within m_muestras
+end type
+
+on m_7.create
+call super::create
+this.tag = "400101999"
+end on
+
+on m_7.destroy
+call super::destroy
+end on
+
+type m_8 from m_main`m_8 within m_muestras
+end type
+
+on m_8.create
+call super::create
+this.tag = "400102999"
+end on
+
+on m_8.destroy
+call super::destroy
+end on
+
+type m_medidas from m_main`m_medidas within m_muestras
+end type
+
+on m_medidas.create
+call super::create
+end on
+
+on m_medidas.destroy
+call super::destroy
+end on
+
+type m_manoobramuestra from m_main`m_manoobramuestra within m_muestras
+end type
+
+on m_manoobramuestra.create
+call super::create
+end on
+
+on m_manoobramuestra.destroy
+call super::destroy
+end on
+
+type m_materiaprimamuestra from m_main`m_materiaprimamuestra within m_muestras
+end type
+
+on m_materiaprimamuestra.create
+call super::create
+end on
+
+on m_materiaprimamuestra.destroy
+call super::destroy
+end on
+
+type m_copiarmuestraareferencia from m_main`m_copiarmuestraareferencia within m_muestras
+end type
+
+on m_copiarmuestraareferencia.create
+call super::create
+end on
+
+on m_copiarmuestraareferencia.destroy
+call super::destroy
+end on
+
+type m_surtidos from m_main`m_surtidos within m_muestras
+end type
+
+on m_surtidos.create
+call super::create
+end on
+
+on m_surtidos.destroy
+call super::destroy
+end on
+
+type m_-0aaa from m_main`m_-0aaa within m_muestras
+end type
+
+on m_-0aaa.create
+call super::create
+end on
+
+on m_-0aaa.destroy
+call super::destroy
+end on
+
+type m_estadosporcolor from m_main`m_estadosporcolor within m_muestras
+end type
+
+on m_estadosporcolor.create
+call super::create
+end on
+
+on m_estadosporcolor.destroy
+call super::destroy
+end on
+
+type m_muestrab$$HEX1$$e100$$ENDHEX$$sica from m_main`m_muestrab$$HEX1$$e100$$ENDHEX$$sica within m_muestras
+end type
+
+on m_muestrab$$HEX1$$e100$$ENDHEX$$sica.create
+call super::create
+end on
+
+on m_muestrab$$HEX1$$e100$$ENDHEX$$sica.destroy
+call super::destroy
+end on
+
+type m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n from m_main`m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n within m_muestras
+end type
+
+on m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n.create
+call super::create
+end on
+
+on m_ordendeproducci$$HEX1$$f300$$ENDHEX$$n.destroy
+call super::destroy
+end on
+
+type m_referencia from m_main`m_referencia within m_movimientos
+end type
+
+on m_referencia.create
+call super::create
+end on
+
+on m_referencia.destroy
+call super::destroy
+end on
+
+type m_medidasreferencia from m_main`m_medidasreferencia within m_referencia
+end type
+
+on m_medidasreferencia.create
+call super::create
+end on
+
+on m_medidasreferencia.destroy
+call super::destroy
+end on
+
+type m_manoobraref from m_main`m_manoobraref within m_referencia
+end type
+
+on m_manoobraref.create
+call super::create
+end on
+
+on m_manoobraref.destroy
+call super::destroy
+end on
+
+type m_materiaprima from m_main`m_materiaprima within m_referencia
+end type
+
+on m_materiaprima.create
+call super::create
+end on
+
+on m_materiaprima.destroy
+call super::destroy
+end on
+
+type m_-5aax from m_main`m_-5aax within m_referencia
+end type
+
+on m_-5aax.create
+call super::create
+end on
+
+on m_-5aax.destroy
+call super::destroy
+end on
+
+type m_nuevasmedidas from m_main`m_nuevasmedidas within m_referencia
+end type
+
+on m_nuevasmedidas.create
+call super::create
+end on
+
+on m_nuevasmedidas.destroy
+call super::destroy
+end on
+
+type m_manoobranueva from m_main`m_manoobranueva within m_referencia
+end type
+
+on m_manoobranueva.create
+call super::create
+end on
+
+on m_manoobranueva.destroy
+call super::destroy
+end on
+
+type m_orden from m_main`m_orden within m_movimientos
+end type
+
+on m_orden.create
+call super::create
+end on
+
+on m_orden.destroy
+call super::destroy
+end on
+
+type m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes from m_main`m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes within m_orden
+end type
+
+on m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes.create
+call super::create
+end on
+
+on m_programaci$$HEX1$$f300$$ENDHEX$$ndeordenes.destroy
+call super::destroy
+end on
+
+type m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n from m_main`m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n within m_orden
+end type
+
+on m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n.create
+call super::create
+end on
+
+on m_reacomodarprogramaci$$HEX1$$f300$$ENDHEX$$n.destroy
+call super::destroy
+end on
+
+type m_-pol12112041805 from m_main`m_-pol12112041805 within m_orden
+end type
+
+on m_-pol12112041805.create
+call super::create
+end on
+
+on m_-pol12112041805.destroy
+call super::destroy
+end on
+
+type m_cambiartareasdegrupo from m_main`m_cambiartareasdegrupo within m_orden
+end type
+
+on m_cambiartareasdegrupo.create
+call super::create
+end on
+
+on m_cambiartareasdegrupo.destroy
+call super::destroy
+end on
+
+type m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a from m_main`m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a within m_orden
+end type
+
+on m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a.create
+call super::create
+end on
+
+on m_cambiartareasdem$$HEX1$$e100$$ENDHEX$$quinadetintorer$$HEX1$$ed00$$ENDHEX$$a.destroy
+call super::destroy
+end on
+
+type m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes from m_main`m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes within m_orden
+end type
+
+on m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes.create
+call super::create
+end on
+
+on m_cambiarprioridadde$$HEX1$$f300$$ENDHEX$$rdenes.destroy
+call super::destroy
+end on
+
+type m_-l2601051147 from m_main`m_-l2601051147 within m_orden
+end type
+
+on m_-l2601051147.create
+call super::create
+end on
+
+on m_-l2601051147.destroy
+call super::destroy
+end on
+
+type m_generargantt from m_main`m_generargantt within m_orden
+end type
+
+on m_generargantt.create
+call super::create
+end on
+
+on m_generargantt.destroy
+call super::destroy
+end on
+
+type m_correodb from m_main`m_correodb within m_movimientos
+end type
+
+on m_correodb.create
+call super::create
+end on
+
+on m_correodb.destroy
+call super::destroy
+end on
+
+type m_procesos from m_main`m_procesos within m_principal_bk
+m_pasardise$$HEX1$$f100$$ENDHEX$$ored m_pasardise$$HEX1$$f100$$ENDHEX$$ored
+end type
+
+on m_procesos.create
+call super::create
+this.m_pasardise$$HEX1$$f100$$ENDHEX$$ored=create m_pasardise$$HEX1$$f100$$ENDHEX$$ored
+this.Item[UpperBound(this.Item)+1]=this.m_pasardise$$HEX1$$f100$$ENDHEX$$ored
+end on
+
+on m_procesos.destroy
+call super::destroy
+destroy(this.m_pasardise$$HEX1$$f100$$ENDHEX$$ored)
+end on
+
+type m_refrescarlistas from m_main`m_refrescarlistas within m_procesos
+end type
+
+on m_refrescarlistas.create
+call super::create
+end on
+
+on m_refrescarlistas.destroy
+call super::destroy
+end on
+
+type m_reportes from m_main`m_reportes within m_principal_bk
+end type
+
+on m_reportes.create
+call super::create
+end on
+
+on m_reportes.destroy
+call super::destroy
+end on
+
+type m_muestras1 from m_main`m_muestras1 within m_reportes
+end type
+
+on m_muestras1.create
+call super::create
+end on
+
+on m_muestras1.destroy
+call super::destroy
+end on
+
+type m_solicitud from m_main`m_solicitud within m_muestras1
+end type
+
+on m_solicitud.create
+call super::create
+end on
+
+on m_solicitud.destroy
+call super::destroy
+end on
+
+type m_medidasymo from m_main`m_medidasymo within m_muestras1
+end type
+
+on m_medidasymo.create
+call super::create
+end on
+
+on m_medidasymo.destroy
+call super::destroy
+end on
+
+type m_11 from m_main`m_11 within m_muestras1
+end type
+
+on m_11.create
+call super::create
+end on
+
+on m_11.destroy
+call super::destroy
+end on
+
+type m_listamuestras from m_main`m_listamuestras within m_muestras1
+end type
+
+on m_listamuestras.create
+call super::create
+end on
+
+on m_listamuestras.destroy
+call super::destroy
+end on
+
+type m_-0212 from m_main`m_-0212 within m_muestras1
+end type
+
+on m_-0212.create
+call super::create
+end on
+
+on m_-0212.destroy
+call super::destroy
+end on
+
+type m_cantidades from m_main`m_cantidades within m_muestras1
+end type
+
+on m_cantidades.create
+call super::create
+end on
+
+on m_cantidades.destroy
+call super::destroy
+end on
+
+type m_reporteconsolidado from m_main`m_reporteconsolidado within m_muestras1
+end type
+
+on m_reporteconsolidado.create
+call super::create
+end on
+
+on m_reporteconsolidado.destroy
+call super::destroy
+end on
+
+type m_saldos from m_main`m_saldos within m_muestras1
+end type
+
+on m_saldos.create
+call super::create
+end on
+
+on m_saldos.destroy
+call super::destroy
+end on
+
+type m_-089797xxhgf from m_main`m_-089797xxhgf within m_muestras1
+end type
+
+on m_-089797xxhgf.create
+call super::create
+end on
+
+on m_-089797xxhgf.destroy
+call super::destroy
+end on
+
+type m_reporteejecutivas from m_main`m_reporteejecutivas within m_muestras1
+end type
+
+on m_reporteejecutivas.create
+call super::create
+end on
+
+on m_reporteejecutivas.destroy
+call super::destroy
+end on
+
+type m_muestrario-color from m_main`m_muestrario-color within m_muestras1
+end type
+
+on m_muestrario-color.create
+call super::create
+end on
+
+on m_muestrario-color.destroy
+call super::destroy
+end on
+
+type m_referencias from m_main`m_referencias within m_reportes
+end type
+
+on m_referencias.create
+call super::create
+end on
+
+on m_referencias.destroy
+call super::destroy
+end on
+
+type m_mediadas from m_main`m_mediadas within m_referencias
+end type
+
+on m_mediadas.create
+call super::create
+end on
+
+on m_mediadas.destroy
+call super::destroy
+end on
+
+type m_fichadematprima from m_main`m_fichadematprima within m_referencias
+end type
+
+on m_fichadematprima.create
+call super::create
+end on
+
+on m_fichadematprima.destroy
+call super::destroy
+end on
+
+type m_manodeobra from m_main`m_manodeobra within m_referencias
+end type
+
+on m_manodeobra.create
+call super::create
+end on
+
+on m_manodeobra.destroy
+call super::destroy
+end on
+
+type m_-11weryhfdhgd from m_main`m_-11weryhfdhgd within m_referencias
+end type
+
+on m_-11weryhfdhgd.create
+call super::create
+end on
+
+on m_-11weryhfdhgd.destroy
+call super::destroy
+end on
+
+type m_nuevasmedidas0 from m_main`m_nuevasmedidas0 within m_referencias
+end type
+
+on m_nuevasmedidas0.create
+call super::create
+end on
+
+on m_nuevasmedidas0.destroy
+call super::destroy
+end on
+
+type m_materiaprimacolor-pinta from m_main`m_materiaprimacolor-pinta within m_referencias
+end type
+
+on m_materiaprimacolor-pinta.create
+call super::create
+end on
+
+on m_materiaprimacolor-pinta.destroy
+call super::destroy
+end on
+
+type m_$$HEX1$$f300$$ENDHEX$$rdenes from m_main`m_$$HEX1$$f300$$ENDHEX$$rdenes within m_reportes
+end type
+
+on m_$$HEX1$$f300$$ENDHEX$$rdenes.create
+call super::create
+end on
+
+on m_$$HEX1$$f300$$ENDHEX$$rdenes.destroy
+call super::destroy
+end on
+
+type m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso from m_main`m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso within m_$$HEX1$$f300$$ENDHEX$$rdenes
+end type
+
+on m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso.create
+call super::create
+end on
+
+on m_$$HEX1$$f300$$ENDHEX$$rdenesenproceso.destroy
+call super::destroy
+end on
+
+type m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo from m_main`m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo within m_$$HEX1$$f300$$ENDHEX$$rdenes
+end type
+
+on m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo.create
+call super::create
+end on
+
+on m_d$$HEX1$$ed00$$ENDHEX$$asendesarrollo.destroy
+call super::destroy
+end on
+
+type m_ordenescompletas from m_main`m_ordenescompletas within m_$$HEX1$$f300$$ENDHEX$$rdenes
+end type
+
+on m_ordenescompletas.create
+call super::create
+end on
+
+on m_ordenescompletas.destroy
+call super::destroy
+end on
+
+type m_10 from m_main`m_10 within m_$$HEX1$$f300$$ENDHEX$$rdenes
+end type
+
+on m_10.create
+call super::create
+end on
+
+on m_10.destroy
+call super::destroy
+end on
+
+type m_programaci$$HEX1$$f300$$ENDHEX$$n from m_main`m_programaci$$HEX1$$f300$$ENDHEX$$n within m_reportes
+end type
+
+on m_programaci$$HEX1$$f300$$ENDHEX$$n.create
+call super::create
+end on
+
+on m_programaci$$HEX1$$f300$$ENDHEX$$n.destroy
+call super::destroy
+end on
+
+type m_grupos from m_main`m_grupos within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_grupos.create
+call super::create
+end on
+
+on m_grupos.destroy
+call super::destroy
+end on
+
+type m_ordenesdetenidas from m_main`m_ordenesdetenidas within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_ordenesdetenidas.create
+call super::create
+end on
+
+on m_ordenesdetenidas.destroy
+call super::destroy
+end on
+
+type m_usuariosprogramando from m_main`m_usuariosprogramando within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_usuariosprogramando.create
+call super::create
+end on
+
+on m_usuariosprogramando.destroy
+call super::destroy
+end on
+
+type m_movimientosrealizados from m_main`m_movimientosrealizados within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_movimientosrealizados.create
+call super::create
+end on
+
+on m_movimientosrealizados.destroy
+call super::destroy
+end on
+
+type m_ordenesenproceso from m_main`m_ordenesenproceso within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_ordenesenproceso.create
+call super::create
+end on
+
+on m_ordenesenproceso.destroy
+call super::destroy
+end on
+
+type m_d$$HEX1$$ed00$$ENDHEX$$asdedesarrollo from m_main`m_d$$HEX1$$ed00$$ENDHEX$$asdedesarrollo within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_d$$HEX1$$ed00$$ENDHEX$$asdedesarrollo.create
+call super::create
+end on
+
+on m_d$$HEX1$$ed00$$ENDHEX$$asdedesarrollo.destroy
+call super::destroy
+end on
+
+type m_muestrasconvertidas from m_main`m_muestrasconvertidas within m_programaci$$HEX1$$f300$$ENDHEX$$n
+end type
+
+on m_muestrasconvertidas.create
+call super::create
+end on
+
+on m_muestrasconvertidas.destroy
+call super::destroy
+end on
+
+type m_ventana from m_main`m_ventana within m_principal_bk
+end type
+
+on m_ventana.create
+call super::create
+end on
+
+on m_ventana.destroy
+call super::destroy
+end on
+
+type m_vertical from m_main`m_vertical within m_ventana
+end type
+
+on m_vertical.create
+call super::create
+this.visible = false
+this.enabled = false
+this.toolbaritemvisible = false
+end on
+
+on m_vertical.destroy
+call super::destroy
+end on
+
+type m_horizontal from m_main`m_horizontal within m_ventana
+end type
+
+on m_horizontal.create
+call super::create
+this.visible = false
+this.enabled = false
+this.toolbaritemvisible = false
+end on
+
+on m_horizontal.destroy
+call super::destroy
+end on
+
+type m_completa from m_main`m_completa within m_ventana
+end type
+
+on m_completa.create
+call super::create
+this.visible = false
+this.enabled = false
+this.toolbaritemvisible = false
+end on
+
+on m_completa.destroy
+call super::destroy
+end on
+
+type m_cascada from m_main`m_cascada within m_ventana
+end type
+
+on m_cascada.create
+call super::create
+this.visible = false
+this.enabled = false
+this.toolbaritemvisible = false
+end on
+
+on m_cascada.destroy
+call super::destroy
+end on
+
+type m_-2 from m_main`m_-2 within m_ventana
+end type
+
+on m_-2.create
+call super::create
+end on
+
+on m_-2.destroy
+call super::destroy
+end on
+
+type m_arreglar_iconos from m_main`m_arreglar_iconos within m_ventana
+end type
+
+on m_arreglar_iconos.create
+call super::create
+this.visible = false
+this.enabled = false
+this.toolbaritemvisible = false
+end on
+
+on m_arreglar_iconos.destroy
+call super::destroy
+end on
+
+type m_-3 from m_main`m_-3 within m_ventana
+end type
+
+on m_-3.create
+call super::create
+end on
+
+on m_-3.destroy
+call super::destroy
+end on
+
+type m_barra from m_main`m_barra within m_ventana
+end type
+
+on m_barra.create
+call super::create
+end on
+
+on m_barra.destroy
+call super::destroy
+end on
+
+type m_arriba from m_main`m_arriba within m_barra
+end type
+
+on m_arriba.create
+call super::create
+end on
+
+on m_arriba.destroy
+call super::destroy
+end on
+
+type m_abajo from m_main`m_abajo within m_barra
+end type
+
+on m_abajo.create
+call super::create
+end on
+
+on m_abajo.destroy
+call super::destroy
+end on
+
+type m_izquierda from m_main`m_izquierda within m_barra
+end type
+
+on m_izquierda.create
+call super::create
+end on
+
+on m_izquierda.destroy
+call super::destroy
+end on
+
+type m_derecha from m_main`m_derecha within m_barra
+end type
+
+on m_derecha.create
+call super::create
+end on
+
+on m_derecha.destroy
+call super::destroy
+end on
+
+type m_-7 from m_main`m_-7 within m_barra
+end type
+
+on m_-7.create
+call super::create
+end on
+
+on m_-7.destroy
+call super::destroy
+end on
+
+type m_ocultar_barra from m_main`m_ocultar_barra within m_barra
+end type
+
+on m_ocultar_barra.create
+call super::create
+end on
+
+on m_ocultar_barra.destroy
+call super::destroy
+end on
+
+type m_-8 from m_main`m_-8 within m_barra
+end type
+
+on m_-8.create
+call super::create
+end on
+
+on m_-8.destroy
+call super::destroy
+end on
+
+type m_mostrar_textos from m_main`m_mostrar_textos within m_barra
+end type
+
+on m_mostrar_textos.create
+call super::create
+end on
+
+on m_mostrar_textos.destroy
+call super::destroy
+end on
+
+type m_ayuda from m_main`m_ayuda within m_principal_bk
+m_manuales m_manuales
+m_prueba m_prueba
+end type
+
+on m_ayuda.create
+call super::create
+this.m_manuales=create m_manuales
+this.m_prueba=create m_prueba
+this.Item[UpperBound(this.Item)+1]=this.m_manuales
+this.Item[UpperBound(this.Item)+1]=this.m_prueba
+end on
+
+on m_ayuda.destroy
+call super::destroy
+destroy(this.m_manuales)
+destroy(this.m_prueba)
+end on
+
+type m_contenido from m_main`m_contenido within m_ayuda
+end type
+
+on m_contenido.create
+call super::create
+end on
+
+on m_contenido.destroy
+call super::destroy
+end on
+
+type m_2 from m_main`m_2 within m_ayuda
+end type
+
+on m_2.create
+call super::create
+end on
+
+on m_2.destroy
+call super::destroy
+end on
+
+type m_acerca from m_main`m_acerca within m_ayuda
+end type
+
+on m_acerca.create
+call super::create
+end on
+
+on m_acerca.destroy
+call super::destroy
+end on
+
+type m_pasardise$$HEX1$$f100$$ENDHEX$$ored from menu within m_procesos
+end type
+
+on m_pasardise$$HEX1$$f100$$ENDHEX$$ored.create
+call super::create
+this.text = "Pasar Dise$$HEX1$$f100$$ENDHEX$$o Red"
+end on
+
+on m_pasardise$$HEX1$$f100$$ENDHEX$$ored.destroy
+call super::destroy
+end on
+
+event clicked;s_base_parametros lo_param
+
+lo_param.cadena[1] = ''
+
+OpenWithParm(w_pasar_diseno_red, lo_param)
+end event
+
+type m_manuales from menu within m_ayuda
+m_c$$HEX1$$e100$$ENDHEX$$lculodeeficiencias m_c$$HEX1$$e100$$ENDHEX$$lculodeeficiencias
+m_cambiapintas1 m_cambiapintas1
+end type
+
+on m_manuales.create
+call super::create
+this.text = "&Manuales"
+this.m_c$$HEX1$$e100$$ENDHEX$$lculodeeficiencias=create m_c$$HEX1$$e100$$ENDHEX$$lculodeeficiencias
+this.m_cambiapintas1=create m_cambiapintas1
+this.Item[UpperBound(this.Item)+1]=this.m_c$$HEX1$$e100$$ENDHEX$$lculodeeficiencias
+this.Item[UpperBound(this.Item)+1]=this.m_cambiapintas1
+end on
+
+on m_manuales.destroy
+call super::destroy
+destroy(this.m_c$$HEX1$$e100$$ENDHEX$$lculodeeficiencias)
+destroy(this.m_cambiapintas1)
+end on
+
+type m_c$$HEX1$$e100$$ENDHEX$$lculodeeficiencias from menu within m_manuales
+end type
+
+event clicked;Run("c:\proyecto\proceso\exe\wordpad.exe c:\proyecto\proceso\exe\eficiencias.doc", Maximized!)
+end event
+
+on m_c$$HEX1$$e100$$ENDHEX$$lculodeeficiencias.create
+call super::create
+this.text = "&C$$HEX1$$e100$$ENDHEX$$lculo de Eficiencias"
+end on
+
+on m_c$$HEX1$$e100$$ENDHEX$$lculodeeficiencias.destroy
+call super::destroy
+end on
+
+type m_cambiapintas1 from menu within m_manuales
+end type
+
+event clicked;Run("c:\proyecto\proceso\exe\wordpad.exe c:\proyecto\proceso\exe\cambia_pintas.doc", Maximized!)
+end event
+
+on m_cambiapintas1.create
+call super::create
+this.text = "Cambia &Pintas"
+end on
+
+on m_cambiapintas1.destroy
+call super::destroy
+end on
+
+type m_prueba from menu within m_ayuda
+end type
+
+on m_prueba.create
+call super::create
+this.text = "Prueba"
+end on
+
+on m_prueba.destroy
+call super::destroy
+end on
+
+event clicked;Open(w_pasar_a_red)
+end event
+
