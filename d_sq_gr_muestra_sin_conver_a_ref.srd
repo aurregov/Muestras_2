@@ -1,0 +1,82 @@
+HA$PBExportHeader$d_sq_gr_muestra_sin_conver_a_ref.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_fabrica dbname="m_muestras.co_fabrica" )
+ column=(type=long updatewhereclause=yes name=co_linea dbname="m_muestras.co_linea" )
+ column=(type=long updatewhereclause=yes name=co_muestra dbname="m_muestras.co_muestra" )
+ column=(type=long updatewhereclause=yes name=co_recurso dbname="dt_muestras.co_recurso" )
+ column=(type=char(30) updatewhereclause=yes name=de_recurso dbname="de_recurso" )
+ column=(type=decimal(0) updatewhereclause=yes name=cantidad_ordenes dbname="cantidad_ordenes" )
+ column=(type=long updatewhereclause=yes name=co_referencia_ref dbname="m_muestras.co_referencia_ref" )
+ column=(type=char(15) updatewhereclause=yes name=talla_ref dbname="talla_ref" )
+ column=(type=char(50) updatewhereclause=yes name=desc_referencia dbname="m_muestras.desc_referencia" )
+ column=(type=datetime updatewhereclause=yes name=fe_creacion dbname="fe_creacion" )
+ column=(type=char(50) updatewhereclause=yes name=de_cliente dbname="de_cliente" )
+ column=(type=char(30) updatewhereclause=yes name=de_ejecutiva dbname="de_ejecutiva" )
+ column=(type=char(30) updatewhereclause=yes name=desarrollador dbname="desarrollador" )
+ retrieve="SELECT m_muestras.co_fabrica,   
+		m_muestras.co_linea,   
+		m_muestras.co_muestra,   
+		dt_muestras.co_recurso,
+		(sp_nom_m_recursos_tj(dt_muestras.co_recurso)) as de_recurso, 
+		(select count(nu_orden) from dt_mu_ord where co_muestra = dt_muestras.co_muestra) as cantidad_ordenes,
+		m_muestras.co_referencia as co_referencia_ref,   
+		(sp_desc_talla_x_grupo(m_muestras.co_grupo_tlla,dt_muestras.co_talla)) AS talla_ref,
+		m_muestras.de_muestra as desc_referencia,	
+		EXTEND(m_muestras.fe_desarrollo,YEAR TO DAY) as fe_creacion,
+		(sp_nom_cliente(m_muestras.tipo_muestra, m_muestras.co_cliente ,m_muestras.co_sucursal)) as de_cliente	, 
+		(sp_nom_ejecutivo(m_muestras.tipo_muestra,m_muestras.co_ejecutiva)) as de_ejecutiva,
+		(sp_desc_desarrollador(m_muestras.desarrollador)) as desarrollador 
+    FROM m_muestras,
+         dt_muestras         
+   WHERE ( dt_muestras.co_fabrica = m_muestras.co_fabrica ) and
+         ( dt_muestras.co_linea = m_muestras.co_linea ) and
+         ( dt_muestras.co_muestra = m_muestras.co_muestra ) and
+			( m_muestras.co_muestra NOT IN ( Select dt_muestras_ref.co_muestra 
+														from dt_muestras_ref 
+														where dt_muestras_ref.co_fabrica = dt_muestras.co_fabrica  
+														and dt_muestras_ref.co_linea = dt_muestras.co_linea 
+														and dt_muestras_ref.co_muestra = dt_muestras.co_muestra )
+			) and 
+			( m_muestras.co_fabrica = :an_fabrica	or :an_fabrica = 0) and 
+			( m_muestras.co_linea 	= :an_linea		or :an_linea = 0  ) and 
+			( tipo_muestra = :as_tipoM					or :as_tipoM = '' ) and 
+         ( EXTEND(m_muestras.fe_desarrollo,YEAR TO FRACTION (5)) >= :a_desde  ) and
+         ( EXTEND(m_muestras.fe_desarrollo,YEAR TO FRACTION(5)) <   :a_hasta ) 
+ 
+" arguments=(("a_desde", datetime),("a_hasta", datetime),("an_fabrica", number),("an_linea", number),("as_tipoM", string))  sort="fe_creacion A " )
+text(band=header alignment="0" text="Fe Creacion" border="0" color="0" x="1216" y="8" height="56" width="562" html.valueishtml="0"  name=fe_creacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Co Recurso" border="0" color="0" x="1787" y="8" height="56" width="261" html.valueishtml="0"  name=co_recurso_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="De Recurso" border="0" color="0" x="2057" y="8" height="56" width="681" html.valueishtml="0"  name=de_recurso_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Cantidad Ordenes" border="0" color="0" x="2747" y="8" height="56" width="750" html.valueishtml="0"  name=cantidad_ordenes_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Referencia" border="0" color="0" x="3506" y="8" height="56" width="800" html.valueishtml="0"  name=m_muestras_desc_referencia_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="De Cliente" border="0" color="0" x="4315" y="8" height="56" width="837" html.valueishtml="0"  name=de_cliente_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="De Ejecutiva" border="0" color="0" x="5161" y="8" height="56" width="562" html.valueishtml="0"  name=de_ejecutiva_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Desarrollador" border="0" color="0" x="5733" y="8" height="56" width="681" html.valueishtml="0"  name=desarrollador_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Talla Ref" border="0" color="0" x="873" y="8" height="56" width="334" html.valueishtml="0"  name=talla_ref_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Co Fabrica" border="0" color="0" x="9" y="8" height="56" width="183" html.valueishtml="0"  name=m_muestras_co_fabrica_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Co Linea" border="0" color="0" x="201" y="8" height="56" width="197" html.valueishtml="0"  name=m_muestras_co_linea_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Co Referencia Ref" border="0" color="0" x="617" y="8" height="56" width="247" html.valueishtml="0"  name=m_muestras_co_referencia_ref_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Co Muestra" border="0" color="0" x="407" y="8" height="56" width="201" html.valueishtml="0"  name=co_muestra_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="33554432" x="1216" y="8" height="68" width="562" format="[shortdate] [time]" html.valueishtml="0"  name=fe_creacion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="33554432" x="1787" y="8" height="68" width="261" format="[general]" html.valueishtml="0"  name=co_recurso visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="33554432" x="2057" y="8" height="68" width="681" format="[general]" html.valueishtml="0"  name=de_recurso visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="33554432" x="2747" y="8" height="68" width="750" format="[general]" html.valueishtml="0"  name=cantidad_ordenes visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="33554432" x="3506" y="8" height="68" width="800" format="[general]" html.valueishtml="0"  name=desc_referencia visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="33554432" x="4315" y="8" height="68" width="837" format="[general]" html.valueishtml="0"  name=de_cliente visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="33554432" x="5161" y="8" height="68" width="562" format="[general]" html.valueishtml="0"  name=de_ejecutiva visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="0" tabsequence=32766 border="0" color="33554432" x="5733" y="8" height="68" width="681" format="[general]" html.valueishtml="0"  name=desarrollador visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="33554432" x="873" y="8" height="68" width="334" format="[general]" html.valueishtml="0"  name=talla_ref visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="33554432" x="9" y="8" height="68" width="183" format="[general]" html.valueishtml="0"  name=co_fabrica visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="33554432" x="201" y="8" height="68" width="197" format="[general]" html.valueishtml="0"  name=co_linea visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="33554432" x="617" y="8" height="68" width="247" format="[general]" html.valueishtml="0"  name=co_referencia_ref visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="33554432" x="407" y="8" height="68" width="201" format="[general]" html.valueishtml="0"  name=co_muestra visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
