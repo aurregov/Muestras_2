@@ -1,0 +1,32 @@
+HA$PBExportHeader$d_recursos_agrupa.srd
+$PBExportComments$dw para los recursos que agrupan por muestra
+release 9;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_recurso dbname="m_recursos_tj.co_recurso" )
+ column=(type=char(30) updatewhereclause=yes name=de_diseno dbname="m_disenos_muestras.de_diseno" )
+ retrieve="Select 	Distinct m_recursos_tj.co_recurso,
+			m_disenos_muestras.de_diseno
+From 		m_recursos_tj,
+			h_fmp_muestras,
+			m_disenos_muestras
+where    ( h_fmp_muestras.co_fabrica         = m_disenos_muestras.co_fabrica ) and  
+			( h_fmp_muestras.co_linea           = m_disenos_muestras.co_linea ) and  
+			( h_fmp_muestras.co_muestra         = m_disenos_muestras.co_muestra ) and
+			( m_recursos_tj.co_recursoagrupa 	= h_fmp_muestras.co_recurso ) and
+			( m_recursos_tj.co_recursoagrupa 	= :a_recursoagrupa ) and
+			( h_fmp_muestras.co_muestra			= :a_muestra ) and
+			( m_disenos_muestras.co_diseno 		= :a_diseno )
+" arguments=(("a_recursoagrupa", number),("a_muestra", number),("a_diseno", number)) )
+text(band=header alignment="2" text="Recurso que Agrupa" border="0" color="0" x="9" y="4" height="56" width="480" html.valueishtml="0"  name=m_recursos_tj_co_recurso_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Dise$$HEX1$$f100$$ENDHEX$$o" border="0" color="0" x="498" y="4" height="56" width="393" html.valueishtml="0"  name=m_disenos_muestras_de_diseno_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="5" color="0" x="9" y="4" height="56" width="480" format="[general]" html.valueishtml="0"  name=co_recurso visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="5" color="0" x="498" y="4" height="56" width="393" format="[general]" html.valueishtml="0"  name=de_diseno visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
