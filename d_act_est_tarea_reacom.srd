@@ -1,0 +1,32 @@
+HA$PBExportHeader$d_act_est_tarea_reacom.srd
+$PBExportComments$DWO para la actualizacion del estado de las tareas que se encuentran en programaci$$HEX1$$f300$$ENDHEX$$n en la reacomodaci$$HEX1$$f300$$ENDHEX$$n
+release 8;
+datawindow(units=0 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=long updatewhereclause=yes key=yes name=nu_orden dbname="mu_gantt.nu_orden" )
+ column=(type=long updatewhereclause=yes key=yes name=consec dbname="mu_gantt.consec" )
+ column=(type=long updatewhereclause=yes name=posicion dbname="mu_gantt.posicion" )
+ column=(type=long update=yes updatewhereclause=yes name=condicion dbname="mu_gantt.condicion" )
+ retrieve="SELECT 	mu_gantt.nu_orden,
+			mu_gantt.consec,
+			mu_gantt.posicion,
+			mu_gantt.condicion
+FROM 		mu_gantt
+WHERE 	(mu_gantt.condicion =9) 
+			AND mu_gantt.nu_orden IN (		SELECT 	dt_mu_ord.nu_orden 
+                       						FROM   	dt_mu_ord
+                       						WHERE 	dt_mu_ord.condicion IN (2,3))
+" update="mu_gantt" updatewhere=1 updatekeyinplace=yes )
+text(band=header alignment="2" text="Nu Orden" border="0" color="33554432" x="9" y="8" height="56" width="443" html.valueishtml="0"  name=nu_orden_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Consec" border="0" color="33554432" x="462" y="8" height="56" width="439" html.valueishtml="0"  name=consec_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="posicion" border="0" color="33554432" x="910" y="8" height="56" width="293" html.valueishtml="0"  name=posicion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="condicion" border="0" color="33554432" x="1211" y="8" height="56" width="329" html.valueishtml="0"  name=condicion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=10 border="5" color="33554432" x="9" y="8" height="60" width="443" format="[general]" html.valueishtml="0"  name=nu_orden visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=20 border="5" color="33554432" x="462" y="8" height="60" width="439" format="[general]" html.valueishtml="0"  name=consec visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=30 border="5" color="33554432" x="910" y="8" height="60" width="293" format="[General]" html.valueishtml="0"  name=posicion  tag="" visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="1" tabsequence=40 border="5" color="33554432" x="1211" y="8" height="60" width="329" format="[General]" html.valueishtml="0"  name=condicion  tag="" visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
