@@ -1,0 +1,21 @@
+HA$PBExportHeader$dgr_cabase.srd
+release 9;
+datawindow(units=3 timer_interval=0 color=67108864 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 635 print.margin.right = 635 print.margin.top = 635 print.margin.bottom = 635 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=476 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=555 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes identity=yes name=co_cabase dbname="m_cabase.co_cabase" )
+ column=(type=char(6) update=yes updatewhereclause=yes name=de_cabase dbname="m_cabase.de_cabase" )
+ retrieve="  SELECT m_cabase.co_cabase,   
+         m_cabase.de_cabase  
+    FROM m_cabase   
+" update="m_cabase" updatewhere=0 updatekeyinplace=yes )
+text(band=header alignment="0" text="Cantidad Base" border="6" color="0" x="740" y="26" height="423" width="3175" html.valueishtml="0"  name=de_cabase_t  tag="Cantidad Base" visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=2 alignment="1" tabsequence=10 border="0" color="0" x="767" y="0" height="529" width="3148" format="[general]" html.valueishtml="0"  name=de_cabase visible="1" editmask.mask="######" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="0" expression=" GetRow()"border="6" color="0" x="52" y="0" height="529" width="635" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="67108864~tif(Currentrow() = GetRow(), RGB(128,128,128), 79471120)" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
