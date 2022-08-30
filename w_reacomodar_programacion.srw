@@ -1,5 +1,5 @@
 HA$PBExportHeader$w_reacomodar_programacion.srw
-$PBExportComments$Obj.Ventana en la que se consulta la lista de $$HEX1$$f300$$ENDHEX$$rdenes que se est$$HEX1$$e100$$ENDHEX$$n procesando y las cuales son susceptibles de ser movidas por la reacomodaci$$HEX1$$f300$$ENDHEX$$n de prioridades.Se despliega la lista y se selecciona opci$$HEX1$$f300$$ENDHEX$$n donde se procesan + muestran con nuevo orden pr$$HEX3$$4441542a0052$$ENDHEX$$
+$PBExportComments$Obj.Ventana en la que se consulta la lista de $$HEX1$$f300$$ENDHEX$$rdenes que se est$$HEX1$$e100$$ENDHEX$$n procesando y las cuales son susceptibles de ser movidas por la reacomodaci$$HEX1$$f300$$ENDHEX$$n de prioridades.Se despliega la lista y se selecciona opci$$HEX1$$f300$$ENDHEX$$n donde se procesan + muestran con nuevo orden pr$$HEX3$$4441542a0038$$ENDHEX$$
 forward
 global type w_reacomodar_programacion from w_sheet
 end type

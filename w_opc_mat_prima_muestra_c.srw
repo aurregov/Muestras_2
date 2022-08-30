@@ -427,6 +427,14 @@ event clicked;If of_retorno()<>1 Then
 	Return 
 End If
 
+
+//---- SOL 159 AUV
+If of_retorno()<>1500 Then
+	Return 
+End If
+//-- FINAL DESARROLLO
+
+
 CloseWithReturn(Parent,iou_param)
 end event
 

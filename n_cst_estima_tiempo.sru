@@ -454,6 +454,14 @@ Choose Case ai_item
 		ids_mu_activ_t6 = CREATE n_ds_application
 		ids_mu_activ_t6.of_load('d_mu_activ_t6_busca')
 		ids_mu_activ_t6.of_conexion(n_cst_application.itr_appl,True)
+	//--- SE ADIONA PARA OTRA ACTIVIDAD SOL 159 AUV 
+	Case 2 //Actividad
+		ids_mu_activ_t1 = CREATE n_ds_application
+		ids_mu_activ_t1.of_load('d_mu_activ_t1_busca')
+		ids_mu_activ_t1.of_conexion(n_cst_application.itr_appl,True)
+		ids_mu_activ_t2 = CREATE n_ds_application
+		ids_mu_activ_t2.of_load('d_mu_activ_t2_busca')
+	//--- FINAL DESARROLLO		
 End Choose
 Return 1
 end function
