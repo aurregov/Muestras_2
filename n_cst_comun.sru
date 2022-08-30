@@ -14,6 +14,7 @@ long     il_retorno[]
 Decimal  ide_retorno[]
 
 end variables
+
 forward prototypes
 public function string of_mmtopulg (decimal a_mm)
 public function integer of_loaddddw (datawindowchild a_dwc, string a_str1, transaction a_transaction)

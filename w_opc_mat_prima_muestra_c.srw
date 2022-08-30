@@ -402,7 +402,10 @@ string text = "&Cancelar"
 boolean cancel = true
 end type
 
-event clicked;Close(Parent)
+event clicked;// RQ 753
+IF 1=2 THEN RETURN
+// FIN
+Close(Parent)
 end event
 
 type cb_aceptar from commandbutton within w_opc_mat_prima_muestra_c
@@ -459,7 +462,6 @@ string facename = "Arial"
 long textcolor = 33554432
 long backcolor = 67108864
 string text = "Criterio de b$$HEX1$$fa00$$ENDHEX$$squeda"
-borderstyle borderstyle = stylelowered!
 end type
 
 type gb_2 from u_gb_base within w_opc_mat_prima_muestra_c

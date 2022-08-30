@@ -478,6 +478,14 @@ Choose Case ai_item
 		DESTROY ids_mu_activ_t3
 		DESTROY ids_mu_activ_t4
 		DESTROY ids_mu_activ_t5
+		//- AUV RQ 753
+	Case 2 //Actividad
+		DESTROY ids_mu_activ_t1
+		DESTROY ids_mu_activ_t2
+		DESTROY ids_mu_activ_t3
+		DESTROY ids_mu_activ_t4
+		DESTROY ids_mu_activ_t5
+		//- FIN AUV RQ 753
 End Choose
 Return 1
 end function
