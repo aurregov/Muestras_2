@@ -157,6 +157,17 @@ If dw_1.RowCount()>0 Then
 Else
 	Close(Parent)
 End If
+
+//---	--------------------------------------------------------------------------------------------------------------------------------
+//---	CONSULTA PARA RQ 753 ALVARO UV FECHA 30-08-2022
+if dw_1.getrow() <= 250 then
+	messagebox('Aviso del Sistema','RQ-753')
+end if
+//---	FIN RQ 753 
+//---	--------------------------------------------------------------------------------------------------------------------------------
+
+
+
 end event
 
 type cb_cancelar from w_base_busqueda_mod`cb_cancelar within w_busins_m_partemp
