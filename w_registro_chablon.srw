@@ -1,5 +1,5 @@
 HA$PBExportHeader$w_registro_chablon.srw
-$PBExportComments$Ventana de Registro de chablones/gr$$HEX1$$e100$$ENDHEX$$ficos antideslizantes para la programaci$$HEX1$$f300$$ENDHEX$$n.Los Chablones son plantillas que se emplean para aplicar los antideslizantes, en este caso solo se registra la informaci$$HEX1$$f300$$ENDHEX$$n del molde y no de su aplicaci$$HEX1$$f300$$ENDHEX$$n. La persona encar$$HEX3$$4441542a0074$$ENDHEX$$
+$PBExportComments$Ventana de Registro de chablones/gr$$HEX1$$e100$$ENDHEX$$ficos antideslizantes para la programaci$$HEX1$$f300$$ENDHEX$$n.Los Chablones son plantillas que se emplean para aplicar los antideslizantes, en este caso solo se registra la informaci$$HEX1$$f300$$ENDHEX$$n del molde y no de su aplicaci$$HEX1$$f300$$ENDHEX$$n. La persona encar$$HEX3$$4441542a00c6$$ENDHEX$$<
 forward
 global type w_registro_chablon from w_sheet
 end type
