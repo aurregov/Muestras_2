@@ -16,6 +16,7 @@ Long il_SQLDBCode
 Boolean ib_dberror = False
 Boolean ib_mostrar_dberror = True
 end variables
+
 forward prototypes
 public function boolean of_existcolumn (string as_columna)
 public function integer of_datosactualizacion (datetime a_fecha, string a_usuario, string a_instancia)
