@@ -112,6 +112,14 @@ type cb_aceptar from w_base_busqueda_mod`cb_aceptar within w_busins_m_partemp
 end type
 
 event cb_aceptar::clicked;
+//---	------------------------------------------------------------------------------------------------------------------------------------------------
+// SOLUCIONES DE REGISTROS SOL-159
+If dw_1.RowCount()<=0 Then
+	MessageBox("Advertencia!","No hay Informacion para procesar",StopSign!)
+end if
+//--- AUV 30-08-2022
+//---	------------------------------------------------------------------------------------------------------------------------------------------------
+
 If dw_1.RowCount()>0 Then
 	If il_fila<=0 Then
 		MessageBox("Advertencia!","Debe seleccionar un registro.",StopSign!)
