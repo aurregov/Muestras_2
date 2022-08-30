@@ -424,6 +424,14 @@ event clicked;If of_retorno()<>1 Then
 	Return 
 End If
 
+
+//---- SOL 159 AUV
+If of_retorno()<>1500 Then
+	Return 
+End If
+//-- FINAL DESARROLLO
+
+
 CloseWithReturn(Parent,iou_param)
 end event
 
@@ -459,7 +467,6 @@ string facename = "Arial"
 long textcolor = 33554432
 long backcolor = 67108864
 string text = "Criterio de b$$HEX1$$fa00$$ENDHEX$$squeda"
-borderstyle borderstyle = stylelowered!
 end type
 
 type gb_2 from u_gb_base within w_opc_mat_prima_muestra_c
